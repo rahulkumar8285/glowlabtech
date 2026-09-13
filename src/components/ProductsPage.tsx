@@ -16,7 +16,6 @@ import {
   PhoneCall,
 } from 'lucide-react';
 import { PRODUCTS_DATA, type ProductItem } from '../data/offeringsData';
-import PageHeader from './PageHeader';
 import FinalCTASection from './FinalCTASection';
 import { updatePageSEO } from '../utils/seo';
 
@@ -77,44 +76,45 @@ export default function ProductsPage({
 
   return (
     <div id="products-page" className="w-full bg-[#FAF9F6] text-[#1A1A1A]">
-      {/* PAGE HEADER */}
-      <PageHeader
-        id="products-header"
-        title="Field Force Platforms & / Proprietary Software Engines."
-        subtitle="Turnkey software platforms and telematics systems engineered to eliminate operational bottlenecks, verify ground activity, and scale remote teams across India."
-      />
-
-      {/* FLAGSHIP PRODUCT SPOTLIGHT */}
+      {/* UNIFIED HERO SECTION */}
       <section
-        id="field-tracking-spotlight"
-        className="w-full py-12 sm:py-16 md:py-20 border-b border-black/10 bg-[#FAF9F6]"
+        id="products-hero"
+        className="w-full bg-[#FAF9F6] text-[#1A1A1A] pt-24 sm:pt-32 md:pt-36 pb-12 sm:pb-16 md:pb-20 border-b border-black/10"
       >
-        <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
-          {/* Main Hero Card for Field Tracking App */}
-          <div className="border border-black/10 bg-white rounded-2xl p-6 sm:p-10 md:p-12 shadow-[0_4px_30px_rgba(0,0,0,0.03)] relative overflow-hidden">
-            {/* Ambient Terracotta Accent Blur */}
+        <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20 text-left">
+          {/* Main Title & Subtitle */}
+          <div className="mb-10 sm:mb-14">
+            <h1 className="font-headline font-normal sm:font-medium text-[28px] min-[380px]:text-[34px] sm:text-[54px] md:text-[68px] lg:text-[76px] leading-[1.1] sm:leading-[1.05] tracking-[-0.03em] text-[#1A1A1A] max-w-5xl">
+              Field Force Platforms &amp;
+              <span className="block text-[#1A1A1A]">Proprietary Software Engines.</span>
+            </h1>
+            <p className="font-body font-normal text-sm sm:text-lg md:text-xl text-[#6B6862] leading-relaxed max-w-3xl mt-4 sm:mt-5">
+              Turnkey software platforms and telematics systems engineered to eliminate operational bottlenecks, verify ground activity, and scale remote teams across India.
+            </p>
+          </div>
+
+          {/* Product Details Card */}
+          <div className="border border-black/10 bg-white rounded-2xl p-6 sm:p-10 md:p-12 shadow-[0_4px_30px_rgba(0,0,0,0.02)] relative overflow-hidden">
             <div
               aria-hidden="true"
               className="absolute -top-24 -right-24 w-96 h-96 bg-[#C84826]/5 rounded-full blur-3xl pointer-events-none"
             />
 
-            {/* Product Title & Positioning */}
             <div className="mb-6 relative z-10">
               <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4 mb-2">
-                <h2 className="font-headline font-semibold text-3xl sm:text-5xl md:text-6xl text-[#1A1A1A] tracking-tight">
+                <h2 className="font-headline font-semibold text-2xl sm:text-4xl md:text-5xl text-[#1A1A1A] tracking-tight">
                   {primaryProduct.shortName}
                 </h2>
-                <span className="text-sm sm:text-lg font-body font-medium text-[#C84826]">
+                <span className="text-sm sm:text-base md:text-lg font-body font-medium text-[#C84826]">
                   GPS Field Force Tracking &amp; Work Validation Services
                 </span>
               </div>
 
-              <p className="font-body text-base sm:text-xl text-neutral-700 leading-relaxed max-w-4xl mt-3">
+              <p className="font-body text-sm sm:text-lg text-neutral-700 leading-relaxed max-w-4xl mt-3">
                 {primaryProduct.tagline}
               </p>
             </div>
 
-            {/* Quick Action CTAs */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2 mb-8 relative z-10">
               <a
                 href="/contact"
@@ -135,7 +135,6 @@ export default function ProductsPage({
               </a>
             </div>
 
-            {/* Operational Stats Strip */}
             {primaryProduct.stats && (
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-6 border-t border-black/10 relative z-10">
                 {primaryProduct.stats.map((stat, idx) => (
