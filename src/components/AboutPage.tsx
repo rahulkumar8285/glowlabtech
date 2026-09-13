@@ -1,4 +1,19 @@
 import { useEffect } from 'react';
+import {
+  Award,
+  Layers,
+  Wrench,
+  ShoppingCart,
+  Laptop,
+  Stethoscope,
+  Home,
+  Truck,
+  TrendingUp,
+  Bot,
+  Workflow,
+  Code2,
+  Database,
+} from 'lucide-react';
 import PageHeader from './PageHeader';
 import FinalCTASection from './FinalCTASection';
 import { updatePageSEO } from '../utils/seo';
@@ -10,52 +25,117 @@ export default function AboutPage({
 }) {
   useEffect(() => {
     const cleanup = updatePageSEO({
-      title: 'About GlowLab Tech — Software & AI Product Agency',
+      title: 'About GlowLab Tech — Software, AI & Automation Agency',
       description:
-        'A specialized team of operators, engineers, and strategists building custom software, applied AI systems, and digital products for real businesses.',
+        'We run an engineering agency with deep knowledge and hands-on experience, delivering high-quality software across multiple industries using a versatile multi-tool ecosystem.',
       canonicalUrl: 'https://glowlabtech.com/about',
       ogType: 'website',
     });
     return cleanup;
   }, []);
+
   return (
     <div id="about-page" className="w-full bg-[#FAF9F6] text-[#1A1A1A]">
       {/* PAGE HEADER */}
       <PageHeader
         id="about-header"
-        title="We build AI systems / that actually work."
-        subtitle="A small team of operators, engineers, and strategists — obsessed with making AI useful for real businesses."
+        eyebrow="About GlowLab Tech"
+        title="Deep Engineering Experience / Across Diverse Industries & Modern Tools"
+        subtitle="We run an agile engineering and AI agency built on technical rigor, battle-tested knowledge, and proven delivery across multiple industries and modern tool ecosystems."
       />
 
       {/* SECTION 1 — MANIFESTO / WHO WE ARE */}
       <section
         id="about-manifesto-section"
-        className="w-full py-10 sm:py-18 md:py-20 border-b border-black/10"
+        className="w-full py-10 sm:py-16 md:py-20 border-b border-black/10"
       >
         <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
           <div className="grid grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-center">
-            {/* Left column (~60% width): 3-4 short editorial paragraphs in plain, confident first-person */}
-            <div className="col-span-12 lg:col-span-7 space-y-4 sm:space-y-5 text-left">
-              <p className="font-body text-base sm:text-xl md:text-[22px] text-[#1A1A1A] leading-[1.6] font-normal">
-                Most agencies talk about AI. We actually build it — for
-                businesses that don't have time to figure out which tools are
-                worth using and which are just noise.
-              </p>
-              <p className="font-body text-sm sm:text-[17px] text-neutral-600 leading-relaxed">
-                We started this because we kept seeing the same problem:
-                businesses spending money on ads, outreach, and content that
-                wasn't working — not because the strategy was wrong, but because
-                the systems behind it were too slow, too manual, and too
-                expensive to iterate on.
-              </p>
-              <p className="font-body text-sm sm:text-[17px] text-neutral-600 leading-relaxed">
-                AI fixes that. But only if someone builds it properly, for your
-                specific business — not a templated workflow copied from a
-                YouTube tutorial.
-              </p>
-              <p className="font-headline font-medium text-lg sm:text-2xl text-[#1A1A1A] pt-2">
-                That's what we do.
-              </p>
+            {/* Left column (~60% width): High-value editorial manifesto, proof pillars & metrics */}
+            <div className="col-span-12 lg:col-span-7 space-y-6 text-left">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C84826]/10 text-[#C84826] font-body text-xs font-semibold tracking-wider uppercase mb-3.5 select-none">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C84826]" />
+                  <span>Engineering Studio &amp; Multi-Disciplinary Agency</span>
+                </div>
+                <h2 className="font-headline font-medium text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] text-[#1A1A1A] leading-[1.2] tracking-[-0.02em]">
+                  Deep technical knowledge, proven execution, and multi-industry versatility.
+                </h2>
+              </div>
+
+              <div className="space-y-4 font-body text-[#1A1A1A]">
+                <p className="text-base sm:text-lg md:text-[19px] leading-[1.65] font-normal text-neutral-800">
+                  We run GlowLab Tech with extensive hands-on experience and deep architectural knowledge. Having engineered mission-critical software, custom digital products, and automated AI pipelines over years of real-world operation, we understand what it takes to build resilient systems that perform under load.
+                </p>
+                <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
+                  We hold our work to the highest standards of craftsmanship. We don't deploy brittle no-code shortcuts or superficial templates; we build clean, maintainable, and battle-tested software. Every pipeline, database connection, and API integration is engineered with automated error recovery, enterprise-grade security, and measurable ROI that compounds your bottom line.
+                </p>
+                <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
+                  Our experience is broad and battle-tested across multiple industries—from high-growth E-Commerce and fast-scaling B2B SaaS to Healthcare, Real Estate, and Logistics. By operating fluidly across a multi-tool ecosystem—spanning state-of-the-art AI models, event-driven automation engines, and modern full-stack web frameworks—we choose and engineer the exact right stack for your business.
+                </p>
+              </div>
+
+              {/* 3 Value Pillars */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2 border-t border-black/[0.08]">
+                <div className="p-3.5 rounded-lg bg-black/[0.02] border border-black/[0.06]">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <Award className="w-4 h-4 text-[#C84826] shrink-0" />
+                    <span className="font-headline text-xs font-semibold text-[#1A1A1A]">
+                      Deep Knowledge &amp; Exp.
+                    </span>
+                  </div>
+                  <p className="font-body text-[11px] text-neutral-500 leading-relaxed">
+                    Years of hands-on software engineering, running reliable systems that never compromise on quality.
+                  </p>
+                </div>
+
+                <div className="p-3.5 rounded-lg bg-black/[0.02] border border-black/[0.06]">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <Layers className="w-4 h-4 text-[#C84826] shrink-0" />
+                    <span className="font-headline text-xs font-semibold text-[#1A1A1A]">
+                      Multi-Industry Reach
+                    </span>
+                  </div>
+                  <p className="font-body text-[11px] text-neutral-500 leading-relaxed">
+                    Battle-tested playbooks adapted for E-Commerce, SaaS, Healthcare, Real Estate, and Logistics.
+                  </p>
+                </div>
+
+                <div className="p-3.5 rounded-lg bg-black/[0.02] border border-black/[0.06]">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <Wrench className="w-4 h-4 text-[#C84826] shrink-0" />
+                    <span className="font-headline text-xs font-semibold text-[#1A1A1A]">
+                      Multi-Tool Agility
+                    </span>
+                  </div>
+                  <p className="font-body text-[11px] text-neutral-500 leading-relaxed">
+                    Fluency across leading LLMs, n8n/Python automation engines, cloud stacks, and modern APIs.
+                  </p>
+                </div>
+              </div>
+
+              {/* Studio Stats Micro-Strip */}
+              <div className="pt-1 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-body text-neutral-600">
+                <div className="flex items-center gap-1.5">
+                  <span className="font-headline font-semibold text-sm text-[#1A1A1A]">6+ Yrs</span>
+                  <span className="text-neutral-500">Agency Experience</span>
+                </div>
+                <div className="w-1 h-1 rounded-full bg-neutral-300" />
+                <div className="flex items-center gap-1.5">
+                  <span className="font-headline font-semibold text-sm text-[#1A1A1A]">10+</span>
+                  <span className="text-neutral-500">Industries Served</span>
+                </div>
+                <div className="w-1 h-1 rounded-full bg-neutral-300" />
+                <div className="flex items-center gap-1.5">
+                  <span className="font-headline font-semibold text-sm text-[#1A1A1A]">40+</span>
+                  <span className="text-neutral-500">Tools &amp; APIs Mastered</span>
+                </div>
+                <div className="w-1 h-1 rounded-full bg-neutral-300" />
+                <div className="flex items-center gap-1.5">
+                  <span className="font-headline font-semibold text-sm text-[#1A1A1A]">99.9%</span>
+                  <span className="text-neutral-500">System Reliability</span>
+                </div>
+              </div>
             </div>
 
             {/* Right column (~40% width): GlowLab Tech Studio & Workstation */}
@@ -73,14 +153,305 @@ export default function AboutPage({
                     backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
                   }}
                 />
-
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 2 — HOW WE'RE DIFFERENT */}
+      {/* SECTION 2 — MULTI-INDUSTRY EXPERIENCE */}
+      <section
+        id="about-industries-section"
+        className="w-full py-12 sm:py-18 md:py-20 border-b border-black/10 bg-[#F5F4EF]"
+      >
+        <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20 text-left">
+          <div className="max-w-3xl mb-10 sm:mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C84826]/10 text-[#C84826] font-body text-xs font-semibold tracking-wider uppercase mb-3 select-none">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C84826]" />
+              <span>Multi-Industry Execution</span>
+            </div>
+            <h2 className="font-headline font-medium text-2xl sm:text-4xl md:text-[42px] leading-tight tracking-[-0.02em] text-[#1A1A1A]">
+              Specialized experience across diverse industries.
+            </h2>
+            <p className="font-body text-base sm:text-lg text-neutral-600 mt-3 leading-relaxed">
+              We don't force generic templates. Having worked across multiple sectors, we tailor our architectures to the unique regulatory, operational, and speed requirements of each business vertical.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+            {/* Card 1: E-Commerce */}
+            <div className="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 flex flex-col justify-between shadow-xs">
+              <div>
+                <div className="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4">
+                  <ShoppingCart className="w-5 h-5" />
+                </div>
+                <h3 className="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
+                  E-Commerce &amp; Retail
+                </h3>
+                <p className="font-body text-sm text-neutral-600 leading-relaxed mb-4">
+                  Omni-channel inventory sync across storefronts, intelligent AI product catalog enrichment, automated fulfillment dispatch, and smart VIP churn prevention.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-black/5 flex flex-wrap gap-1.5 text-[11px] font-body text-neutral-500 font-medium">
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Shopify API</span>
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Klaviyo</span>
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Stripe</span>
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Webhooks</span>
+              </div>
+            </div>
+
+            {/* Card 2: B2B SaaS */}
+            <div className="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 flex flex-col justify-between shadow-xs">
+              <div>
+                <div className="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4">
+                  <Laptop className="w-5 h-5" />
+                </div>
+                <h3 className="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
+                  B2B SaaS &amp; Tech
+                </h3>
+                <p className="font-body text-sm text-neutral-600 leading-relaxed mb-4">
+                  Product-led user onboarding automations, usage-based alert pipelines, webhook data synchronization, and automated churn prevention sequences.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-black/5 flex flex-wrap gap-1.5 text-[11px] font-body text-neutral-500 font-medium">
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Next.js</span>
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">HubSpot</span>
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Supabase</span>
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Segment</span>
+              </div>
+            </div>
+
+            {/* Card 3: Healthcare */}
+            <div className="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 flex flex-col justify-between shadow-xs">
+              <div>
+                <div className="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4">
+                  <Stethoscope className="w-5 h-5" />
+                </div>
+                <h3 className="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
+                  Healthcare &amp; Wellness
+                </h3>
+                <p className="font-body text-sm text-neutral-600 leading-relaxed mb-4">
+                  Secure patient intake flows, automated appointment reminders, confidential lead triaging, and clinical document classification with audit logging.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-black/5 flex flex-wrap gap-1.5 text-[11px] font-body text-neutral-500 font-medium">
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">HIPAA-Ready</span>
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Twilio</span>
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">FastAPI</span>
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Encrypted DBs</span>
+              </div>
+            </div>
+
+            {/* Card 4: Real Estate */}
+            <div className="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 flex flex-col justify-between shadow-xs">
+              <div>
+                <div className="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4">
+                  <Home className="w-5 h-5" />
+                </div>
+                <h3 className="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
+                  Real Estate &amp; PropTech
+                </h3>
+                <p className="font-body text-sm text-neutral-600 leading-relaxed mb-4">
+                  Instant 24/7 buyer and tenant lead qualification, automated multi-touch follow-ups, dynamic listing syndication, and digital contract execution.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-black/5 flex flex-wrap gap-1.5 text-[11px] font-body text-neutral-500 font-medium">
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Follow Up Boss</span>
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Airtable</span>
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">n8n</span>
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">DocuSign</span>
+              </div>
+            </div>
+
+            {/* Card 5: Logistics */}
+            <div className="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 flex flex-col justify-between shadow-xs">
+              <div>
+                <div className="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4">
+                  <Truck className="w-5 h-5" />
+                </div>
+                <h3 className="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
+                  Logistics &amp; Supply Chain
+                </h3>
+                <p className="font-body text-sm text-neutral-600 leading-relaxed mb-4">
+                  Real-time dispatch tracking, automated carrier status alerts, vendor invoice OCR data extraction, and route anomaly detection triggers.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-black/5 flex flex-wrap gap-1.5 text-[11px] font-body text-neutral-500 font-medium">
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Python Workers</span>
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Cloud OCR</span>
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">PostgreSQL</span>
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Celery</span>
+              </div>
+            </div>
+
+            {/* Card 6: FinTech */}
+            <div className="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 flex flex-col justify-between shadow-xs">
+              <div>
+                <div className="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4">
+                  <TrendingUp className="w-5 h-5" />
+                </div>
+                <h3 className="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
+                  FinTech &amp; Professional Services
+                </h3>
+                <p className="font-body text-sm text-neutral-600 leading-relaxed mb-4">
+                  Automated bank and ledger reconciliation, KYC identity verification pipelines, dynamic invoice generation, and high-frequency audit reports.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-black/5 flex flex-wrap gap-1.5 text-[11px] font-body text-neutral-500 font-medium">
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Plaid API</span>
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">OpenAI Vision</span>
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Temporal</span>
+                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Redis</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 3 — MULTI-TOOL MASTERY & TECH ECOSYSTEM */}
+      <section
+        id="about-tools-section"
+        className="w-full py-12 sm:py-18 md:py-20 border-b border-black/10 bg-[#FAF9F6]"
+      >
+        <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20 text-left">
+          <div className="max-w-3xl mb-10 sm:mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C84826]/10 text-[#C84826] font-body text-xs font-semibold tracking-wider uppercase mb-3 select-none">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C84826]" />
+              <span>Multi-Tool Agility</span>
+            </div>
+            <h2 className="font-headline font-medium text-2xl sm:text-4xl md:text-[42px] leading-tight tracking-[-0.02em] text-[#1A1A1A]">
+              Mastering the full modern software &amp; AI stack.
+            </h2>
+            <p className="font-body text-base sm:text-lg text-neutral-600 mt-3 leading-relaxed">
+              We never lock you into a single proprietary ecosystem. We select, combine, and master the best-in-class tools, foundation models, automation platforms, and cloud technologies for each exact challenge.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            {/* Tool Category 1: AI Models */}
+            <div className="p-7 sm:p-8 rounded-xl border border-black/10 bg-[#FAF9F6] hover:border-black/30 transition-colors duration-200">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826]">
+                  <Bot className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="font-headline font-medium text-xl text-[#1A1A1A]">
+                    AI &amp; Foundation Models
+                  </h3>
+                  <p className="font-body text-xs text-neutral-500">Autonomous Agents &amp; Reasoning</p>
+                </div>
+              </div>
+              <p className="font-body text-sm text-neutral-600 leading-relaxed mb-5">
+                We design and fine-tune reasoning pipelines, RAG semantic knowledge retrieval, multimodal vision parsing, and structured data synthesis using top-tier models.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {['OpenAI GPT-4o', 'Claude 3.5 Sonnet', 'Google Gemini 2.0', 'DeepSeek', 'Ollama (Local LLMs)', 'LangChain', 'LlamaIndex'].map(
+                  (tool) => (
+                    <span
+                      key={tool}
+                      className="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md"
+                    >
+                      {tool}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
+
+            {/* Tool Category 2: Automation Engines */}
+            <div className="p-7 sm:p-8 rounded-xl border border-black/10 bg-[#FAF9F6] hover:border-black/30 transition-colors duration-200">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826]">
+                  <Workflow className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="font-headline font-medium text-xl text-[#1A1A1A]">
+                    Automation &amp; Orchestration
+                  </h3>
+                  <p className="font-body text-xs text-neutral-500">Event-Driven Scalable Workflows</p>
+                </div>
+              </div>
+              <p className="font-body text-sm text-neutral-600 leading-relaxed mb-5">
+                We engineer bulletproof webhook listeners, automated failovers, asynchronous worker queues, and scheduled tasks that handle thousands of runs per hour without data loss.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {['n8n (Self-Hosted/Cloud)', 'Make / Integromat', 'Python Event Workers', 'Temporal', 'Zapier Enterprise', 'Redis Queues', 'Webhooks'].map(
+                  (tool) => (
+                    <span
+                      key={tool}
+                      className="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md"
+                    >
+                      {tool}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
+
+            {/* Tool Category 3: Full-Stack Web */}
+            <div className="p-7 sm:p-8 rounded-xl border border-black/10 bg-[#FAF9F6] hover:border-black/30 transition-colors duration-200">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826]">
+                  <Code2 className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="font-headline font-medium text-xl text-[#1A1A1A]">
+                    Full-Stack Software Engineering
+                  </h3>
+                  <p className="font-body text-xs text-neutral-500">Fast, High-Performance Applications</p>
+                </div>
+              </div>
+              <p className="font-body text-sm text-neutral-600 leading-relaxed mb-5">
+                We build interactive client portals, custom operational dashboards, headless commerce engines, and scalable microservices crafted for speed and security.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {['TypeScript', 'React', 'Next.js', 'Astro', 'Node.js', 'FastAPI', 'Tailwind CSS', 'REST & GraphQL'].map(
+                  (tool) => (
+                    <span
+                      key={tool}
+                      className="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md"
+                    >
+                      {tool}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
+
+            {/* Tool Category 4: Cloud & Integrations */}
+            <div className="p-7 sm:p-8 rounded-xl border border-black/10 bg-[#FAF9F6] hover:border-black/30 transition-colors duration-200">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826]">
+                  <Database className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="font-headline font-medium text-xl text-[#1A1A1A]">
+                    Cloud Infrastructure &amp; APIs
+                  </h3>
+                  <p className="font-body text-xs text-neutral-500">Enterprise Integrations &amp; Storage</p>
+                </div>
+              </div>
+              <p className="font-body text-sm text-neutral-600 leading-relaxed mb-5">
+                We connect and deploy your mission-critical applications across reliable cloud backbones, vector stores, payment processors, and bidirectional enterprise CRMs.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {['AWS (Lambda, S3)', 'Google Cloud', 'Supabase', 'PostgreSQL', 'HubSpot API', 'Salesforce', 'Stripe', 'Twilio', 'Slack API'].map(
+                  (tool) => (
+                    <span
+                      key={tool}
+                      className="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md"
+                    >
+                      {tool}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 4 — HOW WE'RE DIFFERENT */}
       <section
         id="about-different-section"
         className="w-full py-10 sm:py-18 md:py-20 border-b border-black/10"
@@ -104,8 +475,7 @@ export default function AboutPage({
               </div>
               <div className="col-span-12 md:col-span-7">
                 <p className="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed">
-                  We don't hand you a strategy doc and disappear. We build the
-                  actual system, run it, and refine it based on real results.
+                  We don't hand you a slide deck and disappear. We engineer the actual systems, run them in production, monitor them, and iterate continuously based on tangible performance data.
                 </p>
               </div>
             </div>
@@ -113,14 +483,12 @@ export default function AboutPage({
             <div className="py-6 sm:py-8 grid grid-cols-12 gap-4 sm:gap-8 lg:gap-12 items-start">
               <div className="col-span-12 md:col-span-5">
                 <h3 className="font-headline font-medium text-2xl sm:text-[26px] leading-tight text-[#1A1A1A]">
-                  AI without the fluff
+                  High standards of workmanship
                 </h3>
               </div>
               <div className="col-span-12 md:col-span-7">
                 <p className="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed">
-                  No unnecessary complexity, no tools added just because they
-                  exist. Every system we build has a clear purpose: save time,
-                  generate leads, or produce better output faster.
+                  No fragile no-code bandages or temporary hacks. Every architecture we deliver is crafted to enterprise standards—built with resilient error handling, secure data encryption, and clear documentation.
                 </p>
               </div>
             </div>
@@ -128,14 +496,12 @@ export default function AboutPage({
             <div className="py-6 sm:py-8 grid grid-cols-12 gap-4 sm:gap-8 lg:gap-12 items-start">
               <div className="col-span-12 md:col-span-5">
                 <h3 className="font-headline font-medium text-2xl sm:text-[26px] leading-tight text-[#1A1A1A]">
-                  Small team, direct access
+                  Small team, direct senior engineer access
                 </h3>
               </div>
               <div className="col-span-12 md:col-span-7">
                 <p className="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed">
-                  You work with the person who actually builds your system — not
-                  an account manager relaying messages to a developer you'll
-                  never speak to.
+                  You work directly with the experienced architects who design and code your systems—not an account executive relaying notes to junior offshore contractors.
                 </p>
               </div>
             </div>
