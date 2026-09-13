@@ -222,11 +222,7 @@ export default function Footer({ onNavigate }: FooterProps) {
       {/* Bottom Sub-Footer: Copyright, Legal & Back to Top */}
       <div className="w-full border-t border-white/[0.06] py-6 sm:py-8 bg-[#090908]">
         <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs font-body text-neutral-500">
-          <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-x-6 gap-y-1.5">
-            <p>© {currentYear} GLOWLAB TECH. All rights reserved.</p>
-            <span className="hidden sm:inline text-neutral-700">•</span>
-            <p className="text-neutral-500">Engineered with precision for ambitious operators.</p>
-          </div>
+          <p>© {currentYear} GLOWLAB TECH. All rights reserved.</p>
 
           <div className="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 border-white/[0.06]">
             <div className="flex items-center gap-3 sm:gap-4 text-neutral-400">
