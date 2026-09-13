@@ -235,6 +235,18 @@ export default function Footer({ onNavigate }: FooterProps) {
               <span className="hover:text-[#FAF9F6] cursor-pointer transition-colors py-1">Terms</span>
               <span className="text-neutral-700">•</span>
               <span className="hover:text-[#FAF9F6] cursor-pointer transition-colors py-1">Security</span>
+              <span className="text-neutral-700">•</span>
+              <button
+                type="button"
+                onClick={() => {
+                  if (typeof window !== 'undefined') {
+                    window.dispatchEvent(new Event('open-cookie-preferences'));
+                  }
+                }}
+                className="hover:text-[#FAF9F6] cursor-pointer transition-colors py-1 text-xs"
+              >
+                Cookies
+              </button>
             </div>
 
             <button

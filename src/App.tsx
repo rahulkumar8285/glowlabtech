@@ -19,6 +19,7 @@ import BlogDetailPage from './components/BlogDetailPage';
 import ContactPage from './components/ContactPage';
 import FinalCTASection from './components/FinalCTASection';
 import Footer from './components/Footer';
+import CookieBanner from './components/CookieBanner';
 import { updatePageSEO } from './utils/seo';
 
 export default function App() {
@@ -210,6 +211,9 @@ export default function App() {
 
       {/* GLOBAL FOOTER */}
       <Footer onNavigate={navigateTo} />
+
+      {/* COOKIE CONSENT BANNER */}
+      <CookieBanner />
     </div>
   );
 }
