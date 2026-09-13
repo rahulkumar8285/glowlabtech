@@ -151,14 +151,9 @@ export default function ProductsPage({
             />
 
             <div className="mb-6 relative z-10">
-              <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4 mb-2">
-                <h2 className="font-headline font-semibold text-2xl sm:text-4xl md:text-5xl text-[#1A1A1A] tracking-tight">
-                  {primaryProduct.shortName}
-                </h2>
-                <span className="text-sm sm:text-base md:text-lg font-body font-medium text-[#C84826]">
-                  GPS Field Force Tracking &amp; Work Validation Services
-                </span>
-              </div>
+              <h2 className="font-headline font-semibold text-2xl sm:text-4xl md:text-5xl text-[#1A1A1A] tracking-tight mb-2">
+                {primaryProduct.shortName}
+              </h2>
 
               <p className="font-body text-sm sm:text-lg text-neutral-700 leading-relaxed max-w-4xl mt-3">
                 {primaryProduct.tagline}
