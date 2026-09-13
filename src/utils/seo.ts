@@ -7,6 +7,8 @@
 export interface SEOProps {
   title: string;
   description: string;
+  keywords?: string;
+  robots?: string;
   canonicalUrl?: string;
   ogType?: 'website' | 'article';
   ogImage?: string;
@@ -19,9 +21,11 @@ export interface SEOProps {
 export function updatePageSEO({
   title,
   description,
+  keywords,
+  robots = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
   canonicalUrl,
   ogType = 'website',
-  ogImage = '/og-image.png',
+  ogImage = '/logo.png',
   publishedTime,
   modifiedTime,
   authorName,
@@ -62,16 +66,28 @@ export function updatePageSEO({
 
   // 2. Standard Meta
   setMeta('description', description);
+  if (keywords) {
+    setMeta('keywords', keywords);
+  }
+  if (robots) {
+    setMeta('robots', robots);
+  }
 
   // 3. OpenGraph Tags
+  setMeta('og:site_name', 'GlowLab Tech', true);
   setMeta('og:title', title, true);
   setMeta('og:description', description, true);
   setMeta('og:type', ogType, true);
-  const currentUrl = typeof window !== 'undefined' ? window.location.href : (canonicalUrl || '');
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : (canonicalUrl || 'https://glowlabtech.com/');
   setMeta('og:url', currentUrl, true);
-  if (ogImage) {
-    setMeta('og:image', ogImage, true);
-  }
+  
+  const absoluteOgImage = ogImage.startsWith('http')
+    ? ogImage
+    : typeof window !== 'undefined'
+      ? `${window.location.origin}${ogImage.startsWith('/') ? '' : '/'}${ogImage}`
+      : `https://glowlabtech.com${ogImage.startsWith('/') ? '' : '/'}${ogImage}`;
+
+  setMeta('og:image', absoluteOgImage, true);
 
   if (ogType === 'article') {
     if (publishedTime) setMeta('article:published_time', publishedTime, true);
@@ -83,9 +99,7 @@ export function updatePageSEO({
   setMeta('twitter:card', 'summary_large_image');
   setMeta('twitter:title', title);
   setMeta('twitter:description', description);
-  if (ogImage) {
-    setMeta('twitter:image', ogImage);
-  }
+  setMeta('twitter:image', absoluteOgImage);
 
   // 5. Canonical Link
   if (canonicalUrl || typeof window !== 'undefined') {

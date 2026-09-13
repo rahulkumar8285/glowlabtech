@@ -1,0 +1,10 @@
+﻿# Robots.txt for GlowLab Tech
+# https://glowlabtech.com
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /*?*preview=true
+
+# Sitemap index
+Sitemap: https://glowlabtech.com/sitemap.xml

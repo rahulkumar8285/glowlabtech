@@ -80,8 +80,43 @@ export default function App() {
         title: 'GlowLab Tech — AI Software & Digital Product Agency',
         description:
           'We design and build AI automation, custom software, and digital products that turn attention into pipeline.',
+        keywords:
+          'AI software agency, digital product development, field sales automation, GPS employee tracking app, custom software engineering, B2B workflow automation',
         canonicalUrl: 'https://glowlabtech.com/',
         ogType: 'website',
+        jsonLd: {
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'WebSite',
+              '@id': 'https://glowlabtech.com/#website',
+              url: 'https://glowlabtech.com/',
+              name: 'GlowLab Tech',
+              description:
+                'AI software, custom digital products, and field workforce tracking solutions.',
+              inLanguage: 'en-US',
+            },
+            {
+              '@type': 'Organization',
+              '@id': 'https://glowlabtech.com/#organization',
+              name: 'GlowLab Tech',
+              url: 'https://glowlabtech.com/',
+              logo: 'https://glowlabtech.com/logo.png',
+              description:
+                'Engineering agency designing and building AI automation, custom software, and field sales tracking systems.',
+              sameAs: [
+                'https://linkedin.com/company/glowlabtech',
+                'https://github.com/glowlabtech',
+              ],
+              contactPoint: {
+                '@type': 'ContactPoint',
+                contactType: 'customer support',
+                email: 'hello@glowlabtech.com',
+                availableLanguage: ['English', 'Hindi'],
+              },
+            },
+          ],
+        },
       });
     }
   }, [currentPath]);

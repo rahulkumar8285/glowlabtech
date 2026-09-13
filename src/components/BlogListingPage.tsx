@@ -20,6 +20,8 @@ export default function BlogListingPage({ onNavigate }: BlogListingPageProps) {
       title: 'Field Notes & Playbooks | GlowLab Tech',
       description:
         'Technical breakdowns, operational case studies, and engineering playbooks on AI automation, software engineering, and B2B growth infrastructure.',
+      keywords:
+        'AI engineering blog, software architecture playbooks, RAG pipelines, LLM latency benchmarks, cold email deliverability, B2B growth engineering',
       canonicalUrl: 'https://glowlabtech.com/blog',
       ogType: 'website',
       jsonLd: {

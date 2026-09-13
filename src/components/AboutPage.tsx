@@ -25,8 +25,28 @@ export default function AboutPage({
       title: 'About GlowLab Tech — Software, AI & Automation Agency',
       description:
         'We run an engineering agency with deep knowledge and hands-on experience, delivering high-quality software across multiple industries using a versatile multi-tool ecosystem.',
+      keywords:
+        'about GlowLab Tech, AI software agency, engineering studio, digital product development, B2B software consulting, full stack engineering',
       canonicalUrl: 'https://glowlabtech.com/about',
       ogType: 'website',
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@type': 'AboutPage',
+        name: 'About GlowLab Tech',
+        url: 'https://glowlabtech.com/about',
+        description:
+          'We run an engineering agency with deep knowledge and hands-on experience, delivering high-quality software across multiple industries using a versatile multi-tool ecosystem.',
+        mainEntity: {
+          '@type': 'Organization',
+          name: 'GlowLab Tech',
+          url: 'https://glowlabtech.com',
+          logo: 'https://glowlabtech.com/logo.png',
+          sameAs: [
+            'https://linkedin.com/company/glowlabtech',
+            'https://github.com/glowlabtech',
+          ],
+        },
+      },
     });
     return cleanup;
   }, []);

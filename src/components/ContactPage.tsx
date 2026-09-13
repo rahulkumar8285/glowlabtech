@@ -25,6 +25,8 @@ export default function ContactPage({ onNavigate: _onNavigate }: ContactPageProp
       title: 'Contact Us | Start a Project with GlowLab Tech',
       description:
         'Get in touch with our engineering team to design custom software, AI workflows, or digital product systems.',
+      keywords:
+        'contact GlowLab Tech, hire AI developers, software engineering quote, project inquiry, enterprise software consultation',
       canonicalUrl: 'https://glowlabtech.com/contact',
       ogType: 'website',
       jsonLd: {

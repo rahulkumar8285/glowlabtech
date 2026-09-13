@@ -20,6 +20,7 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
     const cleanup = updatePageSEO({
       title: `${post.title} | GlowLab Tech`,
       description: post.metaDescription,
+      keywords: post.tags ? post.tags.join(', ') : undefined,
       canonicalUrl: `https://glowlabtech.com/blog/${post.slug}`,
       ogType: 'article',
       publishedTime: post.isoDate,

@@ -32,16 +32,65 @@ export default function ProductsPage({
   const [activeTab, setActiveTab] = useState<'modules' | 'workflow' | 'why' | 'industries' | 'guides' | 'faq'>('modules');
   const isClickScrollingRef = useRef(false);
 
+  const primaryProduct = PRODUCTS_DATA[0];
+
   useEffect(() => {
+    const faqSchema = primaryProduct?.faqs
+      ? {
+          '@type': 'FAQPage',
+          mainEntity: primaryProduct.faqs.map((f) => ({
+            '@type': 'Question',
+            name: f.question,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: f.answer,
+            },
+          })),
+        }
+      : null;
+
+    const softwareSchema = {
+      '@type': 'SoftwareApplication',
+      name: 'GlowLab Field Sales Automation & Workforce Tracking Software',
+      operatingSystem: 'Android, iOS, Cloud Web',
+      applicationCategory: 'BusinessApplication',
+      url: 'https://glowlabtech.com/products',
+      description:
+        'All-in-one field sales automation and GPS workforce management platform. Streamline beat planning, verify client check-ins, automate selfie attendance, and audit travel claims.',
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        ratingCount: '148',
+        bestRating: '5',
+      },
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'INR',
+        description: '14-Day Free Pilot & Team Onboarding',
+      },
+      creator: {
+        '@type': 'Organization',
+        name: 'GlowLab Tech',
+        url: 'https://glowlabtech.com',
+      },
+    };
+
     const cleanup = updatePageSEO({
       title: 'Field Sales Automation & GPS Workforce Tracking Software | GlowLab Tech',
       description:
         'Streamline daily beat plans, verify customer meetings, automate geo-fenced selfie attendance, and eliminate travel reimbursement disputes across 500+ Indian cities.',
+      keywords:
+        'field sales automation software, gps employee tracking app, field force tracking, beat planning software, geo-fenced attendance app, mock gps detection, travel reimbursement automation, sales rep tracking India',
       canonicalUrl: 'https://glowlabtech.com/products',
       ogType: 'website',
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@graph': faqSchema ? [softwareSchema, faqSchema] : [softwareSchema],
+      },
     });
     return cleanup;
-  }, []);
+  }, [primaryProduct]);
 
   // Scroll spy to highlight the corresponding tab as user scrolls through sections
   useEffect(() => {
@@ -92,9 +141,6 @@ export default function ProductsPage({
       isClickScrollingRef.current = false;
     }
   };
-
-  // Primary flagship product (Field Tracking App)
-  const primaryProduct: ProductItem = PRODUCTS_DATA[0];
 
   const handleLinkClick = (path: string, e: MouseEvent) => {
     if (path.startsWith('http')) {

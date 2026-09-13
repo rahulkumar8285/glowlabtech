@@ -1,0 +1,23 @@
+﻿{
+  "name": "GlowLab Tech — AI Software & Field Automation",
+  "short_name": "GlowLab",
+  "description": "Custom AI software engineering, autonomous field tracking, and digital product studio.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF9F6",
+  "theme_color": "#0E0E0D",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"]
+}

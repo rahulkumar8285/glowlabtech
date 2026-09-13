@@ -26,8 +26,37 @@ export default function TestimonialsPage({ onNavigate }: TestimonialsPageProps) 
       title: 'Client Outcomes & Testimonials | GlowLab Tech',
       description:
         'Honest feedback, verified metrics, and operational results from founders, operators, and growth leaders who build AI systems with GlowLab Tech.',
+      keywords:
+        'GlowLab Tech reviews, client testimonials, AI automation case studies, software development reviews, operational results',
       canonicalUrl: 'https://glowlabtech.com/testimonials',
       ogType: 'website',
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: 'GlowLab Tech Client Reviews & Outcomes',
+        description:
+          'Verified feedback and metrics from founders and leaders working with GlowLab Tech.',
+        itemListElement: TESTIMONIALS_DATA.map((item, idx) => ({
+          '@type': 'Review',
+          position: idx + 1,
+          reviewRating: {
+            '@type': 'Rating',
+            ratingValue: '5',
+            bestRating: '5',
+          },
+          author: {
+            '@type': 'Person',
+            name: item.clientName,
+            jobTitle: `${item.role}, ${item.company}`,
+          },
+          reviewBody: item.quote,
+          itemReviewed: {
+            '@type': 'Organization',
+            name: 'GlowLab Tech',
+            url: 'https://glowlabtech.com',
+          },
+        })),
+      },
     });
     return cleanup;
   }, []);

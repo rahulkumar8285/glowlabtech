@@ -19,9 +19,19 @@ export default function ServiceDetailPage({
 
   useEffect(() => {
     if (!service) return;
+    const serviceKeywords = [
+      service.name,
+      service.shortTitle,
+      'GlowLab Tech',
+      'AI engineering',
+      'custom software development',
+      ...service.deliverables.slice(0, 3),
+    ].join(', ');
+
     const cleanup = updatePageSEO({
       title: `${service.name} | GlowLab Tech`,
       description: service.summary || service.tagline,
+      keywords: serviceKeywords,
       canonicalUrl: `https://glowlabtech.com/services/${service.slug}`,
       ogType: 'website',
       jsonLd: {
