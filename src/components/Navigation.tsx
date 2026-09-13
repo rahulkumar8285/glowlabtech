@@ -258,13 +258,7 @@ export default function Navigation({
                   id="products-dropdown-menu"
                   className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[380px] z-50 animate-in fade-in slide-in-from-top-1 duration-150"
                 >
-                  <div className="bg-[#FAF9F6] border border-black/10 rounded-[6px] shadow-xl p-3 sm:p-3.5 text-left">
-                    <div className="px-2.5 pb-2 mb-1 border-b border-black/5">
-                      <span className="font-body text-[11px] uppercase tracking-wider text-neutral-400 font-semibold">
-                        Field Force Tracking
-                      </span>
-                    </div>
-
+                  <div className="bg-[#FAF9F6] border border-black/10 rounded-[6px] shadow-xl p-2 sm:p-2.5 text-left">
                     <ul className="space-y-1">
                       {PRODUCTS_DATA.map((product) => {
                         return (
