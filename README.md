@@ -132,6 +132,50 @@ growLab/
 | `npm run preview` | Locally previews the production build from `dist/` |
 | `npm run lint` | Runs `tsc --noEmit` to validate all TypeScript types |
 | `npm run clean` | Removes build artifacts (`dist/`) and temporary files |
+| `npm run docker:build` | Builds the production multi-stage Docker image (`glowlab-tech:latest`) |
+| `npm run docker:run` | Runs the container on port `8080` (`http://localhost:8080`) |
+| `npm run docker:up` | Boots the application stack via Docker Compose in detached mode |
+| `npm run docker:down` | Stops and removes Docker Compose containers |
+| `npm run docker:dev` | Runs containerized development environment with hot reloading |
+
+---
+
+## 🐳 Docker Containerization
+
+The project includes an enterprise-ready, multi-stage Docker setup powered by **Node.js 20 (Alpine)** for building and **Nginx (Alpine)** for high-performance static serving with SPA client-side routing, gzip compression, and security headers.
+
+### 1. Build and Run via Docker Compose (Recommended)
+
+```bash
+# Start production container on http://localhost:8080
+docker compose up -d --build
+
+# View container logs
+docker compose logs -f
+
+# Stop the container
+docker compose down
+```
+
+### 2. Build and Run via Docker CLI
+
+```bash
+# Build production image
+docker build -t glowlab-tech:latest .
+
+# Run container on port 8080
+docker run -d -p 8080:80 --name glowlab-tech glowlab-tech:latest
+```
+
+Access the site at **[http://localhost:8080](http://localhost:8080)**.
+
+### 3. Containerized Development with Hot Reloading
+
+```bash
+docker compose -f docker-compose.dev.yml up --build
+```
+
+Access dev server at **[http://localhost:3000](http://localhost:3000)**.
 
 ---
 
