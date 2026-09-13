@@ -1,4 +1,4 @@
-import { useState, useEffect, type MouseEvent } from 'react';
+import { useState, useEffect, useRef, type MouseEvent } from 'react';
 import {
   MapPin,
   Navigation as NavIcon,
@@ -26,6 +26,7 @@ export default function ProductsPage({
 } = {}) {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [activeTab, setActiveTab] = useState<'modules' | 'why' | 'industries' | 'guides' | 'faq'>('modules');
+  const isClickScrollingRef = useRef(false);
 
   useEffect(() => {
     const cleanup = updatePageSEO({
@@ -37,6 +38,55 @@ export default function ProductsPage({
     });
     return cleanup;
   }, []);
+
+  // Scroll spy to highlight the corresponding tab as user scrolls through sections
+  useEffect(() => {
+    const sections = [
+      { id: 'modules', tab: 'modules' as const },
+      { id: 'why-needed', tab: 'why' as const },
+      { id: 'industries', tab: 'industries' as const },
+      { id: 'guides', tab: 'guides' as const },
+      { id: 'faq', tab: 'faq' as const },
+    ];
+
+    const handleScroll = () => {
+      if (isClickScrollingRef.current) return;
+      const scrollPosition = window.scrollY + 200;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sections[i].id);
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY;
+          if (scrollPosition >= top) {
+            setActiveTab(sections[i].tab);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (sectionId: string, tab: 'modules' | 'why' | 'industries' | 'guides' | 'faq') => {
+    setActiveTab(tab);
+    isClickScrollingRef.current = true;
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const navOffset = 135;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navOffset;
+      window.scrollTo({
+        top: Math.max(0, offsetPosition),
+        behavior: 'smooth',
+      });
+      setTimeout(() => {
+        isClickScrollingRef.current = false;
+      }, 800);
+    } else {
+      isClickScrollingRef.current = false;
+    }
+  };
 
   // Primary flagship product (Field Tracking App)
   const primaryProduct: ProductItem = PRODUCTS_DATA[0];
@@ -158,7 +208,7 @@ export default function ProductsPage({
         <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20 flex items-center gap-2 overflow-x-auto no-scrollbar text-xs sm:text-sm font-body">
           <button
             type="button"
-            onClick={() => setActiveTab('modules')}
+            onClick={() => scrollToSection('modules', 'modules')}
             className={`px-4 py-2 rounded-full whitespace-nowrap font-medium transition-colors cursor-pointer ${
               activeTab === 'modules'
                 ? 'bg-[#1A1A1A] text-white'
@@ -169,7 +219,7 @@ export default function ProductsPage({
           </button>
           <button
             type="button"
-            onClick={() => setActiveTab('why')}
+            onClick={() => scrollToSection('why-needed', 'why')}
             className={`px-4 py-2 rounded-full whitespace-nowrap font-medium transition-colors cursor-pointer ${
               activeTab === 'why'
                 ? 'bg-[#1A1A1A] text-white'
@@ -180,7 +230,7 @@ export default function ProductsPage({
           </button>
           <button
             type="button"
-            onClick={() => setActiveTab('industries')}
+            onClick={() => scrollToSection('industries', 'industries')}
             className={`px-4 py-2 rounded-full whitespace-nowrap font-medium transition-colors cursor-pointer ${
               activeTab === 'industries'
                 ? 'bg-[#1A1A1A] text-white'
@@ -191,7 +241,7 @@ export default function ProductsPage({
           </button>
           <button
             type="button"
-            onClick={() => setActiveTab('guides')}
+            onClick={() => scrollToSection('guides', 'guides')}
             className={`px-4 py-2 rounded-full whitespace-nowrap font-medium transition-colors cursor-pointer ${
               activeTab === 'guides'
                 ? 'bg-[#1A1A1A] text-white'
@@ -202,7 +252,7 @@ export default function ProductsPage({
           </button>
           <button
             type="button"
-            onClick={() => setActiveTab('faq')}
+            onClick={() => scrollToSection('faq', 'faq')}
             className={`px-4 py-2 rounded-full whitespace-nowrap font-medium transition-colors cursor-pointer ${
               activeTab === 'faq'
                 ? 'bg-[#1A1A1A] text-white'
@@ -217,9 +267,7 @@ export default function ProductsPage({
       {/* SECTION 1: SAAS MODULES */}
       <section
         id="modules"
-        className={`w-full py-16 sm:py-20 md:py-24 border-b border-black/10 ${
-          activeTab === 'modules' ? 'block' : 'hidden md:block'
-        }`}
+        className="w-full py-16 sm:py-20 md:py-24 border-b border-black/10 scroll-mt-36"
       >
         <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
           <div className="max-w-3xl mb-10 sm:mb-14">
@@ -289,9 +337,7 @@ export default function ProductsPage({
       {primaryProduct.whyNeeded && (
         <section
           id="why-needed"
-          className={`w-full py-16 sm:py-20 md:py-24 border-b border-black/10 bg-[#FAF9F6] ${
-            activeTab === 'why' ? 'block' : 'hidden md:block'
-          }`}
+          className="w-full py-16 sm:py-20 md:py-24 border-b border-black/10 bg-[#FAF9F6] scroll-mt-36"
         >
           <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
             <div className="max-w-3xl mb-10 sm:mb-14">
@@ -355,9 +401,7 @@ export default function ProductsPage({
       {primaryProduct.industries && (
         <section
           id="industries"
-          className={`w-full py-16 sm:py-20 md:py-24 border-b border-black/10 bg-white ${
-            activeTab === 'industries' ? 'block' : 'hidden md:block'
-          }`}
+          className="w-full py-16 sm:py-20 md:py-24 border-b border-black/10 bg-white scroll-mt-36"
         >
           <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
             <div className="max-w-3xl mb-10 sm:mb-14">
@@ -404,9 +448,7 @@ export default function ProductsPage({
       {primaryProduct.buyerGuides && (
         <section
           id="guides"
-          className={`w-full py-16 sm:py-20 md:py-24 border-b border-black/10 bg-[#FAF9F6] ${
-            activeTab === 'guides' ? 'block' : 'hidden md:block'
-          }`}
+          className="w-full py-16 sm:py-20 md:py-24 border-b border-black/10 bg-[#FAF9F6] scroll-mt-36"
         >
           <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
             <div className="max-w-3xl mb-10 sm:mb-14">
@@ -455,9 +497,7 @@ export default function ProductsPage({
       {primaryProduct.faqs && (
         <section
           id="faq"
-          className={`w-full py-16 sm:py-20 md:py-24 border-b border-black/10 bg-white ${
-            activeTab === 'faq' ? 'block' : 'hidden md:block'
-          }`}
+          className="w-full py-16 sm:py-20 md:py-24 border-b border-black/10 bg-white scroll-mt-36"
         >
           <div className="w-full max-w-4xl mx-auto px-5 sm:px-12 md:px-16">
             <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
