@@ -80,129 +80,81 @@ import PageHeader from '../components/PageHeader.astro';
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           <!-- Card 1: E-Commerce -->
-          <div class="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 flex flex-col justify-between shadow-xs">
-            <div>
-              <div class="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4 font-headline font-semibold text-lg">
-                EC
-              </div>
-              <h3 class="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
-                E-Commerce &amp; Retail
-              </h3>
-              <p class="font-body text-sm text-neutral-600 leading-relaxed mb-4">
-                Omni-channel inventory sync across storefronts, intelligent AI product catalog enrichment, automated fulfillment dispatch, and smart VIP churn prevention.
-              </p>
+          <div class="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 shadow-xs">
+            <div class="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4 font-headline font-semibold text-lg">
+              EC
             </div>
-            <div class="pt-3 border-t border-black/5 flex flex-wrap gap-1.5 text-[11px] font-body text-neutral-500 font-medium">
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">Shopify API</span>
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">Klaviyo</span>
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">Stripe</span>
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">Webhooks</span>
-            </div>
+            <h3 class="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
+              E-Commerce &amp; Retail
+            </h3>
+            <p class="font-body text-sm text-neutral-600 leading-relaxed">
+              Omni-channel inventory sync across storefronts, intelligent AI product catalog enrichment, automated fulfillment dispatch, and smart VIP churn prevention.
+            </p>
           </div>
 
           <!-- Card 2: B2B SaaS -->
-          <div class="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 flex flex-col justify-between shadow-xs">
-            <div>
-              <div class="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4 font-headline font-semibold text-lg">
-                SaaS
-              </div>
-              <h3 class="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
-                B2B SaaS &amp; Tech
-              </h3>
-              <p class="font-body text-sm text-neutral-600 leading-relaxed mb-4">
-                Product-led user onboarding automations, usage-based alert pipelines, webhook data synchronization, and automated churn prevention sequences.
-              </p>
+          <div class="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 shadow-xs">
+            <div class="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4 font-headline font-semibold text-lg">
+              SaaS
             </div>
-            <div class="pt-3 border-t border-black/5 flex flex-wrap gap-1.5 text-[11px] font-body text-neutral-500 font-medium">
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">Next.js</span>
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">HubSpot</span>
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">Supabase</span>
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">Segment</span>
-            </div>
+            <h3 class="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
+              B2B SaaS &amp; Tech
+            </h3>
+            <p class="font-body text-sm text-neutral-600 leading-relaxed">
+              Product-led user onboarding automations, usage-based alert pipelines, webhook data synchronization, and automated churn prevention sequences.
+            </p>
           </div>
 
           <!-- Card 3: Healthcare -->
-          <div class="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 flex flex-col justify-between shadow-xs">
-            <div>
-              <div class="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4 font-headline font-semibold text-lg">
-                HC
-              </div>
-              <h3 class="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
-                Healthcare &amp; Wellness
-              </h3>
-              <p class="font-body text-sm text-neutral-600 leading-relaxed mb-4">
-                Secure patient intake flows, automated appointment reminders, confidential lead triaging, and clinical document classification with audit logging.
-              </p>
+          <div class="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 shadow-xs">
+            <div class="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4 font-headline font-semibold text-lg">
+              HC
             </div>
-            <div class="pt-3 border-t border-black/5 flex flex-wrap gap-1.5 text-[11px] font-body text-neutral-500 font-medium">
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">HIPAA-Ready</span>
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">Twilio</span>
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">FastAPI</span>
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">Encrypted DBs</span>
-            </div>
+            <h3 class="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
+              Healthcare &amp; Wellness
+            </h3>
+            <p class="font-body text-sm text-neutral-600 leading-relaxed">
+              Secure patient intake flows, automated appointment reminders, confidential lead triaging, and clinical document classification with audit logging.
+            </p>
           </div>
 
           <!-- Card 4: Real Estate -->
-          <div class="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 flex flex-col justify-between shadow-xs">
-            <div>
-              <div class="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4 font-headline font-semibold text-lg">
-                RE
-              </div>
-              <h3 class="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
-                Real Estate &amp; PropTech
-              </h3>
-              <p class="font-body text-sm text-neutral-600 leading-relaxed mb-4">
-                Instant 24/7 buyer and tenant lead qualification, automated multi-touch follow-ups, dynamic listing syndication, and digital contract execution.
-              </p>
+          <div class="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 shadow-xs">
+            <div class="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4 font-headline font-semibold text-lg">
+              RE
             </div>
-            <div class="pt-3 border-t border-black/5 flex flex-wrap gap-1.5 text-[11px] font-body text-neutral-500 font-medium">
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">Follow Up Boss</span>
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">Airtable</span>
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">n8n</span>
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">DocuSign</span>
-            </div>
+            <h3 class="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
+              Real Estate &amp; PropTech
+            </h3>
+            <p class="font-body text-sm text-neutral-600 leading-relaxed">
+              Instant 24/7 buyer and tenant lead qualification, automated multi-touch follow-ups, dynamic listing syndication, and digital contract execution.
+            </p>
           </div>
 
           <!-- Card 5: Logistics -->
-          <div class="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 flex flex-col justify-between shadow-xs">
-            <div>
-              <div class="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4 font-headline font-semibold text-lg">
-                LOG
-              </div>
-              <h3 class="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
-                Logistics &amp; Supply Chain
-              </h3>
-              <p class="font-body text-sm text-neutral-600 leading-relaxed mb-4">
-                Real-time dispatch tracking, automated carrier status alerts, vendor invoice OCR data extraction, and route anomaly detection triggers.
-              </p>
+          <div class="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 shadow-xs">
+            <div class="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4 font-headline font-semibold text-lg">
+              LOG
             </div>
-            <div class="pt-3 border-t border-black/5 flex flex-wrap gap-1.5 text-[11px] font-body text-neutral-500 font-medium">
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">Python Workers</span>
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">Cloud OCR</span>
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">PostgreSQL</span>
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">Celery</span>
-            </div>
+            <h3 class="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
+              Logistics &amp; Supply Chain
+            </h3>
+            <p class="font-body text-sm text-neutral-600 leading-relaxed">
+              Real-time dispatch tracking, automated carrier status alerts, vendor invoice OCR data extraction, and route anomaly detection triggers.
+            </p>
           </div>
 
           <!-- Card 6: FinTech -->
-          <div class="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 flex flex-col justify-between shadow-xs">
-            <div>
-              <div class="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4 font-headline font-semibold text-lg">
-                FIN
-              </div>
-              <h3 class="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
-                FinTech &amp; Professional Services
-              </h3>
-              <p class="font-body text-sm text-neutral-600 leading-relaxed mb-4">
-                Automated bank and ledger reconciliation, KYC identity verification pipelines, dynamic invoice generation, and high-frequency audit reports.
-              </p>
+          <div class="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 shadow-xs">
+            <div class="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4 font-headline font-semibold text-lg">
+              FIN
             </div>
-            <div class="pt-3 border-t border-black/5 flex flex-wrap gap-1.5 text-[11px] font-body text-neutral-500 font-medium">
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">Plaid API</span>
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">OpenAI Vision</span>
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">Temporal</span>
-              <span class="px-2 py-0.5 rounded bg-black/[0.04]">Redis</span>
-            </div>
+            <h3 class="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
+              FinTech &amp; Professional Services
+            </h3>
+            <p class="font-body text-sm text-neutral-600 leading-relaxed">
+              Automated bank and ledger reconciliation, KYC identity verification pipelines, dynamic invoice generation, and high-frequency audit reports.
+            </p>
           </div>
         </div>
       </div>
@@ -232,18 +184,9 @@ import PageHeader from '../components/PageHeader.astro';
               </h3>
               <p class="font-body text-xs text-neutral-500">Autonomous Agents &amp; Reasoning</p>
             </div>
-            <p class="font-body text-sm text-neutral-600 leading-relaxed mb-5">
-              We design and fine-tune reasoning pipelines, RAG semantic knowledge retrieval, multimodal vision parsing, and structured data synthesis using top-tier models.
+            <p class="font-body text-sm text-neutral-600 leading-relaxed">
+              We design and fine-tune reasoning pipelines, RAG semantic knowledge retrieval, multimodal vision parsing, and structured data synthesis across leading foundation models including GPT-4o, Claude 3.5 Sonnet, Gemini 2.0, DeepSeek, and local Ollama deployments.
             </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">OpenAI GPT-4o</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">Claude 3.5 Sonnet</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">Google Gemini 2.0</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">DeepSeek</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">Ollama (Local LLMs)</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">LangChain</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">LlamaIndex</span>
-            </div>
           </div>
 
           <!-- Tool Category 2: Automation Engines -->
@@ -254,18 +197,9 @@ import PageHeader from '../components/PageHeader.astro';
               </h3>
               <p class="font-body text-xs text-neutral-500">Event-Driven Scalable Workflows</p>
             </div>
-            <p class="font-body text-sm text-neutral-600 leading-relaxed mb-5">
-              We engineer bulletproof webhook listeners, automated failovers, asynchronous worker queues, and scheduled tasks that handle thousands of runs per hour without data loss.
+            <p class="font-body text-sm text-neutral-600 leading-relaxed">
+              We engineer bulletproof webhook listeners, automated failovers, asynchronous worker queues, and scheduled tasks using n8n, Make, Python event workers, Temporal, and Redis to handle high volume without data loss.
             </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">n8n (Self-Hosted/Cloud)</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">Make / Integromat</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">Python Event Workers</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">Temporal</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">Zapier Enterprise</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">Redis Queues</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">Webhooks</span>
-            </div>
           </div>
 
           <!-- Tool Category 3: Full-Stack Web -->
@@ -276,19 +210,9 @@ import PageHeader from '../components/PageHeader.astro';
               </h3>
               <p class="font-body text-xs text-neutral-500">Fast, High-Performance Applications</p>
             </div>
-            <p class="font-body text-sm text-neutral-600 leading-relaxed mb-5">
-              We build interactive client portals, custom operational dashboards, headless commerce engines, and scalable microservices crafted for speed and security.
+            <p class="font-body text-sm text-neutral-600 leading-relaxed">
+              We build interactive client portals, custom operational dashboards, headless commerce engines, and scalable microservices crafted for speed and security with TypeScript, React, Next.js, Astro, Node.js, and FastAPI.
             </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">TypeScript</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">React</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">Next.js</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">Astro</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">Node.js</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">FastAPI</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">Tailwind CSS</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">REST &amp; GraphQL</span>
-            </div>
           </div>
 
           <!-- Tool Category 4: Cloud & Integrations -->
@@ -299,20 +223,9 @@ import PageHeader from '../components/PageHeader.astro';
               </h3>
               <p class="font-body text-xs text-neutral-500">Enterprise Integrations &amp; Storage</p>
             </div>
-            <p class="font-body text-sm text-neutral-600 leading-relaxed mb-5">
-              We connect and deploy your mission-critical applications across reliable cloud backbones, vector stores, payment processors, and bidirectional enterprise CRMs.
+            <p class="font-body text-sm text-neutral-600 leading-relaxed">
+              We connect and deploy your mission-critical applications across reliable cloud backbones like AWS and Google Cloud, with PostgreSQL, Supabase, and bi-directional CRM syncing for HubSpot, Salesforce, and Stripe.
             </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">AWS (Lambda, S3)</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">Google Cloud</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">Supabase</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">PostgreSQL</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">HubSpot API</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">Salesforce</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">Stripe</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">Twilio</span>
-              <span class="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md">Slack API</span>
-            </div>
           </div>
         </div>
       </div>

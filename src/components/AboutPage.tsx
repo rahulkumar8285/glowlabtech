@@ -106,129 +106,81 @@ export default function AboutPage({
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {/* Card 1: E-Commerce */}
-            <div className="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 flex flex-col justify-between shadow-xs">
-              <div>
-                <div className="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4">
-                  <ShoppingCart className="w-5 h-5" />
-                </div>
-                <h3 className="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
-                  E-Commerce &amp; Retail
-                </h3>
-                <p className="font-body text-sm text-neutral-600 leading-relaxed mb-4">
-                  Omni-channel inventory sync across storefronts, intelligent AI product catalog enrichment, automated fulfillment dispatch, and smart VIP churn prevention.
-                </p>
+            <div className="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 shadow-xs">
+              <div className="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4">
+                <ShoppingCart className="w-5 h-5" />
               </div>
-              <div className="pt-3 border-t border-black/5 flex flex-wrap gap-1.5 text-[11px] font-body text-neutral-500 font-medium">
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Shopify API</span>
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Klaviyo</span>
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Stripe</span>
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Webhooks</span>
-              </div>
+              <h3 className="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
+                E-Commerce &amp; Retail
+              </h3>
+              <p className="font-body text-sm text-neutral-600 leading-relaxed">
+                Omni-channel inventory sync across storefronts, intelligent AI product catalog enrichment, automated fulfillment dispatch, and smart VIP churn prevention.
+              </p>
             </div>
 
             {/* Card 2: B2B SaaS */}
-            <div className="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 flex flex-col justify-between shadow-xs">
-              <div>
-                <div className="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4">
-                  <Laptop className="w-5 h-5" />
-                </div>
-                <h3 className="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
-                  B2B SaaS &amp; Tech
-                </h3>
-                <p className="font-body text-sm text-neutral-600 leading-relaxed mb-4">
-                  Product-led user onboarding automations, usage-based alert pipelines, webhook data synchronization, and automated churn prevention sequences.
-                </p>
+            <div className="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 shadow-xs">
+              <div className="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4">
+                <Laptop className="w-5 h-5" />
               </div>
-              <div className="pt-3 border-t border-black/5 flex flex-wrap gap-1.5 text-[11px] font-body text-neutral-500 font-medium">
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Next.js</span>
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">HubSpot</span>
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Supabase</span>
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Segment</span>
-              </div>
+              <h3 className="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
+                B2B SaaS &amp; Tech
+              </h3>
+              <p className="font-body text-sm text-neutral-600 leading-relaxed">
+                Product-led user onboarding automations, usage-based alert pipelines, webhook data synchronization, and automated churn prevention sequences.
+              </p>
             </div>
 
             {/* Card 3: Healthcare */}
-            <div className="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 flex flex-col justify-between shadow-xs">
-              <div>
-                <div className="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4">
-                  <Stethoscope className="w-5 h-5" />
-                </div>
-                <h3 className="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
-                  Healthcare &amp; Wellness
-                </h3>
-                <p className="font-body text-sm text-neutral-600 leading-relaxed mb-4">
-                  Secure patient intake flows, automated appointment reminders, confidential lead triaging, and clinical document classification with audit logging.
-                </p>
+            <div className="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 shadow-xs">
+              <div className="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4">
+                <Stethoscope className="w-5 h-5" />
               </div>
-              <div className="pt-3 border-t border-black/5 flex flex-wrap gap-1.5 text-[11px] font-body text-neutral-500 font-medium">
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">HIPAA-Ready</span>
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Twilio</span>
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">FastAPI</span>
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Encrypted DBs</span>
-              </div>
+              <h3 className="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
+                Healthcare &amp; Wellness
+              </h3>
+              <p className="font-body text-sm text-neutral-600 leading-relaxed">
+                Secure patient intake flows, automated appointment reminders, confidential lead triaging, and clinical document classification with audit logging.
+              </p>
             </div>
 
             {/* Card 4: Real Estate */}
-            <div className="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 flex flex-col justify-between shadow-xs">
-              <div>
-                <div className="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4">
-                  <Home className="w-5 h-5" />
-                </div>
-                <h3 className="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
-                  Real Estate &amp; PropTech
-                </h3>
-                <p className="font-body text-sm text-neutral-600 leading-relaxed mb-4">
-                  Instant 24/7 buyer and tenant lead qualification, automated multi-touch follow-ups, dynamic listing syndication, and digital contract execution.
-                </p>
+            <div className="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 shadow-xs">
+              <div className="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4">
+                <Home className="w-5 h-5" />
               </div>
-              <div className="pt-3 border-t border-black/5 flex flex-wrap gap-1.5 text-[11px] font-body text-neutral-500 font-medium">
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Follow Up Boss</span>
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Airtable</span>
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">n8n</span>
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">DocuSign</span>
-              </div>
+              <h3 className="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
+                Real Estate &amp; PropTech
+              </h3>
+              <p className="font-body text-sm text-neutral-600 leading-relaxed">
+                Instant 24/7 buyer and tenant lead qualification, automated multi-touch follow-ups, dynamic listing syndication, and digital contract execution.
+              </p>
             </div>
 
             {/* Card 5: Logistics */}
-            <div className="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 flex flex-col justify-between shadow-xs">
-              <div>
-                <div className="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4">
-                  <Truck className="w-5 h-5" />
-                </div>
-                <h3 className="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
-                  Logistics &amp; Supply Chain
-                </h3>
-                <p className="font-body text-sm text-neutral-600 leading-relaxed mb-4">
-                  Real-time dispatch tracking, automated carrier status alerts, vendor invoice OCR data extraction, and route anomaly detection triggers.
-                </p>
+            <div className="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 shadow-xs">
+              <div className="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4">
+                <Truck className="w-5 h-5" />
               </div>
-              <div className="pt-3 border-t border-black/5 flex flex-wrap gap-1.5 text-[11px] font-body text-neutral-500 font-medium">
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Python Workers</span>
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Cloud OCR</span>
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">PostgreSQL</span>
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Celery</span>
-              </div>
+              <h3 className="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
+                Logistics &amp; Supply Chain
+              </h3>
+              <p className="font-body text-sm text-neutral-600 leading-relaxed">
+                Real-time dispatch tracking, automated carrier status alerts, vendor invoice OCR data extraction, and route anomaly detection triggers.
+              </p>
             </div>
 
             {/* Card 6: FinTech */}
-            <div className="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 flex flex-col justify-between shadow-xs">
-              <div>
-                <div className="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4">
-                  <TrendingUp className="w-5 h-5" />
-                </div>
-                <h3 className="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
-                  FinTech &amp; Professional Services
-                </h3>
-                <p className="font-body text-sm text-neutral-600 leading-relaxed mb-4">
-                  Automated bank and ledger reconciliation, KYC identity verification pipelines, dynamic invoice generation, and high-frequency audit reports.
-                </p>
+            <div className="p-6 sm:p-7 rounded-xl bg-[#FAF9F6] border border-black/10 hover:border-black/30 transition-all duration-200 shadow-xs">
+              <div className="w-10 h-10 rounded-lg bg-[#C84826]/10 flex items-center justify-center text-[#C84826] mb-4">
+                <TrendingUp className="w-5 h-5" />
               </div>
-              <div className="pt-3 border-t border-black/5 flex flex-wrap gap-1.5 text-[11px] font-body text-neutral-500 font-medium">
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Plaid API</span>
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">OpenAI Vision</span>
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Temporal</span>
-                <span className="px-2 py-0.5 rounded bg-black/[0.04]">Redis</span>
-              </div>
+              <h3 className="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
+                FinTech &amp; Professional Services
+              </h3>
+              <p className="font-body text-sm text-neutral-600 leading-relaxed">
+                Automated bank and ledger reconciliation, KYC identity verification pipelines, dynamic invoice generation, and high-frequency audit reports.
+              </p>
             </div>
           </div>
         </div>
@@ -263,21 +215,9 @@ export default function AboutPage({
                   <p className="font-body text-xs text-neutral-500">Autonomous Agents &amp; Reasoning</p>
                 </div>
               </div>
-              <p className="font-body text-sm text-neutral-600 leading-relaxed mb-5">
-                We design and fine-tune reasoning pipelines, RAG semantic knowledge retrieval, multimodal vision parsing, and structured data synthesis using top-tier models.
+              <p className="font-body text-sm text-neutral-600 leading-relaxed">
+                We design and fine-tune reasoning pipelines, RAG semantic knowledge retrieval, multimodal vision parsing, and structured data synthesis across leading foundation models including GPT-4o, Claude 3.5 Sonnet, Gemini 2.0, DeepSeek, and local Ollama deployments.
               </p>
-              <div className="flex flex-wrap gap-2">
-                {['OpenAI GPT-4o', 'Claude 3.5 Sonnet', 'Google Gemini 2.0', 'DeepSeek', 'Ollama (Local LLMs)', 'LangChain', 'LlamaIndex'].map(
-                  (tool) => (
-                    <span
-                      key={tool}
-                      className="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md"
-                    >
-                      {tool}
-                    </span>
-                  )
-                )}
-              </div>
             </div>
 
             {/* Tool Category 2: Automation Engines */}
@@ -293,21 +233,9 @@ export default function AboutPage({
                   <p className="font-body text-xs text-neutral-500">Event-Driven Scalable Workflows</p>
                 </div>
               </div>
-              <p className="font-body text-sm text-neutral-600 leading-relaxed mb-5">
-                We engineer bulletproof webhook listeners, automated failovers, asynchronous worker queues, and scheduled tasks that handle thousands of runs per hour without data loss.
+              <p className="font-body text-sm text-neutral-600 leading-relaxed">
+                We engineer bulletproof webhook listeners, automated failovers, asynchronous worker queues, and scheduled tasks using n8n, Make, Python event workers, Temporal, and Redis to handle high volume without data loss.
               </p>
-              <div className="flex flex-wrap gap-2">
-                {['n8n (Self-Hosted/Cloud)', 'Make / Integromat', 'Python Event Workers', 'Temporal', 'Zapier Enterprise', 'Redis Queues', 'Webhooks'].map(
-                  (tool) => (
-                    <span
-                      key={tool}
-                      className="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md"
-                    >
-                      {tool}
-                    </span>
-                  )
-                )}
-              </div>
             </div>
 
             {/* Tool Category 3: Full-Stack Web */}
@@ -323,21 +251,9 @@ export default function AboutPage({
                   <p className="font-body text-xs text-neutral-500">Fast, High-Performance Applications</p>
                 </div>
               </div>
-              <p className="font-body text-sm text-neutral-600 leading-relaxed mb-5">
-                We build interactive client portals, custom operational dashboards, headless commerce engines, and scalable microservices crafted for speed and security.
+              <p className="font-body text-sm text-neutral-600 leading-relaxed">
+                We build interactive client portals, custom operational dashboards, headless commerce engines, and scalable microservices crafted for speed and security with TypeScript, React, Next.js, Astro, Node.js, and FastAPI.
               </p>
-              <div className="flex flex-wrap gap-2">
-                {['TypeScript', 'React', 'Next.js', 'Astro', 'Node.js', 'FastAPI', 'Tailwind CSS', 'REST & GraphQL'].map(
-                  (tool) => (
-                    <span
-                      key={tool}
-                      className="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md"
-                    >
-                      {tool}
-                    </span>
-                  )
-                )}
-              </div>
             </div>
 
             {/* Tool Category 4: Cloud & Integrations */}
@@ -353,21 +269,9 @@ export default function AboutPage({
                   <p className="font-body text-xs text-neutral-500">Enterprise Integrations &amp; Storage</p>
                 </div>
               </div>
-              <p className="font-body text-sm text-neutral-600 leading-relaxed mb-5">
-                We connect and deploy your mission-critical applications across reliable cloud backbones, vector stores, payment processors, and bidirectional enterprise CRMs.
+              <p className="font-body text-sm text-neutral-600 leading-relaxed">
+                We connect and deploy your mission-critical applications across reliable cloud backbones like AWS and Google Cloud, with PostgreSQL, Supabase, and bi-directional CRM syncing for HubSpot, Salesforce, and Stripe.
               </p>
-              <div className="flex flex-wrap gap-2">
-                {['AWS (Lambda, S3)', 'Google Cloud', 'Supabase', 'PostgreSQL', 'HubSpot API', 'Salesforce', 'Stripe', 'Twilio', 'Slack API'].map(
-                  (tool) => (
-                    <span
-                      key={tool}
-                      className="px-2.5 py-1 text-xs font-body font-medium bg-black/[0.04] text-neutral-700 rounded-md"
-                    >
-                      {tool}
-                    </span>
-                  )
-                )}
-              </div>
             </div>
           </div>
         </div>
