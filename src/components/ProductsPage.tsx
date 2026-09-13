@@ -14,6 +14,10 @@ import {
   Briefcase,
   Layers,
   PhoneCall,
+  Calendar,
+  Clock,
+  FileText,
+  DollarSign,
 } from 'lucide-react';
 import { PRODUCTS_DATA, type ProductItem } from '../data/offeringsData';
 import FinalCTASection from './FinalCTASection';
@@ -25,14 +29,14 @@ export default function ProductsPage({
   onNavigate?: (path: string) => void;
 } = {}) {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
-  const [activeTab, setActiveTab] = useState<'modules' | 'why' | 'industries' | 'guides' | 'faq'>('modules');
+  const [activeTab, setActiveTab] = useState<'modules' | 'workflow' | 'why' | 'industries' | 'guides' | 'faq'>('modules');
   const isClickScrollingRef = useRef(false);
 
   useEffect(() => {
     const cleanup = updatePageSEO({
-      title: 'Field Tracking App — GPS Field Force Tracking & Work Validation | GlowLab Tech',
+      title: 'Field Sales Automation & GPS Workforce Tracking Software | GlowLab Tech',
       description:
-        'End-to-end GPS location tracking, geo-fenced selfie attendance, tamper-proof proof of execution, and automated reporting for mobile teams across India.',
+        'Streamline daily beat plans, verify customer meetings, automate geo-fenced selfie attendance, and eliminate travel reimbursement disputes across 500+ Indian cities.',
       canonicalUrl: 'https://glowlabtech.com/products',
       ogType: 'website',
     });
@@ -43,6 +47,7 @@ export default function ProductsPage({
   useEffect(() => {
     const sections = [
       { id: 'modules', tab: 'modules' as const },
+      { id: 'workflow', tab: 'workflow' as const },
       { id: 'why-needed', tab: 'why' as const },
       { id: 'industries', tab: 'industries' as const },
       { id: 'guides', tab: 'guides' as const },
@@ -68,7 +73,7 @@ export default function ProductsPage({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string, tab: 'modules' | 'why' | 'industries' | 'guides' | 'faq') => {
+  const scrollToSection = (sectionId: string, tab: 'modules' | 'workflow' | 'why' | 'industries' | 'guides' | 'faq') => {
     setActiveTab(tab);
     isClickScrollingRef.current = true;
     const element = document.getElementById(sectionId);
@@ -107,14 +112,22 @@ export default function ProductsPage({
 
   const getModuleIcon = (id: string) => {
     switch (id) {
+      case 'module-beat-planning':
+        return <Calendar className="w-5 h-5 text-[#C84826]" />;
       case 'module-tracking':
         return <NavIcon className="w-5 h-5 text-[#C84826]" />;
-      case 'module-sales':
-        return <Briefcase className="w-5 h-5 text-[#C84826]" />;
       case 'module-attendance':
         return <ShieldCheck className="w-5 h-5 text-[#C84826]" />;
+      case 'module-visits':
+        return <Clock className="w-5 h-5 text-[#C84826]" />;
       case 'module-poe':
         return <CheckCircle2 className="w-5 h-5 text-[#C84826]" />;
+      case 'module-leads':
+        return <Briefcase className="w-5 h-5 text-[#C84826]" />;
+      case 'module-dsr':
+        return <FileText className="w-5 h-5 text-[#C84826]" />;
+      case 'module-expenses':
+        return <DollarSign className="w-5 h-5 text-[#C84826]" />;
       case 'module-offline':
         return <WifiOff className="w-5 h-5 text-[#C84826]" />;
       case 'module-integration':
@@ -214,6 +227,17 @@ export default function ProductsPage({
           </button>
           <button
             type="button"
+            onClick={() => scrollToSection('workflow', 'workflow')}
+            className={`px-4 py-2 rounded-full whitespace-nowrap font-medium transition-colors cursor-pointer ${
+              activeTab === 'workflow'
+                ? 'bg-[#1A1A1A] text-white'
+                : 'text-neutral-600 hover:text-[#1A1A1A] hover:bg-black/5'
+            }`}
+          >
+            How It Works
+          </button>
+          <button
+            type="button"
             onClick={() => scrollToSection('why-needed', 'why')}
             className={`px-4 py-2 rounded-full whitespace-nowrap font-medium transition-colors cursor-pointer ${
               activeTab === 'why'
@@ -221,7 +245,7 @@ export default function ProductsPage({
                 : 'text-neutral-600 hover:text-[#1A1A1A] hover:bg-black/5'
             }`}
           >
-            Why Field Support
+            Why Automation
           </button>
           <button
             type="button"
@@ -267,10 +291,10 @@ export default function ProductsPage({
         <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
           <div className="max-w-3xl mb-10 sm:mb-14">
             <h2 className="font-headline font-semibold text-2xl sm:text-4xl text-[#1A1A1A] tracking-tight leading-tight">
-              Everything operations managers, HRs, and agency directors need to verify, monitor, and report.
+              Enterprise modules engineered for end-to-end field sales accountability.
             </h2>
             <p className="font-body text-sm sm:text-base text-neutral-600 mt-3 leading-relaxed">
-              Eliminate hearsay and manual paperwork. Our field tracking platform gives your leadership direct visibility into active routes, verified client meetings, and tamper-proof work execution across all Indian territories.
+              Empower your field reps with mobile-first automation for beat plans, geo-checkins, instant order booking, and verified travel reimbursements—while leadership retains complete real-time visibility.
             </p>
           </div>
 
@@ -328,7 +352,55 @@ export default function ProductsPage({
         </div>
       </section>
 
-      {/* SECTION 2: WHY YOU NEED FIELD SUPPORT & GROUND AUTOMATION */}
+      {/* SECTION 2: HOW IT WORKS / DAILY WORKFLOW */}
+      {primaryProduct.workflow && (
+        <section
+          id="workflow"
+          className="w-full py-16 sm:py-20 md:py-24 border-b border-black/10 bg-white scroll-mt-36"
+        >
+          <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
+            <div className="max-w-3xl mb-12 sm:mb-16">
+              <h2 className="font-headline font-semibold text-2xl sm:text-4xl text-[#1A1A1A] tracking-tight leading-tight">
+                How Field Sales Automation Works
+              </h2>
+              <p className="font-body text-sm sm:text-base text-neutral-600 mt-3 leading-relaxed">
+                A seamless, automated 4-step daily cycle from morning shift kickoff to evening expense settlement—keeping reps focused on selling and leadership fully informed.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 relative">
+              {primaryProduct.workflow.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="bg-[#FAF9F6] border border-black/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-black/25 hover:shadow-sm transition-all relative group"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-5">
+                      <span className="font-headline font-semibold text-2xl sm:text-3xl text-[#C84826]/30 group-hover:text-[#C84826] transition-colors">
+                        {item.step}
+                      </span>
+                      <span className="w-2 h-2 rounded-full bg-[#C84826]" />
+                    </div>
+
+                    <h3 className="font-headline font-medium text-lg sm:text-xl text-[#1A1A1A] mb-2.5">
+                      {item.title}
+                    </h3>
+                    <p className="font-body text-xs sm:text-sm text-neutral-600 leading-relaxed mb-4">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-black/5 font-body text-xs text-neutral-500 italic">
+                    {item.detail}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* SECTION 3: WHY YOU NEED FIELD AUTOMATION */}
       {primaryProduct.whyNeeded && (
         <section
           id="why-needed"
@@ -340,7 +412,7 @@ export default function ProductsPage({
                 {primaryProduct.whyNeeded.headline}
               </h2>
               <p className="font-body text-sm sm:text-base text-neutral-600 mt-3 leading-relaxed">
-                {primaryProduct.whyNeeded.subheadline} When teams operate away from desktop monitors, conventional management breaks down into friction, disputed reimbursements, and unverified customer feedback.
+                {primaryProduct.whyNeeded.subheadline}
               </p>
             </div>
 
@@ -488,7 +560,7 @@ export default function ProductsPage({
         </section>
       )}
 
-      {/* SECTION 5: FIELD FORCE TRACKING — INTERACTIVE FAQ */}
+      {/* SECTION 5: FIELD SALES AUTOMATION & TRACKING — INTERACTIVE FAQ */}
       {primaryProduct.faqs && (
         <section
           id="faq"
@@ -497,10 +569,10 @@ export default function ProductsPage({
           <div className="w-full max-w-4xl mx-auto px-5 sm:px-12 md:px-16">
             <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
               <h2 className="font-headline font-semibold text-2xl sm:text-4xl text-[#1A1A1A] tracking-tight leading-tight">
-                Field Force Tracking FAQ
+                Field Sales Automation &amp; Workforce Tracking FAQ
               </h2>
               <p className="font-body text-xs sm:text-sm text-neutral-500 mt-2.5">
-                Common questions about location tracking, mock GPS prevention, offline support, and DPDP compliance.
+                Common questions about beat planning, mock GPS detection, privacy laws (DPDP Act), offline sync, and ERP integrations.
               </p>
             </div>
 

@@ -275,7 +275,7 @@ export default function Navigation({
                                 {product.name}
                               </p>
                               <p className="font-body text-[11px] text-neutral-500 mt-1 leading-snug">
-                                Real-time GPS location tracking, geo-fenced selfie attendance &amp; work validation.
+                                Beat plans, live GPS tracking, geo-attendance &amp; automated DSR reports.
                               </p>
                             </a>
                           </li>

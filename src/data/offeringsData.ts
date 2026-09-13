@@ -48,6 +48,13 @@ export interface ProductIndustry {
   solution: string;
 }
 
+export interface ProductWorkflowStep {
+  step: string;
+  title: string;
+  description: string;
+  detail: string;
+}
+
 export interface ProductItem {
   id: string;
   slug: string;
@@ -65,6 +72,7 @@ export interface ProductItem {
     value: string;
     label: string;
   }[];
+  workflow?: ProductWorkflowStep[];
   modules?: ProductModule[];
   whyNeeded?: {
     headline: string;
@@ -426,21 +434,25 @@ export const SERVICES_DATA: ServiceItem[] = [
 export const PRODUCTS_DATA: ProductItem[] = [
   {
     id: 'field-tracking-app',
-    slug: 'field-tracking-app',
-    shortName: 'Field Tracking App',
-    name: 'Field Force Tracking & Work Validation App',
+    slug: 'field-sales-tracking',
+    shortName: 'Field Sales & Tracking App',
+    name: 'Field Sales Automation & GPS Workforce Tracking Software',
     tagline:
-      'End-to-end GPS location tracking, geo-fenced selfie attendance, tamper-proof proof of execution, and automated reporting for mobile teams across India.',
+      'Streamline daily beat plans, verify customer meetings, automate geo-fenced selfie attendance, and eliminate travel reimbursement disputes across 500+ Indian cities.',
     badge: '',
     description:
-      'Everything operation managers, HRs, and agency directors need to verify, monitor, and report on field-based team activities with zero hardware investment.',
+      'All-in-one field sales automation and workforce telemetry platform built for operations heads, sales directors, and agency leaders whose teams execute on the ground.',
     features: [
-      'Real-time GPS tracking & route playback across 500+ Indian cities',
+      'Automated beat planning & dynamic sales route optimization',
       'Anti-spoofing geo-fenced selfie attendance with mock-GPS detection',
-      'Tamper-proof Proof of Execution (PoE) with EXIF coordinate validation',
-      'Zero-signal offline mobile app with automatic cloud synchronization',
-      'Turn-by-turn road mileage calculation for transparent travel reimbursements',
-      'Plug-and-play REST API & ERP connectors for Zoho, SAP & Darwinbox',
+      'Real-time GPS location tracking & step-by-step route playback',
+      'One-click customer visit check-in/out with on-site meeting timer',
+      'Custom mobile forms, retail order booking & digital client signatures',
+      'Field lead capture, instant visit notes & real-time deal pipeline',
+      'Automated Daily Sales Reports (DSR) eliminating end-of-day paperwork',
+      'Distance-verified travel allowance (TA/DA) & expense management',
+      'Zero-signal offline mobile app with secure local data caching',
+      'Enterprise REST API & webhooks for SAP, Zoho, Salesforce & Darwinbox',
     ],
     specs: [
       'Android & iOS Mobile Apps',
@@ -451,187 +463,286 @@ export const PRODUCTS_DATA: ProductItem[] = [
       '14-Day Free Trial',
     ],
     outcome:
-      'Eliminates 100% of phantom client visits and reduces disputed travel allowance claims by up to 40%.',
+      'Reduces field operating costs by up to 40%, increases daily customer visits by 65%, and eliminates 100% of disputed travel allowance claims.',
     stats: [
-      { value: '500+', label: 'Cities Across India' },
-      { value: '99.8%', label: 'Fake GPS & Mock Detection' },
-      { value: '40%', label: 'Travel Claim Savings' },
-      { value: '< 24 Hrs', label: 'Complete Team Onboarding' },
+      { value: '−40%', label: 'Field Operating Costs' },
+      { value: '+65%', label: 'Sales Rep Productivity' },
+      { value: '99.8%', label: 'Mock GPS & Fake Visit Block' },
+      { value: '< 24 Hrs', label: 'Zero-Hardware Deployment' },
+    ],
+    workflow: [
+      {
+        step: '01',
+        title: 'Geo-Fenced Selfie Attendance',
+        description:
+          'Reps start their day by marking attendance on the mobile app within authorized geofences, validated by live selfie and anti-mock GPS detection.',
+        detail: 'Instant biometric & GPS timestamping; blocks spoofing and developer tools.',
+      },
+      {
+        step: '02',
+        title: 'Smart Beat Navigation',
+        description:
+          'The app loads the assigned daily beat plan with turn-by-turn route suggestions, cutting transit time and ensuring all target outlets are visited.',
+        detail: 'Dynamic multi-stop scheduling with zero backtracking and fuel economy.',
+      },
+      {
+        step: '03',
+        title: 'Verified Visit & Order Booking',
+        description:
+          'Upon arriving at the client store, reps check in with one tap, record meeting notes, book sales orders, and upload geotagged photos.',
+        detail: 'EXIF coordinate validation, customer e-signatures, and on-site duration logging.',
+      },
+      {
+        step: '04',
+        title: 'Automated DSR & Expense Settlement',
+        description:
+          'At shift end, the Daily Sales Report (DSR) is auto-generated alongside verified road kilometer travel allowance (TA/DA) claims for 1-click approval.',
+        detail: 'Zero manual spreadsheets, instant manager audit, and transparent reimbursement.',
+      },
     ],
     modules: [
       {
-        id: 'module-tracking',
-        title: 'GPS Employee Tracking',
+        id: 'module-beat-planning',
+        title: 'Beat Planning & Smart Route Optimization',
         description:
-          'Real-time location monitoring for field sales, service, and media agents. Play back active route histories, check exact visit timestamps, and calculate true distance traveled for transparent mileage billing and travel reimbursements across 500+ cities in India.',
+          'Pre-assign daily outlet beats and optimal travel routes for your sales team. Cut travel time by up to 35%, eliminate zigzag backtracking, and ensure complete market coverage across retail networks and distributor territories.',
         bullets: [
-          'Live breadcrumb trail with battery-optimized tracking pings',
-          'Historic route playback with idle-time and stoppage analysis',
-          'Actual road distance calculation eliminating inflated billing',
+          'Pre-scheduled daily and weekly beat plans for retail coverage',
+          'Turn-by-turn route navigation minimizing travel time & fuel burn',
+          'Real-time alerts for missed beats and off-route deviations',
         ],
-        link: '/contact?product=field-tracking&module=gps-tracking',
-        linkText: 'Explore Employee Tracking →',
+        link: '/contact?product=field-tracking&module=beat-planning',
+        linkText: 'Explore Beat Planning →',
       },
       {
-        id: 'module-sales',
-        title: 'Sales Representative Tracking',
+        id: 'module-tracking',
+        title: 'Live GPS Tracking & Route Playback',
         description:
-          'Ensure sales reps are visiting clients. Log check-in times, client feedback notes, and catalog orders directly from client sites. Calculate target vs. actual meetings and receive instant visit scorecards to optimize your sales force performance.',
+          'Real-time location monitoring for field sales executives, service technicians, and collection agents. Replay full historic breadcrumb paths, inspect stoppage durations, and calculate true road distance traveled across 500+ Indian cities.',
         bullets: [
-          'GPS-verified check-in at client retail stores and offices',
-          'On-site order booking and digital client feedback forms',
-          'Daily target vs. actual visit scorecards for sales leaders',
+          'Live breadcrumb trail with battery-optimized background pings',
+          'Historical route playback with idle-time and stoppage analysis',
+          'True odometer road distance calculation eliminating inflated claims',
         ],
-        link: '/contact?product=field-tracking&module=sales-tracking',
-        linkText: 'Explore Sales Tracking →',
+        link: '/contact?product=field-tracking&module=gps-tracking',
+        linkText: 'Explore Live GPS Tracking →',
       },
       {
         id: 'module-attendance',
-        title: 'Geo-Fenced Attendance',
+        title: 'Geo-Fenced Selfie Attendance',
         description:
-          'Replace paper registers and fingerprint biometrics. Employees check-in and check-out via geo-fenced selfie uploads. Our anti-spoofing engine detects and blocks fake GPS, developer mock tools, and static photos to ensure attendance integrity.',
+          'Replace manual registers and stationary biometrics. Field staff punch in and out using geofence-locked selfie captures. Our proprietary anti-spoofing engine detects and blocks Android mock GPS, developer settings, and static photo uploads.',
         bullets: [
           'Facial selfie validation with live anti-spoofing camera lock',
-          'Strict geofence radius enforcement around job sites',
-          'Blocks mock GPS, developer settings, and static gallery uploads',
+          'Strict geofence radius enforcement around designated stores or territories',
+          'Automatic detection of mock-location tools and device clock tampering',
         ],
         link: '/contact?product=field-tracking&module=geo-attendance',
         linkText: 'Explore Geo-Attendance →',
       },
       {
-        id: 'module-poe',
-        title: 'Proof of Execution (PoE)',
+        id: 'module-visits',
+        title: 'Customer Visit Check-In / Check-Out',
         description:
-          'Verify HVAC repairs, telecom installations, or store audits. Field technicians complete custom step-by-step checklists, upload pre/post-service photos with strict EXIF coordinate validation, and collect client review signatures on-site.',
+          'Verify every client meeting with coordinate-locked check-in upon arrival. Automatically measure on-site meeting duration, log discussion minutes, and compare daily target vs. actual visits to keep sales teams accountable.',
         bullets: [
-          'Mandatory step-by-step digital service checklists',
-          'Coordinate and timestamp-stamped pre/post service photos',
-          'On-glass digital customer signatures and instant PDF reports',
+          'One-click geo-verified arrival and departure timestamps',
+          'Automated on-site meeting duration timer and client visit verification',
+          'Target vs. actual customer visit analytics on manager dashboard',
         ],
-        link: '/contact?product=field-tracking&module=work-validation',
-        linkText: 'Explore Field Service Validation →',
+        link: '/contact?product=field-tracking&module=customer-visits',
+        linkText: 'Explore Customer Visits →',
+      },
+      {
+        id: 'module-poe',
+        title: 'Custom Mobile Forms & Proof of Execution (PoE)',
+        description:
+          'Equip reps to book catalog orders, capture competitor pricing, conduct store audits, and log client feedback. Enforces timestamp-stamped photo proof with locked EXIF coordinates and on-glass digital customer signatures.',
+        bullets: [
+          'Drag-and-drop form builder for sales orders, audits, and surveys',
+          'Tamper-proof photo uploads with locked EXIF GPS coordinates',
+          'On-glass digital customer sign-offs with instant PDF export',
+        ],
+        link: '/contact?product=field-tracking&module=custom-forms-poe',
+        linkText: 'Explore Forms & PoE →',
+      },
+      {
+        id: 'module-leads',
+        title: 'Field Lead & Opportunity Pipeline CRM',
+        description:
+          'Capture new leads on the road, scan visiting cards, and record immediate prospect requirements. Automatically distribute incoming inquiries to the nearest rep based on live GPS proximity and update opportunity stages in real time.',
+        bullets: [
+          'Instant mobile lead creation and business card photo capture',
+          'Proximity-based lead routing to the nearest active sales executive',
+          'Full visual deal pipeline with follow-up task reminders',
+        ],
+        link: '/contact?product=field-tracking&module=field-sales-crm',
+        linkText: 'Explore Field Sales CRM →',
+      },
+      {
+        id: 'module-dsr',
+        title: 'Automated Daily Sales Reports (DSR)',
+        description:
+          'Free your field force from evening Excel paperwork. Our engine compiles completed visits, distance covered, orders booked, and client notes into instant daily summary reports available to management in real time.',
+        bullets: [
+          'Zero manual evening spreadsheet reporting for sales reps',
+          'Automated executive performance scorecards and conversion ratios',
+          'Instant daily summary export to WhatsApp, email, or Slack',
+        ],
+        link: '/contact?product=field-tracking&module=automated-dsr',
+        linkText: 'Explore Automated DSR →',
+      },
+      {
+        id: 'module-expenses',
+        title: 'Travel Mileage & Expense Management',
+        description:
+          'Automate travel allowance (TA/DA) calculations directly from verified road distance traveled. Field reps capture fuel slips, hotel bills, and toll receipts for seamless digital submission and fast manager approvals.',
+        bullets: [
+          'Automated kilometer-based travel reimbursement based on actual routes',
+          'Mobile receipt capture with category tagging (Fuel, Meals, Lodging)',
+          'Multi-tier manager approval workflow with policy cap enforcement',
+        ],
+        link: '/contact?product=field-tracking&module=expense-management',
+        linkText: 'Explore Expense Management →',
       },
       {
         id: 'module-offline',
-        title: 'Offline Field App',
+        title: 'Zero-Signal Offline Engine & Enterprise Sync',
         description:
-          'Our mobile app operates with full capabilities offline in low-connectivity areas (e.g., remote sites, industrial basements, or highway corridors). GPS coordinates, timestamps, and photos are cached locally in a secure sandbox and synced to the cloud once network returns.',
+          'Ensure uninterrupted operation in remote rural villages, basement warehouses, and poor reception zones. Data is encrypted in a local sandbox and automatically syncs with your ERP or CRM once connection is restored.',
         bullets: [
-          'Encrypted local SQLite sandbox ensuring zero data loss',
-          'Automatic background sync upon cellular or Wi-Fi reconnect',
-          'Tamper-proof device clock check to prevent timestamp cheating',
+          'Encrypted local SQLite database ensuring zero data loss offline',
+          'Seamless background synchronization upon network recovery',
+          'Direct REST API and webhook connectors for SAP, Zoho, Salesforce & Darwinbox',
         ],
-        link: '/contact?product=field-tracking&module=offline-app',
-        linkText: 'Request App Demo →',
-      },
-      {
-        id: 'module-integration',
-        title: 'ERP & API Integration',
-        description:
-          'Integrate our location tracking and attendance engine with your existing CRM, HR payroll system, or field service software. Our REST APIs allow automatic synchronization of task lists, check-in data, and employee attendance.',
-        bullets: [
-          'Seamless integration with Zoho, SAP, Salesforce, Darwinbox & HRMS',
-          'Webhooks for instant milestone alerts (e.g., arrival, task completion)',
-          'Automated daily payroll attendance export directly to accounting',
-        ],
-        link: '/contact?product=field-tracking&module=api-integration',
-        linkText: 'View API Specifications →',
+        link: '/contact?product=field-tracking&module=offline-sync',
+        linkText: 'Explore Offline Engine →',
       },
     ],
     whyNeeded: {
-      headline: 'Why Your Business Needs Field Force Automation',
+      headline: 'Why Growing Businesses Automate Field Sales Operations',
       subheadline:
-        'If your team operates outside four walls, unmonitored execution creates silent profit leaks.',
+        'When sales and service teams operate outside headquarters, manual tracking leads to blind spots, fake claims, and lost revenue.',
       painPoints: [
-        'Phantom visits: Sales reps reporting client meetings that never occurred.',
-        'Attendance fraud: Employees punching attendance using mock-GPS apps or paper registers.',
-        'Inflated travel allowances: Manual kilometer claims inflating monthly reimbursement overhead.',
-        'Customer disputes: Clients claiming technicians arrived late or skipped critical service steps.',
+        'Phantom client visits: Sales reps logging meetings that never happened or checking in from distant locations.',
+        'Attendance fraud: Employees marking attendance via mock-GPS spoofing apps, WhatsApp locations, or proxy punch-ins.',
+        'Inflated travel allowance bills: Manual kilometer estimations driving up monthly travel reimbursement overhead by 30–40%.',
+        'Unorganized lead follow-ups: New inquiries lost on paper diaries without visibility into visit stages or conversion rates.',
       ],
       outcomes: [
-        '100% verified ground activity backed by hardware-locked GPS breadcrumbs.',
-        'Zero-trust selfie check-ins that reject mock GPS apps and photo uploads automatically.',
-        'Transparent distance calculation powered by real turn-by-turn road tracking.',
-        'Audit-proof service reports with coordinate-stamped photos and customer e-signatures.',
+        '100% verified ground reality backed by GPS breadcrumbs, store-geofenced check-ins, and on-site duration timers.',
+        'Zero-trust selfie attendance that automatically detects and blocks mock-GPS tools, emulators, and static photo uploads.',
+        'Transparent mileage billing calculated strictly from verified Google Maps turn-by-turn road distance.',
+        'Centralized sales pipeline giving leadership real-time visibility into visits, beat adherence, and order revenue.',
       ],
     },
     industries: [
       {
-        title: 'Field Sales & FMCG / Pharma',
-        problem: 'Unverified retail store visits and missed daily distributor booking targets.',
-        solution: 'Live client check-in verification, instant order booking, and daily beat route adherence.',
+        title: 'FMCG & Consumer Packaged Goods',
+        problem: 'Incomplete retail store coverage, skipped beats, and slow end-of-day order processing.',
+        solution: 'Automated beat plans, geofenced outlet check-in, on-site retail order booking, and merchandising photo audits.',
       },
       {
-        title: 'HVAC, Telecom & Maintenance',
-        problem: 'Client disputes over whether technicians arrived on time and performed all service steps.',
-        solution: 'Proof of Execution with coordinate-verified before/after photos and digital customer sign-offs.',
+        title: 'Pharmaceuticals & Healthcare (MRs)',
+        problem: 'Unverified doctor visits, missed chemist calls, and delayed sample distribution records.',
+        solution: 'Medical rep location tracking, scheduled clinic beat routes, digital call reporting, and sample inventory tracking.',
       },
       {
-        title: 'Retail Merchandising & Media Audits',
-        problem: 'Lack of visual proof for store promotional displays, shelf compliance, and billboard installations.',
-        solution: 'Tamper-proof photo uploads with locked EXIF metadata and automated audit scorecards.',
+        title: 'Banking, NBFCs & Microfinance',
+        problem: 'Disputed borrower verification visits, untracked EMI collection agents, and compliance audit risks.',
+        solution: 'Geo-verified customer KYC visits, cash collection logs with digital receipts, and audit-ready reporting.',
       },
       {
-        title: 'Logistics & Fleet Dispatch',
-        problem: 'Unauthorized detours, excessive idling, and disputed delivery timeline claims.',
-        solution: 'Live corridor geo-fencing, speed tracking, and accurate turn-by-turn mileage audit.',
+        title: 'Construction & Real Estate',
+        problem: 'Managing distributed site engineers, unmonitored contractor activity, and untracked client property tours.',
+        solution: 'Multi-site geofenced attendance, coordinate-stamped progress photos, and broker visit logs across projects.',
       },
       {
-        title: 'Security & Facility Management',
-        problem: 'Missed guard patrols and inconsistent janitorial execution across multi-acre sites.',
-        solution: 'Checkpoint-based QR & GPS patrol validation with instant anomaly escalation to HQ.',
+        title: 'Agriculture & Rural Operations',
+        problem: 'Sales teams operating in wide, low-connectivity rural territories with zero cellular network.',
+        solution: 'Full offline mobile functionality, dealer visit logging, farm inspection checklists, and automatic sync upon connectivity.',
+      },
+      {
+        title: 'Retail Store Audits & Merchandising',
+        problem: 'No photographic proof of promotional standees, shelf share compliance, or planogram execution.',
+        solution: 'Tamper-proof photo uploads with locked EXIF metadata, store audit checklists, and instant compliance scorecards.',
+      },
+      {
+        title: 'Telecom, HVAC & Field Maintenance',
+        problem: 'Customer disputes regarding whether technicians arrived on time and executed all mandatory service steps.',
+        solution: 'Proof of Execution (PoE) with coordinate-verified before/after photos, task checklists, and digital customer sign-offs.',
+      },
+      {
+        title: 'Automobile Dealerships & Test Drives',
+        problem: 'Untracked off-site test drives, unmonitored dealership audits, and delayed customer feedback collection.',
+        solution: 'Test-drive route recording, channel partner visit logs, customer feedback forms, and territory performance analytics.',
       },
     ],
     buyerGuides: [
       {
-        id: 'guide-employee',
-        title: 'Field Employee Tracking App Guide',
+        id: 'guide-sales-automation',
+        title: 'Field Sales Automation Buyer Guide',
         summary:
-          'Learn how to monitor active routes, calculate travel mileage, and track employee location history securely.',
-        link: '/contact?inquiry=field-employee-tracking-guide',
+          'How to transition your sales reps from manual spreadsheets to automated beats, live GPS visit verification, and instant order booking.',
+        link: '/contact?inquiry=field-sales-automation-guide',
       },
       {
-        id: 'guide-sales',
-        title: 'Sales Team Tracking Software Guide',
+        id: 'guide-beat-planning',
+        title: 'Beat Planning & Route Optimization Blueprint',
         summary:
-          'Verify sales rep client meetings, track customer visits, and log orders with GPS-verified proof of check-in.',
-        link: '/contact?inquiry=sales-team-tracking-guide',
+          'Best practices for designing high-density distributor beat plans that reduce travel time by 35% and maximize outlet coverage.',
+        link: '/contact?inquiry=beat-planning-guide',
       },
       {
-        id: 'guide-attendance',
-        title: 'Geo-Fenced Attendance System Guide',
+        id: 'guide-mock-gps',
+        title: 'Detecting Mock GPS & Fake Attendance in Field Teams',
         summary:
-          'Replace hardware trackers. Learn how GPS selfie attendance stops check-in fraud and mock GPS apps.',
-        link: '/contact?inquiry=geo-fenced-attendance-guide',
+          'A technical breakdown of how field reps use GPS spoofing apps and how our multi-layered telemetry engine eliminates fraudulent check-ins.',
+        link: '/contact?inquiry=anti-mock-gps-guide',
       },
       {
-        id: 'guide-service',
-        title: 'Field Service Validation Software Guide',
+        id: 'guide-mileage-reimbursement',
+        title: 'Automated Travel Allowance (TA/DA) Audit Guide',
         summary:
-          'Validate HVAC repairs, facility services, or retail merchandising with digital checklists and on-site proof.',
-        link: '/contact?inquiry=field-service-validation-guide',
+          'How automated road-distance calculations eliminate inflated kilometer claims and cut company travel reimbursement expenses by up to 40%.',
+        link: '/contact?inquiry=mileage-reimbursement-guide',
       },
     ],
     faqs: [
       {
-        question: 'What is GPS field force tracking software?',
+        question: 'What is field sales automation software and how does it benefit our business?',
         answer:
-          'GPS field force tracking software is an integrated mobile and cloud management platform that tracks the real-time physical locations of on-field personnel, validates customer visits, automates attendance via geo-fencing, and creates audit-proof operational reports without relying on manual paperwork.',
+          'Field sales automation software is a mobile and cloud platform that equips on-ground sales teams to manage daily beat plans, verify client visits, book orders, and log attendance from their smartphones. Management gains a centralized dashboard with live GPS tracking, visit duration analytics, automated Daily Sales Reports (DSR), and verified travel allowance calculations—reducing field overhead by up to 40% while boosting rep productivity by over 65%.',
       },
       {
-        question: 'How does the app prevent check-in fraud and fake GPS apps?',
+        question: 'How does the platform detect and prevent mock GPS apps and fake check-ins?',
         answer:
-          'Our platform features a multi-layered anti-spoofing engine that inspects device-level telemetry. It actively detects and blocks Android developer mock locations, third-party GPS spoofing apps, emulator environments, and rooted or jailbroken devices. In addition, selfie attendance requires a live camera capture with facial liveness verification, completely rejecting static gallery uploads.',
+          'Our platform employs a multi-tiered anti-fraud security engine. It directly inspects OS-level provider flags to detect Android mock location settings, third-party GPS spoofing apps, emulator environments, and device clock modifications. Furthermore, selfie attendance requires live camera captures with facial liveness detection, completely rejecting pre-saved gallery images.',
       },
       {
-        question: 'Does the system track employees when they are off duty?',
+        question: 'Is it legal to track field employees in India, and how does the software protect privacy?',
         answer:
-          'No. Our software is strictly engineered with privacy-first principles and complies with the Digital Personal Data Protection (DPDP) Act. Location tracking is active strictly between verified shift check-in and check-out. The moment an employee ends their shift, all GPS telemetry immediately stops.',
+          'Yes, employee location tracking for business operations during designated working hours is completely legal under Indian employment frameworks. Our software is designed in strict compliance with the Digital Personal Data Protection (DPDP) Act and ISO 27001 standards. Telemetry is active strictly between verified shift check-in and check-out; the moment a rep punches out, all GPS tracking immediately ceases.',
       },
       {
-        question: 'How quickly can I onboard my field team?',
+        question: 'How does the app operate in rural areas with poor or zero cellular network?',
         answer:
-          'You can onboard your entire team in under 24 hours. There is zero hardware to purchase or install. Field staff simply install the lightweight mobile app on their existing Android or iOS smartphones, log in with their phone number or company credentials, and start operating immediately.',
+          'Our mobile app features a zero-signal offline architecture. Reps can mark attendance, check into meetings, fill order forms, and take coordinate-stamped photos even in basements or remote rural villages with zero connectivity. All data is securely encrypted in a local SQLite sandbox and automatically synchronizes to the cloud the moment cellular or Wi-Fi connectivity is detected.',
+      },
+      {
+        question: 'How does automated travel expense reimbursement save company costs?',
+        answer:
+          'Traditional manual travel allowance (TA/DA) claims rely on self-reported kilometers, which frequently suffer from 30–40% inflation. GlowLab tracks actual turn-by-turn road distance traveled via verified GPS breadcrumbs, automatically calculating the exact reimbursable amount according to your company per-kilometer rate and eliminating manual disputes.',
+      },
+      {
+        question: 'Can GlowLab integrate with our existing ERP, CRM, and HRMS platforms?',
+        answer:
+          'Yes. GlowLab provides plug-and-play REST APIs and webhook connectors for leading enterprise platforms including SAP, Zoho, Salesforce, Darwinbox, Keka, GreytHR, and Microsoft Dynamics. Attendance logs, visit minutes, and sales orders can sync bidirectionally in real time.',
+      },
+      {
+        question: 'How fast can our field team be deployed and onboarded?',
+        answer:
+          'You can onboard your entire field force in under 24 hours. Because GlowLab requires zero hardware or dedicated vehicle trackers, reps simply download the lightweight app onto their existing Android or iOS smartphones, authenticate via OTP or single sign-on, and start operating immediately.',
       },
     ],
   },
