@@ -98,7 +98,7 @@ export default function App() {
         ) : currentPath === '/testimonials' ? (
           /* TESTIMONIALS PAGE */
           <TestimonialsPage onNavigate={navigateTo} />
-        ) : currentPath === '/products' || currentPath === '/projects' ? (
+        ) : currentPath === '/products' || currentPath === '/projects' || currentPath.startsWith('/products/') || currentPath.startsWith('/projects/') ? (
           /* PRODUCTS / PROJECTS PAGE */
           <ProductsPage onNavigate={navigateTo} />
         ) : currentPath === '/contact' ? (

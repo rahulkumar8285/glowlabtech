@@ -425,21 +425,21 @@ export const SERVICES_DATA: ServiceItem[] = [
 
 export const PRODUCTS_DATA: ProductItem[] = [
   {
-    id: 'product-geoproof',
-    slug: 'geoproof',
-    shortName: 'GeoProof',
-    name: 'GPS Field Force Tracking & Work Validation Services',
+    id: 'field-tracking-app',
+    slug: 'field-tracking-app',
+    shortName: 'Field Tracking App',
+    name: 'Field Force Tracking & Work Validation App',
     tagline:
       'End-to-end GPS location tracking, geo-fenced selfie attendance, tamper-proof proof of execution, and automated reporting for mobile teams across India.',
     badge: 'Flagship Field Force Platform',
     description:
       'Everything operation managers, HRs, and agency directors need to verify, monitor, and report on field-based team activities with zero hardware investment.',
     heroNotice:
-      'Engineered specifically for Indian distributed teams operating across Tier 1 to Tier 4 regions with patchy connectivity and diverse field environments.',
+      'Engineered specifically for distributed teams operating across Tier 1 to Tier 4 regions with patchy connectivity and diverse field environments.',
     targetAudience:
       'Built for Operations Managers, HR Directors, and Agency Leaders whose teams operate on the ground.',
     features: [
-      'Real-time GPS tracking & playback across 500+ Indian cities',
+      'Real-time GPS tracking & route playback across 500+ Indian cities',
       'Anti-spoofing geo-fenced selfie attendance with mock-GPS detection',
       'Tamper-proof Proof of Execution (PoE) with EXIF coordinate validation',
       'Zero-signal offline mobile app with automatic cloud synchronization',
@@ -474,7 +474,7 @@ export const PRODUCTS_DATA: ProductItem[] = [
           'Historic route playback with idle-time and stoppage analysis',
           'Actual road distance calculation eliminating inflated billing',
         ],
-        link: 'https://www.geoproof.in/field-employee-tracking-app/',
+        link: '/contact?product=field-tracking&module=gps-tracking',
         linkText: 'Explore Employee Tracking →',
       },
       {
@@ -488,7 +488,7 @@ export const PRODUCTS_DATA: ProductItem[] = [
           'On-site order booking and digital client feedback forms',
           'Daily target vs. actual visit scorecards for sales leaders',
         ],
-        link: 'https://www.geoproof.in/sales-team-tracking-software/',
+        link: '/contact?product=field-tracking&module=sales-tracking',
         linkText: 'Explore Sales Tracking →',
       },
       {
@@ -496,13 +496,13 @@ export const PRODUCTS_DATA: ProductItem[] = [
         title: 'Geo-Fenced Attendance',
         badge: 'Zero-Trust HR',
         description:
-          "Replace paper registers and fingerprint biometrics. Employees check-in and check-out via geo-fenced selfie uploads. GeoProof's anti-spoofing engine detects and blocks fake GPS, developer mock tools, and static photos to ensure attendance integrity.",
+          'Replace paper registers and fingerprint biometrics. Employees check-in and check-out via geo-fenced selfie uploads. Our anti-spoofing engine detects and blocks fake GPS, developer mock tools, and static photos to ensure attendance integrity.',
         bullets: [
           'Facial selfie validation with live anti-spoofing camera lock',
           'Strict geofence radius enforcement around job sites',
           'Blocks mock GPS, developer settings, and static gallery uploads',
         ],
-        link: 'https://www.geoproof.in/geo-fenced-attendance-system/',
+        link: '/contact?product=field-tracking&module=geo-attendance',
         linkText: 'Explore Geo-Attendance →',
       },
       {
@@ -516,7 +516,7 @@ export const PRODUCTS_DATA: ProductItem[] = [
           'Coordinate and timestamp-stamped pre/post service photos',
           'On-glass digital customer signatures and instant PDF reports',
         ],
-        link: 'https://www.geoproof.in/field-service-validation-software/',
+        link: '/contact?product=field-tracking&module=work-validation',
         linkText: 'Explore Field Service Validation →',
       },
       {
@@ -530,18 +530,22 @@ export const PRODUCTS_DATA: ProductItem[] = [
           'Automatic background sync upon cellular or Wi-Fi reconnect',
           'Tamper-proof device clock check to prevent timestamp cheating',
         ],
+        link: '/contact?product=field-tracking&module=offline-app',
+        linkText: 'Request App Demo →',
       },
       {
         id: 'module-integration',
         title: 'ERP & API Integration',
         badge: 'Enterprise APIs',
         description:
-          "Integrate GeoProof's location tracking and attendance engine with your existing CRM, HR payroll system, or field service software. Our REST APIs allow automatic synchronization of task lists, check-in data, and employee attendance.",
+          'Integrate our location tracking and attendance engine with your existing CRM, HR payroll system, or field service software. Our REST APIs allow automatic synchronization of task lists, check-in data, and employee attendance.',
         bullets: [
           'Seamless integration with Zoho, SAP, Salesforce, Darwinbox & HRMS',
           'Webhooks for instant milestone alerts (e.g., arrival, task completion)',
           'Automated daily payroll attendance export directly to accounting',
         ],
+        link: '/contact?product=field-tracking&module=api-integration',
+        linkText: 'View API Specifications →',
       },
     ],
     whyNeeded: {
@@ -591,31 +595,31 @@ export const PRODUCTS_DATA: ProductItem[] = [
     buyerGuides: [
       {
         id: 'guide-employee',
-        title: 'Field Employee Tracking App',
+        title: 'Field Employee Tracking App Guide',
         summary:
           'Learn how to monitor active routes, calculate travel mileage, and track employee location history securely.',
-        link: 'https://www.geoproof.in/field-employee-tracking-app/',
+        link: '/contact?inquiry=field-employee-tracking-guide',
       },
       {
         id: 'guide-sales',
-        title: 'Sales Team Tracking Software',
+        title: 'Sales Team Tracking Software Guide',
         summary:
           'Verify sales rep client meetings, track customer visits, and log orders with GPS-verified proof of check-in.',
-        link: 'https://www.geoproof.in/sales-team-tracking-software/',
+        link: '/contact?inquiry=sales-team-tracking-guide',
       },
       {
         id: 'guide-attendance',
-        title: 'Geo-Fenced Attendance System',
+        title: 'Geo-Fenced Attendance System Guide',
         summary:
           'Replace hardware trackers. Learn how GPS selfie attendance stops check-in fraud and mock GPS apps.',
-        link: 'https://www.geoproof.in/geo-fenced-attendance-system/',
+        link: '/contact?inquiry=geo-fenced-attendance-guide',
       },
       {
         id: 'guide-service',
-        title: 'Field Service Validation Software',
+        title: 'Field Service Validation Software Guide',
         summary:
           'Validate HVAC repairs, facility services, or retail merchandising with digital checklists and on-site proof.',
-        link: 'https://www.geoproof.in/field-service-validation-software/',
+        link: '/contact?inquiry=field-service-validation-guide',
       },
     ],
     faqs: [
@@ -625,25 +629,25 @@ export const PRODUCTS_DATA: ProductItem[] = [
           'GPS field force tracking software is an integrated mobile and cloud management platform that tracks the real-time physical locations of on-field personnel, validates customer visits, automates attendance via geo-fencing, and creates audit-proof operational reports without relying on manual paperwork.',
       },
       {
-        question: 'How does GeoProof prevent check-in fraud and fake GPS apps?',
+        question: 'How does the app prevent check-in fraud and fake GPS apps?',
         answer:
-          'GeoProof features a multi-layered anti-spoofing engine that inspects device-level telemetry. It actively detects and blocks Android developer mock locations, third-party GPS spoofing apps, emulator environments, and rooted or jailbroken devices. In addition, selfie attendance requires a live camera capture with facial liveness verification, completely rejecting static gallery uploads.',
+          'Our platform features a multi-layered anti-spoofing engine that inspects device-level telemetry. It actively detects and blocks Android developer mock locations, third-party GPS spoofing apps, emulator environments, and rooted or jailbroken devices. In addition, selfie attendance requires a live camera capture with facial liveness verification, completely rejecting static gallery uploads.',
       },
       {
-        question: 'Does GeoProof track employees when they are off duty?',
+        question: 'Does the system track employees when they are off duty?',
         answer:
-          'No. GeoProof is strictly engineered with privacy-first principles and complies with the Digital Personal Data Protection (DPDP) Act. Location tracking is active strictly between verified shift check-in and check-out. The moment an employee ends their shift, all GPS telemetry immediately stops.',
+          'No. Our software is strictly engineered with privacy-first principles and complies with the Digital Personal Data Protection (DPDP) Act. Location tracking is active strictly between verified shift check-in and check-out. The moment an employee ends their shift, all GPS telemetry immediately stops.',
       },
       {
         question: 'How quickly can I onboard my field team?',
         answer:
-          'You can onboard your entire team in under 24 hours. There is zero hardware to purchase or install. Field staff simply install the lightweight GeoProof mobile app on their existing Android or iOS smartphones, log in with their phone number or company credentials, and start operating immediately.',
+          'You can onboard your entire team in under 24 hours. There is zero hardware to purchase or install. Field staff simply install the lightweight mobile app on their existing Android or iOS smartphones, log in with their phone number or company credentials, and start operating immediately.',
       },
     ],
     trialCta: {
       headline: 'Start Managing Your Field Force Today',
       subheadline:
-        'Try GeoProof free for 14 days. No credit card required. See why hundreds of Indian teams trust our GPS tracking and validation software.',
+        'Try our Field Tracking App free for 14 days. No credit card required. See why hundreds of Indian teams trust our GPS tracking and validation software.',
       bullets: [
         '14-day risk-free access',
         'Full anti-spoofing engine enabled',
@@ -651,8 +655,42 @@ export const PRODUCTS_DATA: ProductItem[] = [
         'Dedicated onboarding support',
       ],
       ctaText: 'Start 14-Day Free Trial',
-      ctaUrl: 'https://www.geoproof.in/',
+      ctaUrl: '/contact?trial=field-tracking',
     },
+  },
+  {
+    id: 'ai-workflow-engine',
+    slug: 'ai-workflow-engine',
+    shortName: 'AI Workflow Engine',
+    name: 'GlowFlow — Autonomous Workflow Engine',
+    badge: 'Private Beta',
+    tagline: 'Event-driven webhook orchestrator and intelligent LLM document processing pipeline.',
+    description:
+      'Enterprise automation platform that bridges legacy ERPs, CRMs, and LLM reasoning pipelines with self-healing retry logic.',
+    features: [
+      'Sub-second webhook execution across distributed APIs',
+      'LLM document extraction reading invoices & contracts',
+      'Zero message-loss retry queue with failover recovery',
+    ],
+    specs: ['Event Webhooks', 'LLM Pipelines', 'Self-Healing Queues', 'REST & GraphQL'],
+    outcome: 'Automates 40+ hours of repetitive manual data entry per week with 99.9% uptime.',
+  },
+  {
+    id: 'ai-video-engine',
+    slug: 'ai-video-engine',
+    shortName: 'AI Video Studio',
+    name: 'GlowVideo — Programmatic Creative Engine',
+    badge: 'Upcoming Platform',
+    tagline: 'Programmatic video generation and automated UGC split-testing system for paid growth.',
+    description:
+      'Automated video generation pipeline turning scripts and customer reviews into dozens of localized ad variations on autopilot.',
+    features: [
+      'Automated script generation & synthetic voice cloning',
+      'Dynamic typography, auto-captions & B-roll insertion',
+      'Multi-language localization for Meta, TikTok & Shorts',
+    ],
+    specs: ['AI Voice Synthesis', 'Dynamic Captions', 'Automated B-Roll', 'Multi-Language'],
+    outcome: 'Produces 30+ split-tested ad variations weekly with zero studio filming overhead.',
   },
 ];
 

@@ -123,7 +123,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                   >
                     <span>Products</span>
                     <span className="text-[10px] bg-[#C84826]/20 text-[#C84826] px-1.5 py-0.5 rounded font-medium">
-                      GeoProof
+                      Field App
                     </span>
                   </a>
                 </li>
