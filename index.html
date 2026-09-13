@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        try {
+          var originalFetch = typeof window !== 'undefined' && window.fetch ? window.fetch.bind(window) : undefined;
+          Object.defineProperty(window, 'fetch', {
+            get: function () {
+              return originalFetch;
+            },
+            set: function (fn) {
+              originalFetch = typeof fn === 'function' ? fn.bind(window) : fn;
+            },
+            configurable: true,
+            enumerable: true,
+          });
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            var desc = Object.getOwnPropertyDescriptor(Window.prototype, 'fetch');
+            if (desc && !desc.set) {
+              Object.defineProperty(Window.prototype, 'fetch', {
+                get: function () {
+                  return originalFetch;
+                },
+                set: function (fn) {
+                  originalFetch = typeof fn === 'function' ? fn.bind(window) : fn;
+                },
+                configurable: true,
+                enumerable: true,
+              });
+            }
+          }
+        } catch (e) {
+          // ignore
+        }
+      })();
+    </script>
+    <title>AI Automation Studio</title>
+    <meta name="description" content="AI automation, lead generation, and video systems studio website featuring full inner pages, manifesto, workflow, and case studies." />
+    <meta property="og:title" content="AI Automation Studio" />
+    <meta property="og:description" content="AI automation, lead generation, and video systems studio website featuring full inner pages, manifesto, workflow, and case studies." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..500&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
