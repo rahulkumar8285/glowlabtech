@@ -1,8 +1,5 @@
 import { useEffect } from 'react';
 import {
-  Award,
-  Layers,
-  Wrench,
   ShoppingCart,
   Laptop,
   Stethoscope,
@@ -39,7 +36,6 @@ export default function AboutPage({
       {/* PAGE HEADER */}
       <PageHeader
         id="about-header"
-        eyebrow="About GlowLab Tech"
         title="Deep Engineering Experience / Across Diverse Industries & Modern Tools"
         subtitle="We run an agile engineering and AI agency built on technical rigor, battle-tested knowledge, and proven delivery across multiple industries and modern tool ecosystems."
       />
@@ -51,13 +47,9 @@ export default function AboutPage({
       >
         <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
           <div className="grid grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-center">
-            {/* Left column (~60% width): High-value editorial manifesto, proof pillars & metrics */}
+            {/* Left column (~60% width): High-value editorial manifesto */}
             <div className="col-span-12 lg:col-span-7 space-y-6 text-left">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C84826]/10 text-[#C84826] font-body text-xs font-semibold tracking-wider uppercase mb-3.5 select-none">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#C84826]" />
-                  <span>Engineering Studio &amp; Multi-Disciplinary Agency</span>
-                </div>
                 <h2 className="font-headline font-medium text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] text-[#1A1A1A] leading-[1.2] tracking-[-0.02em]">
                   Deep technical knowledge, proven execution, and multi-industry versatility.
                 </h2>
@@ -73,68 +65,6 @@ export default function AboutPage({
                 <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
                   Our experience is broad and battle-tested across multiple industries—from high-growth E-Commerce and fast-scaling B2B SaaS to Healthcare, Real Estate, and Logistics. By operating fluidly across a multi-tool ecosystem—spanning state-of-the-art AI models, event-driven automation engines, and modern full-stack web frameworks—we choose and engineer the exact right stack for your business.
                 </p>
-              </div>
-
-              {/* 3 Value Pillars */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2 border-t border-black/[0.08]">
-                <div className="p-3.5 rounded-lg bg-black/[0.02] border border-black/[0.06]">
-                  <div className="flex items-center gap-2 mb-1.5">
-                    <Award className="w-4 h-4 text-[#C84826] shrink-0" />
-                    <span className="font-headline text-xs font-semibold text-[#1A1A1A]">
-                      Deep Knowledge &amp; Exp.
-                    </span>
-                  </div>
-                  <p className="font-body text-[11px] text-neutral-500 leading-relaxed">
-                    Years of hands-on software engineering, running reliable systems that never compromise on quality.
-                  </p>
-                </div>
-
-                <div className="p-3.5 rounded-lg bg-black/[0.02] border border-black/[0.06]">
-                  <div className="flex items-center gap-2 mb-1.5">
-                    <Layers className="w-4 h-4 text-[#C84826] shrink-0" />
-                    <span className="font-headline text-xs font-semibold text-[#1A1A1A]">
-                      Multi-Industry Reach
-                    </span>
-                  </div>
-                  <p className="font-body text-[11px] text-neutral-500 leading-relaxed">
-                    Battle-tested playbooks adapted for E-Commerce, SaaS, Healthcare, Real Estate, and Logistics.
-                  </p>
-                </div>
-
-                <div className="p-3.5 rounded-lg bg-black/[0.02] border border-black/[0.06]">
-                  <div className="flex items-center gap-2 mb-1.5">
-                    <Wrench className="w-4 h-4 text-[#C84826] shrink-0" />
-                    <span className="font-headline text-xs font-semibold text-[#1A1A1A]">
-                      Multi-Tool Agility
-                    </span>
-                  </div>
-                  <p className="font-body text-[11px] text-neutral-500 leading-relaxed">
-                    Fluency across leading LLMs, n8n/Python automation engines, cloud stacks, and modern APIs.
-                  </p>
-                </div>
-              </div>
-
-              {/* Studio Stats Micro-Strip */}
-              <div className="pt-1 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-body text-neutral-600">
-                <div className="flex items-center gap-1.5">
-                  <span className="font-headline font-semibold text-sm text-[#1A1A1A]">6+ Yrs</span>
-                  <span className="text-neutral-500">Agency Experience</span>
-                </div>
-                <div className="w-1 h-1 rounded-full bg-neutral-300" />
-                <div className="flex items-center gap-1.5">
-                  <span className="font-headline font-semibold text-sm text-[#1A1A1A]">10+</span>
-                  <span className="text-neutral-500">Industries Served</span>
-                </div>
-                <div className="w-1 h-1 rounded-full bg-neutral-300" />
-                <div className="flex items-center gap-1.5">
-                  <span className="font-headline font-semibold text-sm text-[#1A1A1A]">40+</span>
-                  <span className="text-neutral-500">Tools &amp; APIs Mastered</span>
-                </div>
-                <div className="w-1 h-1 rounded-full bg-neutral-300" />
-                <div className="flex items-center gap-1.5">
-                  <span className="font-headline font-semibold text-sm text-[#1A1A1A]">99.9%</span>
-                  <span className="text-neutral-500">System Reliability</span>
-                </div>
               </div>
             </div>
 
@@ -166,10 +96,6 @@ export default function AboutPage({
       >
         <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20 text-left">
           <div className="max-w-3xl mb-10 sm:mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C84826]/10 text-[#C84826] font-body text-xs font-semibold tracking-wider uppercase mb-3 select-none">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C84826]" />
-              <span>Multi-Industry Execution</span>
-            </div>
             <h2 className="font-headline font-medium text-2xl sm:text-4xl md:text-[42px] leading-tight tracking-[-0.02em] text-[#1A1A1A]">
               Specialized experience across diverse industries.
             </h2>
@@ -315,10 +241,6 @@ export default function AboutPage({
       >
         <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20 text-left">
           <div className="max-w-3xl mb-10 sm:mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C84826]/10 text-[#C84826] font-body text-xs font-semibold tracking-wider uppercase mb-3 select-none">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C84826]" />
-              <span>Multi-Tool Agility</span>
-            </div>
             <h2 className="font-headline font-medium text-2xl sm:text-4xl md:text-[42px] leading-tight tracking-[-0.02em] text-[#1A1A1A]">
               Mastering the full modern software &amp; AI stack.
             </h2>
