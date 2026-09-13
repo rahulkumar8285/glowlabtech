@@ -4,7 +4,6 @@ import {
   Navigation as NavIcon,
   CheckCircle2,
   ShieldCheck,
-  Smartphone,
   WifiOff,
   Database,
   BookOpen,
@@ -12,10 +11,8 @@ import {
   ChevronDown,
   ChevronUp,
   AlertTriangle,
-  Users,
   Briefcase,
   Layers,
-  Sparkles,
   PhoneCall,
 } from 'lucide-react';
 import { PRODUCTS_DATA, type ProductItem } from '../data/offeringsData';
@@ -44,7 +41,6 @@ export default function ProductsPage({
 
   // Primary flagship product (Field Tracking App)
   const primaryProduct: ProductItem = PRODUCTS_DATA[0];
-  const otherProducts = PRODUCTS_DATA.slice(1);
 
   const handleLinkClick = (path: string, e: MouseEvent) => {
     if (path.startsWith('http')) {
@@ -102,24 +98,6 @@ export default function ProductsPage({
               className="absolute -top-24 -right-24 w-96 h-96 bg-[#C84826]/5 rounded-full blur-3xl pointer-events-none"
             />
 
-            {/* Top Eyebrow & Badges */}
-            <div className="flex flex-wrap items-center justify-between gap-3 mb-6 relative z-10">
-              <div className="flex items-center gap-2.5">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-body font-semibold tracking-wider uppercase bg-[#C84826]/10 text-[#C84826] border border-[#C84826]/20">
-                  <Sparkles className="w-3 h-3" />
-                  {primaryProduct.badge}
-                </span>
-                <span className="hidden sm:inline-flex text-xs font-body text-neutral-500">
-                  • 500+ Indian Cities Supported
-                </span>
-              </div>
-
-              <div className="flex items-center gap-2 text-xs font-body font-medium text-neutral-600 bg-[#FAF9F6] px-3 py-1 rounded-full border border-black/5">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                <span>Zero Hardware Required</span>
-              </div>
-            </div>
-
             {/* Product Title & Positioning */}
             <div className="mb-6 relative z-10">
               <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4 mb-2">
@@ -134,20 +112,13 @@ export default function ProductsPage({
               <p className="font-body text-base sm:text-xl text-neutral-700 leading-relaxed max-w-4xl mt-3">
                 {primaryProduct.tagline}
               </p>
-
-              {primaryProduct.targetAudience && (
-                <div className="inline-flex items-center gap-2 mt-4 px-3.5 py-1.5 rounded-lg bg-[#FAF9F6] border border-black/10 text-xs sm:text-sm font-body text-neutral-700">
-                  <Users className="w-4 h-4 text-[#C84826] shrink-0" />
-                  <span>{primaryProduct.targetAudience}</span>
-                </div>
-              )}
             </div>
 
             {/* Quick Action CTAs */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2 mb-8 relative z-10">
               <a
-                href={primaryProduct.trialCta?.ctaUrl || '/contact?trial=field-tracking'}
-                onClick={(e) => handleLinkClick(primaryProduct.trialCta?.ctaUrl || '/contact?trial=field-tracking', e)}
+                href="/contact"
+                onClick={(e) => handleLinkClick('/contact', e)}
                 className="inline-flex items-center justify-center gap-2 font-body font-medium text-sm text-white bg-[#C84826] hover:bg-[#B33E1D] active:bg-[#9E3416] px-7 py-3.5 rounded-full transition-all duration-200 cursor-pointer shadow-sm select-none"
               >
                 <span>Start 14-Day Free Trial</span>
@@ -162,10 +133,6 @@ export default function ProductsPage({
                 <PhoneCall className="w-4 h-4" />
                 <span>Talk to Systems Engineer</span>
               </a>
-
-              <span className="text-xs font-body text-neutral-400 text-center sm:text-left self-center sm:ml-2">
-                No credit card required • 24h team onboarding
-              </span>
             </div>
 
             {/* Operational Stats Strip */}
@@ -199,7 +166,7 @@ export default function ProductsPage({
                 : 'text-neutral-600 hover:text-[#1A1A1A] hover:bg-black/5'
             }`}
           >
-            SaaS Modules (6)
+            Modules
           </button>
           <button
             type="button"
@@ -210,7 +177,7 @@ export default function ProductsPage({
                 : 'text-neutral-600 hover:text-[#1A1A1A] hover:bg-black/5'
             }`}
           >
-            Why You Need Field Support
+            Why Field Support
           </button>
           <button
             type="button"
@@ -221,7 +188,7 @@ export default function ProductsPage({
                 : 'text-neutral-600 hover:text-[#1A1A1A] hover:bg-black/5'
             }`}
           >
-            Target Field Industries
+            Industries
           </button>
           <button
             type="button"
@@ -243,12 +210,12 @@ export default function ProductsPage({
                 : 'text-neutral-600 hover:text-[#1A1A1A] hover:bg-black/5'
             }`}
           >
-            FAQ &amp; DPDP
+            FAQ
           </button>
         </div>
       </nav>
 
-      {/* SECTION 1: SAAS MODULES BUILT FOR FIELD ACCOUNTABILITY */}
+      {/* SECTION 1: SAAS MODULES */}
       <section
         id="modules"
         className={`w-full py-16 sm:py-20 md:py-24 border-b border-black/10 ${
@@ -256,10 +223,7 @@ export default function ProductsPage({
         }`}
       >
         <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
-          <div className="max-w-3xl mb-12 sm:mb-16">
-            <span className="font-body text-xs uppercase tracking-wider text-[#C84826] font-semibold block mb-2">
-              SaaS Modules Built for Field Accountability
-            </span>
+          <div className="max-w-3xl mb-10 sm:mb-14">
             <h2 className="font-headline font-semibold text-2xl sm:text-4xl text-[#1A1A1A] tracking-tight leading-tight">
               Everything operations managers, HRs, and agency directors need to verify, monitor, and report.
             </h2>
@@ -276,15 +240,8 @@ export default function ProductsPage({
                 className="bg-white border border-black/10 rounded-xl p-6 sm:p-7 flex flex-col justify-between hover:border-black/25 hover:shadow-sm transition-all duration-200"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-[#FAF9F6] border border-black/10 flex items-center justify-center">
-                      {getModuleIcon(module.id)}
-                    </div>
-                    {module.badge && (
-                      <span className="text-[11px] font-body font-medium uppercase tracking-wider text-neutral-500 bg-[#FAF9F6] px-2.5 py-1 rounded-md border border-black/5">
-                        {module.badge}
-                      </span>
-                    )}
+                  <div className="w-10 h-10 rounded-xl bg-[#FAF9F6] border border-black/10 flex items-center justify-center mb-4">
+                    {getModuleIcon(module.id)}
                   </div>
 
                   <h3 className="font-headline font-medium text-lg sm:text-xl text-[#1A1A1A] mb-2.5">
@@ -338,10 +295,7 @@ export default function ProductsPage({
           }`}
         >
           <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
-            <div className="max-w-3xl mb-12 sm:mb-16">
-              <span className="font-body text-xs uppercase tracking-wider text-[#C84826] font-semibold block mb-2">
-                Ground Reality &amp; Operational Gaps
-              </span>
+            <div className="max-w-3xl mb-10 sm:mb-14">
               <h2 className="font-headline font-semibold text-2xl sm:text-4xl text-[#1A1A1A] tracking-tight leading-tight">
                 {primaryProduct.whyNeeded.headline}
               </h2>
@@ -398,7 +352,7 @@ export default function ProductsPage({
         </section>
       )}
 
-      {/* SECTION 3: TARGET FIELD INDUSTRIES (WHEN YOU NEED THIS SERVICE) */}
+      {/* SECTION 3: TARGET FIELD INDUSTRIES */}
       {primaryProduct.industries && (
         <section
           id="industries"
@@ -407,10 +361,7 @@ export default function ProductsPage({
           }`}
         >
           <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
-            <div className="max-w-3xl mb-12 sm:mb-16">
-              <span className="font-body text-xs uppercase tracking-wider text-[#C84826] font-semibold block mb-2">
-                Field Support Use Cases
-              </span>
+            <div className="max-w-3xl mb-10 sm:mb-14">
               <h2 className="font-headline font-semibold text-2xl sm:text-4xl text-[#1A1A1A] tracking-tight leading-tight">
                 Designed for businesses with personnel on the move across India.
               </h2>
@@ -459,10 +410,7 @@ export default function ProductsPage({
           }`}
         >
           <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
-            <div className="max-w-3xl mb-12 sm:mb-16">
-              <span className="font-body text-xs uppercase tracking-wider text-[#C84826] font-semibold block mb-2">
-                Field Force Buyer Guides &amp; Blueprints
-              </span>
+            <div className="max-w-3xl mb-10 sm:mb-14">
               <h2 className="font-headline font-semibold text-2xl sm:text-4xl text-[#1A1A1A] tracking-tight leading-tight">
                 Evaluate our field tracking tools for your specific team workflow and operational needs.
               </h2>
@@ -513,10 +461,7 @@ export default function ProductsPage({
           }`}
         >
           <div className="w-full max-w-4xl mx-auto px-5 sm:px-12 md:px-16">
-            <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-              <span className="font-body text-xs uppercase tracking-wider text-[#C84826] font-semibold block mb-2">
-                Frequently Asked Questions
-              </span>
+            <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
               <h2 className="font-headline font-semibold text-2xl sm:text-4xl text-[#1A1A1A] tracking-tight leading-tight">
                 Field Force Tracking FAQ
               </h2>
@@ -554,127 +499,6 @@ export default function ProductsPage({
                   </div>
                 );
               })}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* SECTION 6: OTHER GLOWLAB SOFTWARE ENGINES */}
-      {otherProducts.length > 0 && (
-        <section
-          id="other-products"
-          className="w-full py-16 sm:py-20 md:py-24 border-b border-black/10 bg-[#FAF9F6]"
-        >
-          <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
-            <div className="max-w-3xl mb-12">
-              <span className="font-body text-xs uppercase tracking-wider text-[#C84826] font-semibold block mb-2">
-                More Software Platforms
-              </span>
-              <h2 className="font-headline font-semibold text-2xl sm:text-3xl text-[#1A1A1A] tracking-tight">
-                Explore additional GlowLab software engines.
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-              {otherProducts.map((product) => (
-                <div
-                  key={product.id}
-                  className="border border-black/10 p-6 sm:p-8 bg-white rounded-xl flex flex-col justify-between hover:border-black/25 transition-all"
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="font-body text-[11px] uppercase tracking-wider text-[#C84826] font-semibold">
-                        {product.badge}
-                      </span>
-                    </div>
-                    <h3 className="font-headline font-medium text-xl sm:text-2xl text-[#1A1A1A] mb-2">
-                      {product.name}
-                    </h3>
-                    <p className="font-body text-xs sm:text-sm text-neutral-600 leading-relaxed mb-5">
-                      {product.description}
-                    </p>
-                    <ul className="space-y-1.5 mb-6">
-                      {product.features.map((f, fIdx) => (
-                        <li key={fIdx} className="flex items-start gap-2 text-xs font-body text-neutral-700">
-                          <span className="text-[#C84826] font-bold">•</span>
-                          <span>{f}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="pt-4 border-t border-black/10 flex items-center justify-between">
-                    <span className="text-xs font-body text-neutral-500">
-                      {product.outcome}
-                    </span>
-                    <a
-                      href="/contact"
-                      onClick={(e) => handleLinkClick('/contact', e)}
-                      className="inline-flex items-center gap-1.5 text-xs font-body font-semibold text-[#C84826] hover:text-[#9E3416] transition-colors cursor-pointer shrink-0 ml-4"
-                    >
-                      <span>Inquire Beta Access</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* SECTION 7: HIGH-CONVERTING 14-DAY FREE TRIAL CTA */}
-      {primaryProduct.trialCta && (
-        <section
-          id="trial-cta"
-          className="w-full py-16 sm:py-20 md:py-24 bg-[#141413] text-[#FAF9F6] relative overflow-hidden"
-        >
-          <div
-            aria-hidden="true"
-            className="absolute -bottom-24 -left-24 w-96 h-96 bg-[#C84826]/10 rounded-full blur-3xl pointer-events-none"
-          />
-
-          <div className="w-full max-w-5xl mx-auto px-5 sm:px-12 md:px-16 text-center relative z-10">
-            <span className="font-body text-xs uppercase tracking-widest text-[#C84826] font-semibold block mb-3">
-              Zero-Risk Operational Trial
-            </span>
-
-            <h2 className="font-headline font-semibold text-3xl sm:text-5xl text-[#FAF9F6] tracking-tight leading-tight mb-4">
-              {primaryProduct.trialCta.headline}
-            </h2>
-
-            <p className="font-body text-sm sm:text-base text-neutral-300 max-w-2xl mx-auto leading-relaxed mb-8">
-              {primaryProduct.trialCta.subheadline}
-            </p>
-
-            {/* Feature Bullets */}
-            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-8 text-xs sm:text-sm font-body text-neutral-300">
-              {primaryProduct.trialCta.bullets.map((bullet, bIdx) => (
-                <div key={bIdx} className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#C84826]" />
-                  <span>{bullet}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href={primaryProduct.trialCta.ctaUrl}
-                onClick={(e) => handleLinkClick(primaryProduct.trialCta!.ctaUrl, e)}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 font-body font-medium text-sm text-white bg-[#C84826] hover:bg-[#B33E1D] px-8 py-4 rounded-full transition-all duration-200 cursor-pointer shadow-lg select-none"
-              >
-                <span>{primaryProduct.trialCta.ctaText}</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-
-              <a
-                href="/contact"
-                onClick={(e) => handleLinkClick('/contact', e)}
-                className="w-full sm:w-auto inline-flex items-center justify-center font-body font-medium text-sm text-neutral-300 hover:text-white bg-white/10 hover:bg-white/15 px-8 py-4 rounded-full transition-colors cursor-pointer select-none"
-              >
-                Request Enterprise Deployment
-              </a>
             </div>
           </div>
         </section>

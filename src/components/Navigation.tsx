@@ -256,21 +256,17 @@ export default function Navigation({
               {isProductsDropdownOpen && (
                 <div
                   id="products-dropdown-menu"
-                  className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[430px] z-50 animate-in fade-in slide-in-from-top-1 duration-150"
+                  className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[380px] z-50 animate-in fade-in slide-in-from-top-1 duration-150"
                 >
                   <div className="bg-[#FAF9F6] border border-black/10 rounded-[6px] shadow-xl p-3 sm:p-3.5 text-left">
-                    <div className="px-2.5 pb-2 mb-1 border-b border-black/5 flex items-center justify-between">
+                    <div className="px-2.5 pb-2 mb-1 border-b border-black/5">
                       <span className="font-body text-[11px] uppercase tracking-wider text-neutral-400 font-semibold">
-                        GlowLab Software Engines
-                      </span>
-                      <span className="text-[10px] bg-[#C84826]/10 text-[#C84826] px-2 py-0.5 rounded-full font-medium">
-                        Proprietary
+                        Field Force Tracking
                       </span>
                     </div>
 
                     <ul className="space-y-1">
                       {PRODUCTS_DATA.map((product) => {
-                        const isPrimary = product.id === 'field-tracking-app';
                         return (
                           <li key={product.id}>
                             <a
@@ -279,51 +275,19 @@ export default function Navigation({
                                 handleNavClick('/products', e);
                                 setIsProductsDropdownOpen(false);
                               }}
-                              className={`group block p-2.5 rounded-[4px] transition-colors cursor-pointer ${
-                                isPrimary && isProductsActive
-                                  ? 'bg-[#C84826]/10 text-[#C84826]'
-                                  : 'hover:bg-black/[0.03] text-[#1A1A1A]'
-                              }`}
+                              className="group block p-2.5 rounded-[4px] hover:bg-black/[0.03] text-[#1A1A1A] transition-colors cursor-pointer"
                             >
-                              <div className="flex items-center justify-between gap-2">
-                                <p className="font-body text-xs font-semibold truncate group-hover:text-[#C84826] transition-colors">
-                                  {product.name}
-                                </p>
-                                <span
-                                  className={`text-[10px] shrink-0 px-1.5 py-0.5 rounded font-medium ${
-                                    product.badge.includes('Live') || product.badge.includes('Flagship')
-                                      ? 'bg-emerald-500/15 text-emerald-700'
-                                      : 'bg-black/5 text-neutral-500'
-                                  }`}
-                                >
-                                  {product.badge.includes('Live') || product.badge.includes('Flagship')
-                                    ? 'Live SaaS'
-                                    : product.badge}
-                                </span>
-                              </div>
-                              <p className="font-body text-[11px] text-neutral-500 line-clamp-1 mt-0.5">
-                                {product.tagline}
+                              <p className="font-body text-xs font-semibold group-hover:text-[#C84826] transition-colors">
+                                {product.name}
+                              </p>
+                              <p className="font-body text-[11px] text-neutral-500 mt-1 leading-snug">
+                                Real-time GPS location tracking, geo-fenced selfie attendance &amp; work validation.
                               </p>
                             </a>
                           </li>
                         );
                       })}
                     </ul>
-
-                    {/* Dropdown Footer Link */}
-                    <div className="pt-2.5 mt-2 border-t border-black/5 px-2.5">
-                      <a
-                        href="/products"
-                        onClick={(e) => {
-                          handleNavClick('/products', e);
-                          setIsProductsDropdownOpen(false);
-                        }}
-                        className="inline-flex items-center justify-between w-full font-body text-xs font-medium text-[#C84826] hover:text-[#9E3416] transition-colors py-1 cursor-pointer"
-                      >
-                        <span>View All Platforms &amp; Architecture</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </a>
-                    </div>
                   </div>
                 </div>
               )}
@@ -523,22 +487,11 @@ export default function Navigation({
                             onClick={(e) => handleNavClick('/products', e)}
                             className="flex items-center justify-between py-2.5 px-3 rounded-lg text-sm text-neutral-700 hover:text-[#1A1A1A] active:bg-black/[0.04] transition-colors cursor-pointer"
                           >
-                            <div className="flex flex-col">
-                              <span className="font-medium text-xs text-[#1A1A1A]">{product.name}</span>
-                              <span className="text-[11px] text-neutral-500">{product.badge}</span>
-                            </div>
+                            <span className="font-medium text-xs text-[#1A1A1A]">{product.name}</span>
                             <ArrowRight className="w-3.5 h-3.5 text-neutral-400 shrink-0 ml-2" />
                           </a>
                         );
                       })}
-                      <a
-                        href="/products"
-                        onClick={(e) => handleNavClick('/products', e)}
-                        className="flex items-center justify-between py-2.5 px-3 rounded-lg text-xs font-medium text-[#C84826] bg-[#C84826]/5 transition-colors cursor-pointer mt-2"
-                      >
-                        <span>View All Platforms</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </a>
                     </div>
                   </div>
                 )}

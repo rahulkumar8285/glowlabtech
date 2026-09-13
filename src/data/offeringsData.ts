@@ -431,13 +431,9 @@ export const PRODUCTS_DATA: ProductItem[] = [
     name: 'Field Force Tracking & Work Validation App',
     tagline:
       'End-to-end GPS location tracking, geo-fenced selfie attendance, tamper-proof proof of execution, and automated reporting for mobile teams across India.',
-    badge: 'Flagship Field Force Platform',
+    badge: '',
     description:
       'Everything operation managers, HRs, and agency directors need to verify, monitor, and report on field-based team activities with zero hardware investment.',
-    heroNotice:
-      'Engineered specifically for distributed teams operating across Tier 1 to Tier 4 regions with patchy connectivity and diverse field environments.',
-    targetAudience:
-      'Built for Operations Managers, HR Directors, and Agency Leaders whose teams operate on the ground.',
     features: [
       'Real-time GPS tracking & route playback across 500+ Indian cities',
       'Anti-spoofing geo-fenced selfie attendance with mock-GPS detection',
@@ -466,7 +462,6 @@ export const PRODUCTS_DATA: ProductItem[] = [
       {
         id: 'module-tracking',
         title: 'GPS Employee Tracking',
-        badge: 'Core Telemetry',
         description:
           'Real-time location monitoring for field sales, service, and media agents. Play back active route histories, check exact visit timestamps, and calculate true distance traveled for transparent mileage billing and travel reimbursements across 500+ cities in India.',
         bullets: [
@@ -480,7 +475,6 @@ export const PRODUCTS_DATA: ProductItem[] = [
       {
         id: 'module-sales',
         title: 'Sales Representative Tracking',
-        badge: 'Sales Acceleration',
         description:
           'Ensure sales reps are visiting clients. Log check-in times, client feedback notes, and catalog orders directly from client sites. Calculate target vs. actual meetings and receive instant visit scorecards to optimize your sales force performance.',
         bullets: [
@@ -494,7 +488,6 @@ export const PRODUCTS_DATA: ProductItem[] = [
       {
         id: 'module-attendance',
         title: 'Geo-Fenced Attendance',
-        badge: 'Zero-Trust HR',
         description:
           'Replace paper registers and fingerprint biometrics. Employees check-in and check-out via geo-fenced selfie uploads. Our anti-spoofing engine detects and blocks fake GPS, developer mock tools, and static photos to ensure attendance integrity.',
         bullets: [
@@ -508,7 +501,6 @@ export const PRODUCTS_DATA: ProductItem[] = [
       {
         id: 'module-poe',
         title: 'Proof of Execution (PoE)',
-        badge: 'Work Quality Audit',
         description:
           'Verify HVAC repairs, telecom installations, or store audits. Field technicians complete custom step-by-step checklists, upload pre/post-service photos with strict EXIF coordinate validation, and collect client review signatures on-site.',
         bullets: [
@@ -522,7 +514,6 @@ export const PRODUCTS_DATA: ProductItem[] = [
       {
         id: 'module-offline',
         title: 'Offline Field App',
-        badge: 'Zero-Signal Tech',
         description:
           'Our mobile app operates with full capabilities offline in low-connectivity areas (e.g., remote sites, industrial basements, or highway corridors). GPS coordinates, timestamps, and photos are cached locally in a secure sandbox and synced to the cloud once network returns.',
         bullets: [
@@ -536,7 +527,6 @@ export const PRODUCTS_DATA: ProductItem[] = [
       {
         id: 'module-integration',
         title: 'ERP & API Integration',
-        badge: 'Enterprise APIs',
         description:
           'Integrate our location tracking and attendance engine with your existing CRM, HR payroll system, or field service software. Our REST APIs allow automatic synchronization of task lists, check-in data, and employee attendance.',
         bullets: [
@@ -644,53 +634,6 @@ export const PRODUCTS_DATA: ProductItem[] = [
           'You can onboard your entire team in under 24 hours. There is zero hardware to purchase or install. Field staff simply install the lightweight mobile app on their existing Android or iOS smartphones, log in with their phone number or company credentials, and start operating immediately.',
       },
     ],
-    trialCta: {
-      headline: 'Start Managing Your Field Force Today',
-      subheadline:
-        'Try our Field Tracking App free for 14 days. No credit card required. See why hundreds of Indian teams trust our GPS tracking and validation software.',
-      bullets: [
-        '14-day risk-free access',
-        'Full anti-spoofing engine enabled',
-        'Instant mobile app setup for Android & iOS',
-        'Dedicated onboarding support',
-      ],
-      ctaText: 'Start 14-Day Free Trial',
-      ctaUrl: '/contact?trial=field-tracking',
-    },
-  },
-  {
-    id: 'ai-workflow-engine',
-    slug: 'ai-workflow-engine',
-    shortName: 'AI Workflow Engine',
-    name: 'GlowFlow — Autonomous Workflow Engine',
-    badge: 'Private Beta',
-    tagline: 'Event-driven webhook orchestrator and intelligent LLM document processing pipeline.',
-    description:
-      'Enterprise automation platform that bridges legacy ERPs, CRMs, and LLM reasoning pipelines with self-healing retry logic.',
-    features: [
-      'Sub-second webhook execution across distributed APIs',
-      'LLM document extraction reading invoices & contracts',
-      'Zero message-loss retry queue with failover recovery',
-    ],
-    specs: ['Event Webhooks', 'LLM Pipelines', 'Self-Healing Queues', 'REST & GraphQL'],
-    outcome: 'Automates 40+ hours of repetitive manual data entry per week with 99.9% uptime.',
-  },
-  {
-    id: 'ai-video-engine',
-    slug: 'ai-video-engine',
-    shortName: 'AI Video Studio',
-    name: 'GlowVideo — Programmatic Creative Engine',
-    badge: 'Upcoming Platform',
-    tagline: 'Programmatic video generation and automated UGC split-testing system for paid growth.',
-    description:
-      'Automated video generation pipeline turning scripts and customer reviews into dozens of localized ad variations on autopilot.',
-    features: [
-      'Automated script generation & synthetic voice cloning',
-      'Dynamic typography, auto-captions & B-roll insertion',
-      'Multi-language localization for Meta, TikTok & Shorts',
-    ],
-    specs: ['AI Voice Synthesis', 'Dynamic Captions', 'Automated B-Roll', 'Multi-Language'],
-    outcome: 'Produces 30+ split-tested ad variations weekly with zero studio filming overhead.',
   },
 ];
 
