@@ -167,7 +167,7 @@ export default function ContactPage({ onNavigate: _onNavigate }: ContactPageProp
                         <input
                           id="contact-phone"
                           type="tel"
-                          placeholder="+1 (555) 000-0000"
+                          placeholder="+91 98765 43210"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           className="w-full px-4 py-3.5 sm:py-3 bg-[#FAF9F6] border border-black/10 rounded-lg text-base sm:text-sm font-body text-[#1A1A1A] placeholder-neutral-400 focus:outline-none focus:border-[#C84826] focus:bg-white transition-colors"
