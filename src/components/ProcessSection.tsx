@@ -36,7 +36,11 @@ const STEPS: ProcessStep[] = [
   },
 ];
 
-export default function ProcessSection() {
+export default function ProcessSection({
+  onNavigate: _onNavigate,
+}: {
+  onNavigate?: (path: string) => void;
+} = {}) {
   const sectionRef = useRef<HTMLElement>(null);
   const [progress, setProgress] = useState(0);
 
@@ -64,13 +68,13 @@ export default function ProcessSection() {
     <section
       ref={sectionRef}
       id="process-section"
-      className="w-full bg-[#FAF9F6] text-[#1A1A1A] py-28 sm:py-32 md:py-36 lg:py-40"
+      className="w-full bg-[#FAF9F6] text-[#1A1A1A] py-14 sm:py-18 md:py-20 lg:py-24 scroll-mt-20"
     >
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-20">
         {/* Section Title: Left-aligned, matching other section titles */}
         <h2
           id="process-heading"
-          className="font-headline font-normal sm:font-medium text-3xl sm:text-4xl md:text-[44px] leading-tight tracking-[-0.02em] text-[#1A1A1A] mb-16 sm:mb-20 md:mb-24 text-left"
+          className="font-headline font-normal sm:font-medium text-3xl sm:text-4xl md:text-[44px] leading-tight tracking-[-0.02em] text-[#1A1A1A] mb-10 sm:mb-12 md:mb-14 text-left"
         >
           How we work
         </h2>
@@ -88,10 +92,10 @@ export default function ProcessSection() {
             />
           </div>
 
-          {/* Connecting line on mobile (vertical, runs behind the numbers) */}
+          {/* Connecting line on mobile (vertical, runs behind the node column at left-[14px]) */}
           <div
             aria-hidden="true"
-            className="md:hidden absolute top-[10px] bottom-[10px] left-[13px] w-[1px] bg-black/15 z-0"
+            className="md:hidden absolute top-[14px] bottom-[24px] left-[13px] w-[2px] bg-black/10 z-0"
           >
             <div
               className="w-full bg-[#C84826] transition-all duration-150 ease-out"
@@ -100,7 +104,7 @@ export default function ProcessSection() {
           </div>
 
           {/* 5 Steps: horizontal sequence on desktop, stacked vertically on mobile */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-6 lg:gap-8 xl:gap-10 relative z-10">
+          <div className="flex flex-col md:grid md:grid-cols-5 gap-7 sm:gap-8 md:gap-5 lg:gap-6 xl:gap-8 relative z-10">
             {STEPS.map((step, index) => {
               // Calculate if this step is active/passed based on progress
               const stepThreshold = index / (STEPS.length - 1);
@@ -110,12 +114,24 @@ export default function ProcessSection() {
                 <div
                   key={step.number}
                   id={`process-step-${step.number}`}
-                  className="flex flex-row md:flex-col items-start gap-5 md:gap-0"
+                  className="flex flex-row md:flex-col items-start gap-4 sm:gap-5 md:gap-0"
                 >
-                  {/* Two-digit number (01-05): sits cleanly on the connecting line */}
-                  <div className="shrink-0 flex items-center mb-0 md:mb-6 h-[22px]">
+                  {/* Two-digit indicator: circular badge on mobile, text on desktop line */}
+                  <div className="shrink-0 flex items-center justify-center mb-0 md:mb-4">
+                    {/* Mobile circular badge */}
+                    <div
+                      className={`md:hidden w-7 h-7 rounded-full flex items-center justify-center font-mono text-xs font-semibold tabular-nums select-none transition-all duration-300 ${
+                        isStepActive
+                          ? 'bg-[#C84826] text-white shadow-sm ring-4 ring-[#C84826]/15'
+                          : 'bg-[#FAF9F6] text-neutral-400 border border-black/15'
+                      }`}
+                    >
+                      {step.number}
+                    </div>
+
+                    {/* Desktop numeral */}
                     <span
-                      className={`inline-block font-body text-xs sm:text-sm font-medium tabular-nums select-none bg-[#FAF9F6] pr-3 md:px-2 md:-ml-2 transition-colors duration-300 ${
+                      className={`hidden md:inline-block font-body text-xs sm:text-sm font-medium tabular-nums select-none bg-[#FAF9F6] px-2 -ml-2 transition-colors duration-300 ${
                         isStepActive ? 'text-[#C84826]' : 'text-neutral-400'
                       }`}
                     >
@@ -123,20 +139,20 @@ export default function ProcessSection() {
                     </span>
                   </div>
 
-                  {/* Step Title & Description: Plain text, no card containers, no icons */}
-                  <div className="flex-1">
+                  {/* Step Title & Description */}
+                  <div className="flex-1 pt-0.5 md:pt-0 text-left">
                     <h3
-                      className={`font-headline leading-tight tracking-[-0.02em] mb-2 sm:mb-3 transition-colors duration-200 ${
+                      className={`font-headline leading-tight tracking-[-0.02em] mb-1.5 sm:mb-2 transition-colors duration-200 ${
                         step.isPayoff
-                          ? 'text-xl sm:text-2xl md:text-[25px] font-medium text-[#1A1A1A]'
-                          : 'text-xl sm:text-2xl md:text-[23px] font-normal sm:font-medium text-[#1A1A1A]'
+                          ? 'text-lg sm:text-2xl md:text-[25px] font-medium text-[#1A1A1A]'
+                          : 'text-lg sm:text-2xl md:text-[23px] font-medium text-[#1A1A1A]'
                       }`}
                     >
                       {step.title}
                     </h3>
                     <p
-                      className={`font-body text-sm leading-relaxed ${
-                        step.isPayoff ? 'text-neutral-600' : 'text-neutral-500'
+                      className={`font-body text-xs sm:text-sm leading-relaxed ${
+                        step.isPayoff ? 'text-neutral-600 font-medium sm:font-normal' : 'text-neutral-500'
                       }`}
                     >
                       {step.description}
@@ -151,3 +167,4 @@ export default function ProcessSection() {
     </section>
   );
 }
+

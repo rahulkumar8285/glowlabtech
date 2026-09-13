@@ -16,13 +16,13 @@ const titleLines = title.includes('/')
 
 <header
   id={id}
-  class="w-full bg-[#FAF9F6] text-[#1A1A1A] pt-32 sm:pt-36 md:pt-40 pb-16 sm:pb-20 md:pb-24 relative border-b border-black/10"
+  class="w-full bg-[#FAF9F6] text-[#1A1A1A] pt-28 sm:pt-32 md:pt-36 pb-10 sm:pb-12 md:pb-14 relative border-b border-black/10"
 >
   <div class="w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-20 text-left">
     <!-- Eyebrow: Inter, uppercase, small size (~13px), letter-spacing 0.1em, muted gray #6B6862 — plain text, no badge/pill/dot -->
     <p
       id={`${id}-eyebrow`}
-      class="font-body font-medium text-[13px] uppercase tracking-[0.1em] text-[#6B6862] mb-4 sm:mb-6 select-none"
+      class="font-body font-medium text-[13px] uppercase tracking-[0.1em] text-[#6B6862] mb-3 sm:mb-4 select-none"
     >
       {eyebrow}
     </p>
@@ -41,7 +41,7 @@ const titleLines = title.includes('/')
     {subtitle && (
       <p
         id={`${id}-subtitle`}
-        class="font-body font-normal text-base sm:text-lg md:text-xl text-[#6B6862] leading-relaxed max-w-2xl mt-5 sm:mt-6"
+        class="font-body font-normal text-base sm:text-lg md:text-xl text-[#6B6862] leading-relaxed max-w-2xl mt-4 sm:mt-5"
       >
         {subtitle}
       </p>

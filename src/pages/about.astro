@@ -20,12 +20,12 @@ import PageHeader from '../components/PageHeader.astro';
     <!-- SECTION 1 — MANIFESTO / WHO WE ARE -->
     <section
       id="about-manifesto-section"
-      class="w-full py-24 sm:py-28 md:py-32 border-b border-black/10"
+      class="w-full py-14 sm:py-18 md:py-20 border-b border-black/10"
     >
       <div class="w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-20">
-        <div class="grid grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="grid grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-center">
           <!-- Left column (~60% width): 3-4 short editorial paragraphs in plain, confident first-person -->
-          <div class="col-span-12 lg:col-span-7 space-y-6 sm:space-y-7 text-left">
+          <div class="col-span-12 lg:col-span-7 space-y-4 sm:space-y-5 text-left">
             <p class="font-body text-lg sm:text-xl md:text-[22px] text-[#1A1A1A] leading-[1.6] font-normal">
               Most agencies talk about AI. We actually build it — for businesses that don't have time to figure out which tools are worth using and which are just noise.
             </p>
@@ -40,14 +40,13 @@ import PageHeader from '../components/PageHeader.astro';
             </p>
           </div>
 
-          <!-- Right column (~35% width): a single clean image — founder portrait, B&W treatment, no frame/shadow, subtle grain texture -->
+          <!-- Right column (~40% width): GlowLab Tech Studio & Workstation -->
           <div class="col-span-12 lg:col-span-5 flex justify-center lg:justify-end">
-            <div class="relative w-full max-w-md aspect-[4/5] overflow-hidden bg-neutral-200">
+            <div class="relative w-full max-w-sm sm:max-w-md aspect-[9/15] sm:aspect-[9/14] lg:aspect-[9/14] overflow-hidden bg-neutral-200 rounded-2xl border border-black/10 shadow-xl group">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1000&q=80"
-                alt="Studio founder and lead systems engineer"
-                referrerpolicy="no-referrer"
-                class="w-full h-full object-cover grayscale contrast-[1.06] hover:grayscale-0 transition-all duration-700 ease-out"
+                src="/about-office.jpg"
+                alt="GlowLab Tech Headquarters & Studio Workstation"
+                class="w-full h-full object-cover object-center contrast-[1.02] transition-transform duration-700 ease-out group-hover:scale-105"
               />
               <div
                 aria-hidden="true"
@@ -63,18 +62,18 @@ import PageHeader from '../components/PageHeader.astro';
     <!-- SECTION 2 — WHAT MAKES US DIFFERENT -->
     <section
       id="about-different-section"
-      class="w-full py-24 sm:py-28 md:py-32 border-b border-black/10"
+      class="w-full py-14 sm:py-18 md:py-20 border-b border-black/10"
     >
       <div class="w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-20 text-left">
         <h2
           id="about-different-heading"
-          class="font-headline font-normal sm:font-medium text-3xl sm:text-4xl md:text-[44px] leading-tight tracking-[-0.02em] text-[#1A1A1A] mb-14 sm:mb-20"
+          class="font-headline font-normal sm:font-medium text-3xl sm:text-4xl md:text-[44px] leading-tight tracking-[-0.02em] text-[#1A1A1A] mb-8 sm:mb-12"
         >
           How we're different
         </h2>
 
         <div class="divide-y divide-black/10 border-t border-black/10">
-          <div class="py-10 sm:py-14 grid grid-cols-12 gap-6 sm:gap-10 items-start">
+          <div class="py-6 sm:py-8 grid grid-cols-12 gap-6 sm:gap-10 items-start">
             <div class="col-span-12 sm:col-span-2 lg:col-span-1">
               <span class="font-body text-sm font-medium tabular-nums text-neutral-400">01</span>
             </div>
@@ -90,7 +89,7 @@ import PageHeader from '../components/PageHeader.astro';
             </div>
           </div>
 
-          <div class="py-10 sm:py-14 grid grid-cols-12 gap-6 sm:gap-10 items-start">
+          <div class="py-6 sm:py-8 grid grid-cols-12 gap-6 sm:gap-10 items-start">
             <div class="col-span-12 sm:col-span-2 lg:col-span-1">
               <span class="font-body text-sm font-medium tabular-nums text-neutral-400">02</span>
             </div>
@@ -106,7 +105,7 @@ import PageHeader from '../components/PageHeader.astro';
             </div>
           </div>
 
-          <div class="py-10 sm:py-14 grid grid-cols-12 gap-6 sm:gap-10 items-start">
+          <div class="py-6 sm:py-8 grid grid-cols-12 gap-6 sm:gap-10 items-start">
             <div class="col-span-12 sm:col-span-2 lg:col-span-1">
               <span class="font-body text-sm font-medium tabular-nums text-neutral-400">03</span>
             </div>
@@ -128,12 +127,12 @@ import PageHeader from '../components/PageHeader.astro';
     <!-- SECTION 3 — SERVICES SNAPSHOT -->
     <section
       id="about-services-snapshot"
-      class="w-full py-20 sm:py-24 border-b border-black/10"
+      class="w-full py-12 sm:py-14 md:py-16 border-b border-black/10"
     >
       <div class="w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-20 text-left">
         <p
           id="services-snapshot-label"
-          class="font-body font-medium text-[13px] uppercase tracking-[0.1em] text-neutral-500 mb-6 select-none"
+          class="font-body font-medium text-[13px] uppercase tracking-[0.1em] text-neutral-500 mb-4 select-none"
         >
           What we build
         </p>
@@ -154,7 +153,7 @@ import PageHeader from '../components/PageHeader.astro';
           <span>Software Development</span>
         </div>
 
-        <div class="mt-8">
+        <div class="mt-6">
           <a
             href="/services"
             id="services-snapshot-link"
@@ -172,12 +171,12 @@ import PageHeader from '../components/PageHeader.astro';
     <!-- SECTION 4 — FOUNDER / TEAM -->
     <section
       id="about-team-section"
-      class="w-full py-24 sm:py-28 md:py-32 border-b border-black/10"
+      class="w-full py-14 sm:py-18 md:py-20 border-b border-black/10"
     >
       <div class="w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-20 text-left">
         <h2
           id="about-team-heading"
-          class="font-headline font-normal sm:font-medium text-3xl sm:text-4xl md:text-[44px] leading-tight tracking-[-0.02em] text-[#1A1A1A] mb-14 sm:mb-20"
+          class="font-headline font-normal sm:font-medium text-3xl sm:text-4xl md:text-[44px] leading-tight tracking-[-0.02em] text-[#1A1A1A] mb-8 sm:mb-12"
         >
           The team
         </h2>
@@ -201,7 +200,7 @@ import PageHeader from '../components/PageHeader.astro';
             <h3 class="font-headline font-medium text-2xl sm:text-3xl lg:text-[32px] text-[#1A1A1A] leading-tight">
               Rahul Kumar
             </h3>
-            <p class="font-body text-sm sm:text-base text-neutral-500 mt-1 mb-6">
+            <p class="font-body text-sm sm:text-base text-neutral-500 mt-1 mb-4">
               Founder & Lead Systems Architect
             </p>
             <div class="space-y-4 max-w-2xl font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed">
@@ -220,34 +219,34 @@ import PageHeader from '../components/PageHeader.astro';
     <!-- SECTION 5 — VALUES -->
     <section
       id="about-values-section"
-      class="w-full py-24 sm:py-28 md:py-32 border-b border-black/10"
+      class="w-full py-14 sm:py-18 md:py-20 border-b border-black/10"
     >
       <div class="w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-20 text-left">
         <h2
           id="about-values-heading"
-          class="font-headline font-normal sm:font-medium text-3xl sm:text-4xl md:text-[44px] leading-tight tracking-[-0.02em] text-[#1A1A1A] mb-16 sm:mb-24"
+          class="font-headline font-normal sm:font-medium text-3xl sm:text-4xl md:text-[44px] leading-tight tracking-[-0.02em] text-[#1A1A1A] mb-8 sm:mb-12"
         >
           What we believe
         </h2>
 
-        <div class="space-y-16 sm:space-y-20 md:space-y-24">
+        <div class="space-y-8 sm:space-y-10 md:space-y-12">
           <div class="grid grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-start">
             <div id="value-statement-01" class="col-span-12 lg:col-span-7 max-w-2xl">
-              <span class="font-body text-xs sm:text-sm font-medium tabular-nums text-neutral-400 block mb-3">01</span>
+              <span class="font-body text-xs sm:text-sm font-medium tabular-nums text-neutral-400 block mb-2">01</span>
               <h3 class="font-headline font-medium text-2xl sm:text-3xl leading-tight text-[#1A1A1A]">
                 Clarity over complexity
               </h3>
-              <p class="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed mt-4 max-w-xl">
+              <p class="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed mt-2.5 max-w-xl">
                 If we can't explain what a system does in one sentence, it's not ready.
               </p>
             </div>
 
-            <div id="value-statement-02" class="col-span-12 lg:col-span-5 lg:pt-12 max-w-lg lg:ml-auto">
-              <span class="font-body text-xs sm:text-sm font-medium tabular-nums text-neutral-400 block mb-3">02</span>
+            <div id="value-statement-02" class="col-span-12 lg:col-span-5 lg:pt-6 max-w-lg lg:ml-auto">
+              <span class="font-body text-xs sm:text-sm font-medium tabular-nums text-neutral-400 block mb-2">02</span>
               <h3 class="font-headline font-medium text-2xl sm:text-3xl leading-tight text-[#1A1A1A]">
                 Outcomes over outputs
               </h3>
-              <p class="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed mt-4">
+              <p class="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed mt-2.5">
                 Deliverables don't matter. Results do.
               </p>
             </div>
@@ -255,21 +254,21 @@ import PageHeader from '../components/PageHeader.astro';
 
           <div class="grid grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-start">
             <div id="value-statement-03" class="col-span-12 lg:col-span-5 max-w-lg">
-              <span class="font-body text-xs sm:text-sm font-medium tabular-nums text-neutral-400 block mb-3">03</span>
+              <span class="font-body text-xs sm:text-sm font-medium tabular-nums text-neutral-400 block mb-2">03</span>
               <h3 class="font-headline font-medium text-2xl sm:text-3xl leading-tight text-[#1A1A1A]">
                 Speed with intention
               </h3>
-              <p class="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed mt-4">
+              <p class="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed mt-2.5">
                 Moving fast is only useful if you're moving in the right direction.
               </p>
             </div>
 
-            <div id="value-statement-04" class="col-span-12 lg:col-span-7 lg:pt-10 max-w-2xl lg:pl-4">
-              <span class="font-body text-xs sm:text-sm font-medium tabular-nums text-neutral-400 block mb-3">04</span>
+            <div id="value-statement-04" class="col-span-12 lg:col-span-7 lg:pt-5 max-w-2xl lg:pl-4">
+              <span class="font-body text-xs sm:text-sm font-medium tabular-nums text-neutral-400 block mb-2">04</span>
               <h3 class="font-headline font-medium text-2xl sm:text-3xl leading-tight text-[#1A1A1A]">
                 Honest over impressive
               </h3>
-              <p class="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed mt-4 max-w-xl">
+              <p class="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed mt-2.5 max-w-xl">
                 We'd rather tell you something won't work than build it anyway and charge you for it.
               </p>
             </div>
@@ -281,7 +280,7 @@ import PageHeader from '../components/PageHeader.astro';
     <!-- SECTION 6 — FINAL CTA -->
     <section
       id="final-cta-section"
-      class="relative w-full bg-[#111110] text-[#FAF9F6] py-28 sm:py-32 md:py-36 lg:py-40 overflow-hidden"
+      class="relative w-full bg-[#111110] text-[#FAF9F6] py-14 sm:py-18 md:py-20 lg:py-24 overflow-hidden"
     >
       <div
         aria-hidden="true"
@@ -299,7 +298,7 @@ import PageHeader from '../components/PageHeader.astro';
           </h2>
           <p
             id="final-cta-subheadline"
-            class="font-body font-normal text-base sm:text-lg md:text-[20px] text-neutral-400 leading-relaxed max-w-2xl mt-5 sm:mt-6 mb-8 sm:mb-10"
+            class="font-body font-normal text-base sm:text-lg md:text-[20px] text-neutral-400 leading-relaxed max-w-2xl mt-4 sm:mt-5 mb-6 sm:mb-8"
           >
             Tell us what you're trying to build — we'll tell you exactly how AI fits in.
           </p>
@@ -307,7 +306,7 @@ import PageHeader from '../components/PageHeader.astro';
             <button
               type="button"
               id="final-cta-button"
-              class="inline-flex items-center justify-center font-body font-medium text-[15px] sm:text-base text-white bg-[#C84826] hover:bg-[#B33E1D] px-8 sm:px-9 py-4 rounded-full transition-colors duration-200 cursor-pointer select-none"
+              class="inline-flex items-center justify-center font-body font-medium text-[15px] sm:text-base text-white bg-[#C84826] hover:bg-[#B33E1D] px-7 sm:px-9 py-3.5 sm:py-4 rounded-full transition-colors duration-200 cursor-pointer select-none"
             >
               Book a strategy call
             </button>

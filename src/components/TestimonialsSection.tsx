@@ -1,59 +1,21 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, type TouchEvent } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-
-export interface Testimonial {
-  id: string;
-  quote: string;
-  clientName: string;
-  role: string;
-  company: string;
-}
-
-// DEMO CONTENT — replace before launch
-const DEMO_TESTIMONIALS: Testimonial[] = [
-  {
-    id: 'testimonial-1',
-    quote:
-      'We went from one video ad running for weeks to ten variations tested in three days. The winner alone paid for the whole engagement.',
-    clientName: 'Aarav Mehta',
-    role: 'Founder',
-    company: '[Placeholder DTC Brand]',
-  },
-  {
-    id: 'testimonial-2',
-    quote:
-      'The automation they built handles lead follow-up we used to do manually every single day. It just runs now.',
-    clientName: 'Sara Kapoor',
-    role: 'Head of Growth',
-    company: '[Placeholder SaaS Co.]',
-  },
-  {
-    id: 'testimonial-3',
-    quote:
-      'Cold outreach used to be our weakest channel. Now it books more meetings than our paid ads do.',
-    clientName: 'Daniel Osei',
-    role: 'Co-Founder',
-    company: '[Placeholder B2B Startup]',
-  },
-];
+import { TESTIMONIALS_DATA, TestimonialItem } from '../data/testimonialsData';
 
 export default function TestimonialsSection({
-  testimonials = DEMO_TESTIMONIALS,
+  onNavigate,
 }: {
-  testimonials?: Testimonial[];
+  onNavigate?: (path: string) => void;
 }) {
+  const testimonials = TESTIMONIALS_DATA;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFading, setIsFading] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const timerRef = useRef<number | null>(null);
 
-  const hasTestimonials = testimonials.length > 0;
-
-  // Auto-advance every 7 seconds when testimonials are present
+  // Auto-advance every 7 seconds
   useEffect(() => {
-    if (!hasTestimonials || testimonials.length <= 1 || isPaused) {
-      return;
-    }
+    if (testimonials.length <= 1 || isPaused) return;
 
     timerRef.current = window.setInterval(() => {
       handleNext();
@@ -64,7 +26,7 @@ export default function TestimonialsSection({
         clearInterval(timerRef.current);
       }
     };
-  }, [currentIndex, isPaused, hasTestimonials, testimonials.length]);
+  }, [currentIndex, isPaused, testimonials.length]);
 
   const changeSlide = (nextIndex: number) => {
     if (isFading) return;
@@ -72,7 +34,7 @@ export default function TestimonialsSection({
     setTimeout(() => {
       setCurrentIndex(nextIndex);
       setIsFading(false);
-    }, 250); // Clean crossfade timing
+    }, 250);
   };
 
   const handlePrev = () => {
@@ -85,121 +47,119 @@ export default function TestimonialsSection({
     changeSlide(next);
   };
 
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+
+  // Touch gesture support for mobile swiping
+  const handleTouchStart = (e: TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e: TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return;
+    const diff = touchStartX.current - touchEndX.current;
+    const threshold = 45; // 45px swipe threshold
+    if (diff > threshold) {
+      handleNext();
+    } else if (diff < -threshold) {
+      handlePrev();
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
+  const current = testimonials[currentIndex];
+
   return (
     <section
       id="testimonials-section"
-      className="w-full bg-[#FAF9F6] text-[#1A1A1A] py-28 sm:py-32 md:py-36 lg:py-40"
+      className="w-full bg-[#FAF9F6] text-[#1A1A1A] py-14 sm:py-18 md:py-20 lg:py-24 scroll-mt-20 border-b border-black/10"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
-      <div className="w-full max-w-5xl mx-auto px-6 sm:px-12 md:px-16">
-        {!hasTestimonials ? (
-          /* HONEST PLACEHOLDER STATE:
-             No fabricated names or quotes. Rendered in the exact large printed pull-quote typographic style. */
-          <div
-            id="testimonials-placeholder"
-            className="flex flex-col items-start max-w-4xl py-6"
-          >
-            <div className="flex items-start">
-              <span
-                aria-hidden="true"
-                className="font-serif-accent text-3xl sm:text-4xl text-[#C84826] mr-2 select-none leading-none -mt-1"
-              >
-                “
-              </span>
-              <p
-                id="testimonials-placeholder-quote"
-                className="font-serif-accent italic text-3xl sm:text-4xl md:text-5xl lg:text-[54px] leading-[1.28] tracking-[-0.01em] text-[#1A1A1A]"
-              >
-                Client testimonials coming soon
-              </p>
-            </div>
+      <div className="w-full max-w-5xl mx-auto px-5 sm:px-12 md:px-16 text-left">
+        {/* CAROUSEL */}
+        <div id="testimonials-carousel" className="relative w-full">
+          <div className="flex items-start justify-between gap-0 md:gap-10">
+            {/* Desktop Prev chevron */}
+            <button
+              type="button"
+              id="testimonial-prev-button"
+              onClick={handlePrev}
+              aria-label="Previous testimonial"
+              className="hidden md:inline-flex shrink-0 mt-3 p-2 text-[#1A1A1A]/60 hover:text-[#C84826] transition-colors cursor-pointer"
+            >
+              <ChevronLeft className="w-6 h-6 stroke-[1.5]" />
+            </button>
 
-            {/* Honest contextual attribution line */}
-            <div className="mt-8 sm:mt-10 pl-6 sm:pl-8">
-              <p className="font-body text-sm sm:text-[15px] text-neutral-500 leading-relaxed">
-                Verified client outcomes and case metrics are currently being documented
-              </p>
-            </div>
-          </div>
-        ) : (
-          /* ACTIVE TESTIMONIALS CAROUSEL:
-             One large testimonial at a time, crossfade transition, minimal chevrons, accent dash row. */
-          <div id="testimonials-carousel" className="relative w-full">
-            <div className="flex items-start justify-between gap-6 sm:gap-10">
-              {/* Previous plain chevron navigation (no circular button background) */}
-              {testimonials.length > 1 && (
-                <button
-                  type="button"
-                  id="testimonial-prev-button"
-                  onClick={handlePrev}
-                  aria-label="Previous testimonial"
-                  className="shrink-0 mt-3 p-2 text-[#1A1A1A]/60 hover:text-[#C84826] transition-colors cursor-pointer"
+            {/* Main quote block with crossfade - takes full width on mobile */}
+            <div
+              className={`w-full flex-1 transition-opacity duration-300 ease-in-out ${
+                isFading ? 'opacity-0' : 'opacity-100'
+              }`}
+            >
+              {/* Pull-quote text */}
+              <div className="flex items-start">
+                <span
+                  aria-hidden="true"
+                  className="font-serif-accent text-3xl sm:text-4xl text-[#C84826] mr-2 select-none leading-none -mt-1"
                 >
-                  <ChevronLeft className="w-6 h-6 stroke-[1.5]" />
-                </button>
-              )}
+                  “
+                </span>
+                <blockquote
+                  id="testimonial-active-quote"
+                  className="font-serif-accent italic text-xl sm:text-3xl md:text-5xl lg:text-[46px] leading-[1.3] sm:leading-[1.28] tracking-[-0.01em] text-[#1A1A1A]"
+                >
+                  {current.quote}
+                </blockquote>
+              </div>
 
-              {/* Main quote block with crossfade transition */}
-              <div
-                className={`flex-1 transition-opacity duration-300 ease-in-out ${
-                  isFading ? 'opacity-0' : 'opacity-100'
-                }`}
-              >
-                {/* Pull-quote text */}
-                <div className="flex items-start">
-                  <span
-                    aria-hidden="true"
-                    className="font-serif-accent text-3xl sm:text-4xl text-[#C84826] mr-2 select-none leading-none -mt-1"
-                  >
-                    “
-                  </span>
-                  <blockquote
-                    id="testimonial-active-quote"
-                    className="font-serif-accent italic text-3xl sm:text-4xl md:text-5xl lg:text-[52px] leading-[1.28] tracking-[-0.01em] text-[#1A1A1A]"
-                  >
-                    {testimonials[currentIndex].quote}
-                  </blockquote>
-                </div>
-
-                {/* Attribution row: client name on top, role and company below separated by "|" */}
-                <div className="mt-8 sm:mt-10 pl-6 sm:pl-8">
+              {/* Attribution row */}
+              <div className="mt-5 sm:mt-7 pl-5 sm:pl-8 flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-2">
+                <div>
                   <p
                     id="testimonial-client-name"
-                    className="font-headline font-medium text-lg sm:text-xl text-[#1A1A1A] leading-snug"
+                    className="font-headline font-medium text-base sm:text-xl text-[#1A1A1A] leading-snug"
                   >
-                    {testimonials[currentIndex].clientName}
+                    {current.clientName}
                   </p>
                   <p
                     id="testimonial-client-meta"
-                    className="font-body text-sm sm:text-[15px] text-neutral-500 mt-1"
+                    className="font-body text-xs sm:text-sm text-neutral-500 mt-0.5"
                   >
-                    {testimonials[currentIndex].role}
+                    {current.role}
                     <span className="mx-2 text-neutral-300">|</span>
-                    {testimonials[currentIndex].company}
+                    {current.company}
                   </p>
                 </div>
               </div>
-
-              {/* Next plain chevron navigation (no circular button background) */}
-              {testimonials.length > 1 && (
-                <button
-                  type="button"
-                  id="testimonial-next-button"
-                  onClick={handleNext}
-                  aria-label="Next testimonial"
-                  className="shrink-0 mt-3 p-2 text-[#1A1A1A]/60 hover:text-[#C84826] transition-colors cursor-pointer"
-                >
-                  <ChevronRight className="w-6 h-6 stroke-[1.5]" />
-                </button>
-              )}
             </div>
 
-            {/* Accent-colored progress dash row (replaces background color shifting) */}
-            {testimonials.length > 1 && (
+            {/* Desktop Next chevron */}
+            <button
+              type="button"
+              id="testimonial-next-button"
+              onClick={handleNext}
+              aria-label="Next testimonial"
+              className="hidden md:inline-flex shrink-0 mt-3 p-2 text-[#1A1A1A]/60 hover:text-[#C84826] transition-colors cursor-pointer"
+            >
+              <ChevronRight className="w-6 h-6 stroke-[1.5]" />
+            </button>
+          </div>
+
+          {/* Progress dashes and controls bar */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-6 sm:mt-10 pl-5 sm:pl-8 border-t border-black/[0.06] pt-5 sm:pt-6">
+            <div className="flex items-center justify-between sm:justify-start gap-4">
               <div
                 id="testimonial-progress-dashes"
-                className="flex items-center gap-2.5 mt-12 pl-6 sm:pl-8"
+                className="flex items-center gap-2"
               >
                 {testimonials.map((t, idx) => (
                   <button
@@ -207,17 +167,52 @@ export default function TestimonialsSection({
                     type="button"
                     onClick={() => changeSlide(idx)}
                     aria-label={`Go to testimonial ${idx + 1}`}
-                    className={`h-[2px] transition-all duration-300 cursor-pointer ${
+                    className={`h-[3px] sm:h-[2px] transition-all duration-300 cursor-pointer rounded-full ${
                       idx === currentIndex
-                        ? 'w-10 bg-[#C84826]'
-                        : 'w-6 bg-black/15 hover:bg-black/30'
+                        ? 'w-8 sm:w-10 bg-[#C84826]'
+                        : 'w-5 sm:w-6 bg-black/15 hover:bg-black/30'
                     }`}
                   />
                 ))}
               </div>
-            )}
+
+              {/* Mobile prev/next thumb buttons */}
+              <div className="md:hidden flex items-center gap-1">
+                <button
+                  type="button"
+                  onClick={handlePrev}
+                  aria-label="Previous testimonial"
+                  className="w-8 h-8 flex items-center justify-center rounded-full bg-black/[0.04] text-[#1A1A1A] active:bg-[#C84826] active:text-white transition-colors"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <button
+                  type="button"
+                  onClick={handleNext}
+                  aria-label="Next testimonial"
+                  className="w-8 h-8 flex items-center justify-center rounded-full bg-black/[0.04] text-[#1A1A1A] active:bg-[#C84826] active:text-white transition-colors"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+
+            <a
+              href="/testimonials"
+              onClick={(e) => {
+                if (onNavigate) {
+                  e.preventDefault();
+                  onNavigate('/testimonials');
+                }
+              }}
+              className="group relative inline-flex items-center font-body text-xs sm:text-sm font-medium text-[#1A1A1A] hover:text-[#C84826] transition-colors cursor-pointer"
+            >
+              <span className="relative py-1">
+                View all client outcomes & testimonials →
+              </span>
+            </a>
           </div>
-        )}
+        </div>
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 export interface PageHeaderProps {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   subtitle?: string;
   id?: string;
@@ -19,21 +19,23 @@ export default function PageHeader({
   return (
     <header
       id={id}
-      className="w-full bg-[#FAF9F6] text-[#1A1A1A] pt-32 sm:pt-36 md:pt-40 pb-16 sm:pb-20 md:pb-24 relative border-b border-black/10"
+      className="w-full bg-[#FAF9F6] text-[#1A1A1A] pt-24 sm:pt-32 md:pt-36 pb-8 sm:pb-12 md:pb-14 relative border-b border-black/10"
     >
-      <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-20 text-left">
-        {/* Eyebrow: Inter, uppercase, small size (~13px), letter-spacing 0.1em, muted gray #6B6862 — plain text, no badge/pill/dot */}
-        <p
-          id={`${id}-eyebrow`}
-          className="font-body font-medium text-[13px] uppercase tracking-[0.1em] text-[#6B6862] mb-4 sm:mb-6 select-none"
-        >
-          {eyebrow}
-        </p>
+      <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20 text-left">
+        {/* Eyebrow (optional): Inter, uppercase, small size */}
+        {eyebrow && eyebrow.trim() !== '' && (
+          <p
+            id={`${id}-eyebrow`}
+            className="font-body font-medium text-xs sm:text-[13px] uppercase tracking-[0.1em] text-[#6B6862] mb-2 sm:mb-4 select-none"
+          >
+            {eyebrow}
+          </p>
+        )}
 
-        {/* Title: Bricolage Grotesque, weight 400-500, large display size (~56-80px desktop / ~32-40px mobile), tight line-height 1.05 */}
+        {/* Title: Bricolage Grotesque, fluid sizing on mobile to prevent clipping */}
         <h1
           id={`${id}-title`}
-          className="font-headline font-normal sm:font-medium text-[34px] sm:text-[54px] md:text-[68px] lg:text-[76px] leading-[1.05] tracking-[-0.03em] text-[#1A1A1A] max-w-5xl"
+          className="font-headline font-normal sm:font-medium text-[28px] min-[380px]:text-[34px] sm:text-[54px] md:text-[68px] lg:text-[76px] leading-[1.1] sm:leading-[1.05] tracking-[-0.03em] text-[#1A1A1A] max-w-5xl"
         >
           {titleLines.map((line, index) => (
             <span key={index} className="block">
@@ -42,11 +44,11 @@ export default function PageHeader({
           ))}
         </h1>
 
-        {/* Subtitle (if passed): Inter, weight 400, muted gray, clearly smaller than title */}
+        {/* Subtitle (if passed): Inter, weight 400, muted gray */}
         {subtitle && (
           <p
             id={`${id}-subtitle`}
-            className="font-body font-normal text-base sm:text-lg md:text-xl text-[#6B6862] leading-relaxed max-w-2xl mt-5 sm:mt-6"
+            className="font-body font-normal text-xs sm:text-lg md:text-xl text-[#6B6862] leading-relaxed max-w-2xl mt-3 sm:mt-5"
           >
             {subtitle}
           </p>

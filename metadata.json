@@ -1,6 +1,6 @@
 {
-  "name": "AI Automation Studio",
-  "description": "AI automation, lead generation, and video systems studio website featuring full inner pages, manifesto, workflow, and case studies.",
+  "name": "GlowLab Tech",
+  "description": "GlowLab Tech — Software development, digital products, and AI automation agency website featuring full inner pages, manifesto, workflow, and case studies.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

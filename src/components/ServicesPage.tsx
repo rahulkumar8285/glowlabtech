@@ -125,7 +125,7 @@ export default function ServicesPage() {
       {/* DETAILED SERVICES BREAKDOWN */}
       <section
         id="services-breakdown-section"
-        className="w-full py-20 sm:py-24 md:py-28 border-b border-black/10"
+        className="w-full py-14 sm:py-18 md:py-20 border-b border-black/10"
       >
         <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-20 text-left">
           <div className="divide-y divide-black/10">
@@ -133,7 +133,7 @@ export default function ServicesPage() {
               <div
                 key={service.number}
                 id={`service-item-${service.number}`}
-                className="py-14 sm:py-18 lg:py-22 grid grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-start"
+                className="py-8 sm:py-10 lg:py-12 grid grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-start"
               >
                 {/* Index Number */}
                 <div className="col-span-12 sm:col-span-2 lg:col-span-1">
@@ -147,23 +147,23 @@ export default function ServicesPage() {
                   <h3 className="font-headline font-medium text-2xl sm:text-3xl lg:text-[32px] leading-tight text-[#1A1A1A]">
                     {service.name}
                   </h3>
-                  <p className="font-body text-base sm:text-lg text-neutral-500 mt-4 leading-relaxed">
+                  <p className="font-body text-base sm:text-lg text-neutral-500 mt-2.5 sm:mt-3 leading-relaxed">
                     {service.summary}
                   </p>
                 </div>
 
                 {/* Detailed Description, Deliverables & Measurable Outcome */}
-                <div className="col-span-12 lg:col-span-6 space-y-6">
+                <div className="col-span-12 lg:col-span-6 space-y-4">
                   <p className="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed">
                     {service.description}
                   </p>
 
                   {/* Scope / Deliverables list — clean plain text rows, no icon cards, no bullet dots */}
                   <div className="pt-2 border-t border-black/[0.06]">
-                    <span className="font-body text-xs uppercase tracking-wider text-neutral-400 block mb-3 font-medium">
+                    <span className="font-body text-xs uppercase tracking-wider text-neutral-400 block mb-2 font-medium">
                       Core Architecture
                     </span>
-                    <ul className="space-y-2 font-body text-sm sm:text-[15px] text-[#1A1A1A]">
+                    <ul className="space-y-1.5 font-body text-sm sm:text-[15px] text-[#1A1A1A]">
                       {service.deliverables.map((item, idx) => (
                         <li key={idx} className="flex items-start gap-3">
                           <span className="text-neutral-400 text-xs mt-0.5 select-none">—</span>
@@ -174,7 +174,7 @@ export default function ServicesPage() {
                   </div>
 
                   {/* Metric Outcome statement */}
-                  <div className="pt-3 border-t border-black/[0.06]">
+                  <div className="pt-2 border-t border-black/[0.06]">
                     <p className="font-body text-xs sm:text-sm text-[#C84826] font-medium leading-relaxed">
                       {service.outcome}
                     </p>
@@ -189,15 +189,15 @@ export default function ServicesPage() {
       {/* HOW WE ENGAGE / ENGAGEMENT MODELS */}
       <section
         id="engagement-models-section"
-        className="w-full py-24 sm:py-28 md:py-32 border-b border-black/10"
+        className="w-full py-14 sm:py-18 md:py-20 border-b border-black/10"
       >
         <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-20 text-left">
-          <p className="font-body text-[13px] uppercase tracking-[0.1em] text-neutral-500 mb-4 select-none">
+          <p className="font-body text-[13px] uppercase tracking-[0.1em] text-neutral-500 mb-3 select-none">
             Engagement models
           </p>
           <h2
             id="engagement-models-heading"
-            className="font-headline font-normal sm:font-medium text-3xl sm:text-4xl md:text-[44px] leading-tight tracking-[-0.02em] text-[#1A1A1A] mb-16"
+            className="font-headline font-normal sm:font-medium text-3xl sm:text-4xl md:text-[44px] leading-tight tracking-[-0.02em] text-[#1A1A1A] mb-8 sm:mb-10"
           >
             How we partner with your team
           </h2>
@@ -206,15 +206,15 @@ export default function ServicesPage() {
             {/* Model 01: Sprint Build */}
             <div
               id="model-sprint"
-              className="col-span-12 md:col-span-6 border-t border-black/10 pt-8"
+              className="col-span-12 md:col-span-6 border-t border-black/10 pt-5 sm:pt-6"
             >
-              <span className="font-body text-xs sm:text-sm font-medium tabular-nums text-neutral-400 block mb-3">
+              <span className="font-body text-xs sm:text-sm font-medium tabular-nums text-neutral-400 block mb-2">
                 01
               </span>
-              <h3 className="font-headline font-medium text-2xl sm:text-3xl text-[#1A1A1A] mb-4">
+              <h3 className="font-headline font-medium text-2xl sm:text-3xl text-[#1A1A1A] mb-3">
                 Sprint Build (Fixed Scope)
               </h3>
-              <p className="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed mb-6">
+              <p className="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed mb-4">
                 Best for businesses that need a specific system built, tested, and handed over fast. We map the requirements, engineer the pipeline, integrate your tools, train your team, and guarantee performance.
               </p>
               <div className="font-body text-sm text-neutral-500 space-y-1.5">
@@ -227,15 +227,15 @@ export default function ServicesPage() {
             {/* Model 02: Systems Retainer */}
             <div
               id="model-retainer"
-              className="col-span-12 md:col-span-6 border-t border-black/10 pt-8"
+              className="col-span-12 md:col-span-6 border-t border-black/10 pt-5 sm:pt-6"
             >
-              <span className="font-body text-xs sm:text-sm font-medium tabular-nums text-neutral-400 block mb-3">
+              <span className="font-body text-xs sm:text-sm font-medium tabular-nums text-neutral-400 block mb-2">
                 02
               </span>
-              <h3 className="font-headline font-medium text-2xl sm:text-3xl text-[#1A1A1A] mb-4">
+              <h3 className="font-headline font-medium text-2xl sm:text-3xl text-[#1A1A1A] mb-3">
                 Dedicated Systems Partner
               </h3>
-              <p className="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed mb-6">
+              <p className="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed mb-4">
                 For companies scaling rapidly that require continuous automation engineering, outbound optimization, video creative testing, and technical growth infrastructure as an embedded operational arm.
               </p>
               <div className="font-body text-sm text-neutral-500 space-y-1.5">

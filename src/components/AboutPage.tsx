@@ -1,25 +1,28 @@
-import type { MouseEvent } from 'react';
+import { useEffect } from 'react';
 import PageHeader from './PageHeader';
 import FinalCTASection from './FinalCTASection';
+import { updatePageSEO } from '../utils/seo';
 
 export default function AboutPage({
   onNavigate,
 }: {
   onNavigate?: (path: string) => void;
 }) {
-  const handleServicesClick = (e: MouseEvent) => {
-    if (onNavigate) {
-      e.preventDefault();
-      onNavigate('/services');
-    }
-  };
-
+  useEffect(() => {
+    const cleanup = updatePageSEO({
+      title: 'About GlowLab Tech — Software & AI Product Agency',
+      description:
+        'A specialized team of operators, engineers, and strategists building custom software, applied AI systems, and digital products for real businesses.',
+      canonicalUrl: 'https://glowlabtech.com/about',
+      ogType: 'website',
+    });
+    return cleanup;
+  }, []);
   return (
     <div id="about-page" className="w-full bg-[#FAF9F6] text-[#1A1A1A]">
       {/* PAGE HEADER */}
       <PageHeader
         id="about-header"
-        eyebrow="About us"
         title="We build AI systems / that actually work."
         subtitle="A small team of operators, engineers, and strategists — obsessed with making AI useful for real businesses."
       />
@@ -27,44 +30,42 @@ export default function AboutPage({
       {/* SECTION 1 — MANIFESTO / WHO WE ARE */}
       <section
         id="about-manifesto-section"
-        className="w-full py-24 sm:py-28 md:py-32 border-b border-black/10"
+        className="w-full py-10 sm:py-18 md:py-20 border-b border-black/10"
       >
-        <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-20">
-          <div className="grid grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
+          <div className="grid grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-center">
             {/* Left column (~60% width): 3-4 short editorial paragraphs in plain, confident first-person */}
-            <div className="col-span-12 lg:col-span-7 space-y-6 sm:space-y-7 text-left">
-              <p className="font-body text-lg sm:text-xl md:text-[22px] text-[#1A1A1A] leading-[1.6] font-normal">
+            <div className="col-span-12 lg:col-span-7 space-y-4 sm:space-y-5 text-left">
+              <p className="font-body text-base sm:text-xl md:text-[22px] text-[#1A1A1A] leading-[1.6] font-normal">
                 Most agencies talk about AI. We actually build it — for
                 businesses that don't have time to figure out which tools are
                 worth using and which are just noise.
               </p>
-              <p className="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed">
+              <p className="font-body text-sm sm:text-[17px] text-neutral-600 leading-relaxed">
                 We started this because we kept seeing the same problem:
                 businesses spending money on ads, outreach, and content that
                 wasn't working — not because the strategy was wrong, but because
                 the systems behind it were too slow, too manual, and too
                 expensive to iterate on.
               </p>
-              <p className="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed">
+              <p className="font-body text-sm sm:text-[17px] text-neutral-600 leading-relaxed">
                 AI fixes that. But only if someone builds it properly, for your
                 specific business — not a templated workflow copied from a
                 YouTube tutorial.
               </p>
-              <p className="font-headline font-medium text-xl sm:text-2xl text-[#1A1A1A] pt-2">
+              <p className="font-headline font-medium text-lg sm:text-2xl text-[#1A1A1A] pt-2">
                 That's what we do.
               </p>
             </div>
 
-            {/* Right column (~35% width): a single clean image — founder portrait, B&W treatment, no frame/shadow, subtle grain texture */}
+            {/* Right column (~40% width): GlowLab Tech Studio & Workstation */}
             <div className="col-span-12 lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-md aspect-[4/5] overflow-hidden bg-neutral-200">
+              <div className="relative w-full max-w-sm sm:max-w-md aspect-[9/15] sm:aspect-[9/14] lg:aspect-[9/14] overflow-hidden bg-neutral-200 rounded-2xl border border-black/10 shadow-xl group">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1000&q=80"
-                  alt="Studio founder and lead systems engineer"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale contrast-[1.06] hover:grayscale-0 transition-all duration-700 ease-out"
+                  src="/about-office.jpg"
+                  alt="GlowLab Tech Headquarters & Studio Workstation"
+                  className="w-full h-full object-cover object-center contrast-[1.02] transition-transform duration-700 ease-out group-hover:scale-105"
                 />
-                {/* Subtle grain texture overlay (2-4% opacity) */}
                 <div
                   aria-hidden="true"
                   className="pointer-events-none absolute inset-0 opacity-[0.03] mix-blend-overlay bg-repeat"
@@ -72,39 +73,36 @@ export default function AboutPage({
                     backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
                   }}
                 />
+
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 2 — WHAT MAKES US DIFFERENT */}
+      {/* SECTION 2 — HOW WE'RE DIFFERENT */}
       <section
         id="about-different-section"
-        className="w-full py-24 sm:py-28 md:py-32 border-b border-black/10"
+        className="w-full py-10 sm:py-18 md:py-20 border-b border-black/10"
       >
-        <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-20 text-left">
-          <h2
-            id="about-different-heading"
-            className="font-headline font-normal sm:font-medium text-3xl sm:text-4xl md:text-[44px] leading-tight tracking-[-0.02em] text-[#1A1A1A] mb-14 sm:mb-20"
-          >
-            How we're different
-          </h2>
+        <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20 text-left">
+          <div className="mb-6 sm:mb-12">
+            <h2
+              id="about-different-heading"
+              className="font-headline font-normal sm:font-medium text-2xl sm:text-4xl md:text-[44px] leading-tight tracking-[-0.02em] text-[#1A1A1A]"
+            >
+              How we're different
+            </h2>
+          </div>
 
           <div className="divide-y divide-black/10 border-t border-black/10">
-            {/* 01 */}
-            <div className="py-10 sm:py-14 grid grid-cols-12 gap-6 sm:gap-10 items-start">
-              <div className="col-span-12 sm:col-span-2 lg:col-span-1">
-                <span className="font-body text-sm font-medium tabular-nums text-neutral-400">
-                  01
-                </span>
-              </div>
-              <div className="col-span-12 sm:col-span-10 lg:col-span-4">
+            <div className="py-6 sm:py-8 grid grid-cols-12 gap-4 sm:gap-8 lg:gap-12 items-start">
+              <div className="col-span-12 md:col-span-5">
                 <h3 className="font-headline font-medium text-2xl sm:text-[26px] leading-tight text-[#1A1A1A]">
                   We operate, we don't just consult
                 </h3>
               </div>
-              <div className="col-span-12 sm:col-span-12 lg:col-span-7">
+              <div className="col-span-12 md:col-span-7">
                 <p className="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed">
                   We don't hand you a strategy doc and disappear. We build the
                   actual system, run it, and refine it based on real results.
@@ -112,19 +110,13 @@ export default function AboutPage({
               </div>
             </div>
 
-            {/* 02 */}
-            <div className="py-10 sm:py-14 grid grid-cols-12 gap-6 sm:gap-10 items-start">
-              <div className="col-span-12 sm:col-span-2 lg:col-span-1">
-                <span className="font-body text-sm font-medium tabular-nums text-neutral-400">
-                  02
-                </span>
-              </div>
-              <div className="col-span-12 sm:col-span-10 lg:col-span-4">
+            <div className="py-6 sm:py-8 grid grid-cols-12 gap-4 sm:gap-8 lg:gap-12 items-start">
+              <div className="col-span-12 md:col-span-5">
                 <h3 className="font-headline font-medium text-2xl sm:text-[26px] leading-tight text-[#1A1A1A]">
                   AI without the fluff
                 </h3>
               </div>
-              <div className="col-span-12 sm:col-span-12 lg:col-span-7">
+              <div className="col-span-12 md:col-span-7">
                 <p className="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed">
                   No unnecessary complexity, no tools added just because they
                   exist. Every system we build has a clear purpose: save time,
@@ -133,19 +125,13 @@ export default function AboutPage({
               </div>
             </div>
 
-            {/* 03 */}
-            <div className="py-10 sm:py-14 grid grid-cols-12 gap-6 sm:gap-10 items-start">
-              <div className="col-span-12 sm:col-span-2 lg:col-span-1">
-                <span className="font-body text-sm font-medium tabular-nums text-neutral-400">
-                  03
-                </span>
-              </div>
-              <div className="col-span-12 sm:col-span-10 lg:col-span-4">
+            <div className="py-6 sm:py-8 grid grid-cols-12 gap-4 sm:gap-8 lg:gap-12 items-start">
+              <div className="col-span-12 md:col-span-5">
                 <h3 className="font-headline font-medium text-2xl sm:text-[26px] leading-tight text-[#1A1A1A]">
                   Small team, direct access
                 </h3>
               </div>
-              <div className="col-span-12 sm:col-span-12 lg:col-span-7">
+              <div className="col-span-12 md:col-span-7">
                 <p className="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed">
                   You work with the person who actually builds your system — not
                   an account manager relaying messages to a developer you'll
@@ -157,194 +143,63 @@ export default function AboutPage({
         </div>
       </section>
 
-      {/* SECTION 3 — SERVICES SNAPSHOT */}
-      <section
-        id="about-services-snapshot"
-        className="w-full py-20 sm:py-24 border-b border-black/10"
-      >
-        <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-20 text-left">
-          {/* Small section label */}
-          <p
-            id="services-snapshot-label"
-            className="font-body font-medium text-[13px] uppercase tracking-[0.1em] text-neutral-500 mb-6 select-none"
-          >
-            What we build
-          </p>
-
-          {/* Compact horizontal list separated by a thin "|" divider — no icons, no cards, no grid */}
-          <div className="font-body text-base sm:text-lg md:text-[19px] text-[#1A1A1A] leading-relaxed flex flex-wrap items-center gap-y-2">
-            <span>AI Automation</span>
-            <span className="mx-3 sm:mx-4 text-neutral-300 select-none">|</span>
-            <span>AI Video Creation</span>
-            <span className="mx-3 sm:mx-4 text-neutral-300 select-none">|</span>
-            <span>Lead Generation</span>
-            <span className="mx-3 sm:mx-4 text-neutral-300 select-none">|</span>
-            <span>Cold Email Outreach</span>
-            <span className="mx-3 sm:mx-4 text-neutral-300 select-none">|</span>
-            <span>Website Design & Management</span>
-            <span className="mx-3 sm:mx-4 text-neutral-300 select-none">|</span>
-            <span>Content Strategy</span>
-            <span className="mx-3 sm:mx-4 text-neutral-300 select-none">|</span>
-            <span>Software Development</span>
-          </div>
-
-          {/* Plain text link below */}
-          <div className="mt-8">
-            <a
-              href="/#services-overview-section"
-              onClick={handleServicesClick}
-              id="services-snapshot-link"
-              className="group relative inline-flex items-center font-body font-medium text-[15px] text-[#1A1A1A] cursor-pointer"
-            >
-              <span className="relative py-1">
-                See full services breakdown →
-                <span className="absolute bottom-0 left-0 h-[1.5px] w-0 bg-[#1A1A1A] transition-all duration-300 ease-out group-hover:w-full" />
-              </span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 4 — FOUNDER / TEAM */}
-      <section
-        id="about-team-section"
-        className="w-full py-24 sm:py-28 md:py-32 border-b border-black/10"
-      >
-        <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-20 text-left">
-          <h2
-            id="about-team-heading"
-            className="font-headline font-normal sm:font-medium text-3xl sm:text-4xl md:text-[44px] leading-tight tracking-[-0.02em] text-[#1A1A1A] mb-14 sm:mb-20"
-          >
-            The team
-          </h2>
-
-          {/* Team Member Entry (Founder) — left-right row, B&W to color on hover */}
-          <div
-            id="team-member-1"
-            className="grid grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-start"
-          >
-            {/* Left: portrait photo, B&W/duotone, no frame/shadow */}
-            <div className="col-span-12 sm:col-span-5 lg:col-span-4 max-w-sm">
-              <div className="w-full aspect-[4/5] overflow-hidden bg-neutral-200">
-                <img
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80"
-                  alt="Founder & Lead Architect"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale contrast-[1.05] hover:grayscale-0 transition-all duration-500 ease-out cursor-pointer"
-                />
-              </div>
-            </div>
-
-            {/* Right: name (Bricolage Grotesque), role (Inter, muted), 2-3 sentence bio in plain confident language */}
-            <div className="col-span-12 sm:col-span-7 lg:col-span-8 flex flex-col justify-center">
-              <h3 className="font-headline font-medium text-2xl sm:text-3xl lg:text-[32px] text-[#1A1A1A] leading-tight">
-                Rahul Kumar
-              </h3>
-              <p className="font-body text-sm sm:text-base text-neutral-500 mt-1 mb-6">
-                Founder & Lead Systems Architect
-              </p>
-              <div className="space-y-4 max-w-2xl font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed">
-                <p>
-                  Spent the last six years architecting growth infrastructure,
-                  automated lead systems, and production pipelines for high-growth
-                  brands and SaaS businesses.
-                </p>
-                <p>
-                  Started the studio with a straightforward premise: modern AI
-                  technology only creates real enterprise value when it is
-                  engineered directly into a company's daily workflow, measured by
-                  closed deals and operational hours saved.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 5 — VALUES */}
+      {/* SECTION 3 — WHAT WE BELIEVE (Organized 2x2 grid) */}
       <section
         id="about-values-section"
-        className="w-full py-24 sm:py-28 md:py-32 border-b border-black/10"
+        className="w-full py-10 sm:py-18 md:py-20 border-b border-black/10 bg-[#FAF9F6]"
       >
-        <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-20 text-left">
-          <h2
-            id="about-values-heading"
-            className="font-headline font-normal sm:font-medium text-3xl sm:text-4xl md:text-[44px] leading-tight tracking-[-0.02em] text-[#1A1A1A] mb-16 sm:mb-24"
-          >
-            What we believe
-          </h2>
+        <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20 text-left">
+          <div className="mb-8 sm:mb-12">
+            <h2
+              id="about-values-heading"
+              className="font-headline font-normal sm:font-medium text-2xl sm:text-4xl md:text-[44px] leading-tight tracking-[-0.02em] text-[#1A1A1A]"
+            >
+              What we believe
+            </h2>
+          </div>
 
-          {/* 4 values as large stacked text rows in staggered/offset column layout */}
-          <div className="space-y-16 sm:space-y-20 md:space-y-24">
-            {/* Value 01 & 02 */}
-            <div className="grid grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-start">
-              {/* 01 */}
-              <div
-                id="value-statement-01"
-                className="col-span-12 lg:col-span-7 max-w-2xl"
-              >
-                <span className="font-body text-xs sm:text-sm font-medium tabular-nums text-neutral-400 block mb-3">
-                  01
-                </span>
-                <h3 className="font-headline font-medium text-2xl sm:text-3xl leading-tight text-[#1A1A1A]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
+            <div className="p-5 sm:p-7 md:p-9 border border-black/10 rounded-[6px] bg-[#FAF9F6] flex flex-col justify-between hover:border-black/30 transition-colors duration-200">
+              <div>
+                <h3 className="font-headline font-medium text-2xl sm:text-[26px] text-[#1A1A1A] leading-tight mb-3">
                   Clarity over complexity
                 </h3>
-                <p className="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed mt-4 max-w-xl">
+                <p className="font-body text-base text-neutral-600 leading-relaxed">
                   If we can't explain what a system does in one sentence, it's not
-                  ready.
-                </p>
-              </div>
-
-              {/* 02 (Offset on desktop) */}
-              <div
-                id="value-statement-02"
-                className="col-span-12 lg:col-span-5 lg:pt-12 max-w-lg lg:ml-auto"
-              >
-                <span className="font-body text-xs sm:text-sm font-medium tabular-nums text-neutral-400 block mb-3">
-                  02
-                </span>
-                <h3 className="font-headline font-medium text-2xl sm:text-3xl leading-tight text-[#1A1A1A]">
-                  Outcomes over outputs
-                </h3>
-                <p className="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed mt-4">
-                  Deliverables don't matter. Results do.
+                  ready. We strip away jargon, unnecessary layers, and decorative tech.
                 </p>
               </div>
             </div>
 
-            {/* Value 03 & 04 */}
-            <div className="grid grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-start">
-              {/* 03 */}
-              <div
-                id="value-statement-03"
-                className="col-span-12 lg:col-span-5 max-w-lg"
-              >
-                <span className="font-body text-xs sm:text-sm font-medium tabular-nums text-neutral-400 block mb-3">
-                  03
-                </span>
-                <h3 className="font-headline font-medium text-2xl sm:text-3xl leading-tight text-[#1A1A1A]">
-                  Speed with intention
+            <div className="p-7 sm:p-9 border border-black/10 rounded-[6px] bg-[#FAF9F6] flex flex-col justify-between hover:border-black/30 transition-colors duration-200">
+              <div>
+                <h3 className="font-headline font-medium text-2xl sm:text-[26px] text-[#1A1A1A] leading-tight mb-3">
+                  Outcomes over outputs
                 </h3>
-                <p className="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed mt-4">
-                  Moving fast is only useful if you're moving in the right
-                  direction.
+                <p className="font-body text-base text-neutral-600 leading-relaxed">
+                  Deliverables don't matter unless they move the needle. We judge our systems by closed deals, lower customer acquisition costs, and saved human hours.
                 </p>
               </div>
+            </div>
 
-              {/* 04 (Offset on desktop) */}
-              <div
-                id="value-statement-04"
-                className="col-span-12 lg:col-span-7 lg:pt-10 max-w-2xl lg:pl-4"
-              >
-                <span className="font-body text-xs sm:text-sm font-medium tabular-nums text-neutral-400 block mb-3">
-                  04
-                </span>
-                <h3 className="font-headline font-medium text-2xl sm:text-3xl leading-tight text-[#1A1A1A]">
+            <div className="p-7 sm:p-9 border border-black/10 rounded-[6px] bg-[#FAF9F6] flex flex-col justify-between hover:border-black/30 transition-colors duration-200">
+              <div>
+                <h3 className="font-headline font-medium text-2xl sm:text-[26px] text-[#1A1A1A] leading-tight mb-3">
+                  Speed with intention
+                </h3>
+                <p className="font-body text-base text-neutral-600 leading-relaxed">
+                  Moving fast is only useful if you're pointed in the right direction. We test hypotheses rapidly while ensuring the underlying foundation is bulletproof.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-7 sm:p-9 border border-black/10 rounded-[6px] bg-[#FAF9F6] flex flex-col justify-between hover:border-black/30 transition-colors duration-200">
+              <div>
+                <h3 className="font-headline font-medium text-2xl sm:text-[26px] text-[#1A1A1A] leading-tight mb-3">
                   Honest over impressive
                 </h3>
-                <p className="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed mt-4 max-w-xl">
-                  We'd rather tell you something won't work than build it anyway
-                  and charge you for it.
+                <p className="font-body text-base text-neutral-600 leading-relaxed">
+                  We'd rather tell you upfront if an idea won't deliver ROI than build it anyway and invoice you. We treat our clients as long-term engineering partners.
                 </p>
               </div>
             </div>
@@ -352,8 +207,8 @@ export default function AboutPage({
         </div>
       </section>
 
-      {/* SECTION 6 — FINAL CTA (Identical to homepage) */}
-      <FinalCTASection />
+      {/* FINAL CTA */}
+      <FinalCTASection onNavigate={onNavigate} />
     </div>
   );
 }
