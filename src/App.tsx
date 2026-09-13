@@ -98,8 +98,8 @@ export default function App() {
         ) : currentPath === '/testimonials' ? (
           /* TESTIMONIALS PAGE */
           <TestimonialsPage onNavigate={navigateTo} />
-        ) : currentPath === '/products' ? (
-          /* PRODUCTS PAGE */
+        ) : currentPath === '/products' || currentPath === '/projects' ? (
+          /* PRODUCTS / PROJECTS PAGE */
           <ProductsPage onNavigate={navigateTo} />
         ) : currentPath === '/contact' ? (
           /* CONTACT PAGE */

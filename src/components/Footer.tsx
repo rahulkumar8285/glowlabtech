@@ -122,8 +122,8 @@ export default function Footer({ onNavigate }: FooterProps) {
                     className="hover:text-[#FAF9F6] py-1 inline-flex items-center gap-1.5 transition-colors"
                   >
                     <span>Products</span>
-                    <span className="text-[10px] bg-white/10 text-neutral-300 px-1.5 py-0.5 rounded font-medium">
-                      Upcoming
+                    <span className="text-[10px] bg-[#C84826]/20 text-[#C84826] px-1.5 py-0.5 rounded font-medium">
+                      GeoProof
                     </span>
                   </a>
                 </li>

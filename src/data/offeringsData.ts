@@ -20,16 +20,68 @@ export interface ServiceItem {
   }[];
 }
 
+export interface ProductModule {
+  id: string;
+  title: string;
+  badge?: string;
+  description: string;
+  bullets?: string[];
+  link?: string;
+  linkText?: string;
+}
+
+export interface BuyerGuide {
+  id: string;
+  title: string;
+  summary: string;
+  link: string;
+}
+
+export interface ProductFAQ {
+  question: string;
+  answer: string;
+}
+
+export interface ProductIndustry {
+  title: string;
+  problem: string;
+  solution: string;
+}
+
 export interface ProductItem {
   id: string;
   slug: string;
+  shortName: string;
   name: string;
   tagline: string;
   badge: string;
   description: string;
+  heroNotice?: string;
   features: string[];
   specs: string[];
   outcome: string;
+  targetAudience?: string;
+  stats?: {
+    value: string;
+    label: string;
+  }[];
+  modules?: ProductModule[];
+  whyNeeded?: {
+    headline: string;
+    subheadline: string;
+    painPoints: string[];
+    outcomes: string[];
+  };
+  industries?: ProductIndustry[];
+  buyerGuides?: BuyerGuide[];
+  faqs?: ProductFAQ[];
+  trialCta?: {
+    headline: string;
+    subheadline: string;
+    bullets: string[];
+    ctaText: string;
+    ctaUrl: string;
+  };
 }
 
 export const SERVICES_DATA: ServiceItem[] = [
@@ -371,5 +423,236 @@ export const SERVICES_DATA: ServiceItem[] = [
   },
 ];
 
-export const PRODUCTS_DATA: ProductItem[] = [];
+export const PRODUCTS_DATA: ProductItem[] = [
+  {
+    id: 'product-geoproof',
+    slug: 'geoproof',
+    shortName: 'GeoProof',
+    name: 'GPS Field Force Tracking & Work Validation Services',
+    tagline:
+      'End-to-end GPS location tracking, geo-fenced selfie attendance, tamper-proof proof of execution, and automated reporting for mobile teams across India.',
+    badge: 'Flagship Field Force Platform',
+    description:
+      'Everything operation managers, HRs, and agency directors need to verify, monitor, and report on field-based team activities with zero hardware investment.',
+    heroNotice:
+      'Engineered specifically for Indian distributed teams operating across Tier 1 to Tier 4 regions with patchy connectivity and diverse field environments.',
+    targetAudience:
+      'Built for Operations Managers, HR Directors, and Agency Leaders whose teams operate on the ground.',
+    features: [
+      'Real-time GPS tracking & playback across 500+ Indian cities',
+      'Anti-spoofing geo-fenced selfie attendance with mock-GPS detection',
+      'Tamper-proof Proof of Execution (PoE) with EXIF coordinate validation',
+      'Zero-signal offline mobile app with automatic cloud synchronization',
+      'Turn-by-turn road mileage calculation for transparent travel reimbursements',
+      'Plug-and-play REST API & ERP connectors for Zoho, SAP & Darwinbox',
+    ],
+    specs: [
+      'Android & iOS Mobile Apps',
+      'Live Web Dispatch Console',
+      'DPDP & ISO 27001 Ready',
+      'Zero Hardware Needed',
+      '500+ Indian Cities Supported',
+      '14-Day Free Trial',
+    ],
+    outcome:
+      'Eliminates 100% of phantom client visits and reduces disputed travel allowance claims by up to 40%.',
+    stats: [
+      { value: '500+', label: 'Cities Across India' },
+      { value: '99.8%', label: 'Fake GPS & Mock Detection' },
+      { value: '40%', label: 'Travel Claim Savings' },
+      { value: '< 24 Hrs', label: 'Complete Team Onboarding' },
+    ],
+    modules: [
+      {
+        id: 'module-tracking',
+        title: 'GPS Employee Tracking',
+        badge: 'Core Telemetry',
+        description:
+          'Real-time location monitoring for field sales, service, and media agents. Play back active route histories, check exact visit timestamps, and calculate true distance traveled for transparent mileage billing and travel reimbursements across 500+ cities in India.',
+        bullets: [
+          'Live breadcrumb trail with battery-optimized tracking pings',
+          'Historic route playback with idle-time and stoppage analysis',
+          'Actual road distance calculation eliminating inflated billing',
+        ],
+        link: 'https://www.geoproof.in/field-employee-tracking-app/',
+        linkText: 'Explore Employee Tracking →',
+      },
+      {
+        id: 'module-sales',
+        title: 'Sales Representative Tracking',
+        badge: 'Sales Acceleration',
+        description:
+          'Ensure sales reps are visiting clients. Log check-in times, client feedback notes, and catalog orders directly from client sites. Calculate target vs. actual meetings and receive instant visit scorecards to optimize your sales force performance.',
+        bullets: [
+          'GPS-verified check-in at client retail stores and offices',
+          'On-site order booking and digital client feedback forms',
+          'Daily target vs. actual visit scorecards for sales leaders',
+        ],
+        link: 'https://www.geoproof.in/sales-team-tracking-software/',
+        linkText: 'Explore Sales Tracking →',
+      },
+      {
+        id: 'module-attendance',
+        title: 'Geo-Fenced Attendance',
+        badge: 'Zero-Trust HR',
+        description:
+          "Replace paper registers and fingerprint biometrics. Employees check-in and check-out via geo-fenced selfie uploads. GeoProof's anti-spoofing engine detects and blocks fake GPS, developer mock tools, and static photos to ensure attendance integrity.",
+        bullets: [
+          'Facial selfie validation with live anti-spoofing camera lock',
+          'Strict geofence radius enforcement around job sites',
+          'Blocks mock GPS, developer settings, and static gallery uploads',
+        ],
+        link: 'https://www.geoproof.in/geo-fenced-attendance-system/',
+        linkText: 'Explore Geo-Attendance →',
+      },
+      {
+        id: 'module-poe',
+        title: 'Proof of Execution (PoE)',
+        badge: 'Work Quality Audit',
+        description:
+          'Verify HVAC repairs, telecom installations, or store audits. Field technicians complete custom step-by-step checklists, upload pre/post-service photos with strict EXIF coordinate validation, and collect client review signatures on-site.',
+        bullets: [
+          'Mandatory step-by-step digital service checklists',
+          'Coordinate and timestamp-stamped pre/post service photos',
+          'On-glass digital customer signatures and instant PDF reports',
+        ],
+        link: 'https://www.geoproof.in/field-service-validation-software/',
+        linkText: 'Explore Field Service Validation →',
+      },
+      {
+        id: 'module-offline',
+        title: 'Offline Field App',
+        badge: 'Zero-Signal Tech',
+        description:
+          'Our mobile app operates with full capabilities offline in low-connectivity areas (e.g., remote sites, industrial basements, or highway corridors). GPS coordinates, timestamps, and photos are cached locally in a secure sandbox and synced to the cloud once network returns.',
+        bullets: [
+          'Encrypted local SQLite sandbox ensuring zero data loss',
+          'Automatic background sync upon cellular or Wi-Fi reconnect',
+          'Tamper-proof device clock check to prevent timestamp cheating',
+        ],
+      },
+      {
+        id: 'module-integration',
+        title: 'ERP & API Integration',
+        badge: 'Enterprise APIs',
+        description:
+          "Integrate GeoProof's location tracking and attendance engine with your existing CRM, HR payroll system, or field service software. Our REST APIs allow automatic synchronization of task lists, check-in data, and employee attendance.",
+        bullets: [
+          'Seamless integration with Zoho, SAP, Salesforce, Darwinbox & HRMS',
+          'Webhooks for instant milestone alerts (e.g., arrival, task completion)',
+          'Automated daily payroll attendance export directly to accounting',
+        ],
+      },
+    ],
+    whyNeeded: {
+      headline: 'Why Your Business Needs Field Force Automation',
+      subheadline:
+        'If your team operates outside four walls, unmonitored execution creates silent profit leaks.',
+      painPoints: [
+        'Phantom visits: Sales reps reporting client meetings that never occurred.',
+        'Attendance fraud: Employees punching attendance using mock-GPS apps or paper registers.',
+        'Inflated travel allowances: Manual kilometer claims inflating monthly reimbursement overhead.',
+        'Customer disputes: Clients claiming technicians arrived late or skipped critical service steps.',
+      ],
+      outcomes: [
+        '100% verified ground activity backed by hardware-locked GPS breadcrumbs.',
+        'Zero-trust selfie check-ins that reject mock GPS apps and photo uploads automatically.',
+        'Transparent distance calculation powered by real turn-by-turn road tracking.',
+        'Audit-proof service reports with coordinate-stamped photos and customer e-signatures.',
+      ],
+    },
+    industries: [
+      {
+        title: 'Field Sales & FMCG / Pharma',
+        problem: 'Unverified retail store visits and missed daily distributor booking targets.',
+        solution: 'Live client check-in verification, instant order booking, and daily beat route adherence.',
+      },
+      {
+        title: 'HVAC, Telecom & Maintenance',
+        problem: 'Client disputes over whether technicians arrived on time and performed all service steps.',
+        solution: 'Proof of Execution with coordinate-verified before/after photos and digital customer sign-offs.',
+      },
+      {
+        title: 'Retail Merchandising & Media Audits',
+        problem: 'Lack of visual proof for store promotional displays, shelf compliance, and billboard installations.',
+        solution: 'Tamper-proof photo uploads with locked EXIF metadata and automated audit scorecards.',
+      },
+      {
+        title: 'Logistics & Fleet Dispatch',
+        problem: 'Unauthorized detours, excessive idling, and disputed delivery timeline claims.',
+        solution: 'Live corridor geo-fencing, speed tracking, and accurate turn-by-turn mileage audit.',
+      },
+      {
+        title: 'Security & Facility Management',
+        problem: 'Missed guard patrols and inconsistent janitorial execution across multi-acre sites.',
+        solution: 'Checkpoint-based QR & GPS patrol validation with instant anomaly escalation to HQ.',
+      },
+    ],
+    buyerGuides: [
+      {
+        id: 'guide-employee',
+        title: 'Field Employee Tracking App',
+        summary:
+          'Learn how to monitor active routes, calculate travel mileage, and track employee location history securely.',
+        link: 'https://www.geoproof.in/field-employee-tracking-app/',
+      },
+      {
+        id: 'guide-sales',
+        title: 'Sales Team Tracking Software',
+        summary:
+          'Verify sales rep client meetings, track customer visits, and log orders with GPS-verified proof of check-in.',
+        link: 'https://www.geoproof.in/sales-team-tracking-software/',
+      },
+      {
+        id: 'guide-attendance',
+        title: 'Geo-Fenced Attendance System',
+        summary:
+          'Replace hardware trackers. Learn how GPS selfie attendance stops check-in fraud and mock GPS apps.',
+        link: 'https://www.geoproof.in/geo-fenced-attendance-system/',
+      },
+      {
+        id: 'guide-service',
+        title: 'Field Service Validation Software',
+        summary:
+          'Validate HVAC repairs, facility services, or retail merchandising with digital checklists and on-site proof.',
+        link: 'https://www.geoproof.in/field-service-validation-software/',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is GPS field force tracking software?',
+        answer:
+          'GPS field force tracking software is an integrated mobile and cloud management platform that tracks the real-time physical locations of on-field personnel, validates customer visits, automates attendance via geo-fencing, and creates audit-proof operational reports without relying on manual paperwork.',
+      },
+      {
+        question: 'How does GeoProof prevent check-in fraud and fake GPS apps?',
+        answer:
+          'GeoProof features a multi-layered anti-spoofing engine that inspects device-level telemetry. It actively detects and blocks Android developer mock locations, third-party GPS spoofing apps, emulator environments, and rooted or jailbroken devices. In addition, selfie attendance requires a live camera capture with facial liveness verification, completely rejecting static gallery uploads.',
+      },
+      {
+        question: 'Does GeoProof track employees when they are off duty?',
+        answer:
+          'No. GeoProof is strictly engineered with privacy-first principles and complies with the Digital Personal Data Protection (DPDP) Act. Location tracking is active strictly between verified shift check-in and check-out. The moment an employee ends their shift, all GPS telemetry immediately stops.',
+      },
+      {
+        question: 'How quickly can I onboard my field team?',
+        answer:
+          'You can onboard your entire team in under 24 hours. There is zero hardware to purchase or install. Field staff simply install the lightweight GeoProof mobile app on their existing Android or iOS smartphones, log in with their phone number or company credentials, and start operating immediately.',
+      },
+    ],
+    trialCta: {
+      headline: 'Start Managing Your Field Force Today',
+      subheadline:
+        'Try GeoProof free for 14 days. No credit card required. See why hundreds of Indian teams trust our GPS tracking and validation software.',
+      bullets: [
+        '14-day risk-free access',
+        'Full anti-spoofing engine enabled',
+        'Instant mobile app setup for Android & iOS',
+        'Dedicated onboarding support',
+      ],
+      ctaText: 'Start 14-Day Free Trial',
+      ctaUrl: 'https://www.geoproof.in/',
+    },
+  },
+];
 
