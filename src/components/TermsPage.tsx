@@ -58,13 +58,12 @@ export default function TermsPage({ onNavigate }: TermsPageProps) {
       {/* METADATA STRIP */}
       <section className="w-full border-b border-black/10 bg-white/70 backdrop-blur-sm py-4">
         <div className="w-full max-w-5xl mx-auto px-5 sm:px-12 flex flex-wrap items-center justify-between gap-4 text-xs font-body text-neutral-600">
-          <div className="flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+          <div>
             <span>Version 2.4 — Updated September 14, 2026</span>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <span>Jurisdiction: Gurugram, Haryana, India</span>
-            <span>•</span>
+            <span className="text-neutral-300">/</span>
             <span>Governing Body: Arbitration and Conciliation Act, 1996</span>
           </div>
         </div>

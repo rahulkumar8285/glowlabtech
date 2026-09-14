@@ -1,5 +1,5 @@
 import { useState, useEffect, type FormEvent } from 'react';
-import { ArrowRight, CheckCircle2, MapPin, Phone, Mail, Clock, ShieldCheck, MessageSquare } from 'lucide-react';
+import { ArrowRight, CheckCircle2, MapPin, Phone, Mail } from 'lucide-react';
 import PageHeader from './PageHeader';
 import { updatePageSEO } from '../utils/seo';
 
@@ -172,19 +172,6 @@ export default function ContactPage({ onNavigate: _onNavigate }: ContactPageProp
                   </div>
                 </div>
               </div>
-
-              {/* Guarantees Box */}
-              <div className="bg-[#F4EDE4]/60 border border-[#C84826]/20 rounded-xl p-5 font-body space-y-3">
-                <div className="flex items-center gap-2.5 text-[#C84826]">
-                  <ShieldCheck className="w-5 h-5" />
-                  <h4 className="font-headline font-semibold text-sm text-[#1A1A1A]">
-                    Zero Sales Rep Runarounds
-                  </h4>
-                </div>
-                <p className="text-xs text-neutral-700 leading-relaxed">
-                  Every inquiry is reviewed directly by a practicing software engineer or technical founder. You receive an architectural perspective, not an aggressive sales pitch.
-                </p>
-              </div>
             </div>
 
             {/* RIGHT COLUMN: INTAKE FORM (7 cols) */}
@@ -193,7 +180,7 @@ export default function ContactPage({ onNavigate: _onNavigate }: ContactPageProp
                 {isSubmitted ? (
                   /* SUCCESS STATE */
                   <div className="text-center py-8 sm:py-14 animate-in fade-in duration-300">
-                    <div className="w-14 h-14 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center mx-auto mb-5">
+                    <div className="w-14 h-14 rounded-full bg-[#C84826]/10 text-[#C84826] flex items-center justify-center mx-auto mb-5">
                       <CheckCircle2 className="w-8 h-8" />
                     </div>
                     <h3 className="font-headline font-medium text-2xl sm:text-3xl text-[#1A1A1A] mb-3">

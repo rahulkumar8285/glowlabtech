@@ -58,13 +58,12 @@ export default function PrivacyPage({ onNavigate }: PrivacyPageProps) {
       {/* DOCUMENT METADATA STRIP */}
       <section className="w-full border-b border-black/10 bg-white/70 backdrop-blur-sm py-4">
         <div className="w-full max-w-5xl mx-auto px-5 sm:px-12 flex flex-wrap items-center justify-between gap-4 text-xs font-body text-neutral-600">
-          <div className="flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+          <div>
             <span>Effective Date: September 14, 2026</span>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <span>Jurisdiction: Republic of India</span>
-            <span>•</span>
+            <span className="text-neutral-300">/</span>
             <span>Compliance: DPDP Act 2023 & ISO 27001 Standards</span>
           </div>
         </div>
