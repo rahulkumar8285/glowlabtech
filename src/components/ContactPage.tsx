@@ -1,5 +1,5 @@
 import { useState, useEffect, type FormEvent } from 'react';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, MapPin, Phone, Mail, Clock, ShieldCheck, MessageSquare } from 'lucide-react';
 import PageHeader from './PageHeader';
 import { updatePageSEO } from '../utils/seo';
 
@@ -24,9 +24,9 @@ export default function ContactPage({ onNavigate: _onNavigate }: ContactPageProp
     const cleanup = updatePageSEO({
       title: 'Contact Us | Start a Project with GlowLab Tech',
       description:
-        'Get in touch with our engineering team to design custom software, AI workflows, or digital product systems.',
+        'Connect directly with our engineering team at World Tech Park, Gurugram. Call +91 89297 21558 or submit a project brief for custom AI software and workforce automation.',
       keywords:
-        'contact GlowLab Tech, hire AI developers, software engineering quote, project inquiry, enterprise software consultation',
+        'contact GlowLab Tech, hire AI developers, software engineering quote, project inquiry, enterprise software consultation, Gurugram software agency',
       canonicalUrl: 'https://glowlabtech.com/contact',
       ogType: 'website',
       jsonLd: {
@@ -35,7 +35,22 @@ export default function ContactPage({ onNavigate: _onNavigate }: ContactPageProp
         name: 'Contact GlowLab Tech',
         url: 'https://glowlabtech.com/contact',
         description:
-          'Direct contact form and engineering inquiry desk for GlowLab Tech.',
+          'Direct contact form, corporate office address, and engineering inquiry desk for GlowLab Tech.',
+        mainEntity: {
+          '@type': 'Organization',
+          name: 'GlowLab Tech',
+          url: 'https://glowlabtech.com',
+          telephone: '+91 89297 21558',
+          email: 'contact@glowlabtech.com',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: 'B-13 World Tech Park Block-B, World Tech Park, 30, Jaipur - Delhi Expy, Silokhera, Block A, Sector 30',
+            addressLocality: 'Gurugram',
+            addressRegion: 'Haryana',
+            postalCode: '122001',
+            addressCountry: 'IN',
+          },
+        },
       },
     });
 
@@ -71,14 +86,110 @@ export default function ContactPage({ onNavigate: _onNavigate }: ContactPageProp
       {/* PAGE HEADER */}
       <PageHeader
         id="contact-header"
+        eyebrow="Direct Engineering Desk"
         title="Let's build / something enduring."
         subtitle="Tell us about your pipeline bottlenecks, automation goals, or upcoming launch. You will hear back directly from a systems engineer within 24 hours."
       />
 
-      {/* MAIN FORM SECTION */}
-      <section className="w-full py-10 sm:py-18 md:py-24">
-        <div className="w-full max-w-3xl mx-auto px-4 sm:px-12">
-          <div className="bg-white border border-black/10 rounded-2xl p-6 sm:p-10 md:p-12 shadow-[0_4px_24px_rgba(0,0,0,0.02)] text-left">
+      {/* CONTACT & OFFICE GRID */}
+      <section className="w-full py-10 sm:py-16 md:py-20">
+        <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-start">
+            
+            {/* LEFT COLUMN: OFFICE DETAILS & DIRECT ACCESS (5 cols) */}
+            <div className="lg:col-span-5 space-y-6 text-left order-2 lg:order-1">
+              <div className="bg-white border border-black/10 rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm">
+                <div>
+                  <h3 className="font-headline font-semibold text-xl text-[#1A1A1A] mb-1">
+                    Corporate Headquarters
+                  </h3>
+                  <p className="font-body text-xs sm:text-sm text-neutral-500">
+                    Visit our engineering workstations or reach out directly to our operations team.
+                  </p>
+                </div>
+
+                {/* Address Card */}
+                <div className="flex items-start gap-3.5 pt-4 border-t border-black/5 font-body">
+                  <div className="w-9 h-9 rounded-lg bg-[#FAF9F6] border border-black/10 flex items-center justify-center text-[#C84826] shrink-0 mt-0.5">
+                    <MapPin className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="block font-medium text-xs text-neutral-400 uppercase tracking-wider mb-1">
+                      Office Address
+                    </span>
+                    <p className="text-xs sm:text-sm text-neutral-800 leading-relaxed font-normal">
+                      B-13 World Tech Park Block-B, World Tech Park, 30, Jaipur - Delhi Expy, Silokhera, Block A, Sector 30, Gurugram, Haryana 122001
+                    </p>
+                  </div>
+                </div>
+
+                {/* Direct Phone */}
+                <div className="flex items-start gap-3.5 pt-4 border-t border-black/5 font-body">
+                  <div className="w-9 h-9 rounded-lg bg-[#FAF9F6] border border-black/10 flex items-center justify-center text-[#C84826] shrink-0 mt-0.5">
+                    <Phone className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="block font-medium text-xs text-neutral-400 uppercase tracking-wider mb-1">
+                      Direct Line / Phone
+                    </span>
+                    <a
+                      href="tel:+918929721558"
+                      className="font-headline font-semibold text-base sm:text-lg text-[#1A1A1A] hover:text-[#C84826] transition-colors"
+                    >
+                      +91 89297 21558
+                    </a>
+                    <span className="block text-xs text-neutral-500 mt-0.5">
+                      Mon – Fri, 09:30 – 18:30 IST
+                    </span>
+                  </div>
+                </div>
+
+                {/* Domain Email Inboxes */}
+                <div className="flex items-start gap-3.5 pt-4 border-t border-black/5 font-body">
+                  <div className="w-9 h-9 rounded-lg bg-[#FAF9F6] border border-black/10 flex items-center justify-center text-[#C84826] shrink-0 mt-0.5">
+                    <Mail className="w-4 h-4" />
+                  </div>
+                  <div className="space-y-1.5 w-full">
+                    <span className="block font-medium text-xs text-neutral-400 uppercase tracking-wider mb-1">
+                      Domain Inboxes
+                    </span>
+                    <div className="flex flex-col gap-1 text-xs sm:text-sm">
+                      <a
+                        href="mailto:contact@glowlabtech.com"
+                        className="text-[#1A1A1A] font-medium hover:text-[#C84826] transition-colors"
+                      >
+                        contact@glowlabtech.com
+                        <span className="text-neutral-400 text-xs font-normal block sm:inline sm:ml-1.5">— Inquiries &amp; New Projects</span>
+                      </a>
+                      <a
+                        href="mailto:support@glowlabtech.com"
+                        className="text-neutral-600 hover:text-[#C84826] transition-colors"
+                      >
+                        support@glowlabtech.com
+                        <span className="text-neutral-400 text-xs font-normal block sm:inline sm:ml-1.5">— Platform &amp; Field Support</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Guarantees Box */}
+              <div className="bg-[#F4EDE4]/60 border border-[#C84826]/20 rounded-xl p-5 font-body space-y-3">
+                <div className="flex items-center gap-2.5 text-[#C84826]">
+                  <ShieldCheck className="w-5 h-5" />
+                  <h4 className="font-headline font-semibold text-sm text-[#1A1A1A]">
+                    Zero Sales Rep Runarounds
+                  </h4>
+                </div>
+                <p className="text-xs text-neutral-700 leading-relaxed">
+                  Every inquiry is reviewed directly by a practicing software engineer or technical founder. You receive an architectural perspective, not an aggressive sales pitch.
+                </p>
+              </div>
+            </div>
+
+            {/* RIGHT COLUMN: INTAKE FORM (7 cols) */}
+            <div className="lg:col-span-7 order-1 lg:order-2">
+              <div className="bg-white border border-black/10 rounded-2xl p-6 sm:p-10 md:p-12 shadow-[0_4px_24px_rgba(0,0,0,0.02)] text-left">
                 {isSubmitted ? (
                   /* SUCCESS STATE */
                   <div className="text-center py-8 sm:py-14 animate-in fade-in duration-300">
@@ -108,7 +219,7 @@ export default function ContactPage({ onNavigate: _onNavigate }: ContactPageProp
                         Tell us about your project
                       </h3>
                       <p className="font-body text-xs sm:text-sm text-neutral-500">
-                        Fill in your details below and we will respond promptly.
+                        Fill in your details below and our lead engineer will respond promptly.
                       </p>
                     </div>
 
@@ -130,7 +241,7 @@ export default function ContactPage({ onNavigate: _onNavigate }: ContactPageProp
                         id="contact-name"
                         type="text"
                         required
-                        placeholder="Alex Morgan"
+                        placeholder="Rahul Sharma"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className="w-full px-4 py-3.5 sm:py-3 bg-[#FAF9F6] border border-black/10 rounded-lg text-base sm:text-sm font-body text-[#1A1A1A] placeholder-neutral-400 focus:outline-none focus:border-[#C84826] focus:bg-white transition-colors"
@@ -151,7 +262,7 @@ export default function ContactPage({ onNavigate: _onNavigate }: ContactPageProp
                           id="contact-email"
                           type="email"
                           required
-                          placeholder="alex@company.com"
+                          placeholder="rahul@company.com"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           className="w-full px-4 py-3.5 sm:py-3 bg-[#FAF9F6] border border-black/10 rounded-lg text-base sm:text-sm font-body text-[#1A1A1A] placeholder-neutral-400 focus:outline-none focus:border-[#C84826] focus:bg-white transition-colors"
@@ -169,7 +280,7 @@ export default function ContactPage({ onNavigate: _onNavigate }: ContactPageProp
                         <input
                           id="contact-phone"
                           type="tel"
-                          placeholder="+91 98765 43210"
+                          placeholder="+91 89297 21558"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           className="w-full px-4 py-3.5 sm:py-3 bg-[#FAF9F6] border border-black/10 rounded-lg text-base sm:text-sm font-body text-[#1A1A1A] placeholder-neutral-400 focus:outline-none focus:border-[#C84826] focus:bg-white transition-colors"
@@ -183,13 +294,13 @@ export default function ContactPage({ onNavigate: _onNavigate }: ContactPageProp
                         htmlFor="contact-message"
                         className="block font-body text-xs font-medium text-neutral-700 uppercase tracking-wider mb-2"
                       >
-                        Project Details / Message <span className="text-[#C84826]">*</span>
+                        Project Details / Inquiry <span className="text-[#C84826]">*</span>
                       </label>
                       <textarea
                         id="contact-message"
                         required
                         rows={4}
-                        placeholder="Describe what you want to automate, what systems you currently use, or the timeline you're aiming for..."
+                        placeholder="Describe what you want to build or automate (e.g. Field tracking app, AI agent workflow, custom cloud architecture, or timeline)..."
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         className="w-full px-4 py-3.5 sm:py-3 bg-[#FAF9F6] border border-black/10 rounded-lg text-base sm:text-sm font-body text-[#1A1A1A] placeholder-neutral-400 focus:outline-none focus:border-[#C84826] focus:bg-white transition-colors resize-y"
@@ -204,7 +315,7 @@ export default function ContactPage({ onNavigate: _onNavigate }: ContactPageProp
                         className="w-full sm:w-auto inline-flex items-center justify-center gap-2 font-body font-medium text-sm text-white bg-[#C84826] hover:bg-[#B33E1D] active:bg-[#9E3416] px-8 py-3.5 rounded-full transition-all duration-200 cursor-pointer disabled:opacity-60 select-none shadow-md sm:shadow-sm active:scale-[0.98]"
                       >
                         {isSubmitting ? (
-                          <span>Submitting...</span>
+                          <span>Transmitting...</span>
                         ) : (
                           <>
                             <span>Send Project Inquiry</span>
@@ -215,13 +326,16 @@ export default function ContactPage({ onNavigate: _onNavigate }: ContactPageProp
                     </div>
 
                     <p className="font-body text-xs text-neutral-400 pt-2">
-                      We respect your privacy. No spam or marketing drips. Direct operator response only.
+                      We respect your privacy under the DPDP Act. Zero marketing spam. Direct engineer response only.
                     </p>
                   </form>
                 )}
               </div>
             </div>
-          </section>
+
+          </div>
         </div>
-      );
-    }
+      </section>
+    </div>
+  );
+}

@@ -1,5 +1,5 @@
 import type { MouseEvent } from 'react';
-import { ArrowUp, ArrowRight, Mail, Twitter, Linkedin, Github } from 'lucide-react';
+import { ArrowUp, ArrowRight, Mail, Twitter, Linkedin, Github, Phone, MapPin } from 'lucide-react';
 import { SERVICES_DATA } from '../data/offeringsData';
 import { BLOG_POSTS } from '../data/blogData';
 
@@ -173,13 +173,26 @@ export default function Footer({ onNavigate }: FooterProps) {
                 <p className="font-body text-xs sm:text-sm text-neutral-400 mb-3 sm:mb-4 leading-relaxed">
                   Have an architecture challenge or need system throughput? Speak directly with an engineer.
                 </p>
-                <a
-                  href="mailto:contact@glowlabtech.com"
-                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-body text-[#FAF9F6] hover:text-[#C84826] transition-colors mb-5"
-                >
-                  <Mail className="w-4 h-4 text-[#C84826]" />
-                  <span>contact@glowlabtech.com</span>
-                </a>
+                <div className="space-y-2 mb-4">
+                  <a
+                    href="mailto:contact@glowlabtech.com"
+                    className="inline-flex items-center gap-2 text-xs sm:text-sm font-body text-[#FAF9F6] hover:text-[#C84826] transition-colors"
+                  >
+                    <Mail className="w-4 h-4 text-[#C84826] shrink-0" />
+                    <span>contact@glowlabtech.com</span>
+                  </a>
+                  <a
+                    href="tel:+918929721558"
+                    className="inline-flex items-center gap-2 text-xs sm:text-sm font-body text-[#FAF9F6] hover:text-[#C84826] transition-colors block"
+                  >
+                    <Phone className="w-4 h-4 text-[#C84826] shrink-0" />
+                    <span>+91 89297 21558</span>
+                  </a>
+                  <div className="flex items-start gap-2 text-[11px] font-body text-neutral-400 pt-1 leading-snug">
+                    <MapPin className="w-3.5 h-3.5 text-[#C84826] shrink-0 mt-0.5" />
+                    <span>B-13 World Tech Park, Sector 30, Gurugram, HR</span>
+                  </div>
+                </div>
               </div>
 
               <div className="pt-4 border-t border-white/[0.06]">
@@ -226,11 +239,29 @@ export default function Footer({ onNavigate }: FooterProps) {
 
           <div className="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 border-white/[0.06]">
             <div className="flex items-center gap-3 sm:gap-4 text-neutral-400">
-              <span className="hover:text-[#FAF9F6] cursor-pointer transition-colors py-1">Privacy</span>
+              <a
+                href="/privacy"
+                onClick={(e) => handleLinkClick('/privacy', e)}
+                className="hover:text-[#FAF9F6] cursor-pointer transition-colors py-1"
+              >
+                Privacy
+              </a>
               <span className="text-neutral-700">•</span>
-              <span className="hover:text-[#FAF9F6] cursor-pointer transition-colors py-1">Terms</span>
+              <a
+                href="/terms"
+                onClick={(e) => handleLinkClick('/terms', e)}
+                className="hover:text-[#FAF9F6] cursor-pointer transition-colors py-1"
+              >
+                Terms
+              </a>
               <span className="text-neutral-700">•</span>
-              <span className="hover:text-[#FAF9F6] cursor-pointer transition-colors py-1">Security</span>
+              <a
+                href="/security"
+                onClick={(e) => handleLinkClick('/security', e)}
+                className="hover:text-[#FAF9F6] cursor-pointer transition-colors py-1"
+              >
+                Security
+              </a>
               <span className="text-neutral-700">•</span>
               <button
                 type="button"

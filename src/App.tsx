@@ -17,6 +17,9 @@ import BlogSection from './components/BlogSection';
 import BlogListingPage from './components/BlogListingPage';
 import BlogDetailPage from './components/BlogDetailPage';
 import ContactPage from './components/ContactPage';
+import PrivacyPage from './components/PrivacyPage';
+import TermsPage from './components/TermsPage';
+import SecurityPage from './components/SecurityPage';
 import FinalCTASection from './components/FinalCTASection';
 import Footer from './components/Footer';
 import CookieBanner from './components/CookieBanner';
@@ -111,8 +114,17 @@ export default function App() {
               contactPoint: {
                 '@type': 'ContactPoint',
                 contactType: 'customer support',
-                email: 'hello@glowlabtech.com',
+                telephone: '+91 89297 21558',
+                email: 'contact@glowlabtech.com',
                 availableLanguage: ['English', 'Hindi'],
+              },
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: 'B-13 World Tech Park Block-B, World Tech Park, 30, Jaipur - Delhi Expy, Silokhera, Block A, Sector 30',
+                addressLocality: 'Gurugram',
+                addressRegion: 'Haryana',
+                postalCode: '122001',
+                addressCountry: 'IN',
               },
             },
           ],
@@ -139,6 +151,15 @@ export default function App() {
         ) : currentPath === '/contact' ? (
           /* CONTACT PAGE */
           <ContactPage onNavigate={navigateTo} />
+        ) : currentPath === '/privacy' ? (
+          /* PRIVACY POLICY PAGE */
+          <PrivacyPage onNavigate={navigateTo} />
+        ) : currentPath === '/terms' ? (
+          /* TERMS OF SERVICE PAGE */
+          <TermsPage onNavigate={navigateTo} />
+        ) : currentPath === '/security' ? (
+          /* SECURITY OVERVIEW PAGE */
+          <SecurityPage onNavigate={navigateTo} />
         ) : currentPath === '/blog' ? (
           /* BLOG LISTING PAGE */
           <BlogListingPage onNavigate={navigateTo} />
