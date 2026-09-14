@@ -29,7 +29,6 @@ export default function SecurityPage({ onNavigate }: SecurityPageProps) {
           '@type': 'Organization',
           name: 'GlowLab Tech',
           url: 'https://glowlabtech.com',
-          telephone: '+91 89297 21558',
           email: 'security@glowlabtech.com',
           address: {
             '@type': 'PostalAddress',
@@ -252,15 +251,15 @@ export default function SecurityPage({ onNavigate }: SecurityPageProps) {
 
               <div className="space-y-1.5">
                 <div className="flex items-center gap-2 text-[#C84826] font-medium">
-                  <Phone className="w-4 h-4" />
-                  <span>Direct Hotline</span>
+                  <ShieldCheck className="w-4 h-4" />
+                  <span>Incident Response</span>
                 </div>
                 <p className="text-neutral-700">
-                  <a href="tel:+918929721558" className="hover:text-[#C84826] transition-colors font-medium">
-                    +91 89297 21558
+                  <a href="mailto:security@glowlabtech.com" className="hover:text-[#C84826] transition-colors font-medium">
+                    security@glowlabtech.com
                   </a>
                 </p>
-                <span className="text-[11px] text-neutral-400 block">Security Incident Line (24/7 Monitoring)</span>
+                <span className="text-[11px] text-neutral-400 block">PGP &amp; Encrypted Disclosures</span>
               </div>
 
               <div className="space-y-1.5">
