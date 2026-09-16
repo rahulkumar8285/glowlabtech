@@ -192,15 +192,14 @@ export default function ProductsPage({
       {/* PAGE HEADER */}
       <PageHeader
         id="product-header"
-        eyebrow="Proprietary Platform / Turnkey Field App"
         title={primaryProduct.name.includes('&') ? primaryProduct.name.replace('&', '/ &') : primaryProduct.name}
         subtitle={primaryProduct.tagline}
       />
 
       {/* SUB-NAVIGATION & SECTION TABS (STICKY) */}
-      <div className="w-full border-b border-black/[0.08] bg-[#FAF9F6]/95 backdrop-blur-md sticky top-18 sm:top-20 z-30">
+      <div className="w-full border-b border-black/[0.08] bg-[#FAF9F6]/95 backdrop-blur-md sticky top-[72px] sm:top-[80px] z-30 shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
         <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20 py-3 sm:py-3.5 flex items-center justify-between gap-4 text-xs sm:text-sm font-body">
-          <div className="flex items-center gap-2 truncate pr-2 shrink-0">
+          <div className="hidden md:flex items-center gap-2 truncate pr-2 shrink-0">
             <a
               href="/"
               onClick={(e) => handleLinkClick('/', e)}
@@ -214,7 +213,7 @@ export default function ProductsPage({
             <span className="text-[#C84826] font-medium truncate">{primaryProduct.shortName}</span>
           </div>
 
-          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar shrink-0">
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5 w-full md:w-auto justify-start md:justify-end">
             <button
               type="button"
               onClick={() => scrollToSection('modules', 'modules')}
@@ -298,11 +297,6 @@ export default function ProductsPage({
             />
 
             <div className="mb-6 relative z-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C84826]/10 text-[#C84826] text-xs font-medium mb-3">
-                <span>{primaryProduct.shortName}</span>
-                <span>•</span>
-                <span>Zero-Hardware Setup</span>
-              </div>
               <p className="font-body text-base sm:text-lg text-neutral-700 leading-relaxed max-w-4xl">
                 {primaryProduct.description}
               </p>
