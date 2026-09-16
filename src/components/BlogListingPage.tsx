@@ -214,7 +214,7 @@ export default function BlogListingPage({ onNavigate }: BlogListingPageProps) {
           )}
 
           {/* STANDARD ARTICLES GRID */}
-          {standardPosts.length > 0 ? (
+          {standardPosts.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {standardPosts.map((post: BlogPost) => (
                 <article
@@ -270,8 +270,10 @@ export default function BlogListingPage({ onNavigate }: BlogListingPageProps) {
                 </article>
               ))}
             </div>
-          ) : BLOG_POSTS.length === 0 ? (
-            /* BLOG REPOSITORY EMPTY STATE */
+          )}
+
+          {/* BLOG REPOSITORY EMPTY STATE (WHEN NO POSTS EXIST AT ALL) */}
+          {BLOG_POSTS.length === 0 && (
             <div className="text-center py-16 sm:py-20 bg-white border border-black/[0.06] rounded-2xl p-8 sm:p-12 max-w-2xl mx-auto shadow-xs">
               <div className="w-12 h-12 rounded-full bg-[#C84826]/10 text-[#C84826] flex items-center justify-center mx-auto mb-5 font-headline font-medium text-xl">
                 ✦
@@ -309,8 +311,10 @@ export default function BlogListingPage({ onNavigate }: BlogListingPageProps) {
                 </a>
               </div>
             </div>
-          ) : (
-            /* SEARCH / FILTER EMPTY STATE */
+          )}
+
+          {/* SEARCH / FILTER EMPTY STATE (ONLY WHEN USER SEARCH/FILTER YIELDS ZERO POSTS) */}
+          {filteredPosts.length === 0 && BLOG_POSTS.length > 0 && (
             <div className="text-center py-16 bg-white border border-black/[0.06] rounded-xl p-8">
               <p className="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
                 No articles found
