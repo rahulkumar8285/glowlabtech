@@ -37,10 +37,15 @@ export default function BlogListingPage({ onNavigate }: BlogListingPageProps) {
           description: post.excerpt,
           url: `https://growthtechsys.com/blog/${post.slug}`,
           datePublished: post.isoDate,
-          author: {
-            '@type': 'Person',
-            name: post.author.name,
-          },
+          author: post.author
+            ? {
+                '@type': 'Person',
+                name: post.author.name,
+              }
+            : {
+                '@type': 'Organization',
+                name: 'GrowthTechSys',
+              },
         })),
       },
     });
@@ -184,21 +189,28 @@ export default function BlogListingPage({ onNavigate }: BlogListingPageProps) {
                 </div>
 
                 <div className="pt-6 border-t border-black/[0.06] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="flex items-center gap-3">
-                    <img
-                      src={featuredPost.author.avatarUrl}
-                      alt={featuredPost.author.name}
-                      className="w-10 h-10 rounded-full object-cover border border-black/10"
-                    />
-                    <div>
-                      <p className="font-body font-medium text-sm text-[#1A1A1A]">
-                        {featuredPost.author.name}
-                      </p>
-                      <p className="font-body text-xs text-neutral-400">
-                        {featuredPost.author.role}
-                      </p>
+                  {featuredPost.author ? (
+                    <div className="flex items-center gap-3">
+                      <img
+                        src={featuredPost.author.avatarUrl}
+                        alt={featuredPost.author.name}
+                        className="w-10 h-10 rounded-full object-cover border border-black/10"
+                      />
+                      <div>
+                        <p className="font-body font-medium text-sm text-[#1A1A1A]">
+                          {featuredPost.author.name}
+                        </p>
+                        <p className="font-body text-xs text-neutral-400">
+                          {featuredPost.author.role}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  ) : (
+                    <div className="flex items-center gap-2 text-xs font-body text-neutral-500">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#C84826]" />
+                      <span className="font-medium text-neutral-700">GrowthTechSys Engineering</span>
+                    </div>
+                  )}
 
                   <a
                     href={`/blog/${featuredPost.slug}`}
@@ -243,20 +255,27 @@ export default function BlogListingPage({ onNavigate }: BlogListingPageProps) {
                   </div>
 
                   <div className="pt-4 border-t border-black/[0.05] flex items-center justify-between gap-3 text-xs font-body">
-                    <div className="flex items-center gap-2.5">
-                      <img
-                        src={post.author.avatarUrl}
-                        alt={post.author.name}
-                        className="w-7 h-7 rounded-full object-cover border border-black/10"
-                        loading="lazy"
-                      />
-                      <div>
-                        <p className="font-medium text-[#1A1A1A] leading-tight">
-                          {post.author.name}
-                        </p>
-                        <p className="text-[11px] text-neutral-400">{post.author.role}</p>
+                    {post.author ? (
+                      <div className="flex items-center gap-2.5">
+                        <img
+                          src={post.author.avatarUrl}
+                          alt={post.author.name}
+                          className="w-7 h-7 rounded-full object-cover border border-black/10"
+                          loading="lazy"
+                        />
+                        <div>
+                          <p className="font-medium text-[#1A1A1A] leading-tight">
+                            {post.author.name}
+                          </p>
+                          <p className="text-[11px] text-neutral-400">{post.author.role}</p>
+                        </div>
                       </div>
-                    </div>
+                    ) : (
+                      <div className="flex items-center gap-1.5 text-neutral-500">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#C84826]" />
+                        <span>GrowthTechSys</span>
+                      </div>
+                    )}
 
                     <a
                       href={`/blog/${post.slug}`}

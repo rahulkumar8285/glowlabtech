@@ -35,7 +35,7 @@ export interface BlogPost {
   publishedAt: string;
   isoDate: string;
   readTime: string;
-  author: BlogAuthor;
+  author?: BlogAuthor;
   tags: string[];
   metaDescription: string;
   featured?: boolean;
@@ -58,12 +58,6 @@ export const BLOG_POSTS: BlogPost[] = [
     isoDate: '2026-09-16',
     readTime: '7 min read',
     featured: true,
-    author: {
-      name: 'Vikramaditya Sharma',
-      role: 'VP of Field Systems & Operations, GrowthTechSys',
-      avatarUrl:
-        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
-    },
     tags: [
       'field sales tracking software',
       'field sales tracking app',

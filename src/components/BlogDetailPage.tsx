@@ -32,7 +32,7 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
       canonicalUrl: `https://growthtechsys.com/blog/${post.slug}`,
       ogType: 'article',
       publishedTime: post.isoDate,
-      authorName: post.author.name,
+      authorName: post.author?.name || 'GrowthTechSys',
       jsonLd: {
         '@context': 'https://schema.org',
         '@type': 'BlogPosting',
@@ -45,11 +45,17 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
           '@type': 'WebPage',
           '@id': `https://growthtechsys.com/blog/${post.slug}`,
         },
-        author: {
-          '@type': 'Person',
-          name: post.author.name,
-          jobTitle: post.author.role,
-        },
+        author: post.author
+          ? {
+              '@type': 'Person',
+              name: post.author.name,
+              jobTitle: post.author.role,
+            }
+          : {
+              '@type': 'Organization',
+              name: 'GrowthTechSys',
+              url: 'https://growthtechsys.com',
+            },
         publisher: {
           '@type': 'Organization',
           name: 'GrowthTechSys',
@@ -220,21 +226,28 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
             {post.excerpt}
           </p>
 
-          {/* Author attribution & Social Sharing */}
-          <div className="pt-6 border-t border-black/[0.08] flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-            <div className="flex items-center gap-3.5">
-              <img
-                src={post.author.avatarUrl}
-                alt={post.author.name}
-                className="w-12 h-12 rounded-full object-cover border border-black/10"
-              />
-              <div>
-                <p className="font-headline font-medium text-base text-[#1A1A1A] leading-tight">
-                  {post.author.name}
-                </p>
-                <p className="font-body text-xs text-neutral-500 mt-0.5">{post.author.role}</p>
+          {/* Attribution & Social Sharing */}
+          <div className="pt-6 border-t border-black/[0.08] flex items-center justify-between gap-6">
+            {post.author ? (
+              <div className="flex items-center gap-3.5">
+                <img
+                  src={post.author.avatarUrl}
+                  alt={post.author.name}
+                  className="w-12 h-12 rounded-full object-cover border border-black/10"
+                />
+                <div>
+                  <p className="font-headline font-medium text-base text-[#1A1A1A] leading-tight">
+                    {post.author.name}
+                  </p>
+                  <p className="font-body text-xs text-neutral-500 mt-0.5">{post.author.role}</p>
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="flex items-center gap-2 text-xs font-body text-neutral-500">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#C84826]" />
+                <span className="font-medium text-neutral-700">GrowthTechSys Engineering</span>
+              </div>
+            )}
 
             {/* Social Share Buttons */}
             <div className="flex items-center gap-2 text-neutral-500">
