@@ -42,17 +42,11 @@ export default function PreLoader({
       }`}
     >
       <div className="relative flex items-center justify-center">
-        {/* Animated Brand Glow */}
-        <div
-          className="absolute w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-[#C84826]/18 blur-2xl animate-pulse"
-          aria-hidden="true"
-        />
-
-        {/* Standalone Brand Icon */}
+        {/* Clean Logo */}
         <img
           src="/favicon.png"
           alt="GrowthTechSys"
-          className="w-16 h-16 sm:w-20 sm:h-20 object-contain relative z-10 transition-transform duration-300 drop-shadow-[0_10px_25px_rgba(200,72,38,0.32)] animate-pulse"
+          className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
         />
       </div>
     </div>

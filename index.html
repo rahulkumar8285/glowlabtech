@@ -121,20 +121,9 @@
       <!-- Zero-latency Brand Preloader Fallback (replaces instantly upon React mount) -->
       <div id="brand-fallback-loader" style="position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background-color:#FAF9F6;-webkit-font-smoothing:antialiased;">
         <div style="position:relative;display:flex;align-items:center;justify-content:center;">
-          <div style="position:absolute;width:120px;height:120px;border-radius:50%;background-color:rgba(200,72,38,0.18);filter:blur(28px);animation:brand-glow-pulse 1.8s ease-in-out infinite alternate;"></div>
-          <img src="/favicon.png" alt="GrowthTechSys" width="72" height="72" style="width:72px;height:72px;object-fit:contain;position:relative;z-index:10;filter:drop-shadow(0 10px 25px rgba(200,72,38,0.32));animation:brand-icon-pulse 1.8s ease-in-out infinite alternate;" />
+          <img src="/favicon.png" alt="GrowthTechSys" width="72" height="72" style="width:72px;height:72px;object-fit:contain;" />
         </div>
       </div>
-      <style>
-        @keyframes brand-glow-pulse {
-          0% { transform: scale(0.85); opacity: 0.5; }
-          100% { transform: scale(1.15); opacity: 0.9; }
-        }
-        @keyframes brand-icon-pulse {
-          0% { transform: scale(0.96); }
-          100% { transform: scale(1.04); }
-        }
-      </style>
     </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
