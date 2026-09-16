@@ -88,13 +88,13 @@ export default function AboutPage({
               </div>
             </div>
 
-            {/* Right column (~40% width): GrowthTechSys Studio & Workstation */}
+            {/* Right column (~40% width): GrowthTechSys Headquarters & Reception */}
             <div className="col-span-12 lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-sm sm:max-w-md aspect-[9/15] sm:aspect-[9/14] lg:aspect-[9/14] overflow-hidden bg-neutral-200 rounded-2xl border border-black/10 shadow-xl group">
+              <div className="relative w-full max-w-sm sm:max-w-md aspect-[9/16] overflow-hidden bg-neutral-200 rounded-2xl border border-black/10 shadow-xl group">
                 <img
                   src="/about-office.jpg"
-                  alt="GrowthTechSys Headquarters & Studio Workstation"
-                  className="w-full h-full object-cover object-center contrast-[1.02] transition-transform duration-700 ease-out group-hover:scale-105"
+                  alt="GrowthTechSys Headquarters & Reception"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div
                   aria-hidden="true"
