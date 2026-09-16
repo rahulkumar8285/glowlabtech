@@ -1,7 +1,7 @@
 # ==========================================
-# Multi-stage Dockerfile for GrowthTechSys SPA
+# Multi-stage Dockerfile for GrowthTechSys
 # Stage 1: Build static assets using Node.js
-# Stage 2: Serve optimized assets with Nginx
+# Stage 2: Serve SPA and Nodemailer API via Node.js
 # ==========================================
 
 # STAGE 1: Build stage
@@ -9,7 +9,7 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Install dependencies first (leverage Docker layer caching)
+# Install dependencies
 COPY package.json package-lock.json ./
 RUN npm ci
 
@@ -19,24 +19,32 @@ COPY . .
 # Build production assets (outputs to /app/dist)
 RUN npm run build
 
-# STAGE 2: Production Nginx serve stage
-FROM nginx:1.27-alpine AS runner
+# STAGE 2: Production Node.js runner stage
+FROM node:20-alpine AS runner
 
-# Remove default nginx website configuration
-RUN rm -rf /etc/nginx/conf.d/* /usr/share/nginx/html/*
+WORKDIR /app
 
-# Copy custom Nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Set production environment
+ENV NODE_ENV=production
+ENV PORT=80
+
+# Install production dependencies only
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
 
 # Copy compiled static assets from builder stage
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/dist ./dist
+
+# Copy server code
+COPY server.js ./server.js
+COPY server ./server
 
 # Expose HTTP port
 EXPOSE 80
 
-# Health check to ensure Nginx is serving traffic
-HEALTHCHECK --interval=30s --timeout=3s --retries=3 \
-  CMD wget --no-verbose --tries=1 --spider http://127.0.0.1:80/ || exit 1
+# Health check to ensure server and API are healthy
+HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
+  CMD wget --no-verbose --tries=1 --spider http://127.0.0.1:80/api/health || exit 1
 
-# Launch Nginx in foreground
-CMD ["nginx", "-g", "daemon off;"]
+# Launch production server
+CMD ["node", "server.js"]

@@ -57,7 +57,7 @@ export default function ContactPage({ onNavigate: _onNavigate }: ContactPageProp
     return cleanup;
   }, []);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setErrorMsg('');
 
@@ -68,11 +68,31 @@ export default function ContactPage({ onNavigate: _onNavigate }: ContactPageProp
 
     setIsSubmitting(true);
 
-    // Simulate reliable submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send inquiry. Please try again.');
+      }
+
       setIsSubmitted(true);
-    }, 600);
+    } catch (err: any) {
+      console.error('Contact form submission error:', err);
+      setErrorMsg(
+        err.message ||
+          'Failed to transmit your message. Please try again or email directly at contact@growthtechsys.com'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {
