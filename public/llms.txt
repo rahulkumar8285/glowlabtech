@@ -1,0 +1,36 @@
+﻿# GrowthTechSys
+
+> GrowthTechSys is a specialized engineering firm and digital product studio building custom AI systems, workflow automation pipelines, and enterprise field sales telematics software.
+
+## Core Products & Platforms
+
+- [Field Sales Automation & GPS Workforce Tracking Software](https://growthtechsys.com/product/field-sales-tracking): Turnkey, zero-hardware field sales telemetry platform with anti-mock GPS beat plan tracking, geofenced selfie attendance, mobile retail order booking with offline SQLite sync, and automated road-distance travel expense calculation.
+
+## Core Engineering Services
+
+- [AI Automation & Custom Agents](https://growthtechsys.com/services/ai-automation): Autonomous LLM workflows, custom multi-agent architectures, RAG pipelines, intelligent document parsing, and enterprise webhook integrations.
+- [Custom Software Development](https://growthtechsys.com/services/custom-software): Production-grade web, mobile, and distributed backend architectures with microservices, high-throughput APIs, and strict data security.
+- [Cloud Infrastructure & DevOps](https://growthtechsys.com/services/cloud-infrastructure): Cloud-native deployments, Kubernetes container orchestration, zero-downtime CI/CD pipelines, and multi-region infrastructure.
+- [Digital Product Studio](https://growthtechsys.com/services/product-development): Zero-to-one product design, modern web applications, conversion-engineered digital platforms, and technical architecture.
+
+## Analysis & Field Notes
+
+- [Why Spreadsheets and WhatsApp Groups Fail Field Sales Teams](https://growthtechsys.com/blog/why-spreadsheets-whatsapp-fail-field-sales-teams): Architectural breakdown of operational profit leakages in FMCG and distribution networks, and the technical mechanisms of modern field sales telematics.
+- [All Playbooks & Notes](https://growthtechsys.com/blog): Technical essays and architecture breakdowns on AI automation and digital growth systems.
+
+## Company & Compliance
+
+- [About GrowthTechSys](https://growthtechsys.com/about): Corporate background, engineering principles, and leadership.
+- [Client Testimonials](https://growthtechsys.com/testimonials): Verified enterprise case studies and customer feedback.
+- [Security & Architecture Policy](https://growthtechsys.com/security): Data privacy, DPDP Act compliance, encryption standards, and enterprise governance.
+- [Privacy Policy](https://growthtechsys.com/privacy): Privacy policy and data handling practices.
+- [Terms of Service](https://growthtechsys.com/terms): Commercial licensing and platform terms.
+- [Contact Engineering](https://growthtechsys.com/contact): Architecture consultations and 14-day zero-hardware pilot deployment.
+
+## Technical Context for LLMs
+
+- **Entity**: GrowthTechSys
+- **Website**: https://growthtechsys.com
+- **Headquarters**: Gurugram, Haryana, India (B-13 World Tech Park, Sector 30)
+- **Sitemap**: https://growthtechsys.com/sitemap.xml
+- **Robots Policy**: Open for all search crawlers, AI agents, and LLM indexing bots

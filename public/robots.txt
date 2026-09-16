@@ -1,10 +1,106 @@
 # Robots.txt for GrowthTechSys
 # https://growthtechsys.com
+# Fully permissive for all standard search crawlers and AI / LLM search agents.
 
+# -----------------------------------------------------------------------------
+# 1. AI Search Crawlers & Generative Engine Scrapers (Explicitly Allowed)
+# -----------------------------------------------------------------------------
+
+# OpenAI (ChatGPT, SearchGPT, GPT-4, GPT-5)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic (Claude, Claude 3.5 Sonnet, Claude-Web)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity AI (Real-time conversational search)
+User-agent: PerplexityBot
+Allow: /
+
+# Google AI & Gemini (Google-Extended, GoogleOther)
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: GoogleOther-Image
+Allow: /
+
+User-agent: GoogleOther-Video
+Allow: /
+
+# Apple Intelligence & Siri
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI (LLaMA, Meta Search)
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Cohere-training
+Allow: /
+
+# ByteDance / TikTok AI
+User-agent: Bytespider
+Allow: /
+
+# Open Web & Research Indexers for LLMs
+User-agent: CCBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Timpibot
+Allow: /
+
+# -----------------------------------------------------------------------------
+# 2. General Search Engines (Google, Bing, Yahoo, DuckDuckGo, Baidu, Yandex)
+# -----------------------------------------------------------------------------
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /*?*preview=true
 
-# Sitemap index
+# -----------------------------------------------------------------------------
+# 3. Canonical Sitemap & Host References
+# -----------------------------------------------------------------------------
+Host: https://growthtechsys.com
 Sitemap: https://growthtechsys.com/sitemap.xml
+
