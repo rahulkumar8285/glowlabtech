@@ -11,26 +11,26 @@ interface TermsPageProps {
 export default function TermsPage({ onNavigate }: TermsPageProps) {
   useEffect(() => {
     const cleanup = updatePageSEO({
-      title: 'Terms of Service | GlowLab Tech',
+      title: 'Terms of Service | GrowthTechSys',
       description:
-        'Standard master service agreement and platform terms governing GlowLab Tech custom software development, AI automation pipelines, and field force management SaaS.',
+        'Standard master service agreement and platform terms governing GrowthTechSys custom software development, AI automation pipelines, and field force management SaaS.',
       keywords:
-        'terms of service, GlowLab Tech terms, master service agreement, SaaS agreement, enterprise software contract',
-      canonicalUrl: 'https://glowlabtech.com/terms',
+        'terms of service, GrowthTechSys terms, master service agreement, SaaS agreement, enterprise software contract',
+      canonicalUrl: 'https://growthtechsys.com/terms',
       ogType: 'website',
       jsonLd: {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
-        name: 'Terms of Service | GlowLab Tech',
-        url: 'https://glowlabtech.com/terms',
+        name: 'Terms of Service | GrowthTechSys',
+        url: 'https://growthtechsys.com/terms',
         description:
-          'Commercial and platform operational terms for GlowLab Tech engineering services and software applications.',
+          'Commercial and platform operational terms for GrowthTechSys engineering services and software applications.',
         publisher: {
           '@type': 'Organization',
-          name: 'GlowLab Tech',
-          url: 'https://glowlabtech.com',
+          name: 'GrowthTechSys',
+          url: 'https://growthtechsys.com',
           telephone: '+91 89297 21558',
-          email: 'legal@glowlabtech.com',
+          email: 'legal@growthtechsys.com',
           address: {
             '@type': 'PostalAddress',
             streetAddress: 'B-13 World Tech Park Block-B, World Tech Park, 30, Jaipur - Delhi Expy, Silokhera, Block A, Sector 30',
@@ -52,7 +52,7 @@ export default function TermsPage({ onNavigate }: TermsPageProps) {
         id="terms-header"
         eyebrow="Commercial & Operational Terms"
         title="Terms of Service / Master Services Agreement"
-        subtitle="The contractual framework governing access to GlowLab Tech software engines, bespoke engineering services, and field force management infrastructure."
+        subtitle="The contractual framework governing access to GrowthTechSys software engines, bespoke engineering services, and field force management infrastructure."
       />
 
       {/* METADATA STRIP */}
@@ -79,7 +79,7 @@ export default function TermsPage({ onNavigate }: TermsPageProps) {
               1. Acceptance of Terms & Engagement Scope
             </h2>
             <p className="font-body text-sm sm:text-base text-neutral-700 leading-relaxed">
-              These Terms of Service (“Terms”) constitute a legally binding agreement between GlowLab Tech (“GlowLab,” “Company,” “we,” or “us”) and the enterprise entity, founder, or individual (“Client,” “Customer,” or “you”) engaging our engineering services, accessing our software repositories, or subscribing to our cloud-hosted platforms.
+              These Terms of Service (“Terms”) constitute a legally binding agreement between GrowthTechSys (“Company,” “we,” or “us”) and the enterprise entity, founder, or individual (“Client,” “Customer,” or “you”) engaging our engineering services, accessing our software repositories, or subscribing to our cloud-hosted platforms.
             </p>
             <p className="font-body text-sm sm:text-base text-neutral-700 leading-relaxed">
               By commissioning a Statement of Work (SOW), executing an enterprise software agreement, or authorizing team members to download our field telemetry mobile applications, you confirm that you have read, understood, and agreed to be bound by these Terms.
@@ -92,7 +92,7 @@ export default function TermsPage({ onNavigate }: TermsPageProps) {
               2. Scope of Services & SaaS Platforms
             </h2>
             <p className="font-body text-sm sm:text-base text-neutral-700 leading-relaxed">
-              GlowLab Tech provides engineering deliverables across two core engagement models:
+              GrowthTechSys provides engineering deliverables across two core engagement models:
             </p>
             <ul className="space-y-3 font-body text-sm sm:text-base text-neutral-700 pl-5 list-disc leading-relaxed">
               <li>
@@ -110,7 +110,7 @@ export default function TermsPage({ onNavigate }: TermsPageProps) {
               3. Acceptable Use & Employer Responsibilities
             </h2>
             <p className="font-body text-sm sm:text-base text-neutral-700 leading-relaxed">
-              When utilizing GlowLab Tech’s Field Sales & Workforce Automation software:
+              When utilizing GrowthTechSys’s Field Sales & Workforce Automation software:
             </p>
             <ul className="space-y-2.5 font-body text-sm sm:text-base text-neutral-700 pl-5 list-disc leading-relaxed">
               <li>
@@ -120,7 +120,7 @@ export default function TermsPage({ onNavigate }: TermsPageProps) {
                 <strong>Prohibition of Off-Duty Tracking:</strong> The Client covenants not to mandate, configure, or attempt telemetry capture outside of authorized working shift hours.
               </li>
               <li>
-                <strong>No Malicious Reverse Engineering:</strong> Neither Client nor its agents shall decompile, disassemble, reverse engineer, or create derivative works from GlowLab Tech’s compiled mobile binaries or proprietary backend telemetry ingestion endpoints.
+                <strong>No Malicious Reverse Engineering:</strong> Neither Client nor its agents shall decompile, disassemble, reverse engineer, or create derivative works from GrowthTechSys’s compiled mobile binaries or proprietary backend telemetry ingestion endpoints.
               </li>
             </ul>
           </div>
@@ -144,9 +144,9 @@ export default function TermsPage({ onNavigate }: TermsPageProps) {
                 </p>
               </div>
               <div className="border border-black/10 rounded-xl p-4 bg-[#FAF9F6]">
-                <h4 className="font-headline font-medium text-[#1A1A1A] mb-1">GlowLab Core Technology (Proprietary Engine)</h4>
+                <h4 className="font-headline font-medium text-[#1A1A1A] mb-1">GrowthTechSys Core Technology (Proprietary Engine)</h4>
                 <p className="text-neutral-600 leading-relaxed">
-                  GlowLab retains all rights, title, and interest in our pre-existing telemetry kernels, anti-mock GPS detection algorithms, baseline workflow automation scaffolding, and cloud infrastructure templates.
+                  GrowthTechSys retains all rights, title, and interest in our pre-existing telemetry kernels, anti-mock GPS detection algorithms, baseline workflow automation scaffolding, and cloud infrastructure templates.
                 </p>
               </div>
             </div>
@@ -174,7 +174,7 @@ export default function TermsPage({ onNavigate }: TermsPageProps) {
               6. Service Levels, Uptime & Warranties
             </h2>
             <p className="font-body text-sm sm:text-base text-neutral-700 leading-relaxed">
-              GlowLab Tech commits to maintaining an operational uptime target of <strong>99.9%</strong> for cloud-hosted SaaS endpoints, excluding pre-notified scheduled maintenance windows (typically executed outside standard business hours).
+              GrowthTechSys commits to maintaining an operational uptime target of <strong>99.9%</strong> for cloud-hosted SaaS endpoints, excluding pre-notified scheduled maintenance windows (typically executed outside standard business hours).
             </p>
             <p className="font-body text-sm sm:text-base text-neutral-700 leading-relaxed">
               Bespoke software deliverables are supported by a standard 30-day post-launch warranty during which any reproducible bugs or functional regressions violating the approved technical specification are remediated at zero additional cost.
@@ -187,10 +187,10 @@ export default function TermsPage({ onNavigate }: TermsPageProps) {
               7. Limitation of Liability
             </h2>
             <p className="font-body text-sm sm:text-base text-neutral-700 leading-relaxed">
-              To the maximum extent permissible under applicable law, in no event shall GlowLab Tech, its directors, or its software engineers be liable for indirect, incidental, special, consequential, or punitive damages (including loss of business profits, data corruption, or operational interruption).
+              To the maximum extent permissible under applicable law, in no event shall GrowthTechSys, its directors, or its software engineers be liable for indirect, incidental, special, consequential, or punitive damages (including loss of business profits, data corruption, or operational interruption).
             </p>
             <p className="font-body text-sm sm:text-base text-neutral-700 leading-relaxed">
-              Our total aggregate liability arising out of or related to any engagement shall not exceed the total fees actually received by GlowLab Tech from the Client under the specific SOW or subscription during the three (3) months preceding the claim.
+              Our total aggregate liability arising out of or related to any engagement shall not exceed the total fees actually received by GrowthTechSys from the Client under the specific SOW or subscription during the three (3) months preceding the claim.
             </p>
           </div>
 
@@ -248,11 +248,11 @@ export default function TermsPage({ onNavigate }: TermsPageProps) {
                   <span>Legal Department</span>
                 </div>
                 <p className="text-neutral-700">
-                  <a href="mailto:legal@glowlabtech.com" className="hover:text-[#C84826] transition-colors block">
-                    legal@glowlabtech.com
+                  <a href="mailto:legal@growthtechsys.com" className="hover:text-[#C84826] transition-colors block">
+                    legal@growthtechsys.com
                   </a>
-                  <a href="mailto:contact@glowlabtech.com" className="hover:text-[#C84826] transition-colors block text-neutral-500">
-                    contact@glowlabtech.com
+                  <a href="mailto:contact@growthtechsys.com" className="hover:text-[#C84826] transition-colors block text-neutral-500">
+                    contact@growthtechsys.com
                   </a>
                 </p>
               </div>

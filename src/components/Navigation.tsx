@@ -128,7 +128,7 @@ export default function Navigation({
           >
             <img
               src="/logo-transparent.png"
-              alt="GlowLab Tech"
+              alt="GrowthTechSys"
               className="h-4.5 sm:h-5.5 md:h-6.5 w-auto object-contain transition-transform group-hover:opacity-95"
             />
           </a>
@@ -353,7 +353,7 @@ export default function Navigation({
             >
               <img
                 src="/logo-transparent.png"
-                alt="GlowLab Tech"
+                alt="GrowthTechSys"
                 className="h-4.5 sm:h-5.5 w-auto object-contain"
               />
             </a>
@@ -532,12 +532,12 @@ export default function Navigation({
 
               <div className="flex items-center justify-between text-xs font-body text-neutral-500 pt-1">
                 <a
-                  href="mailto:contact@glowlabtech.com"
+                  href="mailto:contact@growthtechsys.com"
                   className="hover:text-[#C84826] transition-colors py-1"
                 >
-                  contact@glowlabtech.com
+                  contact@growthtechsys.com
                 </a>
-                <span className="py-1">glowlabtech.com</span>
+                <span className="py-1">growthtechsys.com</span>
               </div>
             </div>
           </div>

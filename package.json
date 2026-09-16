@@ -1,5 +1,5 @@
 {
-  "name": "glowlab-tech",
+  "name": "growthtechsys",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,8 +9,8 @@
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit",
-    "docker:build": "docker build -t glowlab-tech:latest .",
-    "docker:run": "docker run -d -p 80:80 --name glowlab-tech-container glowlab-tech:latest",
+    "docker:build": "docker build -t growthtechsys:latest .",
+    "docker:run": "docker run -d -p 80:80 --name growthtechsys-container growthtechsys:latest",
     "docker:up": "docker compose up -d --build",
     "docker:down": "docker compose down",
     "docker:dev": "docker compose -f docker-compose.dev.yml up --build"

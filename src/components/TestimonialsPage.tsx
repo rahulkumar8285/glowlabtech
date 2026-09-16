@@ -23,19 +23,19 @@ export default function TestimonialsPage({ onNavigate }: TestimonialsPageProps) 
 
   useEffect(() => {
     const cleanup = updatePageSEO({
-      title: 'Client Outcomes & Testimonials | GlowLab Tech',
+      title: 'Client Outcomes & Testimonials | GrowthTechSys',
       description:
-        'Honest feedback, verified metrics, and operational results from founders, operators, and growth leaders who build AI systems with GlowLab Tech.',
+        'Honest feedback, verified metrics, and operational results from founders, operators, and growth leaders who build AI systems with GrowthTechSys.',
       keywords:
-        'GlowLab Tech reviews, client testimonials, AI automation case studies, software development reviews, operational results',
-      canonicalUrl: 'https://glowlabtech.com/testimonials',
+        'GrowthTechSys reviews, client testimonials, AI automation case studies, software development reviews, operational results',
+      canonicalUrl: 'https://growthtechsys.com/testimonials',
       ogType: 'website',
       jsonLd: {
         '@context': 'https://schema.org',
         '@type': 'ItemList',
-        name: 'GlowLab Tech Client Reviews & Outcomes',
+        name: 'GrowthTechSys Client Reviews & Outcomes',
         description:
-          'Verified feedback and metrics from founders and leaders working with GlowLab Tech.',
+          'Verified feedback and metrics from founders and leaders working with GrowthTechSys.',
         itemListElement: TESTIMONIALS_DATA.map((item, idx) => ({
           '@type': 'Review',
           position: idx + 1,
@@ -52,8 +52,8 @@ export default function TestimonialsPage({ onNavigate }: TestimonialsPageProps) 
           reviewBody: item.quote,
           itemReviewed: {
             '@type': 'Organization',
-            name: 'GlowLab Tech',
-            url: 'https://glowlabtech.com',
+            name: 'GrowthTechSys',
+            url: 'https://growthtechsys.com',
           },
         })),
       },

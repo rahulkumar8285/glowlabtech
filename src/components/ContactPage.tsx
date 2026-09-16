@@ -22,26 +22,26 @@ export default function ContactPage({ onNavigate: _onNavigate }: ContactPageProp
   // Contact Page SEO
   useEffect(() => {
     const cleanup = updatePageSEO({
-      title: 'Contact Us | Start a Project with GlowLab Tech',
+      title: 'Contact Us | Start a Project with GrowthTechSys',
       description:
         'Connect directly with our engineering team at World Tech Park, Gurugram. Call +91 89297 21558 or submit a project brief for custom AI software and workforce automation.',
       keywords:
-        'contact GlowLab Tech, hire AI developers, software engineering quote, project inquiry, enterprise software consultation, Gurugram software agency',
-      canonicalUrl: 'https://glowlabtech.com/contact',
+        'contact GrowthTechSys, hire AI developers, software engineering quote, project inquiry, enterprise software consultation, Gurugram software agency',
+      canonicalUrl: 'https://growthtechsys.com/contact',
       ogType: 'website',
       jsonLd: {
         '@context': 'https://schema.org',
         '@type': 'ContactPage',
-        name: 'Contact GlowLab Tech',
-        url: 'https://glowlabtech.com/contact',
+        name: 'Contact GrowthTechSys',
+        url: 'https://growthtechsys.com/contact',
         description:
-          'Direct contact form, corporate office address, and engineering inquiry desk for GlowLab Tech.',
+          'Direct contact form, corporate office address, and engineering inquiry desk for GrowthTechSys.',
         mainEntity: {
           '@type': 'Organization',
-          name: 'GlowLab Tech',
-          url: 'https://glowlabtech.com',
+          name: 'GrowthTechSys',
+          url: 'https://growthtechsys.com',
           telephone: '+91 89297 21558',
-          email: 'contact@glowlabtech.com',
+          email: 'contact@growthtechsys.com',
           address: {
             '@type': 'PostalAddress',
             streetAddress: 'B-13 World Tech Park Block-B, World Tech Park, 30, Jaipur - Delhi Expy, Silokhera, Block A, Sector 30',
@@ -155,17 +155,17 @@ export default function ContactPage({ onNavigate: _onNavigate }: ContactPageProp
                     </span>
                     <div className="flex flex-col gap-1 text-xs sm:text-sm">
                       <a
-                        href="mailto:contact@glowlabtech.com"
+                        href="mailto:contact@growthtechsys.com"
                         className="text-[#1A1A1A] font-medium hover:text-[#C84826] transition-colors"
                       >
-                        contact@glowlabtech.com
+                        contact@growthtechsys.com
                         <span className="text-neutral-400 text-xs font-normal block sm:inline sm:ml-1.5">— Inquiries &amp; New Projects</span>
                       </a>
                       <a
-                        href="mailto:support@glowlabtech.com"
+                        href="mailto:support@growthtechsys.com"
                         className="text-neutral-600 hover:text-[#C84826] transition-colors"
                       >
-                        support@glowlabtech.com
+                        support@growthtechsys.com
                         <span className="text-neutral-400 text-xs font-normal block sm:inline sm:ml-1.5">— Platform &amp; Field Support</span>
                       </a>
                     </div>

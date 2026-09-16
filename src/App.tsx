@@ -80,42 +80,42 @@ export default function App() {
   useEffect(() => {
     if (currentPath === '/') {
       updatePageSEO({
-        title: 'GlowLab Tech — AI Software & Digital Product Agency',
+        title: 'GrowthTechSys — AI Systems, Workforce Telematics & Digital Engineering',
         description:
-          'We design and build AI automation, custom software, and digital products that turn attention into pipeline.',
+          'GrowthTechSys engineers custom AI software, automated workflow pipelines, and enterprise field workforce tracking telematics that scale revenue.',
         keywords:
-          'AI software agency, digital product development, field sales automation, GPS employee tracking app, custom software engineering, B2B workflow automation',
-        canonicalUrl: 'https://glowlabtech.com/',
+          'GrowthTechSys, AI software agency, digital product development, field sales automation, GPS employee tracking app, custom software engineering, B2B workflow automation',
+        canonicalUrl: 'https://growthtechsys.com/',
         ogType: 'website',
         jsonLd: {
           '@context': 'https://schema.org',
           '@graph': [
             {
               '@type': 'WebSite',
-              '@id': 'https://glowlabtech.com/#website',
-              url: 'https://glowlabtech.com/',
-              name: 'GlowLab Tech',
+              '@id': 'https://growthtechsys.com/#website',
+              url: 'https://growthtechsys.com/',
+              name: 'GrowthTechSys',
               description:
-                'AI software, custom digital products, and field workforce tracking solutions.',
+                'AI systems, custom digital products, and field workforce tracking telematics.',
               inLanguage: 'en-US',
             },
             {
               '@type': 'Organization',
-              '@id': 'https://glowlabtech.com/#organization',
-              name: 'GlowLab Tech',
-              url: 'https://glowlabtech.com/',
-              logo: 'https://glowlabtech.com/logo.png',
+              '@id': 'https://growthtechsys.com/#organization',
+              name: 'GrowthTechSys',
+              url: 'https://growthtechsys.com/',
+              logo: 'https://growthtechsys.com/logo.png',
               description:
                 'Engineering agency designing and building AI automation, custom software, and field sales tracking systems.',
               sameAs: [
-                'https://linkedin.com/company/glowlabtech',
-                'https://github.com/glowlabtech',
+                'https://linkedin.com/company/growthtechsys',
+                'https://github.com/growthtechsys',
               ],
               contactPoint: {
                 '@type': 'ContactPoint',
                 contactType: 'customer support',
                 telephone: '+91 89297 21558',
-                email: 'contact@glowlabtech.com',
+                email: 'contact@growthtechsys.com',
                 availableLanguage: ['English', 'Hindi'],
               },
               address: {

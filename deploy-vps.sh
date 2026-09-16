@@ -2,7 +2,7 @@
 set -euo pipefail
 
 echo "================================================"
-echo "  🚀 GlowLab Tech — Production VPS Deployment   "
+echo "  🚀 GrowthTechSys — Production VPS Deployment  "
 echo "================================================"
 
 # 1. Update packages and install prerequisites
@@ -46,7 +46,13 @@ ufw allow 80/tcp || true
 ufw allow 443/tcp || true
 
 # 5. Clone or pull latest repository
-DEPLOY_DIR="/opt/glowlabtech"
+if [ -d "/opt/growthtechsys/.git" ]; then
+    DEPLOY_DIR="/opt/growthtechsys"
+elif [ -d "/opt/glowlabtech/.git" ]; then
+    DEPLOY_DIR="/opt/glowlabtech"
+else
+    DEPLOY_DIR="/opt/growthtechsys"
+fi
 echo "📂 Deploying to ${DEPLOY_DIR}..."
 
 if [ -d "${DEPLOY_DIR}/.git" ]; then
@@ -70,15 +76,15 @@ docker compose up -d --build
 # 7. Verify container status and logs
 echo "⏳ Verifying container status..."
 sleep 4
-STATUS=$(docker inspect --format='{{.State.Status}}' glowlab-tech-web 2>/dev/null || echo "unknown")
+STATUS=$(docker inspect --format='{{.State.Status}}' growthtechsys-web 2>/dev/null || echo "unknown")
 
 if [ "$STATUS" != "running" ]; then
     echo "❌ Container failed to start (Status: $STATUS). Printing container logs:"
-    docker logs --tail 50 glowlab-tech-web
+    docker logs --tail 50 growthtechsys-web
     exit 1
 fi
 
-docker ps --filter "name=glowlab-tech-web"
+docker ps --filter "name=growthtechsys-web"
 
 SERVER_IP=$(curl -4 -s ifconfig.me 2>/dev/null || echo "216.219.95.111")
 echo "================================================"

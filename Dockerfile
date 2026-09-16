@@ -1,5 +1,5 @@
 # ==========================================
-# Multi-stage Dockerfile for GlowLab Tech SPA
+# Multi-stage Dockerfile for GrowthTechSys SPA
 # Stage 1: Build static assets using Node.js
 # Stage 2: Serve optimized assets with Nginx
 # ==========================================

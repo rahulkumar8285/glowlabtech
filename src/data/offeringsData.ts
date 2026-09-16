@@ -732,17 +732,17 @@ export const PRODUCTS_DATA: ProductItem[] = [
       {
         question: 'How does automated travel expense reimbursement save company costs?',
         answer:
-          'Traditional manual travel allowance (TA/DA) claims rely on self-reported kilometers, which frequently suffer from 30–40% inflation. GlowLab tracks actual turn-by-turn road distance traveled via verified GPS breadcrumbs, automatically calculating the exact reimbursable amount according to your company per-kilometer rate and eliminating manual disputes.',
+          'Traditional manual travel allowance (TA/DA) claims rely on self-reported kilometers, which frequently suffer from 30–40% inflation. GrowthTechSys tracks actual turn-by-turn road distance traveled via verified GPS breadcrumbs, automatically calculating the exact reimbursable amount according to your company per-kilometer rate and eliminating manual disputes.',
       },
       {
-        question: 'Can GlowLab integrate with our existing ERP, CRM, and HRMS platforms?',
+        question: 'Can GrowthTechSys integrate with our existing ERP, CRM, and HRMS platforms?',
         answer:
-          'Yes. GlowLab provides plug-and-play REST APIs and webhook connectors for leading enterprise platforms including SAP, Zoho, Salesforce, Darwinbox, Keka, GreytHR, and Microsoft Dynamics. Attendance logs, visit minutes, and sales orders can sync bidirectionally in real time.',
+          'Yes. GrowthTechSys provides plug-and-play REST APIs and webhook connectors for leading enterprise platforms including SAP, Zoho, Salesforce, Darwinbox, Keka, GreytHR, and Microsoft Dynamics. Attendance logs, visit minutes, and sales orders can sync bidirectionally in real time.',
       },
       {
         question: 'How fast can our field team be deployed and onboarded?',
         answer:
-          'You can onboard your entire field force in under 24 hours. Because GlowLab requires zero hardware or dedicated vehicle trackers, reps simply download the lightweight app onto their existing Android or iOS smartphones, authenticate via OTP or single sign-on, and start operating immediately.',
+          'You can onboard your entire field force in under 24 hours. Because GrowthTechSys requires zero hardware or dedicated vehicle trackers, reps simply download the lightweight app onto their existing Android or iOS smartphones, authenticate via OTP or single sign-on, and start operating immediately.',
       },
     ],
   },

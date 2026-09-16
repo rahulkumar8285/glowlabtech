@@ -74,18 +74,18 @@ export function updatePageSEO({
   }
 
   // 3. OpenGraph Tags
-  setMeta('og:site_name', 'GlowLab Tech', true);
+  setMeta('og:site_name', 'GrowthTechSys', true);
   setMeta('og:title', title, true);
   setMeta('og:description', description, true);
   setMeta('og:type', ogType, true);
-  const currentUrl = typeof window !== 'undefined' ? window.location.href : (canonicalUrl || 'https://glowlabtech.com/');
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : (canonicalUrl || 'https://growthtechsys.com/');
   setMeta('og:url', currentUrl, true);
   
   const absoluteOgImage = ogImage.startsWith('http')
     ? ogImage
     : typeof window !== 'undefined'
       ? `${window.location.origin}${ogImage.startsWith('/') ? '' : '/'}${ogImage}`
-      : `https://glowlabtech.com${ogImage.startsWith('/') ? '' : '/'}${ogImage}`;
+      : `https://growthtechsys.com${ogImage.startsWith('/') ? '' : '/'}${ogImage}`;
 
   setMeta('og:image', absoluteOgImage, true);
 

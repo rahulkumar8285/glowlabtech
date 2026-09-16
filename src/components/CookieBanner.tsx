@@ -8,7 +8,7 @@ export default function CookieBanner() {
   useEffect(() => {
     // Check if user already made a choice
     try {
-      const savedConsent = localStorage.getItem('glowlab_cookie_consent');
+      const savedConsent = localStorage.getItem('growthtechsys_cookie_consent') || localStorage.getItem('glowlab_cookie_consent');
       if (!savedConsent) {
         // Small delay for smooth entry after page loads
         const timer = setTimeout(() => {
@@ -33,9 +33,9 @@ export default function CookieBanner() {
 
   const handleAcceptAll = () => {
     try {
-      localStorage.setItem('glowlab_cookie_consent', 'accepted');
-      localStorage.setItem('glowlab_cookie_analytics', 'true');
-      localStorage.setItem('glowlab_cookie_marketing', 'true');
+      localStorage.setItem('growthtechsys_cookie_consent', 'accepted');
+      localStorage.setItem('growthtechsys_cookie_analytics', 'true');
+      localStorage.setItem('growthtechsys_cookie_marketing', 'true');
     } catch {
       // Ignore
     }
@@ -44,9 +44,9 @@ export default function CookieBanner() {
 
   const handleDeclineNonEssential = () => {
     try {
-      localStorage.setItem('glowlab_cookie_consent', 'essential_only');
-      localStorage.setItem('glowlab_cookie_analytics', 'false');
-      localStorage.setItem('glowlab_cookie_marketing', 'false');
+      localStorage.setItem('growthtechsys_cookie_consent', 'essential_only');
+      localStorage.setItem('growthtechsys_cookie_analytics', 'false');
+      localStorage.setItem('growthtechsys_cookie_marketing', 'false');
     } catch {
       // Ignore
     }
@@ -84,7 +84,7 @@ export default function CookieBanner() {
                 We Store Cookies
               </h3>
               <p className="font-body text-[11px] text-neutral-400">
-                GlowLab Tech Privacy &amp; Data
+                GrowthTechSys Privacy &amp; Data
               </p>
             </div>
           </div>

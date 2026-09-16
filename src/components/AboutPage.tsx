@@ -22,28 +22,28 @@ export default function AboutPage({
 }) {
   useEffect(() => {
     const cleanup = updatePageSEO({
-      title: 'About GlowLab Tech — Software, AI & Automation Agency',
+      title: 'About GrowthTechSys — Software, AI & Automation Agency',
       description:
         'We run an engineering agency with deep knowledge and hands-on experience, delivering high-quality software across multiple industries using a versatile multi-tool ecosystem.',
       keywords:
-        'about GlowLab Tech, AI software agency, engineering studio, digital product development, B2B software consulting, full stack engineering',
-      canonicalUrl: 'https://glowlabtech.com/about',
+        'about GrowthTechSys, AI software agency, engineering studio, digital product development, B2B software consulting, full stack engineering',
+      canonicalUrl: 'https://growthtechsys.com/about',
       ogType: 'website',
       jsonLd: {
         '@context': 'https://schema.org',
         '@type': 'AboutPage',
-        name: 'About GlowLab Tech',
-        url: 'https://glowlabtech.com/about',
+        name: 'About GrowthTechSys',
+        url: 'https://growthtechsys.com/about',
         description:
           'We run an engineering agency with deep knowledge and hands-on experience, delivering high-quality software across multiple industries using a versatile multi-tool ecosystem.',
         mainEntity: {
           '@type': 'Organization',
-          name: 'GlowLab Tech',
-          url: 'https://glowlabtech.com',
-          logo: 'https://glowlabtech.com/logo.png',
+          name: 'GrowthTechSys',
+          url: 'https://growthtechsys.com',
+          logo: 'https://growthtechsys.com/logo.png',
           sameAs: [
-            'https://linkedin.com/company/glowlabtech',
-            'https://github.com/glowlabtech',
+            'https://linkedin.com/company/growthtechsys',
+            'https://github.com/growthtechsys',
           ],
         },
       },
@@ -77,7 +77,7 @@ export default function AboutPage({
 
               <div className="space-y-4 font-body text-[#1A1A1A]">
                 <p className="text-base sm:text-lg md:text-[19px] leading-[1.65] font-normal text-neutral-800">
-                  We run GlowLab Tech with extensive hands-on experience and deep architectural knowledge. Having engineered mission-critical software, custom digital products, and automated AI pipelines over years of real-world operation, we understand what it takes to build resilient systems that perform under load.
+                  We run GrowthTechSys with extensive hands-on experience and deep architectural knowledge. Having engineered mission-critical software, custom digital products, and automated AI pipelines over years of real-world operation, we understand what it takes to build resilient systems that perform under load.
                 </p>
                 <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
                   We hold our work to the highest standards of craftsmanship. We don't deploy brittle no-code shortcuts or superficial templates; we build clean, maintainable, and battle-tested software. Every pipeline, database connection, and API integration is engineered with automated error recovery, enterprise-grade security, and measurable ROI that compounds your bottom line.
@@ -88,12 +88,12 @@ export default function AboutPage({
               </div>
             </div>
 
-            {/* Right column (~40% width): GlowLab Tech Studio & Workstation */}
+            {/* Right column (~40% width): GrowthTechSys Studio & Workstation */}
             <div className="col-span-12 lg:col-span-5 flex justify-center lg:justify-end">
               <div className="relative w-full max-w-sm sm:max-w-md aspect-[9/15] sm:aspect-[9/14] lg:aspect-[9/14] overflow-hidden bg-neutral-200 rounded-2xl border border-black/10 shadow-xl group">
                 <img
                   src="/about-office.jpg"
-                  alt="GlowLab Tech Headquarters & Studio Workstation"
+                  alt="GrowthTechSys Headquarters & Studio Workstation"
                   className="w-full h-full object-cover object-center contrast-[1.02] transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div

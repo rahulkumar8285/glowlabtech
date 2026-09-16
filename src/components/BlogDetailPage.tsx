@@ -18,10 +18,10 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
     if (!post) return;
 
     const cleanup = updatePageSEO({
-      title: `${post.title} | GlowLab Tech`,
+      title: `${post.title} | GrowthTechSys`,
       description: post.metaDescription,
       keywords: post.tags ? post.tags.join(', ') : undefined,
-      canonicalUrl: `https://glowlabtech.com/blog/${post.slug}`,
+      canonicalUrl: `https://growthtechsys.com/blog/${post.slug}`,
       ogType: 'article',
       publishedTime: post.isoDate,
       authorName: post.author.name,
@@ -30,12 +30,12 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
         '@type': 'BlogPosting',
         headline: post.title,
         description: post.metaDescription,
-        url: `https://glowlabtech.com/blog/${post.slug}`,
+        url: `https://growthtechsys.com/blog/${post.slug}`,
         datePublished: post.isoDate,
         dateModified: post.isoDate,
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': `https://glowlabtech.com/blog/${post.slug}`,
+          '@id': `https://growthtechsys.com/blog/${post.slug}`,
         },
         author: {
           '@type': 'Person',
@@ -44,8 +44,8 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
         },
         publisher: {
           '@type': 'Organization',
-          name: 'GlowLab Tech',
-          url: 'https://glowlabtech.com',
+          name: 'GrowthTechSys',
+          url: 'https://growthtechsys.com',
         },
       },
     });

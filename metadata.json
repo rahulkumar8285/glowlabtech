@@ -1,6 +1,6 @@
 {
-  "name": "GlowLab Tech",
-  "description": "GlowLab Tech — Software development, digital products, and AI automation agency website featuring full inner pages, manifesto, workflow, and case studies.",
+  "name": "GrowthTechSys",
+  "description": "GrowthTechSys — AI Systems, workforce telematics, and software engineering agency website featuring full inner pages, manifesto, workflow, and case studies.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

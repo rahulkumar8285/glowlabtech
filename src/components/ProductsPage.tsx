@@ -51,10 +51,10 @@ export default function ProductsPage({
 
     const softwareSchema = {
       '@type': 'SoftwareApplication',
-      name: 'GlowLab Field Sales Automation & Workforce Tracking Software',
+      name: 'GrowthTechSys Field Sales Automation & Workforce Tracking Software',
       operatingSystem: 'Android, iOS, Cloud Web',
       applicationCategory: 'BusinessApplication',
-      url: 'https://glowlabtech.com/products',
+      url: 'https://growthtechsys.com/products',
       description:
         'All-in-one field sales automation and GPS workforce management platform. Streamline beat planning, verify client check-ins, automate selfie attendance, and audit travel claims.',
       aggregateRating: {
@@ -71,18 +71,18 @@ export default function ProductsPage({
       },
       creator: {
         '@type': 'Organization',
-        name: 'GlowLab Tech',
-        url: 'https://glowlabtech.com',
+        name: 'GrowthTechSys',
+        url: 'https://growthtechsys.com',
       },
     };
 
     const cleanup = updatePageSEO({
-      title: 'Field Sales Automation & GPS Workforce Tracking Software | GlowLab Tech',
+      title: 'Field Sales Automation & GPS Workforce Tracking Software | GrowthTechSys',
       description:
         'Streamline daily beat plans, verify customer meetings, automate geo-fenced selfie attendance, and eliminate travel reimbursement disputes across 500+ Indian cities.',
       keywords:
         'field sales automation software, gps employee tracking app, field force tracking, beat planning software, geo-fenced attendance app, mock gps detection, travel reimbursement automation, sales rep tracking India',
-      canonicalUrl: 'https://glowlabtech.com/products',
+      canonicalUrl: 'https://growthtechsys.com/products',
       ogType: 'website',
       jsonLd: {
         '@context': 'https://schema.org',
@@ -462,7 +462,7 @@ export default function ProductsPage({
               </p>
             </div>
 
-            {/* Contrast Grid: Pain Points vs. GlowLab Solution */}
+            {/* Contrast Grid: Pain Points vs. GrowthTechSys Solution */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
               {/* Without Field Tracking Automation (Pain Points) */}
               <div className="bg-white border border-red-200/70 rounded-2xl p-6 sm:p-8 relative">
@@ -489,7 +489,7 @@ export default function ProductsPage({
               <div className="bg-[#141413] text-[#FAF9F6] rounded-2xl p-6 sm:p-8 relative border border-white/10 shadow-lg">
                 <div className="flex items-center gap-2 text-[#FAF9F6] font-headline font-medium text-base sm:text-lg mb-4">
                   <ShieldCheck className="w-5 h-5 text-[#C84826]" />
-                  <span>The GlowLab Field Accountability System</span>
+                  <span>The GrowthTechSys Field Accountability System</span>
                 </div>
                 <p className="font-body text-xs sm:text-sm text-neutral-300 mb-6 leading-relaxed">
                   Replace uncertainty with cryptographic accuracy, automated attendance audits, and transparent travel billing:
@@ -545,7 +545,7 @@ export default function ProductsPage({
                         {ind.problem}
                       </div>
                       <div className="text-neutral-800">
-                        <span className="font-medium text-[#C84826] block mb-0.5">GlowLab Solution:</span>
+                        <span className="font-medium text-[#C84826] block mb-0.5">GrowthTechSys Solution:</span>
                         {ind.solution}
                       </div>
                     </div>

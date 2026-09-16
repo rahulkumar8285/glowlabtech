@@ -22,17 +22,17 @@ export default function ServiceDetailPage({
     const serviceKeywords = [
       service.name,
       service.shortTitle,
-      'GlowLab Tech',
+      'GrowthTechSys',
       'AI engineering',
       'custom software development',
       ...service.deliverables.slice(0, 3),
     ].join(', ');
 
     const cleanup = updatePageSEO({
-      title: `${service.name} | GlowLab Tech`,
+      title: `${service.name} | GrowthTechSys`,
       description: service.summary || service.tagline,
       keywords: serviceKeywords,
-      canonicalUrl: `https://glowlabtech.com/services/${service.slug}`,
+      canonicalUrl: `https://growthtechsys.com/services/${service.slug}`,
       ogType: 'website',
       jsonLd: {
         '@context': 'https://schema.org',
@@ -41,8 +41,8 @@ export default function ServiceDetailPage({
         description: service.description,
         provider: {
           '@type': 'Organization',
-          name: 'GlowLab Tech',
-          url: 'https://glowlabtech.com',
+          name: 'GrowthTechSys',
+          url: 'https://growthtechsys.com',
         },
         serviceType: service.shortTitle,
       },

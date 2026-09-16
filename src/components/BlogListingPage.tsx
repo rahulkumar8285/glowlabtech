@@ -17,25 +17,25 @@ export default function BlogListingPage({ onNavigate }: BlogListingPageProps) {
   // SEO Update for Blog Listing
   useEffect(() => {
     const cleanup = updatePageSEO({
-      title: 'Field Notes & Playbooks | GlowLab Tech',
+      title: 'Field Notes & Playbooks | GrowthTechSys',
       description:
         'Technical breakdowns, operational case studies, and engineering playbooks on AI automation, software engineering, and B2B growth infrastructure.',
       keywords:
         'AI engineering blog, software architecture playbooks, RAG pipelines, LLM latency benchmarks, cold email deliverability, B2B growth engineering',
-      canonicalUrl: 'https://glowlabtech.com/blog',
+      canonicalUrl: 'https://growthtechsys.com/blog',
       ogType: 'website',
       jsonLd: {
         '@context': 'https://schema.org',
         '@type': 'Blog',
-        name: 'GlowLab Tech Insights',
+        name: 'GrowthTechSys Insights',
         description:
           'Technical breakdowns, operational case studies, and engineering playbooks on AI automation, software engineering, and B2B growth infrastructure.',
-        url: 'https://glowlabtech.com/blog',
+        url: 'https://growthtechsys.com/blog',
         blogPost: BLOG_POSTS.map((post) => ({
           '@type': 'BlogPosting',
           headline: post.title,
           description: post.excerpt,
-          url: `https://glowlabtech.com/blog/${post.slug}`,
+          url: `https://growthtechsys.com/blog/${post.slug}`,
           datePublished: post.isoDate,
           author: {
             '@type': 'Person',

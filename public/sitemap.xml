@@ -5,79 +5,79 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <!-- Primary Landing Pages -->
   <url>
-    <loc>https://glowlabtech.com/</loc>
+    <loc>https://growthtechsys.com/</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://glowlabtech.com/products</loc>
+    <loc>https://growthtechsys.com/products</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://glowlabtech.com/services/ai-automation</loc>
+    <loc>https://growthtechsys.com/services/ai-automation</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://glowlabtech.com/services/custom-software</loc>
+    <loc>https://growthtechsys.com/services/custom-software</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://glowlabtech.com/services/cloud-infrastructure</loc>
+    <loc>https://growthtechsys.com/services/cloud-infrastructure</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://glowlabtech.com/services/product-development</loc>
+    <loc>https://growthtechsys.com/services/product-development</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://glowlabtech.com/about</loc>
+    <loc>https://growthtechsys.com/about</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://glowlabtech.com/testimonials</loc>
+    <loc>https://growthtechsys.com/testimonials</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://glowlabtech.com/blog</loc>
+    <loc>https://growthtechsys.com/blog</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://glowlabtech.com/contact</loc>
+    <loc>https://growthtechsys.com/contact</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://glowlabtech.com/privacy</loc>
+    <loc>https://growthtechsys.com/privacy</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://glowlabtech.com/terms</loc>
+    <loc>https://growthtechsys.com/terms</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://glowlabtech.com/security</loc>
+    <loc>https://growthtechsys.com/security</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -85,31 +85,31 @@
 
   <!-- Insights & Blog Articles -->
   <url>
-    <loc>https://glowlabtech.com/blog/autonomous-inbound-lead-engine</loc>
+    <loc>https://growthtechsys.com/blog/autonomous-inbound-lead-engine</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://glowlabtech.com/blog/math-behind-short-form-video-b2b</loc>
+    <loc>https://growthtechsys.com/blog/math-behind-short-form-video-b2b</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://glowlabtech.com/blog/cold-email-deliverability-2025</loc>
+    <loc>https://growthtechsys.com/blog/cold-email-deliverability-2025</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://glowlabtech.com/blog/evaluating-llm-latency-cost-production</loc>
+    <loc>https://growthtechsys.com/blog/evaluating-llm-latency-cost-production</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://glowlabtech.com/blog/building-resilient-rag-pipelines-2025</loc>
+    <loc>https://growthtechsys.com/blog/building-resilient-rag-pipelines-2025</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

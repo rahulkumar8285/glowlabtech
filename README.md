@@ -1,4 +1,4 @@
-# GlowLab Tech — AI Software & Digital Product Agency
+# GrowthTechSys — AI Software & Digital Product Agency
 
 <div align="center">
 
@@ -11,7 +11,7 @@
 
 **Engineering resilient AI automation, custom software architectures, and high-converting digital products for ambitious operators.**
 
-[Live Site](https://glowlabtech.com/) • [Explore Services](https://glowlabtech.com/services) • [Field Notes](https://glowlabtech.com/blog) • [Contact Us](https://glowlabtech.com/contact)
+[Live Site](https://growthtechsys.com/) • [Explore Services](https://growthtechsys.com/services) • [Field Notes](https://growthtechsys.com/blog) • [Contact Us](https://growthtechsys.com/contact)
 
 </div>
 
@@ -19,7 +19,7 @@
 
 ## ✦ Overview
 
-**GlowLab Tech** is a modern systems engineering and digital product agency. We bridge the gap between bleeding-edge AI models and rock-solid production pipelines. From autonomous workflow automation and custom cloud architectures to high-performance web applications, we design systems that eliminate bottlenecks and turn attention into measurable revenue.
+**GrowthTechSys** is a modern systems engineering and digital product agency. We bridge the gap between bleeding-edge AI models and rock-solid production pipelines. From autonomous workflow automation and custom cloud architectures to high-performance web applications, we design systems that eliminate bottlenecks and turn attention into measurable revenue.
 
 ---
 
@@ -132,7 +132,7 @@ growLab/
 | `npm run preview` | Locally previews the production build from `dist/` |
 | `npm run lint` | Runs `tsc --noEmit` to validate all TypeScript types |
 | `npm run clean` | Removes build artifacts (`dist/`) and temporary files |
-| `npm run docker:build` | Builds the production multi-stage Docker image (`glowlab-tech:latest`) |
+| `npm run docker:build` | Builds the production multi-stage Docker image (`growthtechsys:latest`) |
 | `npm run docker:run` | Runs the container on port `8080` (`http://localhost:8080`) |
 | `npm run docker:up` | Boots the application stack via Docker Compose in detached mode |
 | `npm run docker:down` | Stops and removes Docker Compose containers |
@@ -161,10 +161,10 @@ docker compose down
 
 ```bash
 # Build production image
-docker build -t glowlab-tech:latest .
+docker build -t growthtechsys:latest .
 
 # Run container on port 8080
-docker run -d -p 8080:80 --name glowlab-tech glowlab-tech:latest
+docker run -d -p 8080:80 --name growthtechsys-web growthtechsys:latest
 ```
 
 Access the site at **[http://localhost:8080](http://localhost:8080)**.
@@ -181,7 +181,7 @@ Access dev server at **[http://localhost:3000](http://localhost:3000)**.
 
 ## 🎨 Design System & Palette
 
-GlowLab Tech uses a warm, editorial dark aesthetic with tactile terracotta accents:
+GrowthTechSys uses a warm, editorial dark aesthetic with tactile terracotta accents:
 
 - **Background Canvas**: `#FAF9F6` (Alabaster / Warm White) & `#141413` (Deep Onyx)
 - **Primary Accent**: `#C84826` (Terracotta Flame)
@@ -206,5 +206,5 @@ This project is licensed under the [Apache-2.0 License](LICENSE).
 ---
 
 <div align="center">
-  <sub>Engineered with care by <strong>GlowLab Tech</strong>.</sub>
+  <sub>Engineered with care by <strong>GrowthTechSys</strong>.</sub>
 </div>

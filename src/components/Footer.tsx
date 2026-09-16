@@ -38,7 +38,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             >
               <img
                 src="/logo-dark.png"
-                alt="GlowLab Tech"
+                alt="GrowthTechSys"
                 className="h-6 sm:h-8 w-auto object-contain"
               />
             </a>
@@ -175,11 +175,11 @@ export default function Footer({ onNavigate }: FooterProps) {
                 </p>
                 <div className="space-y-2 mb-4">
                   <a
-                    href="mailto:contact@glowlabtech.com"
+                    href="mailto:contact@growthtechsys.com"
                     className="inline-flex items-center gap-2 text-xs sm:text-sm font-body text-[#FAF9F6] hover:text-[#C84826] transition-colors"
                   >
                     <Mail className="w-4 h-4 text-[#C84826] shrink-0" />
-                    <span>contact@glowlabtech.com</span>
+                    <span>contact@growthtechsys.com</span>
                   </a>
                   <a
                     href="tel:+918929721558"
@@ -235,7 +235,7 @@ export default function Footer({ onNavigate }: FooterProps) {
       {/* Bottom Sub-Footer: Copyright, Legal & Back to Top */}
       <div className="w-full border-t border-white/[0.06] py-6 sm:py-8 bg-[#090908]">
         <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs font-body text-neutral-500">
-          <p>© {currentYear} GLOWLAB TECH. All rights reserved.</p>
+          <p>© {currentYear} GROWTHTECHSYS. All rights reserved.</p>
 
           <div className="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 border-white/[0.06]">
             <div className="flex items-center gap-3 sm:gap-4 text-neutral-400">

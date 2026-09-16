@@ -11,26 +11,26 @@ interface PrivacyPageProps {
 export default function PrivacyPage({ onNavigate }: PrivacyPageProps) {
   useEffect(() => {
     const cleanup = updatePageSEO({
-      title: 'Privacy Policy | GlowLab Tech',
+      title: 'Privacy Policy | GrowthTechSys',
       description:
-        'Comprehensive privacy policy for GlowLab Tech software, website, and GPS workforce telemetry applications in compliance with India DPDP Act and international privacy frameworks.',
+        'Comprehensive privacy policy for GrowthTechSys software, website, and GPS workforce telemetry applications in compliance with India DPDP Act and international privacy frameworks.',
       keywords:
-        'privacy policy, GlowLab Tech privacy, field force telemetry privacy, DPDP act compliance, data protection officer',
-      canonicalUrl: 'https://glowlabtech.com/privacy',
+        'privacy policy, GrowthTechSys privacy, field force telemetry privacy, DPDP act compliance, data protection officer',
+      canonicalUrl: 'https://growthtechsys.com/privacy',
       ogType: 'website',
       jsonLd: {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
-        name: 'Privacy Policy | GlowLab Tech',
-        url: 'https://glowlabtech.com/privacy',
+        name: 'Privacy Policy | GrowthTechSys',
+        url: 'https://growthtechsys.com/privacy',
         description:
-          'Data privacy and security standards governing GlowLab Tech platforms, website, and workforce telemetry applications.',
+          'Data privacy and security standards governing GrowthTechSys platforms, website, and workforce telemetry applications.',
         publisher: {
           '@type': 'Organization',
-          name: 'GlowLab Tech',
-          url: 'https://glowlabtech.com',
+          name: 'GrowthTechSys',
+          url: 'https://growthtechsys.com',
           telephone: '+91 89297 21558',
-          email: 'privacy@glowlabtech.com',
+          email: 'privacy@growthtechsys.com',
           address: {
             '@type': 'PostalAddress',
             streetAddress: 'B-13 World Tech Park Block-B, World Tech Park, 30, Jaipur - Delhi Expy, Silokhera, Block A, Sector 30',
@@ -52,7 +52,7 @@ export default function PrivacyPage({ onNavigate }: PrivacyPageProps) {
         id="privacy-header"
         eyebrow="Legal & Data Governance"
         title="Privacy Policy / Data Protection Standards"
-        subtitle="How GlowLab Tech collects, encrypts, and processes personal and organizational telemetry data across our digital platforms and workforce automation engines."
+        subtitle="How GrowthTechSys collects, encrypts, and processes personal and organizational telemetry data across our digital platforms and workforce automation engines."
       />
 
       {/* DOCUMENT METADATA STRIP */}
@@ -79,7 +79,7 @@ export default function PrivacyPage({ onNavigate }: PrivacyPageProps) {
               1. Overview & Scope
             </h2>
             <p className="font-body text-sm sm:text-base text-neutral-700 leading-relaxed">
-              GlowLab Tech (“we,” “our,” or “us”) designs and operates enterprise software, custom AI automations, and workforce telematics solutions. This Privacy Policy details how we handle information collected through our official website (<a href="https://glowlabtech.com" className="text-[#C84826] underline">glowlabtech.com</a>), our mobile tracking and sales automation applications, and related software engines.
+              GrowthTechSys (“we,” “our,” or “us”) designs and operates enterprise software, custom AI automations, and workforce telematics solutions. This Privacy Policy details how we handle information collected through our official website (<a href="https://growthtechsys.com" className="text-[#C84826] underline">growthtechsys.com</a>), our mobile tracking and sales automation applications, and related software engines.
             </p>
             <p className="font-body text-sm sm:text-base text-neutral-700 leading-relaxed">
               We operate under the fundamental principle of data minimization: we strictly collect data necessary to fulfill technical workflows, contractual obligations, and workforce validation needs agreed upon by your organization.
@@ -119,14 +119,14 @@ export default function PrivacyPage({ onNavigate }: PrivacyPageProps) {
               </h3>
             </div>
             <p className="font-body text-sm sm:text-base text-neutral-800 leading-relaxed">
-              For employees and agents using GlowLab Tech’s Field Sales & Workforce Automation applications, your privacy is safeguarded by strict algorithmic boundaries:
+              For employees and agents using GrowthTechSys’s Field Sales & Workforce Automation applications, your privacy is safeguarded by strict algorithmic boundaries:
             </p>
             <ul className="space-y-2.5 font-body text-xs sm:text-sm text-neutral-700 pl-4 list-disc leading-relaxed">
               <li>
                 <strong>Shift-Bound Telemetry Only:</strong> GPS coordinates are captured strictly between your explicit punch-in and punch-out. The instant a user punches out of their shift, all background location services immediately terminate.
               </li>
               <li>
-                <strong>Zero Off-Duty Surveillance:</strong> GlowLab Tech never records, queries, or stores location telemetry during weekends, off-duty hours, or approved leaves.
+                <strong>Zero Off-Duty Surveillance:</strong> GrowthTechSys never records, queries, or stores location telemetry during weekends, off-duty hours, or approved leaves.
               </li>
               <li>
                 <strong>Anti-Tamper Without Device Intrusion:</strong> Our anti-mock location algorithms inspect OS provider state flags to verify authentic physical attendance without reading private files, chats, or personal accounts.
@@ -261,11 +261,11 @@ export default function PrivacyPage({ onNavigate }: PrivacyPageProps) {
                   <span>Domain Inquiries</span>
                 </div>
                 <p className="text-neutral-700">
-                  <a href="mailto:privacy@glowlabtech.com" className="hover:text-[#C84826] transition-colors block">
-                    privacy@glowlabtech.com
+                  <a href="mailto:privacy@growthtechsys.com" className="hover:text-[#C84826] transition-colors block">
+                    privacy@growthtechsys.com
                   </a>
-                  <a href="mailto:legal@glowlabtech.com" className="hover:text-[#C84826] transition-colors block text-neutral-500">
-                    legal@glowlabtech.com
+                  <a href="mailto:legal@growthtechsys.com" className="hover:text-[#C84826] transition-colors block text-neutral-500">
+                    legal@growthtechsys.com
                   </a>
                 </p>
               </div>

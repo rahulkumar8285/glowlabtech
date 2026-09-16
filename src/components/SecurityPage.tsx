@@ -11,25 +11,25 @@ interface SecurityPageProps {
 export default function SecurityPage({ onNavigate }: SecurityPageProps) {
   useEffect(() => {
     const cleanup = updatePageSEO({
-      title: 'Security Overview & Trust Center | GlowLab Tech',
+      title: 'Security Overview & Trust Center | GrowthTechSys',
       description:
-        'Enterprise security posture, zero-trust infrastructure, AES-256 encryption, anti-tamper telemetry defenses, and vulnerability disclosure program at GlowLab Tech.',
+        'Enterprise security posture, zero-trust infrastructure, AES-256 encryption, anti-tamper telemetry defenses, and vulnerability disclosure program at GrowthTechSys.',
       keywords:
         'security policy, zero trust architecture, SOC 2 compliance, anti-mock GPS security, data encryption, vulnerability disclosure',
-      canonicalUrl: 'https://glowlabtech.com/security',
+      canonicalUrl: 'https://growthtechsys.com/security',
       ogType: 'website',
       jsonLd: {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
-        name: 'Security Overview & Trust Center | GlowLab Tech',
-        url: 'https://glowlabtech.com/security',
+        name: 'Security Overview & Trust Center | GrowthTechSys',
+        url: 'https://growthtechsys.com/security',
         description:
-          'Security architecture, encryption standards, and threat prevention mechanisms engineered into GlowLab Tech systems.',
+          'Security architecture, encryption standards, and threat prevention mechanisms engineered into GrowthTechSys systems.',
         publisher: {
           '@type': 'Organization',
-          name: 'GlowLab Tech',
-          url: 'https://glowlabtech.com',
-          email: 'security@glowlabtech.com',
+          name: 'GrowthTechSys',
+          url: 'https://growthtechsys.com',
+          email: 'security@growthtechsys.com',
           address: {
             '@type': 'PostalAddress',
             streetAddress: 'B-13 World Tech Park Block-B, World Tech Park, 30, Jaipur - Delhi Expy, Silokhera, Block A, Sector 30',
@@ -51,7 +51,7 @@ export default function SecurityPage({ onNavigate }: SecurityPageProps) {
         id="security-header"
         eyebrow="Trust Center & Threat Defense"
         title="Security Overview / Enterprise Architecture"
-        subtitle="How GlowLab Tech safeguards production software, client data, and mobile field telemetry through defense-in-depth zero-trust engineering."
+        subtitle="How GrowthTechSys safeguards production software, client data, and mobile field telemetry through defense-in-depth zero-trust engineering."
       />
 
       {/* PILLARS HIGHLIGHT STRIP */}
@@ -104,7 +104,7 @@ export default function SecurityPage({ onNavigate }: SecurityPageProps) {
               1. Security Philosophy &amp; Posture
             </h2>
             <p className="font-body text-sm sm:text-base text-neutral-700 leading-relaxed">
-              At GlowLab Tech, security is not an afterthought or an isolated audit checkbox—it is engineered into every line of code, Docker container, database migration, and telemetry webhook we deploy.
+              At GrowthTechSys, security is not an afterthought or an isolated audit checkbox—it is engineered into every line of code, Docker container, database migration, and telemetry webhook we deploy.
             </p>
             <p className="font-body text-sm sm:text-base text-neutral-700 leading-relaxed">
               Because our platforms process mission-critical business transactions, automated ERP synchronizations, and verified field workforce movements across 500+ Indian cities, we implement defense-in-depth principles across the entire application lifecycle.
@@ -148,7 +148,7 @@ export default function SecurityPage({ onNavigate }: SecurityPageProps) {
               </h3>
             </div>
             <p className="font-body text-sm sm:text-base text-neutral-800 leading-relaxed">
-              Field workforce systems are vulnerable to GPS spoofing and fake attendance tools. GlowLab Tech engineers an active telemetry defense layer built directly into our mobile kernel:
+              Field workforce systems are vulnerable to GPS spoofing and fake attendance tools. GrowthTechSys engineers an active telemetry defense layer built directly into our mobile kernel:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 text-xs sm:text-sm font-body">
               <div className="bg-white/90 border border-black/10 rounded-lg p-4">
@@ -217,10 +217,10 @@ export default function SecurityPage({ onNavigate }: SecurityPageProps) {
               </h3>
             </div>
             <p className="font-body text-sm sm:text-base text-neutral-700 leading-relaxed">
-              We welcome collaboration with independent security researchers and ethical hackers. If you believe you have discovered a security vulnerability affecting GlowLab Tech systems, please report it responsibly:
+              We welcome collaboration with independent security researchers and ethical hackers. If you believe you have discovered a security vulnerability affecting GrowthTechSys systems, please report it responsibly:
             </p>
             <ul className="space-y-2 font-body text-xs sm:text-sm text-neutral-600 pl-5 list-disc leading-relaxed">
-              <li>Submit reports directly to <a href="mailto:security@glowlabtech.com" className="text-[#C84826] font-medium underline">security@glowlabtech.com</a>.</li>
+              <li>Submit reports directly to <a href="mailto:security@growthtechsys.com" className="text-[#C84826] font-medium underline">security@growthtechsys.com</a>.</li>
               <li>Include reproduction steps, proof-of-concept payloads, and affected component endpoints.</li>
               <li>Provide reasonable time for remediation prior to public disclosure.</li>
               <li>We commit to acknowledging valid disclosures within 24 business hours.</li>
@@ -255,8 +255,8 @@ export default function SecurityPage({ onNavigate }: SecurityPageProps) {
                   <span>Incident Response</span>
                 </div>
                 <p className="text-neutral-700">
-                  <a href="mailto:security@glowlabtech.com" className="hover:text-[#C84826] transition-colors font-medium">
-                    security@glowlabtech.com
+                  <a href="mailto:security@growthtechsys.com" className="hover:text-[#C84826] transition-colors font-medium">
+                    security@growthtechsys.com
                   </a>
                 </p>
                 <span className="text-[11px] text-neutral-400 block">PGP &amp; Encrypted Disclosures</span>
@@ -268,11 +268,11 @@ export default function SecurityPage({ onNavigate }: SecurityPageProps) {
                   <span>Secure Inboxes</span>
                 </div>
                 <p className="text-neutral-700">
-                  <a href="mailto:security@glowlabtech.com" className="hover:text-[#C84826] transition-colors block">
-                    security@glowlabtech.com
+                  <a href="mailto:security@growthtechsys.com" className="hover:text-[#C84826] transition-colors block">
+                    security@growthtechsys.com
                   </a>
-                  <a href="mailto:legal@glowlabtech.com" className="hover:text-[#C84826] transition-colors block text-neutral-500">
-                    legal@glowlabtech.com
+                  <a href="mailto:legal@growthtechsys.com" className="hover:text-[#C84826] transition-colors block text-neutral-500">
+                    legal@growthtechsys.com
                   </a>
                 </p>
               </div>

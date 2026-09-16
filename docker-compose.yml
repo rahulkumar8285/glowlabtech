@@ -1,9 +1,9 @@
 services:
-  glowlab-web:
+  growthtechsys-web:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: glowlab-tech-web
+    container_name: growthtechsys-web
     restart: unless-stopped
     ports:
       - "${PORT:-80}:80"
