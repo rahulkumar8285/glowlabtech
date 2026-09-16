@@ -206,55 +206,28 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
       {/* ARTICLE HEADER */}
       <header className="w-full pt-12 sm:pt-16 pb-10 border-b border-black/[0.06]">
         <div className="w-full max-w-4xl mx-auto px-6 sm:px-10 text-left">
-          {/* Metadata pill */}
-          <div className="flex flex-wrap items-center gap-3 text-xs font-body text-neutral-500 mb-6">
-            <span className="font-semibold text-[#C84826] bg-[#C84826]/10 px-3 py-1 rounded-full">
-              {post.category}
-            </span>
-            <time dateTime={post.isoDate}>{post.publishedAt}</time>
-            <span className="text-neutral-300">•</span>
-            <span>{post.readTime}</span>
-          </div>
+          {/* Metadata row with Share Buttons on the right */}
+          <div className="flex flex-wrap items-center justify-between gap-4 text-xs font-body text-neutral-500 mb-6 sm:mb-8">
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="font-semibold text-[#C84826] bg-[#C84826]/10 px-3 py-1 rounded-full">
+                {post.category}
+              </span>
+              <time dateTime={post.isoDate}>{post.publishedAt}</time>
+              <span className="text-neutral-300">•</span>
+              <span>{post.readTime}</span>
+            </div>
 
-          {/* Large Editorial Headline */}
-          <h1 className="font-headline font-normal sm:font-medium text-3xl sm:text-4xl md:text-5xl lg:text-[54px] leading-[1.12] tracking-[-0.02em] text-[#1A1A1A] mb-8">
-            {post.title}
-          </h1>
-
-          {/* Lead excerpt */}
-          <p className="font-body text-lg sm:text-xl text-neutral-600 leading-relaxed max-w-3xl mb-10">
-            {post.excerpt}
-          </p>
-
-          {/* Social Sharing */}
-          <div className="pt-6 border-t border-black/[0.08] flex items-center justify-end gap-6">
-            {post.author && (
-              <div className="flex items-center gap-3.5 mr-auto">
-                <img
-                  src={post.author.avatarUrl}
-                  alt={post.author.name}
-                  className="w-12 h-12 rounded-full object-cover border border-black/10"
-                />
-                <div>
-                  <p className="font-headline font-medium text-base text-[#1A1A1A] leading-tight">
-                    {post.author.name}
-                  </p>
-                  <p className="font-body text-xs text-neutral-500 mt-0.5">{post.author.role}</p>
-                </div>
-              </div>
-            )}
-
-            {/* Social Share Buttons */}
+            {/* Social Share Buttons (Right Side) */}
             <div className="flex items-center gap-2 text-neutral-500">
               <span className="font-body text-xs text-neutral-400 mr-1">Share:</span>
               <button
                 type="button"
                 onClick={handleCopyLink}
                 aria-label="Copy article link"
-                className="p-2 rounded-full border border-black/10 hover:border-black/30 hover:text-[#1A1A1A] transition-colors relative"
+                className="p-1.5 sm:p-2 rounded-full border border-black/10 hover:border-black/30 hover:text-[#1A1A1A] transition-colors relative cursor-pointer"
                 title="Copy link"
               >
-                {copied ? <Check className="w-4 h-4 text-emerald-600" /> : <Share2 className="w-4 h-4" />}
+                {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Share2 className="w-3.5 h-3.5" />}
                 {copied && (
                   <span className="absolute -top-7 left-1/2 -translate-x-1/2 bg-[#1A1A1A] text-white text-[10px] px-2 py-0.5 rounded font-body whitespace-nowrap">
                     Copied!
@@ -267,10 +240,10 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Share on X / Twitter"
-                className="p-2 rounded-full border border-black/10 hover:border-black/30 hover:text-[#1A1A1A] transition-colors"
+                className="p-1.5 sm:p-2 rounded-full border border-black/10 hover:border-black/30 hover:text-[#1A1A1A] transition-colors"
                 title="Share on X"
               >
-                <Twitter className="w-4 h-4" />
+                <Twitter className="w-3.5 h-3.5" />
               </a>
 
               <a
@@ -278,13 +251,23 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Share on LinkedIn"
-                className="p-2 rounded-full border border-black/10 hover:border-black/30 hover:text-[#1A1A1A] transition-colors"
+                className="p-1.5 sm:p-2 rounded-full border border-black/10 hover:border-black/30 hover:text-[#1A1A1A] transition-colors"
                 title="Share on LinkedIn"
               >
-                <Linkedin className="w-4 h-4" />
+                <Linkedin className="w-3.5 h-3.5" />
               </a>
             </div>
           </div>
+
+          {/* Large Editorial Headline */}
+          <h1 className="font-headline font-normal sm:font-medium text-3xl sm:text-4xl md:text-5xl lg:text-[54px] leading-[1.12] tracking-[-0.02em] text-[#1A1A1A] mb-8">
+            {post.title}
+          </h1>
+
+          {/* Lead excerpt */}
+          <p className="font-body text-lg sm:text-xl text-neutral-600 leading-relaxed max-w-3xl">
+            {post.excerpt}
+          </p>
         </div>
       </header>
 
