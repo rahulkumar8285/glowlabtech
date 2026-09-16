@@ -188,9 +188,9 @@ export default function BlogListingPage({ onNavigate }: BlogListingPageProps) {
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-black/[0.06] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  {featuredPost.author ? (
-                    <div className="flex items-center gap-3">
+                <div className="pt-6 border-t border-black/[0.06] flex items-center justify-end gap-4">
+                  {featuredPost.author && (
+                    <div className="flex items-center gap-3 mr-auto">
                       <img
                         src={featuredPost.author.avatarUrl}
                         alt={featuredPost.author.name}
@@ -204,11 +204,6 @@ export default function BlogListingPage({ onNavigate }: BlogListingPageProps) {
                           {featuredPost.author.role}
                         </p>
                       </div>
-                    </div>
-                  ) : (
-                    <div className="flex items-center gap-2 text-xs font-body text-neutral-500">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#C84826]" />
-                      <span className="font-medium text-neutral-700">GrowthTechSys Engineering</span>
                     </div>
                   )}
 
@@ -254,9 +249,9 @@ export default function BlogListingPage({ onNavigate }: BlogListingPageProps) {
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-black/[0.05] flex items-center justify-between gap-3 text-xs font-body">
-                    {post.author ? (
-                      <div className="flex items-center gap-2.5">
+                  <div className="pt-4 border-t border-black/[0.05] flex items-center justify-end gap-3 text-xs font-body">
+                    {post.author && (
+                      <div className="flex items-center gap-2.5 mr-auto">
                         <img
                           src={post.author.avatarUrl}
                           alt={post.author.name}
@@ -269,11 +264,6 @@ export default function BlogListingPage({ onNavigate }: BlogListingPageProps) {
                           </p>
                           <p className="text-[11px] text-neutral-400">{post.author.role}</p>
                         </div>
-                      </div>
-                    ) : (
-                      <div className="flex items-center gap-1.5 text-neutral-500">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#C84826]" />
-                        <span>GrowthTechSys</span>
                       </div>
                     )}
 

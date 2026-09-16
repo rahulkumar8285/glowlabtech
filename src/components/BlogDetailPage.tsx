@@ -226,10 +226,10 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
             {post.excerpt}
           </p>
 
-          {/* Attribution & Social Sharing */}
-          <div className="pt-6 border-t border-black/[0.08] flex items-center justify-between gap-6">
-            {post.author ? (
-              <div className="flex items-center gap-3.5">
+          {/* Social Sharing */}
+          <div className="pt-6 border-t border-black/[0.08] flex items-center justify-end gap-6">
+            {post.author && (
+              <div className="flex items-center gap-3.5 mr-auto">
                 <img
                   src={post.author.avatarUrl}
                   alt={post.author.name}
@@ -241,11 +241,6 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
                   </p>
                   <p className="font-body text-xs text-neutral-500 mt-0.5">{post.author.role}</p>
                 </div>
-              </div>
-            ) : (
-              <div className="flex items-center gap-2 text-xs font-body text-neutral-500">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#C84826]" />
-                <span className="font-medium text-neutral-700">GrowthTechSys Engineering</span>
               </div>
             )}
 

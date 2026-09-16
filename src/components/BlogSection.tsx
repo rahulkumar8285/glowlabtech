@@ -91,10 +91,10 @@ export default function BlogSection({ onNavigate }: BlogSectionProps) {
                 </p>
               </div>
 
-              {/* Author & Read More */}
-              <div className="pt-4 border-t border-black/[0.05] flex items-center justify-between gap-3 text-xs font-body">
-                {post.author ? (
-                  <div className="flex items-center gap-2.5">
+              {/* Read More */}
+              <div className="pt-4 border-t border-black/[0.05] flex items-center justify-end gap-3 text-xs font-body">
+                {post.author && (
+                  <div className="flex items-center gap-2.5 mr-auto">
                     <img
                       src={post.author.avatarUrl}
                       alt={post.author.name}
@@ -105,11 +105,6 @@ export default function BlogSection({ onNavigate }: BlogSectionProps) {
                       <p className="font-medium text-[#1A1A1A] leading-tight">{post.author.name}</p>
                       <p className="text-[11px] text-neutral-400">{post.author.role}</p>
                     </div>
-                  </div>
-                ) : (
-                  <div className="flex items-center gap-1.5 text-neutral-500">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C84826]" />
-                    <span>GrowthTechSys</span>
                   </div>
                 )}
 
