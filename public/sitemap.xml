@@ -54,8 +54,14 @@
   </url>
   <url>
     <loc>https://growthtechsys.com/blog</loc>
-    <lastmod>2026-09-13</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://growthtechsys.com/blog/why-spreadsheets-whatsapp-fail-field-sales-teams</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>

@@ -1,4 +1,4 @@
-import { useState, useEffect, type MouseEvent } from 'react';
+import { useState, useEffect, type MouseEvent, type ReactNode } from 'react';
 import { Share2, Check, ArrowLeft, ArrowRight, Twitter, Linkedin } from 'lucide-react';
 import { getBlogPostBySlug, BLOG_POSTS, BlogPost } from '../data/blogData';
 import { updatePageSEO } from '../utils/seo';
@@ -26,7 +26,7 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
     }
 
     const cleanup = updatePageSEO({
-      title: `${post.title} | GrowthTechSys`,
+      title: post.metaTitle || `${post.title} | GrowthTechSys`,
       description: post.metaDescription,
       keywords: post.tags ? post.tags.join(', ') : undefined,
       canonicalUrl: `https://growthtechsys.com/blog/${post.slug}`,
@@ -74,6 +74,47 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
       e.preventDefault();
       onNavigate(path);
     }
+  };
+
+  const formatInlineText = (text: string) => {
+    const parts: (string | ReactNode)[] = [];
+    const regex = /(\[.*?\]\(.*?\)|\*\*.*?\*\*)/g;
+    let lastIndex = 0;
+    let match: RegExpExecArray | null;
+
+    while ((match = regex.exec(text)) !== null) {
+      if (match.index > lastIndex) {
+        parts.push(text.substring(lastIndex, match.index));
+      }
+      const token = match[0];
+      if (token.startsWith('[') && token.includes('](')) {
+        const linkText = token.slice(1, token.indexOf(']('));
+        const linkUrl = token.slice(token.indexOf('](') + 2, -1);
+        parts.push(
+          <a
+            key={match.index}
+            href={linkUrl}
+            onClick={(e) => handleNavigate(linkUrl, e)}
+            className="text-[#C84826] font-medium hover:underline underline-offset-2 cursor-pointer"
+          >
+            {linkText}
+          </a>
+        );
+      } else if (token.startsWith('**') && token.endsWith('**')) {
+        parts.push(
+          <strong key={match.index} className="font-semibold text-[#1A1A1A]">
+            {token.slice(2, -2)}
+          </strong>
+        );
+      }
+      lastIndex = regex.lastIndex;
+    }
+
+    if (lastIndex < text.length) {
+      parts.push(text.substring(lastIndex));
+    }
+
+    return parts.length > 0 ? parts : text;
   };
 
   if (!post) {
@@ -286,7 +327,7 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
                     key={pIdx}
                     className="font-body text-base sm:text-[17px] text-neutral-700 leading-[1.8] font-normal"
                   >
-                    {para}
+                    {formatInlineText(para)}
                   </p>
                 ))}
 
@@ -297,10 +338,47 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
                         key={bIdx}
                         className="font-body text-sm sm:text-base text-neutral-700 leading-relaxed pl-2"
                       >
-                        {bullet}
+                        {formatInlineText(bullet)}
                       </li>
                     ))}
                   </ul>
+                )}
+
+                {section.table && (
+                  <div className="my-8 overflow-x-auto border border-black/10 rounded-xl shadow-xs">
+                    <table className="w-full text-left text-xs sm:text-sm font-body">
+                      <thead className="bg-[#F5F3EF] border-b border-black/10">
+                        <tr>
+                          {section.table.headers.map((header, hIdx) => (
+                            <th
+                              key={hIdx}
+                              className="px-4 sm:px-5 py-3.5 font-headline font-semibold text-[#1A1A1A] tracking-tight whitespace-nowrap"
+                            >
+                              {header}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-black/5 bg-white">
+                        {section.table.rows.map((row, rIdx) => (
+                          <tr key={rIdx} className="hover:bg-neutral-50/70 transition-colors">
+                            {row.map((cell, cIdx) => (
+                              <td
+                                key={cIdx}
+                                className={`px-4 sm:px-5 py-3.5 leading-relaxed ${
+                                  cIdx === 0
+                                    ? 'font-medium text-[#1A1A1A] bg-black/[0.01]'
+                                    : 'text-neutral-700'
+                                }`}
+                              >
+                                {formatInlineText(cell)}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 )}
 
                 {section.callout && (
