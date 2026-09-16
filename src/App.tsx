@@ -46,8 +46,18 @@ export default function App() {
   }, []);
 
   const navigateTo = (path: string) => {
-    if (path.startsWith('/#')) {
-      const hash = path.substring(1);
+    let resolvedPath = path;
+    if (
+      resolvedPath === '/products' ||
+      resolvedPath === '/product' ||
+      resolvedPath === '/projects' ||
+      resolvedPath === '/project'
+    ) {
+      resolvedPath = '/product/field-sales-tracking';
+    }
+
+    if (resolvedPath.startsWith('/#')) {
+      const hash = resolvedPath.substring(1);
       setCurrentPath('/');
       if (window.location.pathname !== '/') {
         window.history.pushState(null, '', '/');
@@ -61,10 +71,20 @@ export default function App() {
       return;
     }
 
-    setCurrentPath(path);
-    window.history.pushState(null, '', path);
+    setCurrentPath(resolvedPath);
+    window.history.pushState(null, '', resolvedPath);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const isProductDetail =
+    currentPath.startsWith('/product/') || currentPath.startsWith('/products/');
+  const productSlug = isProductDetail
+    ? currentPath
+        .replace(/^\/(product|products)\//, '')
+        .split('/')[0]
+        .split('?')[0]
+        .split('#')[0]
+    : '';
 
   const isServiceDetail = currentPath.startsWith('/services/');
   const serviceSlug = isServiceDetail
@@ -145,9 +165,12 @@ export default function App() {
         ) : currentPath === '/testimonials' ? (
           /* TESTIMONIALS PAGE */
           <TestimonialsPage onNavigate={navigateTo} />
-        ) : currentPath === '/products' || currentPath === '/projects' || currentPath.startsWith('/products/') || currentPath.startsWith('/projects/') ? (
-          /* PRODUCTS / PROJECTS PAGE */
-          <ProductsPage onNavigate={navigateTo} />
+        ) : isProductDetail ? (
+          /* DEDICATED INDIVIDUAL PRODUCT PAGE: /product/:slug */
+          <ProductsPage slug={productSlug} onNavigate={navigateTo} />
+        ) : currentPath === '/products' || currentPath === '/product' || currentPath === '/projects' || currentPath === '/project' ? (
+          /* FALLBACK ROOT PRODUCT -> ROUTES TO FIRST PRODUCT */
+          <ProductsPage slug="field-sales-tracking" onNavigate={navigateTo} />
         ) : currentPath === '/contact' ? (
           /* CONTACT PAGE */
           <ContactPage onNavigate={navigateTo} />

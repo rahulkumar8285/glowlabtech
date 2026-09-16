@@ -20,19 +20,25 @@ import {
   DollarSign,
 } from 'lucide-react';
 import { PRODUCTS_DATA, type ProductItem } from '../data/offeringsData';
+import PageHeader from './PageHeader';
 import FinalCTASection from './FinalCTASection';
 import { updatePageSEO } from '../utils/seo';
 
-export default function ProductsPage({
-  onNavigate,
-}: {
+interface ProductsPageProps {
+  slug?: string;
   onNavigate?: (path: string) => void;
-} = {}) {
+}
+
+export default function ProductsPage({
+  slug,
+  onNavigate,
+}: ProductsPageProps = {}) {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [activeTab, setActiveTab] = useState<'modules' | 'workflow' | 'why' | 'industries' | 'guides' | 'faq'>('modules');
   const isClickScrollingRef = useRef(false);
 
-  const primaryProduct = PRODUCTS_DATA[0];
+  const currentIndex = slug ? PRODUCTS_DATA.findIndex((p) => p.slug === slug) : 0;
+  const primaryProduct: ProductItem = currentIndex !== -1 ? PRODUCTS_DATA[currentIndex] : PRODUCTS_DATA[0];
 
   useEffect(() => {
     const faqSchema = primaryProduct?.faqs
@@ -51,12 +57,11 @@ export default function ProductsPage({
 
     const softwareSchema = {
       '@type': 'SoftwareApplication',
-      name: 'GrowthTechSys Field Sales Automation & Workforce Tracking Software',
+      name: `${primaryProduct.name} | GrowthTechSys`,
       operatingSystem: 'Android, iOS, Cloud Web',
       applicationCategory: 'BusinessApplication',
-      url: 'https://growthtechsys.com/products',
-      description:
-        'All-in-one field sales automation and GPS workforce management platform. Streamline beat planning, verify client check-ins, automate selfie attendance, and audit travel claims.',
+      url: `https://growthtechsys.com/product/${primaryProduct.slug}`,
+      description: primaryProduct.description,
       aggregateRating: {
         '@type': 'AggregateRating',
         ratingValue: '4.9',
@@ -77,12 +82,11 @@ export default function ProductsPage({
     };
 
     const cleanup = updatePageSEO({
-      title: 'Field Sales Automation & GPS Workforce Tracking Software | GrowthTechSys',
-      description:
-        'Streamline daily beat plans, verify customer meetings, automate geo-fenced selfie attendance, and eliminate travel reimbursement disputes across 500+ Indian cities.',
+      title: `${primaryProduct.name} | GrowthTechSys`,
+      description: primaryProduct.tagline,
       keywords:
         'field sales automation software, gps employee tracking app, field force tracking, beat planning software, geo-fenced attendance app, mock gps detection, travel reimbursement automation, sales rep tracking India',
-      canonicalUrl: 'https://growthtechsys.com/products',
+      canonicalUrl: `https://growthtechsys.com/product/${primaryProduct.slug}`,
       ogType: 'website',
       jsonLd: {
         '@context': 'https://schema.org',
@@ -185,24 +189,108 @@ export default function ProductsPage({
 
   return (
     <div id="products-page" className="w-full bg-[#FAF9F6] text-[#1A1A1A]">
-      {/* UNIFIED HERO SECTION */}
-      <section
-        id="products-hero"
-        className="w-full bg-[#FAF9F6] text-[#1A1A1A] pt-24 sm:pt-32 md:pt-36 pb-12 sm:pb-16 md:pb-20 border-b border-black/10"
-      >
-        <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20 text-left">
-          {/* Main Title & Subtitle */}
-          <div className="mb-10 sm:mb-14">
-            <h1 className="font-headline font-normal sm:font-medium text-[28px] min-[380px]:text-[34px] sm:text-[54px] md:text-[68px] lg:text-[76px] leading-[1.1] sm:leading-[1.05] tracking-[-0.03em] text-[#1A1A1A] max-w-5xl">
-              Field Force Platforms &amp;
-              <span className="block text-[#1A1A1A]">Proprietary Software Engines.</span>
-            </h1>
-            <p className="font-body font-normal text-sm sm:text-lg md:text-xl text-[#6B6862] leading-relaxed max-w-3xl mt-4 sm:mt-5">
-              Turnkey software platforms and telematics systems engineered to eliminate operational bottlenecks, verify ground activity, and scale remote teams across India.
-            </p>
+      {/* PAGE HEADER */}
+      <PageHeader
+        id="product-header"
+        eyebrow="Proprietary Platform / Turnkey Field App"
+        title={primaryProduct.name.includes('&') ? primaryProduct.name.replace('&', '/ &') : primaryProduct.name}
+        subtitle={primaryProduct.tagline}
+      />
+
+      {/* SUB-NAVIGATION & SECTION TABS (STICKY) */}
+      <div className="w-full border-b border-black/[0.08] bg-[#FAF9F6]/95 backdrop-blur-md sticky top-18 sm:top-20 z-30">
+        <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20 py-3 sm:py-3.5 flex items-center justify-between gap-4 text-xs sm:text-sm font-body">
+          <div className="flex items-center gap-2 truncate pr-2 shrink-0">
+            <a
+              href="/"
+              onClick={(e) => handleLinkClick('/', e)}
+              className="hover:text-[#1A1A1A] transition-colors shrink-0 text-neutral-500"
+            >
+              Home
+            </a>
+            <span className="text-neutral-300 shrink-0">/</span>
+            <span className="text-neutral-400 shrink-0">Product</span>
+            <span className="text-neutral-300 shrink-0">/</span>
+            <span className="text-[#C84826] font-medium truncate">{primaryProduct.shortName}</span>
           </div>
 
-          {/* Product Details Card */}
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar shrink-0">
+            <button
+              type="button"
+              onClick={() => scrollToSection('modules', 'modules')}
+              className={`px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full whitespace-nowrap font-medium transition-colors cursor-pointer ${
+                activeTab === 'modules'
+                  ? 'bg-[#1A1A1A] text-white'
+                  : 'text-neutral-600 hover:text-[#1A1A1A] hover:bg-black/5'
+              }`}
+            >
+              Modules
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollToSection('workflow', 'workflow')}
+              className={`px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full whitespace-nowrap font-medium transition-colors cursor-pointer ${
+                activeTab === 'workflow'
+                  ? 'bg-[#1A1A1A] text-white'
+                  : 'text-neutral-600 hover:text-[#1A1A1A] hover:bg-black/5'
+              }`}
+            >
+              Workflow
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollToSection('why-needed', 'why')}
+              className={`px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full whitespace-nowrap font-medium transition-colors cursor-pointer ${
+                activeTab === 'why'
+                  ? 'bg-[#1A1A1A] text-white'
+                  : 'text-neutral-600 hover:text-[#1A1A1A] hover:bg-black/5'
+              }`}
+            >
+              Impact
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollToSection('industries', 'industries')}
+              className={`px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full whitespace-nowrap font-medium transition-colors cursor-pointer ${
+                activeTab === 'industries'
+                  ? 'bg-[#1A1A1A] text-white'
+                  : 'text-neutral-600 hover:text-[#1A1A1A] hover:bg-black/5'
+              }`}
+            >
+              Industries
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollToSection('guides', 'guides')}
+              className={`px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full whitespace-nowrap font-medium transition-colors cursor-pointer ${
+                activeTab === 'guides'
+                  ? 'bg-[#1A1A1A] text-white'
+                  : 'text-neutral-600 hover:text-[#1A1A1A] hover:bg-black/5'
+              }`}
+            >
+              Guides
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollToSection('faq', 'faq')}
+              className={`px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full whitespace-nowrap font-medium transition-colors cursor-pointer ${
+                activeTab === 'faq'
+                  ? 'bg-[#1A1A1A] text-white'
+                  : 'text-neutral-600 hover:text-[#1A1A1A] hover:bg-black/5'
+              }`}
+            >
+              FAQ
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* PRODUCT OVERVIEW & IMPACT CARD */}
+      <section
+        id="overview"
+        className="w-full bg-[#FAF9F6] text-[#1A1A1A] py-10 sm:py-14 md:py-16 border-b border-black/10"
+      >
+        <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20 text-left">
           <div className="border border-black/10 bg-white rounded-2xl p-6 sm:p-10 md:p-12 shadow-[0_4px_30px_rgba(0,0,0,0.02)] relative overflow-hidden">
             <div
               aria-hidden="true"
@@ -210,12 +298,13 @@ export default function ProductsPage({
             />
 
             <div className="mb-6 relative z-10">
-              <h2 className="font-headline font-semibold text-2xl sm:text-4xl md:text-5xl text-[#1A1A1A] tracking-tight mb-2">
-                {primaryProduct.shortName}
-              </h2>
-
-              <p className="font-body text-sm sm:text-lg text-neutral-700 leading-relaxed max-w-4xl mt-3">
-                {primaryProduct.tagline}
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C84826]/10 text-[#C84826] text-xs font-medium mb-3">
+                <span>{primaryProduct.shortName}</span>
+                <span>•</span>
+                <span>Zero-Hardware Setup</span>
+              </div>
+              <p className="font-body text-base sm:text-lg text-neutral-700 leading-relaxed max-w-4xl">
+                {primaryProduct.description}
               </p>
             </div>
 
@@ -256,78 +345,6 @@ export default function ProductsPage({
           </div>
         </div>
       </section>
-
-      {/* SECTION NAVIGATION TABS */}
-      <nav aria-label="Product Sections" className="sticky top-18 sm:top-20 z-30 bg-[#FAF9F6]/95 backdrop-blur-md border-b border-black/10 py-3">
-        <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20 flex items-center gap-2 overflow-x-auto no-scrollbar text-xs sm:text-sm font-body">
-          <button
-            type="button"
-            onClick={() => scrollToSection('modules', 'modules')}
-            className={`px-4 py-2 rounded-full whitespace-nowrap font-medium transition-colors cursor-pointer ${
-              activeTab === 'modules'
-                ? 'bg-[#1A1A1A] text-white'
-                : 'text-neutral-600 hover:text-[#1A1A1A] hover:bg-black/5'
-            }`}
-          >
-            Modules
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollToSection('workflow', 'workflow')}
-            className={`px-4 py-2 rounded-full whitespace-nowrap font-medium transition-colors cursor-pointer ${
-              activeTab === 'workflow'
-                ? 'bg-[#1A1A1A] text-white'
-                : 'text-neutral-600 hover:text-[#1A1A1A] hover:bg-black/5'
-            }`}
-          >
-            How It Works
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollToSection('why-needed', 'why')}
-            className={`px-4 py-2 rounded-full whitespace-nowrap font-medium transition-colors cursor-pointer ${
-              activeTab === 'why'
-                ? 'bg-[#1A1A1A] text-white'
-                : 'text-neutral-600 hover:text-[#1A1A1A] hover:bg-black/5'
-            }`}
-          >
-            Why Automation
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollToSection('industries', 'industries')}
-            className={`px-4 py-2 rounded-full whitespace-nowrap font-medium transition-colors cursor-pointer ${
-              activeTab === 'industries'
-                ? 'bg-[#1A1A1A] text-white'
-                : 'text-neutral-600 hover:text-[#1A1A1A] hover:bg-black/5'
-            }`}
-          >
-            Industries
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollToSection('guides', 'guides')}
-            className={`px-4 py-2 rounded-full whitespace-nowrap font-medium transition-colors cursor-pointer ${
-              activeTab === 'guides'
-                ? 'bg-[#1A1A1A] text-white'
-                : 'text-neutral-600 hover:text-[#1A1A1A] hover:bg-black/5'
-            }`}
-          >
-            Buyer Guides
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollToSection('faq', 'faq')}
-            className={`px-4 py-2 rounded-full whitespace-nowrap font-medium transition-colors cursor-pointer ${
-              activeTab === 'faq'
-                ? 'bg-[#1A1A1A] text-white'
-                : 'text-neutral-600 hover:text-[#1A1A1A] hover:bg-black/5'
-            }`}
-          >
-            FAQ
-          </button>
-        </div>
-      </nav>
 
       {/* SECTION 1: SAAS MODULES */}
       <section

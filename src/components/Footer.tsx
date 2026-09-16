@@ -117,13 +117,13 @@ export default function Footer({ onNavigate }: FooterProps) {
                 </li>
                 <li>
                   <a
-                    href="/products"
-                    onClick={(e) => handleLinkClick('/products', e)}
+                    href="/product/field-sales-tracking"
+                    onClick={(e) => handleLinkClick('/product/field-sales-tracking', e)}
                     className="hover:text-[#FAF9F6] py-1 inline-flex items-center gap-1.5 transition-colors"
                   >
-                    <span>Products</span>
+                    <span>Field Tracking App</span>
                     <span className="text-[10px] bg-[#C84826]/20 text-[#C84826] px-1.5 py-0.5 rounded font-medium">
-                      Field App
+                      Platform
                     </span>
                   </a>
                 </li>

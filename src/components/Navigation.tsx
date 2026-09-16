@@ -27,7 +27,9 @@ export default function Navigation({
 
   const isProductsActive =
     currentPath === '/products' ||
-    currentPath.startsWith('/products');
+    currentPath.startsWith('/products') ||
+    currentPath === '/product' ||
+    currentPath.startsWith('/product');
 
   const handleNavClick = (path: string, e?: MouseEvent<HTMLElement>) => {
     if (e) {
@@ -264,9 +266,9 @@ export default function Navigation({
                         return (
                           <li key={product.id}>
                             <a
-                              href="/products"
+                              href={`/product/${product.slug}`}
                               onClick={(e) => {
-                                handleNavClick('/products', e);
+                                handleNavClick(`/product/${product.slug}`, e);
                                 setIsProductsDropdownOpen(false);
                               }}
                               className="group block p-2.5 rounded-[4px] hover:bg-black/[0.03] text-[#1A1A1A] transition-colors cursor-pointer"
@@ -477,8 +479,8 @@ export default function Navigation({
                         return (
                           <a
                             key={product.id}
-                            href="/products"
-                            onClick={(e) => handleNavClick('/products', e)}
+                            href={`/product/${product.slug}`}
+                            onClick={(e) => handleNavClick(`/product/${product.slug}`, e)}
                             className="flex items-center justify-between py-2.5 px-3 rounded-lg text-sm text-neutral-700 hover:text-[#1A1A1A] active:bg-black/[0.04] transition-colors cursor-pointer"
                           >
                             <span className="font-medium text-xs text-[#1A1A1A]">{product.name}</span>
