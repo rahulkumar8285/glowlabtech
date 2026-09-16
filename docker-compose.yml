@@ -6,7 +6,7 @@ services:
     container_name: growthtechsys-web
     restart: unless-stopped
     ports:
-      - "${PORT:-80}:80"
+      - "${PORT:-8080}:80"
     environment:
       - NODE_ENV=production
     healthcheck:
