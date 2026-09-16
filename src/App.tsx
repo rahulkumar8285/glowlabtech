@@ -23,9 +23,12 @@ import SecurityPage from './components/SecurityPage';
 import FinalCTASection from './components/FinalCTASection';
 import Footer from './components/Footer';
 import CookieBanner from './components/CookieBanner';
+import PreLoader from './components/PreLoader';
 import { updatePageSEO } from './utils/seo';
 
 export default function App() {
+  const [isNavigating, setIsNavigating] = useState(false);
+  const [navProgress, setNavProgress] = useState(0);
   const [currentPath, setCurrentPath] = useState<string>(() => {
     if (typeof window !== 'undefined') {
       const path = window.location.pathname;
@@ -70,6 +73,18 @@ export default function App() {
       }, 50);
       return;
     }
+
+    // Trigger top brand progress indicator on route transitions
+    setIsNavigating(true);
+    setNavProgress(35);
+    setTimeout(() => setNavProgress(75), 60);
+    setTimeout(() => {
+      setNavProgress(100);
+      setTimeout(() => {
+        setIsNavigating(false);
+        setNavProgress(0);
+      }, 180);
+    }, 180);
 
     setCurrentPath(resolvedPath);
     window.history.pushState(null, '', resolvedPath);
@@ -155,6 +170,22 @@ export default function App() {
 
   return (
     <div className="w-full min-h-screen bg-[#FAF9F6] text-[#1A1A1A]">
+      {/* Brand Color Preloader on initial page load */}
+      <PreLoader />
+
+      {/* Top Edge Route Transition Progress Bar */}
+      {isNavigating && (
+        <div
+          className="fixed top-0 left-0 right-0 z-[100000] h-[3px] bg-transparent pointer-events-none"
+          aria-hidden="true"
+        >
+          <div
+            className="h-full bg-[#C84826] transition-all duration-150 ease-out shadow-[0_0_10px_rgba(200,72,38,0.85)]"
+            style={{ width: `${navProgress}%` }}
+          />
+        </div>
+      )}
+
       {/* GLOBAL NAVIGATION */}
       <Navigation currentPath={currentPath} onNavigate={navigateTo} />
 
