@@ -11,11 +11,19 @@ interface BlogDetailPageProps {
 
 export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps) {
   const [copied, setCopied] = useState(false);
-  const post = getBlogPostBySlug(slug) || BLOG_POSTS[0];
+  const post = getBlogPostBySlug(slug) || (BLOG_POSTS.length > 0 ? BLOG_POSTS[0] : undefined);
 
   // Dynamic SEO setup for Article
   useEffect(() => {
-    if (!post) return;
+    if (!post) {
+      const cleanup = updatePageSEO({
+        title: 'Article Not Found | GrowthTechSys',
+        description: 'The requested article is currently being updated or is in production.',
+        canonicalUrl: 'https://growthtechsys.com/blog',
+        ogType: 'website',
+      });
+      return cleanup;
+    }
 
     const cleanup = updatePageSEO({
       title: `${post.title} | GrowthTechSys`,
@@ -67,6 +75,39 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
       onNavigate(path);
     }
   };
+
+  if (!post) {
+    return (
+      <div className="w-full min-h-[70vh] bg-[#FAF9F6] text-[#1A1A1A] pt-32 pb-20 flex flex-col items-center justify-center px-6 text-center">
+        <div className="w-12 h-12 rounded-full bg-[#C84826]/10 text-[#C84826] flex items-center justify-center mb-5 font-headline font-medium text-xl">
+          ✦
+        </div>
+        <h1 className="font-headline font-medium text-3xl sm:text-4xl text-[#1A1A1A] mb-3">
+          Article In Production
+        </h1>
+        <p className="font-body text-base text-neutral-600 max-w-md mb-8 leading-relaxed">
+          This article is currently being drafted or updated by our engineering team. Please explore our services or return to the blog directory.
+        </p>
+        <div className="flex flex-col sm:flex-row items-center gap-3">
+          <a
+            href="/blog"
+            onClick={(e) => handleNavigate('/blog', e)}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 font-body text-sm font-medium text-white bg-[#C84826] hover:bg-[#B33E1D] px-6 py-3 rounded-full transition-colors cursor-pointer"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>All playbooks</span>
+          </a>
+          <a
+            href="/contact"
+            onClick={(e) => handleNavigate('/contact', e)}
+            className="w-full sm:w-auto inline-flex items-center justify-center font-body text-sm font-medium text-neutral-600 hover:text-[#1A1A1A] px-5 py-3 transition-colors cursor-pointer"
+          >
+            Contact us →
+          </a>
+        </div>
+      </div>
+    );
+  }
 
   // Related posts from other articles
   const relatedPosts = BLOG_POSTS.filter((p) => p.id !== post.id).slice(0, 2);

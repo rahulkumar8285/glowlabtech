@@ -89,8 +89,9 @@ export default function BlogListingPage({ onNavigate }: BlogListingPageProps) {
         subtitle="Deep dives on operational AI, cold outreach infrastructure, high-velocity video production, and real revenue leverage."
       />
 
-      {/* FILTER & SEARCH BAR */}
-      <section className="w-full border-b border-black/[0.06] bg-[#FAF9F6] py-6 sm:py-8">
+      {/* FILTER & SEARCH BAR (Only when articles exist) */}
+      {BLOG_POSTS.length > 0 && (
+        <section className="w-full border-b border-black/[0.06] bg-[#FAF9F6] py-6 sm:py-8">
         <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-6">
             {/* Category Pills - horizontal swipe on mobile, wrap on desktop */}
@@ -149,6 +150,7 @@ export default function BlogListingPage({ onNavigate }: BlogListingPageProps) {
           </div>
         </div>
       </section>
+      )}
 
       {/* ARTICLES CONTENT SECTION */}
       <section className="w-full py-10 sm:py-16 md:py-20">
@@ -268,8 +270,47 @@ export default function BlogListingPage({ onNavigate }: BlogListingPageProps) {
                 </article>
               ))}
             </div>
+          ) : BLOG_POSTS.length === 0 ? (
+            /* BLOG REPOSITORY EMPTY STATE */
+            <div className="text-center py-16 sm:py-20 bg-white border border-black/[0.06] rounded-2xl p-8 sm:p-12 max-w-2xl mx-auto shadow-xs">
+              <div className="w-12 h-12 rounded-full bg-[#C84826]/10 text-[#C84826] flex items-center justify-center mx-auto mb-5 font-headline font-medium text-xl">
+                ✦
+              </div>
+              <h3 className="font-headline font-medium text-2xl sm:text-3xl text-[#1A1A1A] mb-3">
+                Playbooks &amp; Notes In Production
+              </h3>
+              <p className="font-body text-sm sm:text-base text-neutral-600 mb-8 leading-relaxed">
+                We are actively writing and curating our technical breakdowns, system architecture blueprints, and real-world AI implementation playbooks. New articles will be published shortly.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a
+                  href="/contact"
+                  onClick={(e) => {
+                    if (onNavigate) {
+                      e.preventDefault();
+                      onNavigate('/contact');
+                    }
+                  }}
+                  className="w-full sm:w-auto font-body text-sm font-medium text-white bg-[#C84826] hover:bg-[#B33E1D] px-6 py-3 rounded-full transition-colors cursor-pointer"
+                >
+                  Book a strategy call
+                </a>
+                <a
+                  href="/"
+                  onClick={(e) => {
+                    if (onNavigate) {
+                      e.preventDefault();
+                      onNavigate('/');
+                    }
+                  }}
+                  className="w-full sm:w-auto font-body text-sm font-medium text-neutral-600 hover:text-[#1A1A1A] px-5 py-3 transition-colors cursor-pointer"
+                >
+                  Return to home →
+                </a>
+              </div>
+            </div>
           ) : (
-            /* EMPTY STATE */
+            /* SEARCH / FILTER EMPTY STATE */
             <div className="text-center py-16 bg-white border border-black/[0.06] rounded-xl p-8">
               <p className="font-headline font-medium text-xl text-[#1A1A1A] mb-2">
                 No articles found

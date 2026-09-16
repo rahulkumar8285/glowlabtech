@@ -8,6 +8,10 @@ interface BlogSectionProps {
 export default function BlogSection({ onNavigate }: BlogSectionProps) {
   const recentPosts = getRecentBlogPosts(3);
 
+  if (recentPosts.length === 0) {
+    return null;
+  }
+
   const handlePostClick = (slug: string, e: MouseEvent) => {
     if (onNavigate) {
       e.preventDefault();

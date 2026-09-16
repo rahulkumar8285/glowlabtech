@@ -145,22 +145,28 @@ export default function Footer({ onNavigate }: FooterProps) {
                 Selected Playbooks
               </h3>
               <ul className="space-y-3 sm:space-y-3.5 font-body text-sm">
-                {BLOG_POSTS.slice(0, 3).map((post) => (
-                  <li key={post.id}>
-                    <a
-                      href={`/blog/${post.slug}`}
-                      onClick={(e) => handleLinkClick(`/blog/${post.slug}`, e)}
-                      className="group block py-1"
-                    >
-                      <p className="text-neutral-300 group-hover:text-[#C84826] transition-colors line-clamp-2 text-xs sm:text-sm leading-snug">
-                        {post.title}
-                      </p>
-                      <span className="text-[11px] text-neutral-500 mt-1 block">
-                        {post.readTime}
-                      </span>
-                    </a>
+                {BLOG_POSTS.length > 0 ? (
+                  BLOG_POSTS.slice(0, 3).map((post) => (
+                    <li key={post.id}>
+                      <a
+                        href={`/blog/${post.slug}`}
+                        onClick={(e) => handleLinkClick(`/blog/${post.slug}`, e)}
+                        className="group block py-1"
+                      >
+                        <p className="text-neutral-300 group-hover:text-[#C84826] transition-colors line-clamp-2 text-xs sm:text-sm leading-snug">
+                          {post.title}
+                        </p>
+                        <span className="text-[11px] text-neutral-500 mt-1 block">
+                          {post.readTime}
+                        </span>
+                      </a>
+                    </li>
+                  ))
+                ) : (
+                  <li className="text-xs text-neutral-400 leading-relaxed py-1">
+                    Engineering playbooks and case studies are currently in production.
                   </li>
-                ))}
+                )}
               </ul>
             </div>
 
