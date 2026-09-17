@@ -1,4 +1,4 @@
-﻿# GrowthTechSys
+# GrowthTechSys
 
 > GrowthTechSys is a specialized engineering firm and digital product studio building custom AI systems, workflow automation pipelines, and enterprise field sales telematics software.
 
@@ -15,6 +15,7 @@
 
 ## Analysis & Field Notes
 
+- [Enterprise AI Workflow Automation: Why Most Implementations Fail](https://growthtechsys.com/blog/enterprise-ai-workflow-automation): Practical engineering blueprint tackling structural bottlenecks in off-the-shelf triggers and detailing three production-grade layers for custom AI workflow pipelines.
 - [Why Spreadsheets and WhatsApp Groups Fail Field Sales Teams](https://growthtechsys.com/blog/why-spreadsheets-whatsapp-fail-field-sales-teams): Architectural breakdown of operational profit leakages in FMCG and distribution networks, and the technical mechanisms of modern field sales telematics.
 - [All Playbooks & Notes](https://growthtechsys.com/blog): Technical essays and architecture breakdowns on AI automation and digital growth systems.
 
