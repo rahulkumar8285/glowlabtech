@@ -39,7 +39,7 @@ function contactApiPlugin(): Plugin {
               res.end(
                 JSON.stringify({
                   success: true,
-                  message: 'Your project brief has been sent successfully.',
+                  message: 'Thanks for submit team will connect in shorty.',
                   details: result,
                 })
               );

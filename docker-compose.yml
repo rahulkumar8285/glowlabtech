@@ -10,11 +10,11 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=80
-      - SMTP_HOST=${SMTP_HOST:-smtp.gmail.com}
+      - SMTP_HOST=${SMTP_HOST:-smtp.hostinger.com}
       - SMTP_PORT=${SMTP_PORT:-465}
       - SMTP_SECURE=${SMTP_SECURE:-true}
-      - SMTP_USER=${SMTP_USER:-}
-      - SMTP_PASS=${SMTP_PASS:-}
+      - SMTP_USER=${SMTP_USER:-info@growthtechsys.com}
+      - SMTP_PASS=${SMTP_PASS:-RAFG^&hwB|!8Bvd}
       - CONTACT_RECEIVER_EMAIL=${CONTACT_RECEIVER_EMAIL:-rahulkumardrop@gmail.com}
     env_file:
       - path: .env

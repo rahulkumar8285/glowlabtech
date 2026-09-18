@@ -18,11 +18,11 @@ function escapeHtml(str) {
  * Creates and configures the Nodemailer transporter.
  */
 function createTransporter() {
-  const host = process.env.SMTP_HOST || 'smtp.gmail.com';
+  const host = process.env.SMTP_HOST || 'smtp.hostinger.com';
   const port = parseInt(process.env.SMTP_PORT || '465', 10);
   const secure = process.env.SMTP_SECURE !== 'false' && (port === 465 || process.env.SMTP_SECURE === 'true');
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
+  const user = process.env.SMTP_USER || 'info@growthtechsys.com';
+  const pass = process.env.SMTP_PASS || 'RAFG^&hwB|!8Bvd';
 
   if (user && pass) {
     return nodemailer.createTransport({
@@ -183,8 +183,9 @@ Sent to: ${RECEIVER_EMAIL}
     };
   }
 
+  const senderUser = process.env.SMTP_USER || 'info@growthtechsys.com';
   const mailOptions = {
-    from: `"${cleanName} via GrowthTechSys" <${process.env.SMTP_USER}>`,
+    from: `"${cleanName} via GrowthTechSys" <${senderUser}>`,
     to: RECEIVER_EMAIL,
     replyTo: email,
     subject,
@@ -197,6 +198,7 @@ Sent to: ${RECEIVER_EMAIL}
 
   return {
     success: true,
+    message: 'Thanks for submit team will connect in shorty.',
     messageId: info.messageId,
     recipient: RECEIVER_EMAIL,
   };

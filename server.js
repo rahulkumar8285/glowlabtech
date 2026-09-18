@@ -70,7 +70,7 @@ app.post('/api/contact', async (req, res) => {
 
     return res.status(200).json({
       success: true,
-      message: 'Your project brief has been sent successfully. Our team will get back to you within 24 hours.',
+      message: 'Thanks for submit team will connect in shorty.',
       details: result,
     });
   } catch (err) {

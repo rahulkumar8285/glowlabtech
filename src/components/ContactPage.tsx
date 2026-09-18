@@ -203,13 +203,9 @@ export default function ContactPage({ onNavigate: _onNavigate }: ContactPageProp
                     <div className="w-14 h-14 rounded-full bg-[#C84826]/10 text-[#C84826] flex items-center justify-center mx-auto mb-5">
                       <CheckCircle2 className="w-8 h-8" />
                     </div>
-                    <h3 className="font-headline font-medium text-2xl sm:text-3xl text-[#1A1A1A] mb-3">
-                      Message received.
+                    <h3 className="font-headline font-medium text-2xl sm:text-3xl text-[#1A1A1A] mb-8 max-w-lg mx-auto leading-snug">
+                      Thanks for submit team will connect in shorty.
                     </h3>
-                    <p className="font-body text-sm sm:text-base text-neutral-600 max-w-md mx-auto leading-relaxed mb-8">
-                      Thank you, <span className="font-semibold text-[#1A1A1A]">{formData.name}</span>. We've logged your project brief and our systems engineer will contact you at{' '}
-                      <span className="font-semibold text-[#1A1A1A]">{formData.email}</span> within 24 hours.
-                    </p>
                     <button
                       type="button"
                       onClick={handleReset}
