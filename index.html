@@ -61,53 +61,132 @@
     <link rel="canonical" href="https://growthtechsys.com/" />
     <link rel="manifest" href="/manifest.json" />
 
-    <!-- OpenGraph / Social Meta Tags -->
+    <meta name="author" content="GrowthTechSys" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="GrowthTechSys" />
     <meta property="og:title" content="GrowthTechSys — AI Systems, Workforce Telematics &amp; Digital Engineering" />
     <meta property="og:description" content="GrowthTechSys engineers custom AI software, automated workflow pipelines, and enterprise field workforce tracking telematics that scale revenue." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://growthtechsys.com/" />
     <meta property="og:image" content="https://growthtechsys.com/images/homepage-share.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GrowthTechSys AI Systems, Workforce Telematics and Digital Engineering" />
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="GrowthTechSys — AI Systems, Workforce Telematics &amp; Digital Engineering" />
     <meta name="twitter:description" content="GrowthTechSys engineers custom AI software, automated workflow pipelines, and enterprise field workforce tracking telematics that scale revenue." />
     <meta name="twitter:image" content="https://growthtechsys.com/images/homepage-share.png" />
+    <meta name="twitter:image:alt" content="GrowthTechSys AI Systems Architecture" />
 
     <!-- Static JSON-LD Organization Schema for Crawlers -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "GrowthTechSys",
-      "url": "https://growthtechsys.com",
-      "logo": "https://growthtechsys.com/logo.png",
-      "description": "Custom AI systems engineering, automated workflows, and enterprise field workforce tracking telematics.",
-      "sameAs": [
-        "https://linkedin.com/company/growthtechsys",
-        "https://github.com/growthtechsys"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "B-13 World Tech Park Block-B, 30, Jaipur - Delhi Expy, Silokhera, Block A, Sector 30",
-        "addressLocality": "Gurugram",
-        "addressRegion": "Haryana",
-        "postalCode": "122001",
-        "addressCountry": "IN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 28.4632,
-        "longitude": 77.0601
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer support",
-        "telephone": "+91-89297-21558",
-        "email": "contact@growthtechsys.com",
-        "availableLanguage": ["English", "Hindi"]
-      }
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://growthtechsys.com/#website",
+          "url": "https://growthtechsys.com/",
+          "name": "GrowthTechSys",
+          "description": "AI systems, custom digital products, and field workforce tracking telematics.",
+          "inLanguage": "en-US",
+          "publisher": {
+            "@id": "https://growthtechsys.com/#organization"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://growthtechsys.com/#organization",
+          "name": "GrowthTechSys",
+          "url": "https://growthtechsys.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://growthtechsys.com/logo.png",
+            "width": 512,
+            "height": 512
+          },
+          "description": "Custom AI systems engineering, automated workflows, and enterprise field workforce tracking telematics.",
+          "sameAs": [
+            "https://linkedin.com/company/growthtechsys",
+            "https://github.com/growthtechsys"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "B-13 World Tech Park Block-B, 30, Jaipur - Delhi Expy, Silokhera, Block A, Sector 30",
+            "addressLocality": "Gurugram",
+            "addressRegion": "Haryana",
+            "postalCode": "122001",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 28.4632,
+            "longitude": 77.0601
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "telephone": "+91-89297-21558",
+            "email": "contact@growthtechsys.com",
+            "availableLanguage": ["English", "Hindi"]
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Platforms & Engineering Services",
+            "itemListElement": [
+              {
+                "@type": "SoftwareApplication",
+                "name": "Field Sales Tracking & Telematics Platform",
+                "applicationCategory": "BusinessApplication",
+                "url": "https://growthtechsys.com/product/field-sales-tracking"
+              },
+              {
+                "@type": "SoftwareApplication",
+                "name": "GrowthFlow CRM & Omnichannel Marketing Platform",
+                "applicationCategory": "BusinessApplication",
+                "url": "https://growthtechsys.com/product/growthflow-crm"
+              },
+              {
+                "@type": "Service",
+                "name": "AI Automation & Workflows",
+                "url": "https://growthtechsys.com/services/ai-automation"
+              },
+              {
+                "@type": "Service",
+                "name": "AI Video Creation",
+                "url": "https://growthtechsys.com/services/ai-video-creation"
+              },
+              {
+                "@type": "Service",
+                "name": "Lead Generation Systems",
+                "url": "https://growthtechsys.com/services/lead-generation"
+              },
+              {
+                "@type": "Service",
+                "name": "Cold Email & Outreach",
+                "url": "https://growthtechsys.com/services/cold-email-outreach"
+              },
+              {
+                "@type": "Service",
+                "name": "Website Design & Management",
+                "url": "https://growthtechsys.com/services/website-design"
+              },
+              {
+                "@type": "Service",
+                "name": "Content Strategy",
+                "url": "https://growthtechsys.com/services/content-strategy"
+              },
+              {
+                "@type": "Service",
+                "name": "Software Development & Custom AI",
+                "url": "https://growthtechsys.com/services/software-development"
+              }
+            ]
+          }
+        }
+      ]
     }
     </script>
 

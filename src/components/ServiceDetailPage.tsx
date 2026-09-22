@@ -31,27 +31,60 @@ export default function ServiceDetailPage({
       ...service.deliverables.slice(0, 3),
     ].join(', ');
 
+    const serviceOgImage = mediaConfig?.headerHero?.src || '/images/homepage-share.png';
+
+    const serviceSchema = {
+      '@type': 'Service',
+      name: service.name,
+      description: service.description,
+      provider: {
+        '@type': 'Organization',
+        name: 'GrowthTechSys',
+        url: 'https://growthtechsys.com',
+      },
+      serviceType: service.shortTitle,
+      areaServed: 'Worldwide',
+      url: `https://growthtechsys.com/services/${service.slug}`,
+    };
+
+    const breadcrumbSchema = {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://growthtechsys.com/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Services',
+          item: 'https://growthtechsys.com/#services',
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: service.name,
+          item: `https://growthtechsys.com/services/${service.slug}`,
+        },
+      ],
+    };
+
     const cleanup = updatePageSEO({
       title: `${service.name} | GrowthTechSys`,
       description: service.summary || service.tagline,
       keywords: serviceKeywords,
       canonicalUrl: `https://growthtechsys.com/services/${service.slug}`,
       ogType: 'website',
+      ogImage: serviceOgImage,
       jsonLd: {
         '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: service.name,
-        description: service.description,
-        provider: {
-          '@type': 'Organization',
-          name: 'GrowthTechSys',
-          url: 'https://growthtechsys.com',
-        },
-        serviceType: service.shortTitle,
+        '@graph': [serviceSchema, breadcrumbSchema],
       },
     });
     return cleanup;
-  }, [service]);
+  }, [service, mediaConfig]);
 
   const prevService =
     currentIndex > 0

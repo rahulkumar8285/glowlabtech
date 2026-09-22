@@ -1,17 +1,21 @@
 # GrowthTechSys
 
-> GrowthTechSys is a specialized engineering firm and digital product studio building custom AI systems, workflow automation pipelines, and enterprise field sales telematics software.
+> GrowthTechSys is a specialized engineering firm and digital product studio building custom AI systems, workflow automation pipelines, high-conversion outbound engines, and enterprise telematics software.
 
 ## Core Products & Platforms
 
 - [Field Sales Automation & GPS Workforce Tracking Software](https://growthtechsys.com/product/field-sales-tracking): Turnkey, zero-hardware field sales telemetry platform with anti-mock GPS beat plan tracking, geofenced selfie attendance, mobile retail order booking with offline SQLite sync, and automated road-distance travel expense calculation.
+- [GrowthFlow CRM & Omnichannel Marketing Platform](https://growthtechsys.com/product/growthflow-crm): High-deliverability omnichannel sales engagement platform unifying WhatsApp Business API, personalized cold outreach, multi-inbox rotation, and unified customer CRM pipelines.
 
 ## Core Engineering Services
 
-- [AI Automation & Custom Agents](https://growthtechsys.com/services/ai-automation): Autonomous LLM workflows, custom multi-agent architectures, RAG pipelines, intelligent document parsing, and enterprise webhook integrations.
-- [Custom Software Development](https://growthtechsys.com/services/custom-software): Production-grade web, mobile, and distributed backend architectures with microservices, high-throughput APIs, and strict data security.
-- [Cloud Infrastructure & DevOps](https://growthtechsys.com/services/cloud-infrastructure): Cloud-native deployments, Kubernetes container orchestration, zero-downtime CI/CD pipelines, and multi-region infrastructure.
-- [Digital Product Studio](https://growthtechsys.com/services/product-development): Zero-to-one product design, modern web applications, conversion-engineered digital platforms, and technical architecture.
+- [AI Automation & Workflows](https://growthtechsys.com/services/ai-automation): Custom event-driven automation engines, resilient webhook pipelines, intelligent document ingestion, and multi-tool internal workflow orchestration.
+- [AI Video Creation & Creative Systems](https://growthtechsys.com/services/ai-video-creation): High-velocity programmatic short-form video generation, synthetic voice cloning, automated caption synchronization, and batch creative split-testing.
+- [Lead Generation Systems](https://growthtechsys.com/services/lead-generation): Intent-driven scraping pipelines, waterfall data enrichment (Apollo, Clay, Clearbit), qualification scoring, and direct CRM routing.
+- [Cold Email & Outreach Infrastructure](https://growthtechsys.com/services/cold-email-outreach): Deliverability-hardened outbound systems, secondary domain isolation, automated inbox warming, and spam-safe sequencing.
+- [Website Design & Management](https://growthtechsys.com/services/website-design): High-performance digital platforms engineered for conversion, modern typography, sub-second load times, and ongoing management.
+- [Content Strategy](https://growthtechsys.com/services/content-strategy): Compounding thought leadership frameworks, editorial pipelines, organic distribution architecture, and multi-channel asset repurposing.
+- [Software Development & Custom AI](https://growthtechsys.com/services/software-development): Bespoke web applications, enterprise dashboards, fine-tuned proprietary AI models, and scalable distributed architectures.
 
 ## Analysis & Field Notes
 

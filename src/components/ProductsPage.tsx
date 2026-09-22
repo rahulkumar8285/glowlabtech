@@ -91,10 +91,40 @@ export default function ProductsPage({
       },
     };
 
-    const productKeywords =
-      primaryProduct.slug === 'growthflow-crm' || primaryProduct.slug === 'omniflow-crm'
-        ? 'GrowthFlow CRM, unified lead management, customer CRM, email marketing automation, whatsapp marketing platform, activity-based email personalization, 97 open rate email, universal mail provider, AWS SES email marketing, WhatsApp Business API CRM, GrowthTechSys GrowthFlow'
-        : 'field sales automation software, gps employee tracking app, field force tracking, beat planning software, geo-fenced attendance app, mock gps detection, travel reimbursement automation, sales rep tracking India';
+    const isCrm =
+      primaryProduct.slug === 'growthflow-crm' || primaryProduct.slug === 'omniflow-crm';
+
+    const productOgImage = isCrm
+      ? '/images/products/growthflow-crm-hero.webp'
+      : '/images/products/field-sales-tracking-share.webp';
+
+    const breadcrumbSchema = {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://growthtechsys.com/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Products',
+          item: 'https://growthtechsys.com/products',
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: primaryProduct.name,
+          item: `https://growthtechsys.com/product/${primaryProduct.slug}`,
+        },
+      ],
+    };
+
+    const productKeywords = isCrm
+      ? 'GrowthFlow CRM, unified lead management, customer CRM, email marketing automation, whatsapp marketing platform, activity-based email personalization, 97 open rate email, universal mail provider, AWS SES email marketing, WhatsApp Business API CRM, GrowthTechSys GrowthFlow'
+      : 'field sales automation software, gps employee tracking app, field force tracking, beat planning software, geo-fenced attendance app, mock gps detection, travel reimbursement automation, sales rep tracking India';
 
     const cleanup = updatePageSEO({
       title: `${primaryProduct.name} | GrowthTechSys`,
@@ -102,9 +132,10 @@ export default function ProductsPage({
       keywords: productKeywords,
       canonicalUrl: `https://growthtechsys.com/product/${primaryProduct.slug}`,
       ogType: 'website',
+      ogImage: productOgImage,
       jsonLd: {
         '@context': 'https://schema.org',
-        '@graph': faqSchema ? [softwareSchema, faqSchema] : [softwareSchema],
+        '@graph': faqSchema ? [softwareSchema, breadcrumbSchema, faqSchema] : [softwareSchema, breadcrumbSchema],
       },
     });
     return cleanup;

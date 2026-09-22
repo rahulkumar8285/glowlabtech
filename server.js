@@ -81,12 +81,31 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
-// Serve compiled static assets in production
+// Serve compiled static assets in production with granular caching headers
 const distPath = path.join(__dirname, 'dist');
-app.use(express.static(distPath, { maxAge: '1d' }));
+app.use(
+  express.static(distPath, {
+    setHeaders: (res, filePath) => {
+      // Hashed Vite assets can be cached aggressively (1 year, immutable)
+      if (filePath.includes(path.sep + 'assets' + path.sep)) {
+        res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+      } else if (/\.(png|jpe?g|webp|svg|ico|gif)$/i.test(filePath)) {
+        // Image assets: 7 days with stale-while-revalidate
+        res.setHeader('Cache-Control', 'public, max-age=604800, stale-while-revalidate=86400');
+      } else if (/\.(xml|txt)$/i.test(filePath)) {
+        // Sitemap, robots.txt, llms.txt: 1 hour
+        res.setHeader('Cache-Control', 'public, max-age=3600, must-revalidate');
+      } else if (filePath.endsWith('.html')) {
+        // HTML files: never cache aggressively to ensure instant SPA updates
+        res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+      }
+    },
+  })
+);
 
 // SPA client routing fallback (all unmatched GET requests serve index.html)
 app.get('*', (req, res) => {
+  res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
   res.sendFile(path.join(distPath, 'index.html'));
 });
 

@@ -1,102 +1,203 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  <!-- Primary Landing Pages -->
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+        http://www.google.com/schemas/sitemap-image/1.1
+        http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
+
+  <!-- Primary Homepage -->
   <url>
     <loc>https://growthtechsys.com/</loc>
-    <lastmod>2026-09-13</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/homepage-hero-composite.webp</image:loc>
+      <image:title>GrowthTechSys AI Systems &amp; Revenue Architecture</image:title>
+      <image:caption>AI automation, video creative, and outreach pipelines converging into customer acquisition.</image:caption>
+    </image:image>
   </url>
+
+  <!-- Core SaaS Platforms & Products -->
   <url>
     <loc>https://growthtechsys.com/product/field-sales-tracking</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/products/field-sales-tracking-dashboard-hero.webp</image:loc>
+      <image:title>Field Sales Automation &amp; GPS Workforce Telematics Dashboard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/products/field-sales-modules-composite.webp</image:loc>
+      <image:title>Field Sales Modular Capabilities Architecture</image:title>
+    </image:image>
   </url>
+
+  <url>
+    <loc>https://growthtechsys.com/product/growthflow-crm</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/products/growthflow-crm-hero.webp</image:loc>
+      <image:title>GrowthFlow CRM &amp; Omnichannel Marketing Platform</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/products/growthflow-crm-modules-composite.webp</image:loc>
+      <image:title>GrowthFlow CRM Unified Architecture &amp; Delivery Engine</image:title>
+    </image:image>
+  </url>
+
+  <!-- Core Engineering Services (7 Active Offerings) -->
   <url>
     <loc>https://growthtechsys.com/services/ai-automation</loc>
-    <lastmod>2026-09-13</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/services/ai-automation-hero.png</image:loc>
+      <image:title>AI Automation &amp; Internal Workflow Architecture</image:title>
+    </image:image>
   </url>
+
   <url>
-    <loc>https://growthtechsys.com/services/custom-software</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://growthtechsys.com/services/ai-video-creation</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/services/ai-video-hero.png</image:loc>
+      <image:title>AI Video Creation &amp; Programmatic Ad Generation Pipeline</image:title>
+    </image:image>
   </url>
+
   <url>
-    <loc>https://growthtechsys.com/services/cloud-infrastructure</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://growthtechsys.com/services/lead-generation</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/services/lead-generation-hero.png</image:loc>
+      <image:title>B2B Lead Generation &amp; Waterfall Enrichment Engine</image:title>
+    </image:image>
   </url>
+
   <url>
-    <loc>https://growthtechsys.com/services/product-development</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://growthtechsys.com/services/cold-email-outreach</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/services/cold-email-hero.png</image:loc>
+      <image:title>Cold Email &amp; Outbound Deliverability Infrastructure</image:title>
+    </image:image>
   </url>
+
+  <url>
+    <loc>https://growthtechsys.com/services/website-design</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/service-icons/website-design.png</image:loc>
+      <image:title>High-Conversion Website Design &amp; Digital Engineering</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://growthtechsys.com/services/content-strategy</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/service-icons/content-strategy.png</image:loc>
+      <image:title>Editorial Content Strategy &amp; Thought Leadership Pipelines</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://growthtechsys.com/services/software-development</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/service-icons/software-development.png</image:loc>
+      <image:title>Custom Software Development &amp; Proprietary AI Solutions</image:title>
+    </image:image>
+  </url>
+
+  <!-- Company & Social Proof -->
   <url>
     <loc>https://growthtechsys.com/about</loc>
-    <lastmod>2026-09-13</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://growthtechsys.com/testimonials</loc>
-    <lastmod>2026-09-13</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://growthtechsys.com/contact</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Insights & Blog -->
   <url>
     <loc>https://growthtechsys.com/blog</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://growthtechsys.com/blog/ai-video-creation-service-for-ecommerce</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://growthtechsys.com/blog/enterprise-ai-workflow-automation</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://growthtechsys.com/blog/why-spreadsheets-whatsapp-fail-field-sales-teams</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://growthtechsys.com/contact</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
+  <!-- Legal & Compliance -->
   <url>
     <loc>https://growthtechsys.com/privacy</loc>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+
   <url>
     <loc>https://growthtechsys.com/terms</loc>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+
   <url>
     <loc>https://growthtechsys.com/security</loc>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
