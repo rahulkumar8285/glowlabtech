@@ -746,5 +746,311 @@ export const PRODUCTS_DATA: ProductItem[] = [
       },
     ],
   },
+  {
+    id: 'growthflow-crm-platform',
+    slug: 'growthflow-crm',
+    shortName: 'GrowthFlow CRM',
+    name: 'GrowthFlow CRM & Omnichannel Marketing Platform',
+    tagline:
+      'Stop paying for 4 separate subscriptions. Manage leads, track customer journeys, and run hyper-personalized email & WhatsApp campaigns with 97% open rates from one unified platform.',
+    badge: 'All-in-One Revenue Engine',
+    description:
+      'The complete end-to-end revenue platform that replaces disconnected tools. Unify your lead pipeline, customer records, activity-based personalized email sequences, and official WhatsApp Business campaigns into a single high-deliverability engine configurable with any mail provider.',
+    features: [
+      'End-to-end lead & customer lifecycle CRM with visual kanban pipelines',
+      'Activity-triggered email personalization based on real-time prospect behavior',
+      'Industry-leading 97% peak open rates with precision inbox warmup',
+      'Universal mail provider engine (AWS SES, Google Workspace, Microsoft 365, Hostinger, SendGrid, custom SMTP)',
+      'Official WhatsApp Business API integration with interactive reply buttons',
+      'Omnichannel sequence builder (Email + WhatsApp cross-channel workflows)',
+      'Granular telemetry tracking: opens, clicks, reads, replies & pipeline stage changes',
+      'Automated bounce suppression, spam-trap filtering & list hygiene',
+      'Two-way unified team inbox for email and WhatsApp communications',
+      'Enterprise webhooks and REST API for Shopify, WooCommerce, Stripe & custom apps',
+    ],
+    specs: [
+      'Unified Web & Mobile Dashboard',
+      'Connect Any Mail Provider (SMTP / SES / Google / 365)',
+      'Official Meta WhatsApp Business API',
+      'Real-Time Webhook & REST API',
+      'SOC 2 & GDPR / DPDP Ready',
+      '14-Day Free Trial',
+    ],
+    outcome:
+      'Eliminates 65% of monthly marketing software spend while boosting prospect engagement by 3.8x through activity-personalized omnichannel touchpoints.',
+    stats: [
+      { value: '97%', label: 'Peak Campaign Open Rate' },
+      { value: '−65%', label: 'SaaS Tooling Cost Reduction' },
+      { value: '3.8x', label: 'Higher Reply & Conversion Rates' },
+      { value: '< 15 Min', label: 'Any Mail Provider Integration' },
+    ],
+    workflow: [
+      {
+        step: '01',
+        title: 'Unified Lead Ingestion & Enrichment',
+        description:
+          'Capture prospects from landing pages, web forms, ads, or CSV imports into a central CRM. Automatically enrich contact data, identify company size, and score buying intent.',
+        detail: 'Instant duplicate detection, contact scoring, and visual stage routing.',
+      },
+      {
+        step: '02',
+        title: 'Activity-Triggered Email Personalization',
+        description:
+          'Our AI engine monitors prospect interactions (page dwell time, documentation views, pricing visits) and crafts tailored, hyper-personalized emails that speak directly to their pain points.',
+        detail: 'Dynamic subject line optimization and real-time behavioral merge tags.',
+      },
+      {
+        step: '03',
+        title: 'Automated WhatsApp Omnichannel Sequences',
+        description:
+          'When an email goes unopened or a high-intent link is clicked, an automated WhatsApp sequence triggers with interactive buttons, meeting booking links, or product catalogs.',
+        detail: 'Official WhatsApp Business API with 98% read rate within 5 minutes.',
+      },
+      {
+        step: '04',
+        title: 'Real-Time Telemetry & Revenue Attribution',
+        description:
+          'Track every touchpoint from first email open to signed contract. Monitor deliverability health, manage two-way conversations in one inbox, and close deals faster.',
+        detail: 'Full deal attribution, rep performance metrics, and automated CRM stage progression.',
+      },
+    ],
+    modules: [
+      {
+        id: 'module-crm-leads',
+        title: 'Centralized Lead & Customer CRM',
+        description:
+          'Ditch clunky spreadsheets and expensive single-purpose CRMs. Organize your entire lead pipeline with drag-and-drop kanban boards, custom deal stages, customer communication timelines, and automated task reminders for your sales team.',
+        bullets: [
+          'Visual drag-and-drop deal pipelines with customizable sales stages',
+          'Complete customer activity timeline tracking every email, call, and WhatsApp message',
+          'Automated lead scoring, assignment rules, and follow-up alerts',
+        ],
+        link: '/contact?product=growthflow-crm&module=lead-crm',
+        linkText: 'Explore Lead & Customer CRM →',
+      },
+      {
+        id: 'module-personalized-email',
+        title: 'Behavior-Triggered Hyper-Personalized Email',
+        description:
+          'Move beyond generic mail-merge blasts. GrowthFlow analyzes how prospects interact with your website, pricing pages, and previous emails to dynamically generate bespoke copy, case studies, and call-to-actions tailored to each prospect.',
+        bullets: [
+          'Dynamic content insertion based on prospect activity and intent signals',
+          'Multi-variant subject line and body split-testing on autopilot',
+          'AI-assisted copy generation calibrated for high direct-response conversion',
+        ],
+        link: '/contact?product=growthflow-crm&module=personalized-email',
+        linkText: 'Explore Personalized Email →',
+      },
+      {
+        id: 'module-mail-provider',
+        title: 'Universal Mail Provider & Deliverability Engine',
+        description:
+          'Never get locked into an overpriced email vendor again. Connect your preferred sending infrastructure—AWS SES, Google Workspace, Microsoft 365, SendGrid, Hostinger SMTP, Mailgun, or custom relays—with automated sender rotation and 97% open rate deliverability.',
+        bullets: [
+          'Plug-and-play setup for AWS SES, Google Workspace, Office 365, Hostinger & custom SMTP',
+          'Automated domain warmup, SPF, DKIM, and DMARC health diagnostics',
+          'Smart sender rotation and automatic failover preventing domain blacklisting',
+        ],
+        link: '/contact?product=growthflow-crm&module=mail-provider',
+        linkText: 'Explore Mail Provider Engine →',
+      },
+      {
+        id: 'module-whatsapp-marketing',
+        title: 'Official WhatsApp Business Marketing & Automation',
+        description:
+          'Reach your customers where they actually read messages. Build automated WhatsApp broadcast sequences, send personalized catalog alerts, trigger abandoned checkout reminders, and equip reps with a shared team inbox.',
+        bullets: [
+          'Official Meta WhatsApp Business API integration with verified green tick support',
+          'Rich media templates with interactive quick-reply and CTA buttons',
+          'Automated broadcast sequences with smart throttle rates and compliance safeguards',
+        ],
+        link: '/contact?product=growthflow-crm&module=whatsapp-marketing',
+        linkText: 'Explore WhatsApp Marketing →',
+      },
+      {
+        id: 'module-omnichannel-orchestration',
+        title: 'Cross-Channel Sequence Orchestration',
+        description:
+          'Orchestrate seamless multi-channel journeys. If a prospect doesn’t open an email within 24 hours, automatically dispatch a WhatsApp nudge. If they click a pricing link, instantly alert your sales rep to call or send a calendar invite.',
+        bullets: [
+          'Visual drag-and-drop workflow canvas connecting Email and WhatsApp triggers',
+          'Conditional branching based on opens, link clicks, replies, and delays',
+          'Unified customer profile tracking cross-channel engagement in one place',
+        ],
+        link: '/contact?product=growthflow-crm&module=omnichannel-orchestration',
+        linkText: 'Explore Omnichannel Workflows →',
+      },
+      {
+        id: 'module-telemetry-tracking',
+        title: 'Real-Time Engagement Telemetry & Attribution',
+        description:
+          'Gain complete visibility into your outbound and inbound campaigns. Monitor real-time open timestamps, link click heatmaps, WhatsApp delivery/read receipts, bounce rates, and revenue pipeline attribution in live dashboards.',
+        bullets: [
+          'Pixel-accurate email open, click, and reply telemetry',
+          'WhatsApp message delivery, read receipt, and interactive button click analytics',
+          'End-to-end revenue attribution connecting campaign touchpoints to won deals',
+        ],
+        link: '/contact?product=growthflow-crm&module=telemetry-tracking',
+        linkText: 'Explore Telemetry & Analytics →',
+      },
+      {
+        id: 'module-unified-inbox',
+        title: 'Unified Team Inbox for Email & WhatsApp',
+        description:
+          'Consolidate customer communications into a single shared inbox. Sales and support reps can reply to prospect emails and WhatsApp conversations from the same interface with collision detection, canned replies, and assignment tags.',
+        bullets: [
+          'Two-way email and WhatsApp messaging in one collaborative workspace',
+          'Team collision detection preventing duplicate replies from multiple reps',
+          'Internal notes, mentions, and instant conversation re-assignment',
+        ],
+        link: '/contact?product=growthflow-crm&module=unified-inbox',
+        linkText: 'Explore Unified Team Inbox →',
+      },
+      {
+        id: 'module-api-webhooks',
+        title: 'Enterprise REST API & Instant Webhooks',
+        description:
+          'Connect GrowthFlow seamlessly into your existing tech stack. Ingest leads from web forms, sync customers with Shopify, WooCommerce, or Stripe, and trigger automated webhook dispatches into internal databases.',
+        bullets: [
+          'Comprehensive REST API with developer-friendly documentation and SDKs',
+          'Real-time webhook events for leads, email opens, clicks, and WhatsApp replies',
+          'Pre-built integrations for Shopify, WooCommerce, WordPress, and Stripe',
+        ],
+        link: '/contact?product=growthflow-crm&module=api-webhooks',
+        linkText: 'Explore API & Webhooks →',
+      },
+    ],
+    whyNeeded: {
+      headline: 'Why Growing Businesses Are Replacing Fragmented Marketing Stacks',
+      subheadline:
+        'Managing separate subscriptions for CRM, email blasts, and WhatsApp marketing creates data silos, inflated software bills, and missed revenue opportunities.',
+      painPoints: [
+        'Tool fragmentation tax: Paying $500–$1,500/month across HubSpot, Mailchimp, Wati/Interakt, and Zapier with constant sync breakdowns.',
+        'Generic, unpersonalized emails: Static batch-and-blast templates resulting in dismal 12–18% open rates and burning domain reputation.',
+        'Disconnected customer data: Sales reps having no clue what emails marketing sent or what links the prospect clicked on the website.',
+        'Vendor lock-in: Forced to use expensive proprietary mail servers instead of cost-effective AWS SES or existing Google/Microsoft inboxes.',
+      ],
+      outcomes: [
+        'One single unified platform handling leads, customer records, personalized email, and WhatsApp marketing at a fraction of the cost.',
+        'Activity-triggered hyper-personalization delivering peak 97% open rates and 3.8x higher response rates from interested buyers.',
+        'Complete 360-degree timeline of all customer interactions across email, WhatsApp, and web visits in a single shared screen.',
+        'Total sending freedom: Configure with any mail provider (AWS SES, Google Workspace, Office 365, Hostinger SMTP, or SendGrid).',
+      ],
+    },
+    industries: [
+      {
+        title: 'B2B SaaS & Tech Companies',
+        problem: 'Trial signups dropping off without activation; marketing emails ignored by technical decision-makers.',
+        solution: 'Activity-based onboarding sequences triggered by in-app actions, automated WhatsApp demo reminders, and unified CRM deal pipelines.',
+      },
+      {
+        title: 'D2C & E-Commerce Brands',
+        problem: 'Skyrocketing cart abandonment and high customer acquisition costs relying solely on paid ads.',
+        solution: 'Abandoned cart WhatsApp nudges within 15 minutes, personalized post-purchase email flows, and repeat-buyer VIP segmentation.',
+      },
+      {
+        title: 'Real Estate & Property Developers',
+        problem: 'Delayed inquiry follow-ups leading to cold leads; inability to send brochures instantly on WhatsApp.',
+        solution: 'Instant WhatsApp brochure dispatch upon lead capture, automated site visit booking workflows, and agent assignment CRM.',
+      },
+      {
+        title: 'Education, EdTech & Coaching',
+        problem: 'High lead volume from Facebook ads but low webinar attendance and manual counseling follow-ups.',
+        solution: 'Automated WhatsApp webinar reminders with 1-click join links, personalized admission email sequences, and counselor call logging.',
+      },
+      {
+        title: 'Financial Services, Insurance & Wealth',
+        problem: 'Strict compliance requirements and delayed document collection stalling loan and policy approvals.',
+        solution: 'Automated WhatsApp document collection checklists, secure email updates, and encrypted customer audit logs.',
+      },
+      {
+        title: 'Agencies & Professional Consultancies',
+        problem: 'Spending dozens of hours manually sending cold pitches and managing client updates across fragmented tools.',
+        solution: 'Personalized outbound email sequences via rotated inboxes, unified client onboarding CRM, and real-time open telemetry.',
+      },
+      {
+        title: 'Healthcare & Wellness Clinics',
+        problem: 'Missed patient appointments and manual telephone confirmation eating up administrative staff hours.',
+        solution: 'Automated WhatsApp appointment confirmations, interactive reschedule buttons, and pre-consultation email instructions.',
+      },
+      {
+        title: 'Automotive Dealerships & High-Ticket Retail',
+        problem: 'Leads lost between online inquiries and showroom walk-ins with zero cross-channel tracking.',
+        solution: 'Instant test-drive confirmation via WhatsApp, salesperson CRM routing, and personalized trade-in value email sequences.',
+      },
+    ],
+    buyerGuides: [
+      {
+        id: 'guide-growthflow-vs-hubspot',
+        title: 'GrowthFlow CRM vs. Fragmented SaaS Stacks: TCO Analysis',
+        summary:
+          'How unifying CRM, Email, and WhatsApp into one platform eliminates 65% of software overhead and eliminates Zapier sync failures.',
+        link: '/contact?inquiry=growthflow-vs-hubspot-guide',
+      },
+      {
+        id: 'guide-97-open-rate-blueprint',
+        title: 'The 97% Open Rate Deliverability Blueprint',
+        summary:
+          'Step-by-step technical guide to domain warmup, SPF/DKIM/DMARC alignment, and activity-based personalizations that bypass the promo tab.',
+        link: '/contact?inquiry=97-open-rate-guide',
+      },
+      {
+        id: 'guide-whatsapp-marketing-compliance',
+        title: 'Meta WhatsApp Business API Implementation Guide',
+        summary:
+          'How to set up verified WhatsApp marketing sequences, interactive reply templates, and 2-way support without risk of number bans.',
+        link: '/contact?inquiry=whatsapp-api-guide',
+      },
+      {
+        id: 'guide-mail-provider-configuration',
+        title: 'Universal Mail Provider Architecture: AWS SES to Google',
+        summary:
+          'How to configure custom SMTP relays, AWS SES high-volume sending, and Google Workspace rotation for maximum deliverability and lowest cost.',
+        link: '/contact?inquiry=mail-provider-guide',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is GrowthFlow CRM and why should we replace our existing tools with it?',
+        answer:
+          'GrowthFlow CRM is a unified revenue platform that brings together Lead CRM, customer communication history, behavior-triggered personalized email sequences, and official WhatsApp Business marketing into one single system. Instead of paying $500–$1,500/month across separate platforms (such as HubSpot for CRM, Mailchimp for email, Wati/Interakt for WhatsApp, and Zapier for syncing), GrowthFlow CRM provides end-to-end orchestration in one screen with zero sync errors and dramatically lower total cost of ownership.',
+      },
+      {
+        question: 'How does the platform achieve up to 97% email open rates?',
+        answer:
+          'Most email tools send generic mass blasts that email providers (Gmail, Outlook) automatically filter into Promotions or Spam. GrowthFlow CRM achieves industry-leading open rates through three proprietary mechanisms: (1) automated gradual inbox warmup and continuous SPF, DKIM, and DMARC health monitoring; (2) smart sender rotation across multiple inboxes and providers; and (3) deep activity-based personalization that crafts emails based on real prospect actions, making each message look and read like a genuine 1-on-1 personal email.',
+      },
+      {
+        question: 'Can we connect our own mail provider like AWS SES, Google Workspace, or Hostinger?',
+        answer:
+          'Yes! Unlike closed-garden platforms that force you to pay exorbitant per-contact or per-email fees, GrowthFlow CRM includes a Universal Mail Provider Engine. You can connect AWS SES, Google Workspace, Microsoft 365, SendGrid, Hostinger SMTP, Mailgun, or your own private SMTP relays with automated fallback and load balancing.',
+      },
+      {
+        question: 'How does the WhatsApp Business Marketing integration work?',
+        answer:
+          'GrowthFlow CRM connects directly via the official Meta WhatsApp Business Cloud API. You can broadcast personalized messages, launch automated drip campaigns with interactive buttons, trigger abandoned cart or demo reminders, and manage incoming responses in a collaborative team inbox—all in full compliance with Meta policies.',
+      },
+      {
+        question: 'What does cross-channel omnichannel sequence orchestration mean?',
+        answer:
+          'Omnichannel orchestration means Email and WhatsApp work together intelligently rather than in silos. For example, you can create a workflow where a prospect receives an introduction email; if they do not open it within 24 hours, the system automatically sends a WhatsApp message. If they click a link in either channel, the deal stage in your CRM updates instantly and alerts your sales team.',
+      },
+      {
+        question: 'Can we migrate our existing leads, customer contacts, and email lists into GrowthFlow CRM?',
+        answer:
+          'Yes. GrowthFlow CRM provides 1-click CSV import with automated column mapping, tag assignment, and duplicate detection. We also provide direct migration utilities and API endpoints for HubSpot, Salesforce, Zoho, Mailchimp, and ActiveCampaign.',
+      },
+      {
+        question: 'Is customer data secure, and does the platform comply with privacy laws?',
+        answer:
+          'Yes. GrowthFlow CRM is built to enterprise standards with AES-256 encryption at rest and TLS 1.3 in transit. It fully complies with the Digital Personal Data Protection (DPDP) Act, GDPR, and ISO 27001 data protection principles, including granular role-based access control and unsubscribe/opt-out automation.',
+      },
+      {
+        question: 'How quickly can we get started with a free trial?',
+        answer:
+          'You can be up and running in under 15 minutes. Sign up for the 14-day free pilot, connect your preferred mail provider or test with our sandbox, create your first lead pipeline, and launch your first personalized campaign immediately.',
+      },
+    ],
+  },
 ];
 

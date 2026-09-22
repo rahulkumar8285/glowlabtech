@@ -1,6 +1,8 @@
 import { useEffect, type MouseEvent } from 'react';
 import { SERVICES_DATA, ServiceItem } from '../data/offeringsData';
+import { SERVICE_MEDIA_CONFIGS } from '../data/serviceMediaData';
 import PageHeader from './PageHeader';
+import ImagePlaceholder from './ImagePlaceholder';
 import FinalCTASection from './FinalCTASection';
 import { updatePageSEO } from '../utils/seo';
 
@@ -16,6 +18,7 @@ export default function ServiceDetailPage({
   const currentIndex = SERVICES_DATA.findIndex((s) => s.slug === slug);
   const service: ServiceItem =
     currentIndex !== -1 ? SERVICES_DATA[currentIndex] : SERVICES_DATA[0];
+  const mediaConfig = SERVICE_MEDIA_CONFIGS[service.slug];
 
   useEffect(() => {
     if (!service) return;
@@ -74,6 +77,13 @@ export default function ServiceDetailPage({
         id="service-detail-header"
         title={service.name.includes('&') ? service.name.replace('&', '/ &') : service.name}
         subtitle={service.tagline}
+        rightContent={
+          mediaConfig?.headerHero ? (
+            <div className="w-full max-w-lg lg:max-w-none">
+              <ImagePlaceholder {...mediaConfig.headerHero} />
+            </div>
+          ) : undefined
+        }
       />
 
       {/* SUB-NAVIGATION / SERVICES BREADCRUMB */}
@@ -152,16 +162,29 @@ export default function ServiceDetailPage({
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            {service.challenges.map((challenge, idx) => (
-              <div
-                key={idx}
-                className="border-t border-black/10 pt-5 flex items-start gap-4"
-              >
-                <p className="font-body text-base text-neutral-600 leading-relaxed">
-                  {challenge}
-                </p>
-              </div>
-            ))}
+            {service.challenges.map((challenge, idx) => {
+              const iconSrc = mediaConfig?.challengeIcons?.[idx];
+              return (
+                <div
+                  key={idx}
+                  className="border-t border-black/10 pt-5 sm:pt-6 flex items-start gap-4 sm:gap-5"
+                >
+                  {iconSrc ? (
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 p-1.5 rounded-[4px] bg-black/[0.02] border border-black/[0.06] flex items-center justify-center">
+                      <img
+                        src={iconSrc}
+                        alt={`Problem illustration ${idx + 1}`}
+                        className="w-full h-full object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                  ) : null}
+                  <p className="font-body text-base sm:text-[17px] text-neutral-600 leading-relaxed pt-1 sm:pt-1.5">
+                    {challenge}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -169,9 +192,25 @@ export default function ServiceDetailPage({
       {/* SECTION 3: SYSTEM ARCHITECTURE & ENGINEERING */}
       <section className="w-full py-14 sm:py-18 md:py-20 border-b border-black/10">
         <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-20 text-left">
-          <h2 className="font-headline font-normal sm:font-medium text-3xl sm:text-4xl leading-tight text-[#1A1A1A] mb-10 sm:mb-12">
+          <h2 className="font-headline font-normal sm:font-medium text-3xl sm:text-4xl leading-tight text-[#1A1A1A] mb-8 sm:mb-10 text-center">
             How we engineer this system
           </h2>
+
+          {/* System Architecture Flowchart Diagram */}
+          {mediaConfig?.architectureDiagram?.src ? (
+            <div className="mb-8 sm:mb-10 flex items-center justify-center">
+              <img
+                src={mediaConfig.architectureDiagram.src}
+                alt={mediaConfig.architectureDiagram.alt || 'System Architecture Flowchart'}
+                className="w-full max-w-3xl h-auto object-contain block"
+                loading="lazy"
+              />
+            </div>
+          ) : mediaConfig?.architectureDiagram ? (
+            <div className="mb-8 sm:mb-10">
+              <ImagePlaceholder {...mediaConfig.architectureDiagram} />
+            </div>
+          ) : null}
 
           <div className="divide-y divide-black/10 border-t border-black/10">
             {service.architecture.map((arch, idx) => (
@@ -203,14 +242,25 @@ export default function ServiceDetailPage({
               <h2 className="font-headline font-medium text-2xl sm:text-3xl text-[#1A1A1A] leading-tight mb-4">
                 What is included in the build
               </h2>
-              <div className="border-t border-black/[0.06] pt-4 mt-4">
-                <span className="font-body text-xs uppercase tracking-wider text-neutral-400 block mb-1 font-medium">
-                  Guaranteed Target Outcome
-                </span>
-                <p className="font-body text-sm sm:text-base text-[#C84826] font-medium leading-relaxed">
-                  {service.outcome}
-                </p>
-              </div>
+              {mediaConfig?.outcomeVisual?.src ? (
+                <div className="mt-6 flex items-center justify-start">
+                  <img
+                    src={mediaConfig.outcomeVisual.src}
+                    alt={mediaConfig.outcomeVisual.alt || 'Deliverables and outcome preview'}
+                    className="w-full max-w-md h-auto object-contain block"
+                    loading="lazy"
+                  />
+                </div>
+              ) : (
+                <div className="border-t border-black/[0.06] pt-4 mt-4">
+                  <span className="font-body text-xs uppercase tracking-wider text-neutral-400 block mb-1 font-medium">
+                    Guaranteed Target Outcome
+                  </span>
+                  <p className="font-body text-sm sm:text-base text-[#C84826] font-medium leading-relaxed">
+                    {service.outcome}
+                  </p>
+                </div>
+              )}
             </div>
 
             <div className="col-span-12 lg:col-span-7">

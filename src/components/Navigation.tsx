@@ -276,8 +276,8 @@ export default function Navigation({
                               <p className="font-body text-xs font-semibold group-hover:text-[#C84826] transition-colors">
                                 {product.name}
                               </p>
-                              <p className="font-body text-[11px] text-neutral-500 mt-1 leading-snug">
-                                Beat plans, live GPS tracking, geo-attendance &amp; automated DSR reports.
+                              <p className="font-body text-[11px] text-neutral-500 mt-1 leading-snug line-clamp-2">
+                                {product.tagline}
                               </p>
                             </a>
                           </li>

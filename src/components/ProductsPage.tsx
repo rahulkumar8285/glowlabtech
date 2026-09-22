@@ -18,11 +18,19 @@ import {
   Clock,
   FileText,
   DollarSign,
+  Mail,
+  MessageSquare,
+  Users,
+  BarChart3,
+  Sliders,
+  Sparkles,
 } from 'lucide-react';
 import { PRODUCTS_DATA, type ProductItem } from '../data/offeringsData';
 import PageHeader from './PageHeader';
+import ImagePlaceholder from './ImagePlaceholder';
 import FinalCTASection from './FinalCTASection';
 import { updatePageSEO } from '../utils/seo';
+import { PRODUCT_MEDIA_CONFIGS } from '../data/serviceMediaData';
 
 interface ProductsPageProps {
   slug?: string;
@@ -39,6 +47,8 @@ export default function ProductsPage({
 
   const currentIndex = slug ? PRODUCTS_DATA.findIndex((p) => p.slug === slug) : 0;
   const primaryProduct: ProductItem = currentIndex !== -1 ? PRODUCTS_DATA[currentIndex] : PRODUCTS_DATA[0];
+  const mediaConfig = PRODUCT_MEDIA_CONFIGS[primaryProduct.slug];
+  const isCrm = primaryProduct.slug === 'growthflow-crm' || primaryProduct.slug === 'omniflow-crm';
 
   useEffect(() => {
     const faqSchema = primaryProduct?.faqs
@@ -81,11 +91,15 @@ export default function ProductsPage({
       },
     };
 
+    const productKeywords =
+      primaryProduct.slug === 'growthflow-crm' || primaryProduct.slug === 'omniflow-crm'
+        ? 'GrowthFlow CRM, unified lead management, customer CRM, email marketing automation, whatsapp marketing platform, activity-based email personalization, 97 open rate email, universal mail provider, AWS SES email marketing, WhatsApp Business API CRM, GrowthTechSys GrowthFlow'
+        : 'field sales automation software, gps employee tracking app, field force tracking, beat planning software, geo-fenced attendance app, mock gps detection, travel reimbursement automation, sales rep tracking India';
+
     const cleanup = updatePageSEO({
       title: `${primaryProduct.name} | GrowthTechSys`,
       description: primaryProduct.tagline,
-      keywords:
-        'field sales automation software, gps employee tracking app, field force tracking, beat planning software, geo-fenced attendance app, mock gps detection, travel reimbursement automation, sales rep tracking India',
+      keywords: productKeywords,
       canonicalUrl: `https://growthtechsys.com/product/${primaryProduct.slug}`,
       ogType: 'website',
       jsonLd: {
@@ -173,7 +187,20 @@ export default function ProductsPage({
       case 'module-poe':
         return <CheckCircle2 className="w-5 h-5 text-[#C84826]" />;
       case 'module-leads':
+      case 'module-crm-leads':
         return <Briefcase className="w-5 h-5 text-[#C84826]" />;
+      case 'module-personalized-email':
+        return <Mail className="w-5 h-5 text-[#C84826]" />;
+      case 'module-mail-provider':
+        return <Sliders className="w-5 h-5 text-[#C84826]" />;
+      case 'module-whatsapp-marketing':
+        return <MessageSquare className="w-5 h-5 text-[#C84826]" />;
+      case 'module-omnichannel-orchestration':
+        return <Layers className="w-5 h-5 text-[#C84826]" />;
+      case 'module-telemetry-tracking':
+        return <BarChart3 className="w-5 h-5 text-[#C84826]" />;
+      case 'module-unified-inbox':
+        return <Users className="w-5 h-5 text-[#C84826]" />;
       case 'module-dsr':
         return <FileText className="w-5 h-5 text-[#C84826]" />;
       case 'module-expenses':
@@ -181,6 +208,7 @@ export default function ProductsPage({
       case 'module-offline':
         return <WifiOff className="w-5 h-5 text-[#C84826]" />;
       case 'module-integration':
+      case 'module-api-webhooks':
         return <Database className="w-5 h-5 text-[#C84826]" />;
       default:
         return <MapPin className="w-5 h-5 text-[#C84826]" />;
@@ -194,6 +222,13 @@ export default function ProductsPage({
         id="product-header"
         title={primaryProduct.name.includes('&') ? primaryProduct.name.replace('&', '/ &') : primaryProduct.name}
         subtitle={primaryProduct.tagline}
+        rightContent={
+          mediaConfig?.headerHero ? (
+            <div className="w-full max-w-lg lg:max-w-none">
+              <ImagePlaceholder {...mediaConfig.headerHero} />
+            </div>
+          ) : undefined
+        }
       />
 
       {/* SUB-NAVIGATION & SECTION TABS (STICKY) */}
@@ -346,13 +381,28 @@ export default function ProductsPage({
         className="w-full py-16 sm:py-20 md:py-24 border-b border-black/10 scroll-mt-36"
       >
         <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
-          <div className="max-w-3xl mb-10 sm:mb-14">
-            <h2 className="font-headline font-semibold text-2xl sm:text-4xl text-[#1A1A1A] tracking-tight leading-tight">
-              Enterprise modules engineered for end-to-end field sales accountability.
-            </h2>
-            <p className="font-body text-sm sm:text-base text-neutral-600 mt-3 leading-relaxed">
-              Empower your field reps with mobile-first automation for beat plans, geo-checkins, instant order booking, and verified travel reimbursements—while leadership retains complete real-time visibility.
-            </p>
+          {/* Section 1 Header: 2-Column (Left: Image | Right: Headline & Text) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12 sm:mb-16">
+            {/* Left Side: Modules Composite Image */}
+            <div className="lg:col-span-6 w-full order-2 lg:order-1">
+              {mediaConfig?.modulesComposite ? (
+                <ImagePlaceholder {...mediaConfig.modulesComposite} />
+              ) : null}
+            </div>
+
+            {/* Right Side: Headline & Description */}
+            <div className="lg:col-span-6 w-full text-left order-1 lg:order-2">
+              <h2 className="font-headline font-semibold text-2xl sm:text-3xl lg:text-4xl text-[#1A1A1A] tracking-tight leading-tight">
+                {isCrm
+                  ? 'Modular revenue engines built for high-conversion omnichannel growth.'
+                  : 'Enterprise modules engineered for end-to-end field sales accountability.'}
+              </h2>
+              <p className="font-body text-sm sm:text-base text-neutral-600 mt-4 leading-relaxed">
+                {isCrm
+                  ? 'Unify lead pipelines, behavior-triggered personalized email sequences, official WhatsApp marketing, and real-time telemetry—all connected to any mail provider.'
+                  : 'Empower your field reps with mobile-first automation for beat plans, geo-checkins, instant order booking, and verified travel reimbursements—while leadership retains complete real-time visibility.'}
+              </p>
+            </div>
           </div>
 
           {/* Modules Grid */}
@@ -413,23 +463,34 @@ export default function ProductsPage({
       {primaryProduct.workflow && (
         <section
           id="workflow"
-          className="w-full py-16 sm:py-20 md:py-24 border-b border-black/10 bg-white scroll-mt-36"
+          className="w-full py-16 sm:py-20 md:py-24 border-b border-black/10 bg-[#FAF9F6] scroll-mt-36"
         >
           <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
-            <div className="max-w-3xl mb-12 sm:mb-16">
+            <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-14">
               <h2 className="font-headline font-semibold text-2xl sm:text-4xl text-[#1A1A1A] tracking-tight leading-tight">
-                How Field Sales Automation Works
+                {isCrm ? 'How GrowthFlow CRM Works' : 'How Field Sales Automation Works'}
               </h2>
               <p className="font-body text-sm sm:text-base text-neutral-600 mt-3 leading-relaxed">
-                A seamless, automated 4-step daily cycle from morning shift kickoff to evening expense settlement—keeping reps focused on selling and leadership fully informed.
+                {isCrm
+                  ? 'A seamless 4-step revenue cycle from lead ingestion and behavioral email personalization to automated WhatsApp outreach and real-time attribution.'
+                  : 'A seamless, automated 4-step daily cycle from morning shift kickoff to evening expense settlement—keeping reps focused on selling and leadership fully informed.'}
               </p>
             </div>
+
+            {/* 4-Step Daily Workflow Flowchart Diagram (Constrained size matching service pages) */}
+            {mediaConfig?.dayCycleWorkflow && (
+              <div className="mb-10 sm:mb-12 flex items-center justify-center">
+                <div className="w-full max-w-3xl">
+                  <ImagePlaceholder {...mediaConfig.dayCycleWorkflow} />
+                </div>
+              </div>
+            )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 relative">
               {primaryProduct.workflow.map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-[#FAF9F6] border border-black/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-black/25 hover:shadow-sm transition-all relative group"
+                  className="bg-white border border-black/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-black/25 hover:shadow-sm transition-all relative group"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-5">
@@ -530,10 +591,14 @@ export default function ProductsPage({
           <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
             <div className="max-w-3xl mb-10 sm:mb-14">
               <h2 className="font-headline font-semibold text-2xl sm:text-4xl text-[#1A1A1A] tracking-tight leading-tight">
-                Designed for businesses with personnel on the move across India.
+                {isCrm
+                  ? 'Tailored revenue architectures for high-velocity growth sectors.'
+                  : 'Designed for businesses with personnel on the move across India.'}
               </h2>
               <p className="font-body text-sm sm:text-base text-neutral-600 mt-3 leading-relaxed">
-                Whether you oversee pharmaceutical territory managers, solar technicians, or outdoor media audit teams, our platform adapts directly to your operational SOPs.
+                {isCrm
+                  ? 'Whether you run B2B SaaS onboarding, D2C cart abandonment recovery, real estate site visit scheduling, or agency outreach, GrowthFlow adapts directly to your customer journey.'
+                  : 'Whether you oversee pharmaceutical territory managers, solar technicians, or outdoor media audit teams, our platform adapts directly to your operational SOPs.'}
               </p>
             </div>
 
@@ -577,10 +642,14 @@ export default function ProductsPage({
           <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
             <div className="max-w-3xl mb-10 sm:mb-14">
               <h2 className="font-headline font-semibold text-2xl sm:text-4xl text-[#1A1A1A] tracking-tight leading-tight">
-                Evaluate our field tracking tools for your specific team workflow and operational needs.
+                {isCrm
+                  ? 'Deep-dive engineering playbooks & revenue architecture guides.'
+                  : 'Evaluate our field tracking tools for your specific team workflow and operational needs.'}
               </h2>
               <p className="font-body text-sm sm:text-base text-neutral-600 mt-3 leading-relaxed">
-                Dive into in-depth playbooks detailing how to audit routes, prevent GPS spoofing, and validate client visits.
+                {isCrm
+                  ? 'Explore in-depth blueprints on email deliverability, universal mail provider configuration, Meta WhatsApp Business compliance, and total cost of ownership.'
+                  : 'Dive into in-depth playbooks detailing how to audit routes, prevent GPS spoofing, and validate client visits.'}
               </p>
             </div>
 
@@ -617,6 +686,34 @@ export default function ProductsPage({
         </section>
       )}
 
+      {/* SECTION 4.5: UNIFIED PLATFORM TELEMETRY & APP PREVIEW */}
+      {mediaConfig?.socialShare && (
+        <section className="w-full py-16 sm:py-20 md:py-24 border-b border-black/10 bg-white">
+          <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              {/* Left Side: Device Ecosystem Image */}
+              <div className="lg:col-span-6 w-full order-2 lg:order-1">
+                <ImagePlaceholder {...mediaConfig.socialShare} />
+              </div>
+
+              {/* Right Side: Headline & Description */}
+              <div className="lg:col-span-6 w-full text-left order-1 lg:order-2">
+                <h2 className="font-headline font-semibold text-2xl sm:text-3xl lg:text-4xl text-[#1A1A1A] tracking-tight leading-tight">
+                  {isCrm
+                    ? 'Complete Omnichannel Command Center Across Web & Mobile'
+                    : 'Unified Field Force Management On Any Device'}
+                </h2>
+                <p className="font-body text-sm sm:text-base text-neutral-600 mt-4 leading-relaxed">
+                  {isCrm
+                    ? 'Orchestrate personalized email campaigns, automated WhatsApp broadcasts, and live lead pipeline stages from one collaborative interface.'
+                    : 'Real-time synchronization between the web dispatch console for managers and the lightweight mobile application for field representatives.'}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* SECTION 5: FIELD SALES AUTOMATION & TRACKING — INTERACTIVE FAQ */}
       {primaryProduct.faqs && (
         <section
@@ -626,10 +723,14 @@ export default function ProductsPage({
           <div className="w-full max-w-4xl mx-auto px-5 sm:px-12 md:px-16">
             <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
               <h2 className="font-headline font-semibold text-2xl sm:text-4xl text-[#1A1A1A] tracking-tight leading-tight">
-                Field Sales Automation &amp; Workforce Tracking FAQ
+                {isCrm
+                  ? 'GrowthFlow CRM & Omnichannel Marketing FAQ'
+                  : 'Field Sales Automation & Workforce Tracking FAQ'}
               </h2>
               <p className="font-body text-xs sm:text-sm text-neutral-500 mt-2.5">
-                Common questions about beat planning, mock GPS detection, privacy laws (DPDP Act), offline sync, and ERP integrations.
+                {isCrm
+                  ? 'Common questions about 97% open rates, universal mail providers, WhatsApp Business API compliance, data privacy, and CRM migrations.'
+                  : 'Common questions about beat planning, mock GPS detection, privacy laws (DPDP Act), offline sync, and ERP integrations.'}
               </p>
             </div>
 
