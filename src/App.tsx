@@ -122,6 +122,7 @@ export default function App() {
           'GrowthTechSys, AI software agency, digital product development, field sales automation, GPS employee tracking app, custom software engineering, B2B workflow automation',
         canonicalUrl: 'https://growthtechsys.com/',
         ogType: 'website',
+        ogImage: '/images/homepage-share.png',
         jsonLd: {
           '@context': 'https://schema.org',
           '@graph': [
@@ -246,54 +247,67 @@ export default function App() {
 
               <div
                 id="hero-container"
-                className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20 pt-24 pb-12 sm:pt-32 sm:pb-16 md:pt-36 md:pb-20 flex flex-col justify-center text-left"
+                className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20 pt-24 pb-12 sm:pt-32 sm:pb-16 md:pt-36 md:pb-20"
               >
-                {/* Giant headline with fluid scaling on mobile devices */}
-                <h1
-                  id="hero-headline"
-                  className="font-headline font-normal sm:font-medium text-[32px] min-[380px]:text-[38px] sm:text-[68px] md:text-[84px] lg:text-[96px] leading-[1.08] sm:leading-[1.05] tracking-[-0.03em] text-[#1A1A1A] max-w-5xl"
-                >
-                  <span className="block">AI systems that bring</span>
-                  <span className="block">
-                    your business <span className="text-[#C84826]">new customers.</span>
-                  </span>
-                </h1>
+                <div className="grid grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-center">
+                  {/* Left Column: Text & CTAs */}
+                  <div className="col-span-12 lg:col-span-6 xl:col-span-6 flex flex-col justify-center text-left">
+                    <h1
+                      id="hero-headline"
+                      className="font-headline font-normal sm:font-medium text-[32px] min-[380px]:text-[38px] sm:text-[46px] md:text-[54px] lg:text-[44px] xl:text-[54px] 2xl:text-[60px] leading-[1.12] sm:leading-[1.1] tracking-[-0.03em] text-[#1A1A1A]"
+                    >
+                      <span>AI systems that bring your business </span>
+                      <span className="text-[#C84826] whitespace-nowrap">new customers.</span>
+                    </h1>
 
-                {/* Subheadline directly below, fluid for mobile */}
-                <p
-                  id="hero-subheadline"
-                  className="font-body font-normal text-[15px] sm:text-lg md:text-[20px] text-neutral-600 leading-relaxed max-w-3xl mt-4 sm:mt-6 mb-7 sm:mb-8"
-                >
-                  We design and build AI automation, video content, and outreach systems that turn attention into pipeline.
-                </p>
+                    <p
+                      id="hero-subheadline"
+                      className="font-body font-normal text-[15px] sm:text-lg md:text-[19px] text-neutral-600 leading-relaxed max-w-xl mt-4 sm:mt-6 mb-7 sm:mb-8"
+                    >
+                      We design and build AI automation, video content, and outreach systems that turn attention into pipeline.
+                    </p>
 
-                {/* Two CTAs - full width on mobile phones for effortless thumb reach */}
-                <div
-                  id="hero-cta-group"
-                  className="flex flex-col sm:flex-row sm:items-center gap-3.5 sm:gap-6 w-full sm:w-auto"
-                >
-                  <a
-                    href="/contact"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      navigateTo('/contact');
-                    }}
-                    id="hero-cta-primary"
-                    className="w-full sm:w-auto inline-flex items-center justify-center font-body font-medium text-[15px] text-white bg-[#C84826] hover:bg-[#B33E1D] active:bg-[#9E3416] px-7 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all duration-200 cursor-pointer shadow-md sm:shadow-none active:scale-[0.98]"
-                  >
-                    Book a strategy call
-                  </a>
+                    <div
+                      id="hero-cta-group"
+                      className="flex flex-col sm:flex-row sm:items-center gap-3.5 sm:gap-6 w-full sm:w-auto"
+                    >
+                      <a
+                        href="/contact"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigateTo('/contact');
+                        }}
+                        id="hero-cta-primary"
+                        className="w-full sm:w-auto inline-flex items-center justify-center font-body font-medium text-[15px] text-white bg-[#C84826] hover:bg-[#B33E1D] active:bg-[#9E3416] px-7 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all duration-200 cursor-pointer shadow-md sm:shadow-none active:scale-[0.98]"
+                      >
+                        Book a strategy call
+                      </a>
 
-                  <a
-                    href="#services-overview-section"
-                    id="hero-cta-secondary"
-                    className="group relative inline-flex items-center justify-center sm:justify-start font-body font-medium text-[15px] text-[#1A1A1A] cursor-pointer py-1.5 sm:py-1"
-                  >
-                    <span className="relative">
-                      See what we do →
-                      <span className="absolute bottom-0 left-0 h-[1.5px] w-0 bg-[#1A1A1A] transition-all duration-300 ease-out group-hover:w-full" />
-                    </span>
-                  </a>
+                      <a
+                        href="#services-overview-section"
+                        id="hero-cta-secondary"
+                        className="group relative inline-flex items-center justify-center sm:justify-start font-body font-medium text-[15px] text-[#1A1A1A] cursor-pointer py-1.5 sm:py-1"
+                      >
+                        <span className="relative">
+                          See what we do →
+                          <span className="absolute bottom-0 left-0 h-[1.5px] w-0 bg-[#1A1A1A] transition-all duration-300 ease-out group-hover:w-full" />
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Right Column: Composite Illustration (Balanced size, transparent) */}
+                  <div className="col-span-12 lg:col-span-6 xl:col-span-6 flex items-center justify-center lg:justify-end">
+                    <img
+                      src="/images/homepage-hero-composite.webp"
+                      alt="AI automation, video creation, and outreach systems converging into new customers"
+                      width={836}
+                      height={518}
+                      fetchPriority="high"
+                      decoding="async"
+                      className="w-full h-auto max-w-[420px] sm:max-w-[460px] lg:max-w-[490px] xl:max-w-[520px] object-contain block select-none"
+                    />
+                  </div>
                 </div>
               </div>
             </section>

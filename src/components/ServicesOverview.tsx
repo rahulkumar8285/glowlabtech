@@ -89,16 +89,26 @@ function ServiceRow({ service, onNavigate }: ServiceRowProps) {
       onClick={handleClick}
       className="group relative block w-full py-4.5 sm:py-6 md:py-7 px-1 sm:px-0 border-t border-black/10 transition-all duration-200 cursor-pointer overflow-hidden rounded-lg active:bg-black/[0.03] active:scale-[0.99]"
     >
-      <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2.5 sm:gap-3 md:gap-8 lg:gap-12">
-        {/* Left: Service Name */}
-        <div className="flex items-center sm:items-baseline flex-1 min-w-0">
-          <h3 className="font-headline font-normal sm:font-medium text-xl sm:text-3xl lg:text-[34px] xl:text-[38px] leading-[1.15] sm:leading-[1.1] tracking-[-0.02em] text-[#1A1A1A] group-hover:text-[#C84826] transition-colors duration-200">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4 md:gap-8 lg:gap-12">
+        {/* Left: Icon + Service Name */}
+        <div className="flex items-center gap-3.5 sm:gap-5 md:gap-6 flex-1 min-w-0">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 flex items-center justify-center rounded-lg bg-black/[0.03] group-hover:bg-[#C84826]/10 border border-black/5 group-hover:border-[#C84826]/20 transition-all duration-200">
+            <img
+              src={`/images/service-icons/${service.slug}.webp`}
+              alt={`${service.name} icon`}
+              width={40}
+              height={40}
+              loading="lazy"
+              className="w-7 h-7 sm:w-8 sm:h-8 object-contain transition-transform duration-200 group-hover:scale-110"
+            />
+          </div>
+          <h3 className="font-headline font-normal sm:font-medium text-xl sm:text-2xl md:text-3xl lg:text-[32px] xl:text-[36px] leading-[1.15] sm:leading-[1.1] tracking-[-0.02em] text-[#1A1A1A] group-hover:text-[#C84826] transition-colors duration-200">
             {service.name}
           </h3>
         </div>
 
         {/* Right: One-line description and persistent arrow */}
-        <div className="flex items-center justify-between sm:justify-end gap-3 sm:gap-4 shrink-0 pl-0">
+        <div className="flex items-center justify-between sm:justify-end gap-3 sm:gap-4 shrink-0 pl-13.5 sm:pl-0 md:pl-0">
           <p className="font-body text-xs sm:text-[15px] md:text-base font-normal text-neutral-500 leading-relaxed md:text-right max-w-xl md:max-w-md lg:max-w-lg group-hover:text-[#1A1A1A] transition-colors duration-200">
             {service.description}
           </p>

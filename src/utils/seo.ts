@@ -25,7 +25,7 @@ export function updatePageSEO({
   robots = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
   canonicalUrl,
   ogType = 'website',
-  ogImage = '/logo.png',
+  ogImage = '/images/homepage-share.png',
   publishedTime,
   modifiedTime,
   authorName,

@@ -5,6 +5,7 @@ interface ProcessStep {
   title: string;
   description: string;
   isPayoff?: boolean;
+  icon: string;
 }
 
 const STEPS: ProcessStep[] = [
@@ -12,27 +13,32 @@ const STEPS: ProcessStep[] = [
     number: '01',
     title: 'Discover',
     description: 'Understand your business, goals, and where AI can create leverage',
+    icon: '01-discover',
   },
   {
     number: '02',
     title: 'Define',
     description: "Map the exact systems, workflows, and outcomes we're building toward",
+    icon: '02-define',
   },
   {
     number: '03',
     title: 'Design',
     description: 'Architect the automation, content, or outreach system end to end',
+    icon: '03-design',
   },
   {
     number: '04',
     title: 'Develop',
     description: 'Build, integrate, and test everything against real scenarios',
+    icon: '04-develop',
   },
   {
     number: '05',
     title: 'Deliver',
     description: 'Launch, monitor, and refine based on real performance data',
     isPayoff: true,
+    icon: '05-deliver',
   },
 ];
 
@@ -74,10 +80,25 @@ export default function ProcessSection({
         {/* Section Title: Left-aligned, matching other section titles */}
         <h2
           id="process-heading"
-          className="font-headline font-normal sm:font-medium text-3xl sm:text-4xl md:text-[44px] leading-tight tracking-[-0.02em] text-[#1A1A1A] mb-10 sm:mb-12 md:mb-14 text-left"
+          className="font-headline font-normal sm:font-medium text-3xl sm:text-4xl md:text-[44px] leading-tight tracking-[-0.02em] text-[#1A1A1A] mb-8 sm:mb-10 md:mb-12 text-left"
         >
           How we work
         </h2>
+
+        {/* Visual 5-Step Process Flow Diagram */}
+        <div
+          id="process-flow-diagram-wrapper"
+          className="w-full max-w-5xl mb-8 sm:mb-10 md:mb-14 select-none"
+        >
+          <img
+            src="/images/process-flow-diagram.webp"
+            alt="5-step connected process diagram: Discover, Define, Design, Develop, Deliver"
+            width={924}
+            height={144}
+            loading="lazy"
+            className="w-full h-auto object-contain block"
+          />
+        </div>
 
         {/* SEQUENCE CONTAINER */}
         <div id="process-sequence" className="relative w-full">
@@ -92,10 +113,10 @@ export default function ProcessSection({
             />
           </div>
 
-          {/* Connecting line on mobile (vertical, runs behind the node column at left-[14px]) */}
+          {/* Connecting line on mobile (vertical, runs behind the node column at left-[15px]) */}
           <div
             aria-hidden="true"
-            className="md:hidden absolute top-[14px] bottom-[24px] left-[13px] w-[2px] bg-black/10 z-0"
+            className="md:hidden absolute top-[14px] bottom-[24px] left-[15px] w-[2px] bg-black/10 z-0"
           >
             <div
               className="w-full bg-[#C84826] transition-all duration-150 ease-out"
@@ -116,17 +137,23 @@ export default function ProcessSection({
                   id={`process-step-${step.number}`}
                   className="flex flex-row md:flex-col items-start gap-4 sm:gap-5 md:gap-0"
                 >
-                  {/* Two-digit indicator: circular badge on mobile, text on desktop line */}
+                  {/* Two-digit indicator: circular icon badge on mobile, text on desktop line */}
                   <div className="shrink-0 flex items-center justify-center mb-0 md:mb-4">
-                    {/* Mobile circular badge */}
+                    {/* Mobile circular illustrated icon */}
                     <div
-                      className={`md:hidden w-7 h-7 rounded-full flex items-center justify-center font-mono text-xs font-semibold tabular-nums select-none transition-all duration-300 ${
+                      className={`md:hidden w-8 h-8 rounded-full flex items-center justify-center select-none bg-[#FAF9F6] transition-all duration-300 ${
                         isStepActive
-                          ? 'bg-[#C84826] text-white shadow-sm ring-4 ring-[#C84826]/15'
-                          : 'bg-[#FAF9F6] text-neutral-400 border border-black/15'
+                          ? 'ring-2 ring-[#C84826]/40 scale-105'
+                          : 'opacity-85'
                       }`}
                     >
-                      {step.number}
+                      <img
+                        src={`/images/process-icons/${step.icon}.webp`}
+                        alt=""
+                        width={32}
+                        height={32}
+                        className="w-full h-full object-contain"
+                      />
                     </div>
 
                     {/* Desktop numeral */}

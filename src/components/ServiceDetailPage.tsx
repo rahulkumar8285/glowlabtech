@@ -98,7 +98,16 @@ export default function ServiceDetailPage({
               Services
             </a>
             <span className="text-neutral-300 shrink-0">/</span>
-            <span className="text-[#C84826] font-medium truncate">{service.shortTitle}</span>
+            <div className="flex items-center gap-1.5 min-w-0">
+              <img
+                src={`/images/service-icons/${service.slug}.webp`}
+                alt=""
+                width={18}
+                height={18}
+                className="w-4 h-4 object-contain shrink-0"
+              />
+              <span className="text-[#C84826] font-medium truncate">{service.shortTitle}</span>
+            </div>
           </div>
 
           <div className="flex items-center gap-3 sm:gap-4 shrink-0">
