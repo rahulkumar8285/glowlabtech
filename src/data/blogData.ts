@@ -128,11 +128,6 @@ export const BLOG_POSTS: BlogPost[] = [
         content: [
           '"Unified" gets thrown around loosely. For a CRM with WhatsApp and email marketing built in, it should mean three things in one system, not three tabs:',
         ],
-        image: {
-          src: '/images/blog/unified-crm-diagram.webp',
-          alt: 'Diagram showing fragmented funnel, email, WhatsApp, and analytics tools converging into a single unified GrowthFlow CRM laptop dashboard',
-          caption: 'Consolidating four fragmented point tools into one unified pipeline, customer timeline, and inbox.',
-        },
         bullets: [
           '**One pipeline**: Drag-and-drop deal stages, lead scoring, and assignment rules — not a spreadsheet next to your CRM.',
           '**One customer timeline**: Every email, call, and WhatsApp message on a single screen, so a rep never has to ask "what did marketing already send this person?"',
