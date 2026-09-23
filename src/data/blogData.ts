@@ -14,10 +14,17 @@ export interface BlogFaq {
   answer: string;
 }
 
+export interface BlogSectionImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
 export interface BlogSectionBlock {
   heading?: string;
   subheading?: string;
   content: string[];
+  image?: BlogSectionImage;
   bullets?: string[];
   contentAfterBullets?: string[];
   callout?: BlogCallout;
@@ -69,7 +76,7 @@ export const BLOG_POSTS: BlogPost[] = [
     isoDate: '2026-09-23',
     readTime: '6 min read',
     featured: true,
-    coverImage: '/images/products/growthflow-crm-hero.webp',
+    coverImage: '/images/blog/unified-crm-diagram.webp',
     primaryKeyword: 'unified CRM with WhatsApp and email marketing',
     secondaryKeywords: [
       'WhatsApp CRM for Indian businesses',
@@ -121,6 +128,11 @@ export const BLOG_POSTS: BlogPost[] = [
         content: [
           '"Unified" gets thrown around loosely. For a CRM with WhatsApp and email marketing built in, it should mean three things in one system, not three tabs:',
         ],
+        image: {
+          src: '/images/blog/unified-crm-diagram.webp',
+          alt: 'Diagram showing fragmented funnel, email, WhatsApp, and analytics tools converging into a single unified GrowthFlow CRM laptop dashboard',
+          caption: 'Consolidating four fragmented point tools into one unified pipeline, customer timeline, and inbox.',
+        },
         bullets: [
           '**One pipeline**: Drag-and-drop deal stages, lead scoring, and assignment rules — not a spreadsheet next to your CRM.',
           '**One customer timeline**: Every email, call, and WhatsApp message on a single screen, so a rep never has to ask "what did marketing already send this person?"',

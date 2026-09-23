@@ -166,55 +166,79 @@ export default function BlogListingPage({ onNavigate }: BlogListingPageProps) {
               <span className="font-body text-xs font-semibold uppercase tracking-wider text-neutral-400 block mb-3 sm:mb-4">
                 Featured Analysis
               </span>
-              <article className="group relative bg-white border border-black/10 rounded-xl p-6 sm:p-12 hover:border-black/20 transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-2 text-xs font-body text-neutral-500 mb-4">
-                    <time dateTime={featuredPost.isoDate}>{featuredPost.publishedAt}</time>
-                    <span className="text-neutral-300">•</span>
-                    <span>{featuredPost.readTime}</span>
+              <article className="group relative bg-white border border-black/10 rounded-xl p-6 sm:p-10 hover:border-black/20 transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)]">
+                <div className={`grid grid-cols-1 ${featuredPost.coverImage ? 'lg:grid-cols-12' : ''} gap-8 items-center`}>
+                  <div className={featuredPost.coverImage ? 'lg:col-span-7 flex flex-col justify-between h-full' : 'flex flex-col justify-between h-full'}>
+                    <div>
+                      <div className="flex items-center gap-2 text-xs font-body text-neutral-500 mb-4">
+                        <span className="font-semibold text-[#C84826] bg-[#C84826]/10 px-2.5 py-0.5 rounded-full">
+                          {featuredPost.category}
+                        </span>
+                        <time dateTime={featuredPost.isoDate}>{featuredPost.publishedAt}</time>
+                        <span className="text-neutral-300">•</span>
+                        <span>{featuredPost.readTime}</span>
+                      </div>
+
+                      <h2 className="font-headline font-medium text-2xl sm:text-3xl md:text-4xl text-[#1A1A1A] group-hover:text-[#C84826] transition-colors leading-[1.2] tracking-tight mb-4">
+                        <a
+                          href={`/blog/${featuredPost.slug}`}
+                          onClick={(e) => handlePostClick(featuredPost.slug, e)}
+                        >
+                          {featuredPost.title}
+                        </a>
+                      </h2>
+
+                      <p className="font-body text-base sm:text-lg text-neutral-600 leading-relaxed mb-6">
+                        {featuredPost.excerpt}
+                      </p>
+                    </div>
+
+                    <div className="pt-6 border-t border-black/[0.06] flex items-center justify-between gap-4">
+                      {featuredPost.author && (
+                        <div className="flex items-center gap-3 mr-auto">
+                          <img
+                            src={featuredPost.author.avatarUrl}
+                            alt={featuredPost.author.name}
+                            className="w-10 h-10 rounded-full object-cover border border-black/10"
+                          />
+                          <div>
+                            <p className="font-body font-medium text-sm text-[#1A1A1A]">
+                              {featuredPost.author.name}
+                            </p>
+                            <p className="font-body text-xs text-neutral-400">
+                              {featuredPost.author.role}
+                            </p>
+                          </div>
+                        </div>
+                      )}
+
+                      <a
+                        href={`/blog/${featuredPost.slug}`}
+                        onClick={(e) => handlePostClick(featuredPost.slug, e)}
+                        className="inline-flex items-center gap-2 font-body text-sm font-medium text-[#C84826] group-hover:text-[#B33E1D] transition-colors cursor-pointer"
+                      >
+                        <span>Read complete playbook</span>
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </a>
+                    </div>
                   </div>
 
-                  <h2 className="font-headline font-medium text-2xl sm:text-3xl md:text-4xl text-[#1A1A1A] group-hover:text-[#C84826] transition-colors leading-[1.2] tracking-tight mb-4 max-w-4xl">
-                    <a
-                      href={`/blog/${featuredPost.slug}`}
-                      onClick={(e) => handlePostClick(featuredPost.slug, e)}
-                    >
-                      {featuredPost.title}
-                    </a>
-                  </h2>
-
-                  <p className="font-body text-base sm:text-lg text-neutral-600 leading-relaxed max-w-3xl mb-8">
-                    {featuredPost.excerpt}
-                  </p>
-                </div>
-
-                <div className="pt-6 border-t border-black/[0.06] flex items-center justify-end gap-4">
-                  {featuredPost.author && (
-                    <div className="flex items-center gap-3 mr-auto">
-                      <img
-                        src={featuredPost.author.avatarUrl}
-                        alt={featuredPost.author.name}
-                        className="w-10 h-10 rounded-full object-cover border border-black/10"
-                      />
-                      <div>
-                        <p className="font-body font-medium text-sm text-[#1A1A1A]">
-                          {featuredPost.author.name}
-                        </p>
-                        <p className="font-body text-xs text-neutral-400">
-                          {featuredPost.author.role}
-                        </p>
-                      </div>
+                  {featuredPost.coverImage && (
+                    <div className="lg:col-span-5 order-first lg:order-last">
+                      <a
+                        href={`/blog/${featuredPost.slug}`}
+                        onClick={(e) => handlePostClick(featuredPost.slug, e)}
+                        className="block overflow-hidden rounded-xl border border-black/10 aspect-[16/10] bg-black/[0.02] shadow-xs cursor-pointer"
+                      >
+                        <img
+                          src={featuredPost.coverImage}
+                          alt={featuredPost.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="eager"
+                        />
+                      </a>
                     </div>
                   )}
-
-                  <a
-                    href={`/blog/${featuredPost.slug}`}
-                    onClick={(e) => handlePostClick(featuredPost.slug, e)}
-                    className="inline-flex items-center gap-2 font-body text-sm font-medium text-[#C84826] group-hover:text-[#B33E1D] transition-colors"
-                  >
-                    <span>Read complete playbook</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
                 </div>
               </article>
             </div>
@@ -229,7 +253,21 @@ export default function BlogListingPage({ onNavigate }: BlogListingPageProps) {
                   className="group flex flex-col justify-between p-7 rounded-xl bg-white border border-black/[0.06] hover:border-black/15 transition-all duration-300 shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)]"
                 >
                   <div>
-                    <div className="flex items-center gap-1.5 mb-4 text-xs font-body text-neutral-500">
+                    {post.coverImage && (
+                      <a
+                        href={`/blog/${post.slug}`}
+                        onClick={(e) => handlePostClick(post.slug, e)}
+                        className="block mb-5 overflow-hidden rounded-lg aspect-[16/9] bg-black/[0.02] border border-black/5 cursor-pointer"
+                      >
+                        <img
+                          src={post.coverImage}
+                          alt={post.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                        />
+                      </a>
+                    )}
+                    <div className="flex items-center gap-1.5 mb-3 text-xs font-body text-neutral-500">
                       <time dateTime={post.isoDate}>{post.publishedAt}</time>
                       <span className="text-neutral-300">•</span>
                       <span>{post.readTime}</span>

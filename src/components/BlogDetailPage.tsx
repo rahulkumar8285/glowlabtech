@@ -426,6 +426,22 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
                   </p>
                 ))}
 
+                {section.image && (
+                  <figure className="my-8 overflow-hidden rounded-xl border border-black/10 bg-black/[0.02] shadow-xs">
+                    <img
+                      src={section.image.src}
+                      alt={section.image.alt}
+                      className="w-full h-auto object-cover"
+                      loading="lazy"
+                    />
+                    {section.image.caption && (
+                      <figcaption className="px-5 py-3 bg-neutral-50/70 border-t border-black/5 text-xs font-body text-neutral-500 text-center">
+                        {section.image.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                )}
+
                 {section.bullets && (
                   <ul className="my-6 space-y-3 pl-4 border-l-2 border-black/10">
                     {section.bullets.map((bullet, bIdx) => (
