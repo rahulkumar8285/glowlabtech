@@ -25,42 +25,97 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
       return cleanup;
     }
 
+    const articleSchema = {
+      '@type': 'Article',
+      headline: post.title,
+      description: post.metaDescription,
+      url: `https://growthtechsys.com/blog/${post.slug}`,
+      datePublished: post.isoDate,
+      dateModified: post.isoDate,
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': `https://growthtechsys.com/blog/${post.slug}`,
+      },
+      image: post.coverImage
+        ? `https://growthtechsys.com${post.coverImage}`
+        : 'https://growthtechsys.com/images/homepage-share.png',
+      author: post.author
+        ? {
+            '@type': 'Person',
+            name: post.author.name,
+            jobTitle: post.author.role,
+          }
+        : {
+            '@type': 'Organization',
+            name: 'GrowthTechSys',
+            url: 'https://growthtechsys.com',
+          },
+      publisher: {
+        '@type': 'Organization',
+        name: 'GrowthTechSys',
+        url: 'https://growthtechsys.com',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://growthtechsys.com/favicon.svg',
+        },
+      },
+    };
+
+    const breadcrumbSchema = {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://growthtechsys.com/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Blog',
+          item: 'https://growthtechsys.com/blog',
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: post.title,
+          item: `https://growthtechsys.com/blog/${post.slug}`,
+        },
+      ],
+    };
+
+    const faqSchema =
+      post.faqs && post.faqs.length > 0
+        ? {
+            '@type': 'FAQPage',
+            mainEntity: post.faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.question,
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: f.answer,
+              },
+            })),
+          }
+        : null;
+
+    const graphItems = faqSchema
+      ? [articleSchema, breadcrumbSchema, faqSchema]
+      : [articleSchema, breadcrumbSchema];
+
     const cleanup = updatePageSEO({
       title: post.metaTitle || `${post.title} | GrowthTechSys`,
       description: post.metaDescription,
       keywords: post.tags ? post.tags.join(', ') : undefined,
       canonicalUrl: `https://growthtechsys.com/blog/${post.slug}`,
       ogType: 'article',
+      ogImage: post.coverImage || '/images/homepage-share.png',
       publishedTime: post.isoDate,
       authorName: post.author?.name || 'GrowthTechSys',
       jsonLd: {
         '@context': 'https://schema.org',
-        '@type': 'BlogPosting',
-        headline: post.title,
-        description: post.metaDescription,
-        url: `https://growthtechsys.com/blog/${post.slug}`,
-        datePublished: post.isoDate,
-        dateModified: post.isoDate,
-        mainEntityOfPage: {
-          '@type': 'WebPage',
-          '@id': `https://growthtechsys.com/blog/${post.slug}`,
-        },
-        author: post.author
-          ? {
-              '@type': 'Person',
-              name: post.author.name,
-              jobTitle: post.author.role,
-            }
-          : {
-              '@type': 'Organization',
-              name: 'GrowthTechSys',
-              url: 'https://growthtechsys.com',
-            },
-        publisher: {
-          '@type': 'Organization',
-          name: 'GrowthTechSys',
-          url: 'https://growthtechsys.com',
-        },
+        '@graph': graphItems,
       },
     });
 
@@ -122,6 +177,9 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
 
     return parts.length > 0 ? parts : text;
   };
+
+  const slugify = (str?: string) =>
+    str ? str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') : '';
 
   if (!post) {
     return (
@@ -268,6 +326,18 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
           <p className="font-body text-lg sm:text-xl text-neutral-600 leading-relaxed max-w-3xl">
             {post.excerpt}
           </p>
+
+          {/* Cover image if available */}
+          {post.coverImage && (
+            <div className="mt-8 overflow-hidden rounded-2xl border border-black/10 shadow-sm bg-black/[0.02]">
+              <img
+                src={post.coverImage}
+                alt={post.title}
+                className="w-full h-auto object-cover max-h-[460px]"
+                loading="eager"
+              />
+            </div>
+          )}
         </div>
       </header>
 
@@ -297,10 +367,44 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
             </aside>
           )}
 
+          {/* TABLE OF CONTENTS */}
+          {post.tableOfContents && post.tableOfContents.length > 0 && (
+            <nav
+              aria-label="Table of contents"
+              className="bg-black/[0.02] border border-black/10 rounded-xl p-6 sm:p-7 mb-12 shadow-xs"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <span className="w-2 h-2 rounded-full bg-[#C84826]" />
+                <h2 className="font-headline font-semibold text-xs uppercase tracking-wider text-neutral-800">
+                  Table of contents
+                </h2>
+              </div>
+              <ol className="grid grid-cols-1 sm:grid-cols-2 gap-y-2.5 gap-x-6">
+                {post.tableOfContents.map((item, i) => {
+                  const targetId = slugify(item);
+                  return (
+                    <li key={i} className="font-body text-sm text-neutral-700 flex items-baseline gap-2">
+                      <span className="text-neutral-400 font-mono text-xs select-none shrink-0">
+                        {String(i + 1).padStart(2, '0')}.
+                      </span>
+                      <a
+                        href={`#${targetId}`}
+                        className="hover:text-[#C84826] transition-colors underline-offset-4 hover:underline leading-snug truncate"
+                        title={item}
+                      >
+                        {item}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ol>
+            </nav>
+          )}
+
           {/* SECTIONS */}
           <div className="space-y-12">
             {post.sections.map((section, idx) => (
-              <section key={idx} className="space-y-5">
+              <section key={idx} id={slugify(section.heading)} className="space-y-5 scroll-mt-28">
                 {section.heading && (
                   <h2 className="font-headline font-medium text-2xl sm:text-3xl text-[#1A1A1A] tracking-tight pt-4">
                     {section.heading}
@@ -333,6 +437,19 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
                       </li>
                     ))}
                   </ul>
+                )}
+
+                {section.contentAfterBullets && (
+                  <div className="space-y-4 pt-2">
+                    {section.contentAfterBullets.map((para, pIdx) => (
+                      <p
+                        key={pIdx}
+                        className="font-body text-base sm:text-[17px] text-neutral-700 leading-[1.8] font-normal"
+                      >
+                        {formatInlineText(para)}
+                      </p>
+                    ))}
+                  </div>
                 )}
 
                 {section.table && (
@@ -387,6 +504,33 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
               </section>
             ))}
           </div>
+
+          {/* FAQ SECTION */}
+          {post.faqs && post.faqs.length > 0 && (
+            <section id="faq" className="space-y-6 scroll-mt-28 mt-14 pt-10 border-t border-black/[0.08]">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="w-2 h-2 rounded-full bg-[#C84826]" />
+                <h2 className="font-headline font-semibold text-xs uppercase tracking-wider text-neutral-800">
+                  Frequently Asked Questions
+                </h2>
+              </div>
+              <div className="space-y-4">
+                {post.faqs.map((faq, fIdx) => (
+                  <div
+                    key={fIdx}
+                    className="bg-white border border-black/10 rounded-xl p-6 sm:p-7 shadow-xs transition-all hover:border-black/20"
+                  >
+                    <h3 className="font-headline font-medium text-lg sm:text-xl text-[#1A1A1A] mb-3">
+                      {faq.question}
+                    </h3>
+                    <p className="font-body text-base text-neutral-700 leading-relaxed">
+                      {formatInlineText(faq.answer)}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* TAGS FOOTER */}
           <div className="mt-14 pt-8 border-t border-black/[0.08] flex flex-wrap items-center gap-2">
