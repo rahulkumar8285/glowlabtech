@@ -51,6 +51,21 @@
     </image:image>
   </url>
 
+  <url>
+    <loc>https://growthtechsys.com/product/data-scraper-service</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/products/data-scraper-hero.webp</image:loc>
+      <image:title>Data Scraper Service &amp; Precision Web Extraction Platform</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/products/data-scraper-modules-composite.webp</image:loc>
+      <image:title>Data Scraper Multi-Channel Extraction Architecture</image:title>
+    </image:image>
+  </url>
+
   <!-- Core Engineering Services (7 Active Offerings) -->
   <url>
     <loc>https://growthtechsys.com/services/ai-automation</loc>

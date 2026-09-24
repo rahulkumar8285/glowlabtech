@@ -567,5 +567,63 @@ export const PRODUCT_MEDIA_CONFIGS: Record<string, ServiceMediaConfig> = {
       objectFit: 'contain',
     },
   },
+  'data-scraper-service': {
+    // 1. Live multi-channel extraction dashboard showing LinkedIn and Google Maps queue, proxy health, and real-time contact validation stream
+    headerHero: {
+      width: 1024,
+      height: 731,
+      aspectRatio: '1.4:1',
+      slotId: 'SLOT 01 / HERO',
+      title: 'data-scraper-hero.webp',
+      suggestion:
+        'Live multi-channel extraction dashboard showing LinkedIn and Google Maps queue, proxy health, and real-time contact validation stream.',
+      formats: 'WebP / PNG (Max 800 KB)',
+      src: '',
+      alt: 'Data Scraper Service live multi-channel extraction dashboard and verification queue',
+      objectFit: 'contain',
+    },
+    // 2. Composite interface showcasing query builder, anti-captcha stealth monitor, technographic tag inspector, and lead deduplication table
+    modulesComposite: {
+      width: 1024,
+      height: 576,
+      aspectRatio: '16:9',
+      slotId: 'SLOT 02 / MODULES',
+      title: 'data-scraper-modules-composite.webp',
+      suggestion:
+        'Composite interface showcasing query builder, anti-captcha stealth monitor, technographic tag inspector, and lead deduplication table.',
+      formats: 'WebP / PNG (Max 800 KB)',
+      src: '',
+      alt: 'Data Scraper Service query builder, proxy monitor, and contact enrichment tables',
+      objectFit: 'contain',
+    },
+    // 3. 4-step extraction pipeline: Target ICP Definition → Distributed Stealth Scraping → Deep Enrichment & Verification → Clean CRM Delivery
+    dayCycleWorkflow: {
+      width: 1024,
+      height: 341,
+      aspectRatio: '3:1',
+      slotId: 'SLOT 03 / WORKFLOW',
+      title: 'data-scraper-workflow.webp',
+      suggestion:
+        '4-step extraction pipeline: Target ICP Definition → Distributed Stealth Scraping → Deep Enrichment & Verification → Clean CRM Delivery.',
+      formats: 'WebP / PNG / SVG',
+      src: '',
+      alt: 'Data Scraper Service 4-step extraction architecture: Query Setup, Stealth Scraping, Multi-Tier Verification, and CRM Sync',
+      objectFit: 'contain',
+    },
+    // 4. Omnichannel data extraction terminal connected to GrowthFlow CRM and verified lead download center
+    socialShare: {
+      width: 1024,
+      height: 538,
+      aspectRatio: '1.9:1',
+      slotId: 'SLOT 04 / SHOWCASE',
+      title: 'data-scraper-showcase.webp',
+      suggestion:
+        'Omnichannel data extraction terminal connected to GrowthFlow CRM and verified lead download center.',
+      formats: 'WebP / PNG (Max 800 KB)',
+      src: '',
+      alt: 'Data Scraper Service multi-channel web extraction terminal and verified lead export preview',
+      objectFit: 'contain',
+    },
+  },
 };
 

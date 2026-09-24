@@ -24,6 +24,12 @@ import {
   BarChart3,
   Sliders,
   Sparkles,
+  Globe,
+  Search,
+  Zap,
+  Filter,
+  RefreshCw,
+  Cpu,
 } from 'lucide-react';
 import { PRODUCTS_DATA, type ProductItem } from '../data/offeringsData';
 import PageHeader from './PageHeader';
@@ -49,6 +55,7 @@ export default function ProductsPage({
   const primaryProduct: ProductItem = currentIndex !== -1 ? PRODUCTS_DATA[currentIndex] : PRODUCTS_DATA[0];
   const mediaConfig = PRODUCT_MEDIA_CONFIGS[primaryProduct.slug];
   const isCrm = primaryProduct.slug === 'growthflow-crm' || primaryProduct.slug === 'omniflow-crm';
+  const isScraper = primaryProduct.slug === 'data-scraper-service';
 
   useEffect(() => {
     const faqSchema = primaryProduct?.faqs
@@ -93,9 +100,12 @@ export default function ProductsPage({
 
     const isCrm =
       primaryProduct.slug === 'growthflow-crm' || primaryProduct.slug === 'omniflow-crm';
+    const isScraper = primaryProduct.slug === 'data-scraper-service';
 
     const productOgImage = isCrm
       ? '/images/products/growthflow-crm-hero.webp'
+      : isScraper
+      ? '/images/products/data-scraper-hero.webp'
       : '/images/products/field-sales-tracking-share.webp';
 
     const breadcrumbSchema = {
@@ -124,6 +134,8 @@ export default function ProductsPage({
 
     const productKeywords = isCrm
       ? 'GrowthFlow CRM, unified lead management, customer CRM, email marketing automation, whatsapp marketing platform, activity-based email personalization, 97 open rate email, universal mail provider, AWS SES email marketing, WhatsApp Business API CRM, GrowthTechSys GrowthFlow'
+      : isScraper
+      ? 'data scraper service, lead data extraction, linkedin scraper, google maps scraper, B2B data extraction, verified email finder, web scraping service India, targeted lead list, SMTP email verification, live lead enrichment, GrowthTechSys Data Scraper'
       : 'field sales automation software, gps employee tracking app, field force tracking, beat planning software, geo-fenced attendance app, mock gps detection, travel reimbursement automation, sales rep tracking India';
 
     const cleanup = updatePageSEO({
@@ -240,6 +252,22 @@ export default function ProductsPage({
         return <WifiOff className="w-5 h-5 text-[#C84826]" />;
       case 'module-integration':
       case 'module-api-webhooks':
+        return <Database className="w-5 h-5 text-[#C84826]" />;
+      case 'module-scraper-channels':
+        return <Globe className="w-5 h-5 text-[#C84826]" />;
+      case 'module-scraper-quality':
+        return <ShieldCheck className="w-5 h-5 text-[#C84826]" />;
+      case 'module-scraper-stealth':
+        return <Zap className="w-5 h-5 text-[#C84826]" />;
+      case 'module-scraper-technographics':
+        return <Cpu className="w-5 h-5 text-[#C84826]" />;
+      case 'module-scraper-intent':
+        return <Sparkles className="w-5 h-5 text-[#C84826]" />;
+      case 'module-scraper-normalization':
+        return <Filter className="w-5 h-5 text-[#C84826]" />;
+      case 'module-scraper-crm-sync':
+        return <RefreshCw className="w-5 h-5 text-[#C84826]" />;
+      case 'module-scraper-api':
         return <Database className="w-5 h-5 text-[#C84826]" />;
       default:
         return <MapPin className="w-5 h-5 text-[#C84826]" />;
@@ -426,11 +454,15 @@ export default function ProductsPage({
               <h2 className="font-headline font-semibold text-2xl sm:text-3xl lg:text-4xl text-[#1A1A1A] tracking-tight leading-tight">
                 {isCrm
                   ? 'Modular revenue engines built for high-conversion omnichannel growth.'
+                  : isScraper
+                  ? 'Specialized scraping pipelines built for precision multi-channel extraction.'
                   : 'Enterprise modules engineered for end-to-end field sales accountability.'}
               </h2>
               <p className="font-body text-sm sm:text-base text-neutral-600 mt-4 leading-relaxed">
                 {isCrm
                   ? 'Unify lead pipelines, behavior-triggered personalized email sequences, official WhatsApp marketing, and real-time telemetry—all connected to any mail provider.'
+                  : isScraper
+                  ? 'Extract live decision-maker data across LinkedIn, Google Maps, and niche business directories with residential proxy rotation, SMTP verification, and direct CRM sync.'
                   : 'Empower your field reps with mobile-first automation for beat plans, geo-checkins, instant order booking, and verified travel reimbursements—while leadership retains complete real-time visibility.'}
               </p>
             </div>
@@ -499,11 +531,17 @@ export default function ProductsPage({
           <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20">
             <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-14">
               <h2 className="font-headline font-semibold text-2xl sm:text-4xl text-[#1A1A1A] tracking-tight leading-tight">
-                {isCrm ? 'How GrowthFlow CRM Works' : 'How Field Sales Automation Works'}
+                {isCrm
+                  ? 'How GrowthFlow CRM Works'
+                  : isScraper
+                  ? 'How Precision Extraction Works'
+                  : 'How Field Sales Automation Works'}
               </h2>
               <p className="font-body text-sm sm:text-base text-neutral-600 mt-3 leading-relaxed">
                 {isCrm
                   ? 'A seamless 4-step revenue cycle from lead ingestion and behavioral email personalization to automated WhatsApp outreach and real-time attribution.'
+                  : isScraper
+                  ? 'A seamless 4-step data pipeline from target definition and residential proxy extraction to multi-pass verification and zero-friction CRM synchronization.'
                   : 'A seamless, automated 4-step daily cycle from morning shift kickoff to evening expense settlement—keeping reps focused on selling and leadership fully informed.'}
               </p>
             </div>
@@ -571,10 +609,20 @@ export default function ProductsPage({
               <div className="bg-white border border-red-200/70 rounded-2xl p-6 sm:p-8 relative">
                 <div className="flex items-center gap-2 text-red-700 font-headline font-medium text-base sm:text-lg mb-4">
                   <AlertTriangle className="w-5 h-5 text-red-600" />
-                  <span>The Cost of Unmonitored Field Operations</span>
+                  <span>
+                    {isCrm
+                      ? 'The Cost of Fragmented Stack & Stale Contacts'
+                      : isScraper
+                      ? 'The Cost of Stale Databases & Dirty Scraped Data'
+                      : 'The Cost of Unmonitored Field Operations'}
+                  </span>
                 </div>
                 <p className="font-body text-xs sm:text-sm text-neutral-600 mb-6 leading-relaxed">
-                  Companies lose thousands of rupees per representative every month to unverified hours and false expense receipts:
+                  {isCrm
+                    ? 'Companies burn thousands of dollars every month juggling siloed tools and disconnected customer channels:'
+                    : isScraper
+                    ? 'Sales and outreach teams waste countless SDR hours and burn domain reputation on unverified, outdated lead databases:'
+                    : 'Companies lose thousands of rupees per representative every month to unverified hours and false expense receipts:'}
                 </p>
                 <ul className="space-y-4 font-body text-xs sm:text-sm text-neutral-700">
                   {primaryProduct.whyNeeded.painPoints.map((pain, pIdx) => (
@@ -592,10 +640,20 @@ export default function ProductsPage({
               <div className="bg-[#141413] text-[#FAF9F6] rounded-2xl p-6 sm:p-8 relative border border-white/10 shadow-lg">
                 <div className="flex items-center gap-2 text-[#FAF9F6] font-headline font-medium text-base sm:text-lg mb-4">
                   <ShieldCheck className="w-5 h-5 text-[#C84826]" />
-                  <span>The GrowthTechSys Field Accountability System</span>
+                  <span>
+                    {isCrm
+                      ? 'The Unified Omnichannel Growth Platform'
+                      : isScraper
+                      ? 'The Precision Extraction & Verification Engine'
+                      : 'The GrowthTechSys Field Accountability System'}
+                  </span>
                 </div>
                 <p className="font-body text-xs sm:text-sm text-neutral-300 mb-6 leading-relaxed">
-                  Replace uncertainty with cryptographic accuracy, automated attendance audits, and transparent travel billing:
+                  {isCrm
+                    ? 'Consolidate leads, automate dynamic email sequences, and broadcast high-converting WhatsApp campaigns from one source of truth:'
+                    : isScraper
+                    ? 'Extract live, verified contacts directly from target sources with automated SMTP deliverability checks and direct CRM delivery:'
+                    : 'Replace uncertainty with cryptographic accuracy, automated attendance audits, and transparent travel billing:'}
                 </p>
                 <ul className="space-y-4 font-body text-xs sm:text-sm text-neutral-200">
                   {primaryProduct.whyNeeded.outcomes.map((outcome, oIdx) => (
@@ -624,11 +682,15 @@ export default function ProductsPage({
               <h2 className="font-headline font-semibold text-2xl sm:text-4xl text-[#1A1A1A] tracking-tight leading-tight">
                 {isCrm
                   ? 'Tailored revenue architectures for high-velocity growth sectors.'
+                  : isScraper
+                  ? 'Targeted extraction models engineered for high-intent industries.'
                   : 'Designed for businesses with personnel on the move across India.'}
               </h2>
               <p className="font-body text-sm sm:text-base text-neutral-600 mt-3 leading-relaxed">
                 {isCrm
                   ? 'Whether you run B2B SaaS onboarding, D2C cart abandonment recovery, real estate site visit scheduling, or agency outreach, GrowthFlow adapts directly to your customer journey.'
+                  : isScraper
+                  ? 'Whether you need B2B SaaS decision-makers, local service directories from Google Maps, high-ticket real estate brokers, or e-commerce store technographics, our extractors tailor custom schemas.'
                   : 'Whether you oversee pharmaceutical territory managers, solar technicians, or outdoor media audit teams, our platform adapts directly to your operational SOPs.'}
               </p>
             </div>
@@ -675,11 +737,15 @@ export default function ProductsPage({
               <h2 className="font-headline font-semibold text-2xl sm:text-4xl text-[#1A1A1A] tracking-tight leading-tight">
                 {isCrm
                   ? 'Deep-dive engineering playbooks & revenue architecture guides.'
+                  : isScraper
+                  ? 'Data extraction blueprints, legal compliance, and deliverability guides.'
                   : 'Evaluate our field tracking tools for your specific team workflow and operational needs.'}
               </h2>
               <p className="font-body text-sm sm:text-base text-neutral-600 mt-3 leading-relaxed">
                 {isCrm
                   ? 'Explore in-depth blueprints on email deliverability, universal mail provider configuration, Meta WhatsApp Business compliance, and total cost of ownership.'
+                  : isScraper
+                  ? 'Read technical breakdowns on residential proxy rotation, catch-all email verification mechanics, and GDPR/DPDP compliant public web scraping.'
                   : 'Dive into in-depth playbooks detailing how to audit routes, prevent GPS spoofing, and validate client visits.'}
               </p>
             </div>
@@ -732,11 +798,15 @@ export default function ProductsPage({
                 <h2 className="font-headline font-semibold text-2xl sm:text-3xl lg:text-4xl text-[#1A1A1A] tracking-tight leading-tight">
                   {isCrm
                     ? 'Complete Omnichannel Command Center Across Web & Mobile'
+                    : isScraper
+                    ? 'High-Throughput Extraction Console with Live Data Feeds'
                     : 'Unified Field Force Management On Any Device'}
                 </h2>
                 <p className="font-body text-sm sm:text-base text-neutral-600 mt-4 leading-relaxed">
                   {isCrm
                     ? 'Orchestrate personalized email campaigns, automated WhatsApp broadcasts, and live lead pipeline stages from one collaborative interface.'
+                    : isScraper
+                    ? 'Configure multi-channel extraction targets, monitor real-time anti-detection proxies, inspect data validation health, and stream verified leads directly to your CRM.'
                     : 'Real-time synchronization between the web dispatch console for managers and the lightweight mobile application for field representatives.'}
                 </p>
               </div>
@@ -756,11 +826,15 @@ export default function ProductsPage({
               <h2 className="font-headline font-semibold text-2xl sm:text-4xl text-[#1A1A1A] tracking-tight leading-tight">
                 {isCrm
                   ? 'GrowthFlow CRM & Omnichannel Marketing FAQ'
+                  : isScraper
+                  ? 'Data Scraper Service & Precision Extraction FAQ'
                   : 'Field Sales Automation & Workforce Tracking FAQ'}
               </h2>
               <p className="font-body text-xs sm:text-sm text-neutral-500 mt-2.5">
                 {isCrm
                   ? 'Common questions about 97% open rates, universal mail providers, WhatsApp Business API compliance, data privacy, and CRM migrations.'
+                  : isScraper
+                  ? 'Common questions about LinkedIn anti-scraping compliance, residential proxy rotation, SMTP verification, and direct CRM sync.'
                   : 'Common questions about beat planning, mock GPS detection, privacy laws (DPDP Act), offline sync, and ERP integrations.'}
               </p>
             </div>

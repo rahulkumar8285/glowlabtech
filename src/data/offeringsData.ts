@@ -1052,5 +1052,300 @@ export const PRODUCTS_DATA: ProductItem[] = [
       },
     ],
   },
+  {
+    id: 'data-scraper-service',
+    slug: 'data-scraper-service',
+    shortName: 'Data Scraper Service',
+    name: 'Data Scraper Service & Precision Web Extraction Platform',
+    tagline:
+      'Extract 100% verified, high-precision lead intelligence from LinkedIn, Google Maps, and multi-channel directories with zero blocks.',
+    badge: '100% Verified Quality',
+    heroNotice:
+      'LIVE MULTI-CHANNEL EXTRACTION: LinkedIn Sales Navigator, Google Maps, Google Places, directories, and web portals with triple-tier email and phone verification.',
+    description:
+      'A specialized high-throughput web scraping and lead extraction engine built to eliminate stale B2B lists and manual prospecting. Features residential and 4G/5G mobile proxy rotation, headless browser clusters, automated CAPTCHA solving, and real-time SMTP handshake verification—delivering clean, 100% deliverable contact data directly into your CRM or outbound sales pipeline.',
+    outcome:
+      'Empowers growth and sales teams to generate 10,000+ verified, zero-bounce B2B and local business leads per week at 70% lower cost than static database providers.',
+    targetAudience:
+      'B2B Sales Teams, Outreach Agencies, Recruitment Firms, Real Estate Brokers, Growth Marketers, and Enterprise Data Engineers.',
+    stats: [
+      { value: '99.2%', label: 'Email Deliverability Rate' },
+      { value: '100%', label: 'Normalized & Clean Schema' },
+      { value: '<1.2s', label: 'Extraction Speed Per Record' },
+      { value: '0', label: 'Proxy or CAPTCHA Blocks' },
+    ],
+    features: [
+      'Multi-channel live extraction: LinkedIn, Google Maps, Google Places, directories',
+      'Triple-tier email verification (SMTP handshake, MX records, syntax validation)',
+      'Anti-bot stealth proxy network with residential and 4G/5G mobile rotation',
+      'Direct contact enrichment: Verified work emails, direct mobile numbers, LinkedIn URLs',
+      'Firmographic & technographic profiling: Company size, tech stack, revenue estimates',
+      'Real-time hiring intent & executive transition signal scrapers',
+      'Automated data cleaning, deduplication, and schema standardization',
+      'Native 1-click CRM export to GrowthFlow CRM, HubSpot, Salesforce, or CSV/JSON',
+    ],
+    specs: [
+      'Data Sources: LinkedIn Sales Navigator, Google Maps, Google Places, Clutch, Crunchbase, Yelp, Custom Web Portals',
+      'Verification Pipeline: Triple-tier SMTP handshake, MX lookup, catch-all detection, RFC 5322 syntax validation',
+      'Proxy Architecture: 55M+ rotating residential & 4G/5G mobile IPs across 195+ countries with automatic failover',
+      'Anti-Detection: TLS fingerprint spoofing, headless Chromium clusters, automated hCaptcha/reCAPTCHA resolution',
+      'Export Formats: CSV, XLSX, JSON, Webhook dispatch, direct GrowthFlow CRM & HubSpot API sync',
+      'Compliance: 100% public data harvesting compliant with GDPR, DPDP Act 2023, and US CAN-SPAM regulations',
+    ],
+    modules: [
+      {
+        id: 'module-scraper-channels',
+        title: 'Multi-Channel Extraction Engine',
+        badge: 'Multi-Source',
+        description:
+          'Harvest fresh, high-intent lead records across LinkedIn Sales Navigator, Google Maps, Google Places, Crunchbase, Clutch, and custom industry directories with precise geographic and keyword targeting.',
+        bullets: [
+          'LinkedIn & Sales Navigator: Extract decision makers, job titles, direct emails, and company headcounts.',
+          'Google Maps & Places: Scrape local business listings, verified phone numbers, websites, and review metrics.',
+          'Custom Web Portals: Target industry associations, e-commerce stores, and specialty B2B directories.',
+        ],
+      },
+      {
+        id: 'module-scraper-quality',
+        title: '100% Quality & Triple Verification Pipeline',
+        badge: 'Zero Bounce',
+        description:
+          'Every email and phone number is validated in real time before reaching your export file, completely eliminating hard bounces, spam-trap hits, and wasted sales rep time.',
+        bullets: [
+          'Direct SMTP Handshake: Confirms inbox existence on target mail servers without dispatching an email.',
+          'MX & DNS Record Verification: Detects catch-all servers, disposable addresses, and invalid domains.',
+          'Phone & WhatsApp Validation: Confirms mobile number activity and active WhatsApp status for omnichannel outreach.',
+        ],
+      },
+      {
+        id: 'module-scraper-stealth',
+        title: 'Anti-Detection Stealth Proxy & Captcha Bypass',
+        badge: 'Zero Blocks',
+        description:
+          'Enterprise scraping infrastructure utilizing 55M+ residential and mobile IPs with dynamic browser fingerprint emulation, guaranteeing 99.9% uptime with zero account bans or rate limits.',
+        bullets: [
+          'Residential & 4G/5G Rotation: Proxies cycle automatically per request to simulate genuine organic visitors.',
+          'Automated CAPTCHA Solving: Resolves reCAPTCHA v2/v3, hCaptcha, and Cloudflare Turnstile invisibly.',
+          'TLS & Header Spoofing: Matches real Chrome and Safari browser profiles to prevent anti-bot fingerprinting.',
+        ],
+      },
+      {
+        id: 'module-scraper-technographics',
+        title: 'Deep Firmographic & Technographic Enrichment',
+        badge: 'Intelligence',
+        description:
+          'Enrich company profiles with underlying software stacks, funding history, annual revenue estimates, and verified office headquarters.',
+        bullets: [
+          'Technology Detection: Identifies Shopify, WordPress, Salesforce, HubSpot, AWS, Stripe, and 3,000+ tools.',
+          'Funding & Headcount Velocity: Tracks venture rounds, employee growth trajectories, and executive hires.',
+          'Social & Digital Presence: Appends verified company LinkedIn, Twitter/X, and executive profiles.',
+        ],
+      },
+      {
+        id: 'module-scraper-intent',
+        title: 'Live Hiring & Buying Intent Signals',
+        badge: 'Signal Scraping',
+        description:
+          'Target accounts at the exact moment they are ready to buy by monitoring live hiring velocity, job board openings, and recent leadership transitions.',
+        bullets: [
+          'Job Post Scraping: Detects companies hiring for specific roles (e.g., SDRs, React engineers, DevOps).',
+          'Executive Moves: Flags new C-level and VP appointments within their first 90 days in role.',
+          'Growth Triggers: Monitors company expansion, product launches, and geographical market entry.',
+        ],
+      },
+      {
+        id: 'module-scraper-normalization',
+        title: 'Automated Schema Normalization & Deduplication',
+        badge: 'Clean Data',
+        description:
+          'Raw scraped data is transformed into clean, standardized CRM-ready schemas with intelligent name parsing, corporate entity stripping, and duplicate suppression.',
+        bullets: [
+          'Clean Name Parsing: Separates first, middle, and last names while stripping honorifics and emojis.',
+          'Company Name Cleaning: Removes legal suffixes ("Inc.", "LLC", "Pvt. Ltd.", "Corp.") for natural outreach.',
+          'Fuzzy Deduplication: Prevents duplicate records across multiple scraping runs and existing CRM lists.',
+        ],
+      },
+      {
+        id: 'module-scraper-crm-sync',
+        title: '1-Click CRM & Webhook Pipeline Injection',
+        badge: 'Integration',
+        description:
+          'Seamlessly push extracted leads directly into GrowthFlow CRM pipelines, HubSpot, Salesforce, or sync to Google Sheets, CSV, XLSX, and JSON.',
+        bullets: [
+          'Native GrowthFlow Sync: Injects leads straight into automated email and WhatsApp sequence campaigns.',
+          'Webhook Dispatch: Emits real-time JSON payloads to Zapier, Make, or custom API endpoints.',
+          'Flexible Export: Download clean spreadsheets formatted specifically for Cold Email and CRM import.',
+        ],
+      },
+      {
+        id: 'module-scraper-api',
+        title: 'Enterprise Extraction API & Headless Automation',
+        badge: 'Headless API',
+        description:
+          'Schedule automated recurring scraping jobs or invoke on-demand programmatic extraction through our high-performance REST API.',
+        bullets: [
+          'Scheduled Crawls: Set up daily or weekly scrapes that automatically deposit fresh leads into your inbox.',
+          'Custom Site Scrapers: Commission tailored scrapers for specialized industry portals and vendor databases.',
+          'Scalable Concurrency: Process up to 500,000 records daily across distributed cloud worker clusters.',
+        ],
+      },
+    ],
+    workflow: [
+      {
+        step: '01',
+        title: 'Target ICP & Channel Parameter Setup',
+        description:
+          'Define your target persona parameters including job titles, company headcount, location, industry, or paste direct LinkedIn Sales Navigator and Google Maps search queries.',
+        detail:
+          'Our parameter builder validates query feasibility, estimates audience volume, and configures proxy geolocation to match the target market.',
+      },
+      {
+        step: '02',
+        title: 'Distributed Stealth Web Extraction',
+        description:
+          'Our headless browser fleet distributes extraction across thousands of residential IPs, rendering JavaScript pages and harvesting complete profile datasets with zero blocks.',
+        detail:
+          'Built-in human interaction simulation, dynamic scrolling, and CAPTCHA solving ensure uninterrupted extraction throughput.',
+      },
+      {
+        step: '03',
+        title: 'Algorithmic Verification & Deep Enrichment',
+        description:
+          'Extracted contacts pass through live SMTP handshake checks, phone validation, and technographic enrichment to produce 100% verified, actionable intelligence.',
+        detail:
+          'Invalid domains, disposable inboxes, and catch-all servers are segregated or verified, ensuring bounce rates remain strictly below 1.5%.',
+      },
+      {
+        step: '04',
+        title: 'Clean Delivery & CRM Ingestion',
+        description:
+          'Normalized, duplicate-free lead lists are automatically dispatched to your GrowthFlow CRM campaigns, pushed via webhooks, or downloaded as clean CSV files.',
+        detail:
+          'Your sales team immediately starts outreach with zero manual formatting, clean merge tags, and verified contact coordinates.',
+      },
+    ],
+    whyNeeded: {
+      headline: 'Why Live Scraping Beats Stale Static Databases',
+      subheadline:
+        'Traditional B2B database vendors sell pre-packaged lists that degrade by 2.5% every month. Live extraction guarantees 100% active, current intelligence.',
+      painPoints: [
+        'Static databases (ZoomInfo, Apollo) suffer 25–40% email bounce rates because prospects change jobs constantly without the database updating.',
+        'Generic open-source scraping tools trigger IP bans, aggressive CAPTCHAs, and produce messy, incomplete CSVs with missing contact info.',
+        'Manual copy-pasting from Google Maps, LinkedIn, and directories wastes 20+ hours per week per sales rep on low-value data entry.',
+        'Dirty, unverified contact data burns domain reputation, triggers spam filters, and causes cold email domain blacklisting.',
+      ],
+      outcomes: [
+        'Real-time extraction harvests contacts currently working at the target company today, delivering 100% fresh data.',
+        'Enterprise residential proxy rotation guarantees 99.9% scrape uptime with zero IP blocks or account security warnings.',
+        'Automated workflows extract and verify 1,000+ enriched records in minutes, reclaiming 80+ hours of monthly sales capacity.',
+        'Triple-tier verification guarantees <1.5% bounce rates, protecting your email sender score and domain deliverability.',
+      ],
+    },
+    industries: [
+      {
+        title: 'B2B SaaS & Tech Startups',
+        problem:
+          'High customer acquisition costs (CAC) caused by outdated Apollo lists and high email bounce rates among tech decision makers.',
+        solution:
+          'Live LinkedIn Sales Navigator extraction targeting verified CTOs, VPs of Engineering, and Product Leads with technographic filter criteria.',
+      },
+      {
+        title: 'Outreach & Growth Marketing Agencies',
+        problem:
+          'Spending thousands per month on multiple lead databases only to discover overlapping, exhausted contact lists.',
+        solution:
+          'Dedicated multi-channel extraction generating exclusive, un-contacted lead pipelines for each client niche with guaranteed deliverability.',
+      },
+      {
+        title: 'Recruitment & Staffing Firms',
+        problem:
+          'Relying on expensive LinkedIn Recruiter seats while struggling to find verified personal email addresses and direct phone numbers.',
+        solution:
+          'High-speed talent extraction capturing candidate work history, skill tags, direct mobile numbers, and personal email addresses.',
+      },
+      {
+        title: 'Real Estate, Healthcare & Local Services',
+        problem:
+          'Local business listings on static databases are sparse, inaccurate, and lack verified owner contact details.',
+        solution:
+          'High-volume Google Maps and Places extraction capturing phone numbers, owner names, addresses, websites, and review telemetry.',
+      },
+      {
+        title: 'E-Commerce & DTC Brands',
+        problem:
+          'Need to find wholesale distributors, retail partners, or influencer creators across specialized niche directories.',
+        solution:
+          'Custom web scrapers harvesting retail store locators, Shopify merchant directories, and social media creator profiles at scale.',
+      },
+    ],
+    buyerGuides: [
+      {
+        id: 'guide-scraping-channels',
+        title: 'B2B Lead Scraping Playbook: LinkedIn vs Google Maps vs Web Directories',
+        summary:
+          'A comparative operational guide on choosing the best data extraction channels based on your target ICP, deal size, and sales cycle.',
+        link: '/blog/unified-crm-whatsapp-email-marketing',
+      },
+      {
+        id: 'guide-email-deliverability',
+        title: 'How to Maintain a Sub-1% Email Bounce Rate with Live SMTP Verification',
+        summary:
+          'Technical deep-dive on SMTP handshake verification, MX record validation, and handling catch-all mail servers safely.',
+        link: '/blog/unified-crm-whatsapp-email-marketing',
+      },
+      {
+        id: 'guide-stealth-architecture',
+        title: 'Avoiding IP Bans: Residential Proxies, Headless Browsers & Stealth Engineering',
+        summary:
+          'Architectural breakdown of browser fingerprint spoofing, residential IP pooling, and automated CAPTCHA resolution.',
+        link: '/blog/enterprise-ai-workflow-automation',
+      },
+    ],
+    trialCta: {
+      headline: 'Start Extracting 100% Verified High-Quality Leads Today',
+      subheadline:
+        'Request 1,000 free verified leads extracted from LinkedIn or Google Maps tailored specifically to your ICP. Zero credit card required.',
+      bullets: [
+        '1,000 free verified contact records with zero bounces',
+        'Custom target criteria: Geography, industry, job titles, technologies',
+        'Direct CSV download or 1-click import into GrowthFlow CRM',
+        'Full data enrichment including direct phone numbers and verified emails',
+      ],
+      ctaText: 'Request 1,000 Free Leads',
+      ctaUrl: '/contact',
+    },
+    faqs: [
+      {
+        question: 'What data sources and channels can the Data Scraper Service extract from?',
+        answer:
+          'Our platform extracts data from LinkedIn, LinkedIn Sales Navigator, Google Maps, Google Places, business directories (Clutch, Crunchbase, Yelp, Yellow Pages), e-commerce platforms (Shopify, Amazon storefronts), and custom public websites or web portals. If the data is publicly accessible on the web, our distributed engine can extract and structure it for you.',
+      },
+      {
+        question: 'How do you guarantee 100% data quality and zero email bounces?',
+        answer:
+          'Unlike static databases that sell cached records, our platform verifies every email and phone number in real time before delivery. We run a three-stage verification pipeline: (1) RFC 5322 syntax validation; (2) DNS and MX record query; and (3) live SMTP handshake with the recipient mail server without sending an actual email. This guarantees a deliverability rate exceeding 99% and keeps hard bounces strictly under 1.5%.',
+      },
+      {
+        question: 'Is web scraping legal and compliant with privacy regulations (GDPR / DPDP)?',
+        answer:
+          'Yes. Our extraction processes collect exclusively publicly available business information (B2B contacts, public directory listings, corporate business profiles). We do not breach authentication paywalls or hack private systems. Furthermore, our data processing strictly complies with the Digital Personal Data Protection (DPDP) Act 2023, GDPR, and US CAN-SPAM guidelines, including automated opt-out suppression and do-not-contact filtering.',
+      },
+      {
+        question: 'Can we connect the scraped data directly into GrowthFlow CRM or our existing stack?',
+        answer:
+          'Yes! Data can be automatically injected into GrowthFlow CRM with 1-click, triggering personalized email and WhatsApp sequences immediately. We also provide direct integrations and clean CSV/XLSX export formats for HubSpot, Salesforce, Zoho, Google Sheets, or custom webhooks that emit JSON payloads to Zapier and Make.',
+      },
+      {
+        question: 'How does this differ from buying static lists from Apollo or ZoomInfo?',
+        answer:
+          'Static databases store millions of records that decay by approximately 2.5% to 3% each month as people change jobs, companies rebrand, or inboxes close. When you pull a list from a static database, 25% to 40% of the emails typically bounce or reach abandoned inboxes. Our service extracts data live on demand at the moment of your request and verifies every single inbox, ensuring 100% freshness and relevance.',
+      },
+      {
+        question: 'Can you build custom scraping pipelines for niche or proprietary websites?',
+        answer:
+          'Yes. In addition to our pre-built LinkedIn and Google Maps engines, our engineering team builds custom enterprise extraction pipelines for niche industry directories, real estate listings, healthcare provider registries, government tender portals, and e-commerce catalogs. Contact our team to scope your custom extraction requirements.',
+      },
+    ],
+  },
 ];
 

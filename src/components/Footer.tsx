@@ -129,6 +129,30 @@ export default function Footer({ onNavigate }: FooterProps) {
                 </li>
                 <li>
                   <a
+                    href="/product/growthflow-crm"
+                    onClick={(e) => handleLinkClick('/product/growthflow-crm', e)}
+                    className="hover:text-[#FAF9F6] py-1 inline-flex items-center gap-1.5 transition-colors"
+                  >
+                    <span>GrowthFlow CRM</span>
+                    <span className="text-[10px] bg-[#C84826]/20 text-[#C84826] px-1.5 py-0.5 rounded font-medium">
+                      Platform
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/product/data-scraper-service"
+                    onClick={(e) => handleLinkClick('/product/data-scraper-service', e)}
+                    className="hover:text-[#FAF9F6] py-1 inline-flex items-center gap-1.5 transition-colors"
+                  >
+                    <span>Data Scraper Service</span>
+                    <span className="text-[10px] bg-[#C84826]/20 text-[#C84826] px-1.5 py-0.5 rounded font-medium">
+                      Platform
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="/contact"
                     onClick={(e) => handleLinkClick('/contact', e)}
                     className="hover:text-[#FAF9F6] py-1 inline-block transition-colors"

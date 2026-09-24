@@ -6,6 +6,7 @@
 
 - [Field Sales Automation & GPS Workforce Tracking Software](https://growthtechsys.com/product/field-sales-tracking): Turnkey, zero-hardware field sales telemetry platform with anti-mock GPS beat plan tracking, geofenced selfie attendance, mobile retail order booking with offline SQLite sync, and automated road-distance travel expense calculation.
 - [GrowthFlow CRM & Omnichannel Marketing Platform](https://growthtechsys.com/product/growthflow-crm): High-deliverability omnichannel sales engagement platform unifying WhatsApp Business API, personalized cold outreach, multi-inbox rotation, and unified customer CRM pipelines.
+- [Data Scraper Service & Precision Web Extraction Platform](https://growthtechsys.com/product/data-scraper-service): Live multi-channel lead extraction engine pulling 100% verified B2B leads from LinkedIn, Google Maps, and business directories with residential proxy rotation, triple-tier SMTP email validation, and direct CRM sync.
 
 ## Core Engineering Services
 
