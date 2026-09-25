@@ -588,19 +588,19 @@ export const PRODUCT_MEDIA_CONFIGS: Record<string, ServiceMediaConfig> = {
       height: 576,
       aspectRatio: '16:9',
       slotId: 'SLOT 02 / MODULES',
-      title: 'data-scraper-modules-composite.webp',
+      title: 'data-scraper-modules-composite.png',
       suggestion:
         'Composite interface showcasing query builder, anti-captcha stealth monitor, technographic tag inspector, and lead deduplication table.',
-      formats: 'WebP / PNG (Max 800 KB)',
-      src: '',
+      formats: 'PNG / WebP',
+      src: '/images/products/data-scraper-modules-composite.png',
       alt: 'Data Scraper Service query builder, proxy monitor, and contact enrichment tables',
       objectFit: 'contain',
     },
     // 3. 4-step extraction pipeline: Target ICP Definition → Distributed Stealth Scraping → Deep Enrichment & Verification → Clean CRM Delivery
     dayCycleWorkflow: {
       width: 1024,
-      height: 576,
-      aspectRatio: '16:9',
+      height: 341,
+      aspectRatio: '3:1',
       slotId: 'SLOT 03 / WORKFLOW',
       title: 'data-scraper-workflow.png',
       suggestion:
