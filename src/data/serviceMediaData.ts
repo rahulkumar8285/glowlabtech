@@ -599,14 +599,14 @@ export const PRODUCT_MEDIA_CONFIGS: Record<string, ServiceMediaConfig> = {
     // 3. 4-step extraction pipeline: Target ICP Definition → Distributed Stealth Scraping → Deep Enrichment & Verification → Clean CRM Delivery
     dayCycleWorkflow: {
       width: 1024,
-      height: 341,
-      aspectRatio: '3:1',
+      height: 576,
+      aspectRatio: '16:9',
       slotId: 'SLOT 03 / WORKFLOW',
-      title: 'data-scraper-workflow.webp',
+      title: 'data-scraper-workflow.png',
       suggestion:
         '4-step extraction pipeline: Target ICP Definition → Distributed Stealth Scraping → Deep Enrichment & Verification → Clean CRM Delivery.',
-      formats: 'WebP / PNG / SVG',
-      src: '',
+      formats: 'PNG / WebP / SVG',
+      src: '/images/products/data-scraper-workflow.png',
       alt: 'Data Scraper Service 4-step extraction architecture: Query Setup, Stealth Scraping, Multi-Tier Verification, and CRM Sync',
       objectFit: 'contain',
     },
