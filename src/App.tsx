@@ -51,6 +51,15 @@ export default function App() {
   const navigateTo = (path: string) => {
     let resolvedPath = path;
     if (
+      resolvedPath === '/services/data-scraper-service' ||
+      resolvedPath === '/services/data-scraper' ||
+      resolvedPath === '/service/data-scraper-service' ||
+      resolvedPath === '/service/data-scraper'
+    ) {
+      resolvedPath = '/product/data-scraper-service';
+    }
+
+    if (
       resolvedPath === '/products' ||
       resolvedPath === '/product' ||
       resolvedPath === '/projects' ||
@@ -92,16 +101,24 @@ export default function App() {
   };
 
   const isProductDetail =
-    currentPath.startsWith('/product/') || currentPath.startsWith('/products/');
+    currentPath.startsWith('/product/') ||
+    currentPath.startsWith('/products/') ||
+    currentPath === '/services/data-scraper-service' ||
+    currentPath === '/services/data-scraper';
   const productSlug = isProductDetail
-    ? currentPath
-        .replace(/^\/(product|products)\//, '')
-        .split('/')[0]
-        .split('?')[0]
-        .split('#')[0]
+    ? currentPath.includes('data-scraper')
+      ? 'data-scraper-service'
+      : currentPath
+          .replace(/^\/(product|products)\//, '')
+          .split('/')[0]
+          .split('?')[0]
+          .split('#')[0]
     : '';
 
-  const isServiceDetail = currentPath.startsWith('/services/');
+  const isServiceDetail =
+    currentPath.startsWith('/services/') &&
+    currentPath !== '/services/data-scraper-service' &&
+    currentPath !== '/services/data-scraper';
   const serviceSlug = isServiceDetail
     ? currentPath.replace('/services/', '').split('/')[0].split('?')[0].split('#')[0]
     : '';

@@ -105,7 +105,7 @@ export default function ProductsPage({
     const productOgImage = isCrm
       ? '/images/products/growthflow-crm-hero.webp'
       : isScraper
-      ? '/images/products/data-scraper-hero.webp'
+      ? '/images/products/data-scraper-hero.png'
       : '/images/products/field-sales-tracking-share.webp';
 
     const breadcrumbSchema = {

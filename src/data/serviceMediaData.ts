@@ -571,15 +571,15 @@ export const PRODUCT_MEDIA_CONFIGS: Record<string, ServiceMediaConfig> = {
     // 1. Live multi-channel extraction dashboard showing LinkedIn and Google Maps queue, proxy health, and real-time contact validation stream
     headerHero: {
       width: 1024,
-      height: 731,
-      aspectRatio: '1.4:1',
+      height: 682,
+      aspectRatio: '3:2',
       slotId: 'SLOT 01 / HERO',
-      title: 'data-scraper-hero.webp',
+      title: 'data-scraper-hero.png',
       suggestion:
-        'Live multi-channel extraction dashboard showing LinkedIn and Google Maps queue, proxy health, and real-time contact validation stream.',
-      formats: 'WebP / PNG (Max 800 KB)',
-      src: '',
-      alt: 'Data Scraper Service live multi-channel extraction dashboard and verification queue',
+        'Live multi-channel extraction architecture connecting LinkedIn, Google Maps, and business directories through central verification.',
+      formats: 'PNG / WebP',
+      src: '/images/products/data-scraper-hero.png',
+      alt: 'Data Scraper Service live multi-channel extraction architecture connecting LinkedIn, Google Maps, and verified lead records',
       objectFit: 'contain',
     },
     // 2. Composite interface showcasing query builder, anti-captcha stealth monitor, technographic tag inspector, and lead deduplication table
