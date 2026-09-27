@@ -84,16 +84,11 @@ export default function BlogSection({ onNavigate }: BlogSectionProps) {
                   </a>
                 )}
 
-                {/* Meta info: Category & Reading Time */}
-                <div className="flex items-center justify-between gap-2 mb-3 text-xs font-body text-neutral-500">
-                  <span className="font-semibold text-[#C84826] bg-[#C84826]/10 px-2.5 py-0.5 rounded-full text-[11px]">
-                    {post.category}
-                  </span>
-                  <div className="flex items-center gap-1.5">
-                    <time dateTime={post.isoDate}>{post.publishedAt}</time>
-                    <span className="text-neutral-300">•</span>
-                    <span>{post.readTime}</span>
-                  </div>
+                {/* Meta info: Date & Reading Time */}
+                <div className="flex items-center gap-1.5 mb-3 text-xs font-body text-neutral-500">
+                  <time dateTime={post.isoDate}>{post.publishedAt}</time>
+                  <span className="text-neutral-300">•</span>
+                  <span>{post.readTime}</span>
                 </div>
 
                 {/* Title */}
