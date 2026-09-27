@@ -43,3 +43,7 @@
 - **Headquarters**: Gurugram, Haryana, India (B-13 World Tech Park, Sector 30)
 - **Sitemap**: https://growthtechsys.com/sitemap.xml
 - **Robots Policy**: Open for all search crawlers, AI agents, and LLM indexing bots
+- **Social Profiles**:
+  - LinkedIn: https://www.linkedin.com/company/growth-tech-sys
+  - Instagram: https://www.instagram.com/growth_techsys/
+  - Facebook: https://www.facebook.com/growthtechsys

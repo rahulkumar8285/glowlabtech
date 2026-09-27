@@ -161,8 +161,9 @@ export default function App() {
               description:
                 'Engineering agency designing and building AI automation, custom software, and field sales tracking systems.',
               sameAs: [
-                'https://linkedin.com/company/growthtechsys',
-                'https://github.com/growthtechsys',
+                'https://www.linkedin.com/company/growth-tech-sys',
+                'https://www.instagram.com/growth_techsys/',
+                'https://www.facebook.com/growthtechsys',
               ],
               contactPoint: {
                 '@type': 'ContactPoint',

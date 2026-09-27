@@ -42,8 +42,9 @@ export default function AboutPage({
           url: 'https://growthtechsys.com',
           logo: 'https://growthtechsys.com/logo.png',
           sameAs: [
-            'https://linkedin.com/company/growthtechsys',
-            'https://github.com/growthtechsys',
+            'https://www.linkedin.com/company/growth-tech-sys',
+            'https://www.instagram.com/growth_techsys/',
+            'https://www.facebook.com/growthtechsys',
           ],
         },
       },

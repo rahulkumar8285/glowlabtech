@@ -1,5 +1,5 @@
 import type { MouseEvent } from 'react';
-import { ArrowUp, ArrowRight, Mail, Twitter, Linkedin, Github, Phone, MapPin } from 'lucide-react';
+import { ArrowUp, ArrowRight, Mail, Instagram, Facebook, Linkedin, Phone, MapPin } from 'lucide-react';
 import { SERVICES_DATA } from '../data/offeringsData';
 import { BLOG_POSTS } from '../data/blogData';
 
@@ -229,31 +229,34 @@ export default function Footer({ onNavigate }: FooterProps) {
                 <span className="font-body text-xs text-neutral-500 block mb-3">Connect:</span>
                 <div className="flex items-center gap-3 text-neutral-400">
                   <a
-                    href="https://twitter.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Twitter / X"
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white/[0.04] hover:bg-white/10 active:bg-white/15 hover:text-[#FAF9F6] transition-colors"
-                  >
-                    <Twitter className="w-4 h-4" />
-                  </a>
-                  <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/company/growth-tech-sys"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"
+                    title="GrowthTechSys on LinkedIn"
                     className="w-10 h-10 flex items-center justify-center rounded-full bg-white/[0.04] hover:bg-white/10 active:bg-white/15 hover:text-[#FAF9F6] transition-colors"
                   >
                     <Linkedin className="w-4 h-4" />
                   </a>
                   <a
-                    href="https://github.com"
+                    href="https://www.instagram.com/growth_techsys/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="GitHub"
+                    aria-label="Instagram"
+                    title="GrowthTechSys on Instagram"
                     className="w-10 h-10 flex items-center justify-center rounded-full bg-white/[0.04] hover:bg-white/10 active:bg-white/15 hover:text-[#FAF9F6] transition-colors"
                   >
-                    <Github className="w-4 h-4" />
+                    <Instagram className="w-4 h-4" />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/growthtechsys"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    title="GrowthTechSys on Facebook"
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white/[0.04] hover:bg-white/10 active:bg-white/15 hover:text-[#FAF9F6] transition-colors"
+                  >
+                    <Facebook className="w-4 h-4" />
                   </a>
                 </div>
               </div>

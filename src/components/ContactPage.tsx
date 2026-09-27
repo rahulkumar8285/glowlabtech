@@ -1,5 +1,5 @@
 import { useState, useEffect, type FormEvent } from 'react';
-import { ArrowRight, CheckCircle2, MapPin, Phone, Mail } from 'lucide-react';
+import { ArrowRight, CheckCircle2, MapPin, Phone, Mail, Linkedin, Instagram, Facebook } from 'lucide-react';
 import PageHeader from './PageHeader';
 import { updatePageSEO } from '../utils/seo';
 
@@ -42,6 +42,11 @@ export default function ContactPage({ onNavigate: _onNavigate }: ContactPageProp
           url: 'https://growthtechsys.com',
           telephone: '+91 89297 21558',
           email: 'contact@growthtechsys.com',
+          sameAs: [
+            'https://www.linkedin.com/company/growth-tech-sys',
+            'https://www.instagram.com/growth_techsys/',
+            'https://www.facebook.com/growthtechsys',
+          ],
           address: {
             '@type': 'PostalAddress',
             streetAddress: 'B-13 World Tech Park Block-B, World Tech Park, 30, Jaipur - Delhi Expy, Silokhera, Block A, Sector 30',
@@ -189,6 +194,45 @@ export default function ContactPage({ onNavigate: _onNavigate }: ContactPageProp
                         <span className="text-neutral-400 text-xs font-normal block sm:inline sm:ml-1.5">— Platform &amp; Field Support</span>
                       </a>
                     </div>
+                  </div>
+                </div>
+
+                {/* Official Social Channels */}
+                <div className="pt-4 border-t border-black/5 font-body">
+                  <span className="block font-medium text-xs text-neutral-400 uppercase tracking-wider mb-2.5">
+                    Official Social Channels
+                  </span>
+                  <div className="flex items-center gap-2.5">
+                    <a
+                      href="https://www.linkedin.com/company/growth-tech-sys"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                      title="GrowthTechSys on LinkedIn"
+                      className="w-9 h-9 rounded-lg bg-[#FAF9F6] border border-black/10 flex items-center justify-center text-neutral-700 hover:text-[#0A66C2] hover:border-[#0A66C2]/40 transition-colors"
+                    >
+                      <Linkedin className="w-4 h-4" />
+                    </a>
+                    <a
+                      href="https://www.instagram.com/growth_techsys/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                      title="GrowthTechSys on Instagram"
+                      className="w-9 h-9 rounded-lg bg-[#FAF9F6] border border-black/10 flex items-center justify-center text-neutral-700 hover:text-[#E4405F] hover:border-[#E4405F]/40 transition-colors"
+                    >
+                      <Instagram className="w-4 h-4" />
+                    </a>
+                    <a
+                      href="https://www.facebook.com/growthtechsys"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Facebook"
+                      title="GrowthTechSys on Facebook"
+                      className="w-9 h-9 rounded-lg bg-[#FAF9F6] border border-black/10 flex items-center justify-center text-neutral-700 hover:text-[#1877F2] hover:border-[#1877F2]/40 transition-colors"
+                    >
+                      <Facebook className="w-4 h-4" />
+                    </a>
                   </div>
                 </div>
               </div>
