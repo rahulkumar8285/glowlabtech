@@ -77,7 +77,7 @@ export const BLOG_POSTS: BlogPost[] = [
     isoDate: '2026-09-27',
     readTime: '6 min read',
     featured: true,
-    coverImage: '/images/blog/field-sales-automation-software.webp',
+    coverImage: '/images/blog/field-sales-automation-software.png',
     primaryKeyword: 'field sales automation software',
     secondaryKeywords: [
       'GPS employee tracking app',
