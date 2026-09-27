@@ -193,25 +193,7 @@ export default function BlogListingPage({ onNavigate }: BlogListingPageProps) {
                       </p>
                     </div>
 
-                    <div className="pt-6 border-t border-black/[0.06] flex items-center justify-between gap-4">
-                      {featuredPost.author && (
-                        <div className="flex items-center gap-3 mr-auto">
-                          <img
-                            src={featuredPost.author.avatarUrl}
-                            alt={featuredPost.author.name}
-                            className="w-10 h-10 rounded-full object-cover border border-black/10"
-                          />
-                          <div>
-                            <p className="font-body font-medium text-sm text-[#1A1A1A]">
-                              {featuredPost.author.name}
-                            </p>
-                            <p className="font-body text-xs text-neutral-400">
-                              {featuredPost.author.role}
-                            </p>
-                          </div>
-                        </div>
-                      )}
-
+                    <div className="pt-6 border-t border-black/[0.06] flex items-center justify-end gap-4">
                       <a
                         href={`/blog/${featuredPost.slug}`}
                         onClick={(e) => handlePostClick(featuredPost.slug, e)}
@@ -288,23 +270,6 @@ export default function BlogListingPage({ onNavigate }: BlogListingPageProps) {
                   </div>
 
                   <div className="pt-4 border-t border-black/[0.05] flex items-center justify-end gap-3 text-xs font-body">
-                    {post.author && (
-                      <div className="flex items-center gap-2.5 mr-auto">
-                        <img
-                          src={post.author.avatarUrl}
-                          alt={post.author.name}
-                          className="w-7 h-7 rounded-full object-cover border border-black/10"
-                          loading="lazy"
-                        />
-                        <div>
-                          <p className="font-medium text-[#1A1A1A] leading-tight">
-                            {post.author.name}
-                          </p>
-                          <p className="text-[11px] text-neutral-400">{post.author.role}</p>
-                        </div>
-                      </div>
-                    )}
-
                     <a
                       href={`/blog/${post.slug}`}
                       onClick={(e) => handlePostClick(post.slug, e)}

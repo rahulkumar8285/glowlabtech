@@ -60,22 +60,44 @@ export default function BlogSection({ onNavigate }: BlogSectionProps) {
         </div>
 
         {/* 3-Column Articles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {recentPosts.map((post: BlogPost) => (
             <article
               key={post.id}
-              className="group flex flex-col justify-between p-5 sm:p-7 rounded-lg bg-white/70 hover:bg-white border border-black/[0.06] hover:border-black/15 transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] active:scale-[0.99]"
+              className="group flex flex-col justify-between p-5 sm:p-6 rounded-xl bg-white border border-black/[0.06] hover:border-black/15 transition-all duration-300 shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)]"
             >
               <div>
-                {/* Meta info: Date & Reading Time */}
-                <div className="flex items-center gap-1.5 mb-4 text-xs font-body text-neutral-500">
-                  <time dateTime={post.isoDate}>{post.publishedAt}</time>
-                  <span className="text-neutral-300">•</span>
-                  <span>{post.readTime}</span>
+                {/* Blog Card Thumbnail */}
+                {post.coverImage && (
+                  <a
+                    href={`/blog/${post.slug}`}
+                    onClick={(e) => handlePostClick(post.slug, e)}
+                    className="block mb-4 overflow-hidden rounded-lg aspect-[16/9] bg-black/[0.02] border border-black/5 cursor-pointer"
+                    aria-label={post.title}
+                  >
+                    <img
+                      src={post.coverImage}
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                  </a>
+                )}
+
+                {/* Meta info: Category & Reading Time */}
+                <div className="flex items-center justify-between gap-2 mb-3 text-xs font-body text-neutral-500">
+                  <span className="font-semibold text-[#C84826] bg-[#C84826]/10 px-2.5 py-0.5 rounded-full text-[11px]">
+                    {post.category}
+                  </span>
+                  <div className="flex items-center gap-1.5">
+                    <time dateTime={post.isoDate}>{post.publishedAt}</time>
+                    <span className="text-neutral-300">•</span>
+                    <span>{post.readTime}</span>
+                  </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="font-headline font-medium text-lg sm:text-xl text-[#1A1A1A] group-hover:text-[#C84826] transition-colors leading-snug tracking-tight mb-3">
+                <h3 className="font-headline font-medium text-lg sm:text-xl text-[#1A1A1A] group-hover:text-[#C84826] transition-colors leading-snug tracking-tight mb-2.5">
                   <a
                     href={`/blog/${post.slug}`}
                     onClick={(e) => handlePostClick(post.slug, e)}
@@ -86,35 +108,20 @@ export default function BlogSection({ onNavigate }: BlogSectionProps) {
                 </h3>
 
                 {/* Excerpt */}
-                <p className="font-body text-sm text-neutral-600 leading-relaxed line-clamp-3 mb-6">
+                <p className="font-body text-sm text-neutral-600 leading-relaxed line-clamp-3 mb-5">
                   {post.excerpt}
                 </p>
               </div>
 
-              {/* Read More */}
-              <div className="pt-4 border-t border-black/[0.05] flex items-center justify-end gap-3 text-xs font-body">
-                {post.author && (
-                  <div className="flex items-center gap-2.5 mr-auto">
-                    <img
-                      src={post.author.avatarUrl}
-                      alt={post.author.name}
-                      className="w-7 h-7 rounded-full object-cover border border-black/10"
-                      loading="lazy"
-                    />
-                    <div>
-                      <p className="font-medium text-[#1A1A1A] leading-tight">{post.author.name}</p>
-                      <p className="text-[11px] text-neutral-400">{post.author.role}</p>
-                    </div>
-                  </div>
-                )}
-
+              {/* Read Action (without author name) */}
+              <div className="pt-3.5 border-t border-black/[0.05] flex items-center justify-end text-xs font-body">
                 <a
                   href={`/blog/${post.slug}`}
                   onClick={(e) => handlePostClick(post.slug, e)}
-                  className="font-medium text-[#C84826] group-hover:translate-x-0.5 transition-transform duration-200 inline-flex items-center gap-0.5"
+                  className="font-medium text-[#C84826] group-hover:translate-x-0.5 transition-transform duration-200 inline-flex items-center gap-1"
                   aria-label={`Read article: ${post.title}`}
                 >
-                  <span>Read</span>
+                  <span>Read article</span>
                   <span>→</span>
                 </a>
               </div>

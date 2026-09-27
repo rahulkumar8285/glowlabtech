@@ -94,11 +94,6 @@ export const BLOG_POSTS: BlogPost[] = [
       'mock GPS detection',
       'field sales India',
     ],
-    author: {
-      name: 'GrowthTechSys Team',
-      role: 'Sales Operations & Field Telematics Practice',
-      avatarUrl: '/logo.png',
-    },
     tableOfContents: [
       'What Is Field Sales Automation Software?',
       'The Real Cost of Unmonitored Field Sales Teams',
@@ -398,6 +393,7 @@ export const BLOG_POSTS: BlogPost[] = [
     isoDate: '2026-09-19',
     readTime: '7 min read',
     featured: true,
+    coverImage: '/images/services/ai-video-hero.png',
     tags: [
       'ai video creation service for ecommerce',
       'ai ugc video ads agency',
@@ -568,6 +564,7 @@ export const BLOG_POSTS: BlogPost[] = [
     isoDate: '2026-09-17',
     readTime: '6 min read',
     featured: true,
+    coverImage: '/images/services/ai-automation-architecture.png',
     tags: [
       'enterprise AI workflow automation services',
       'custom AI automation for IT operations',
@@ -678,6 +675,7 @@ export const BLOG_POSTS: BlogPost[] = [
     isoDate: '2026-09-16',
     readTime: '7 min read',
     featured: true,
+    coverImage: '/images/products/field-sales-tracking-dashboard-hero.webp',
     tags: [
       'field sales tracking software',
       'field sales tracking app',
