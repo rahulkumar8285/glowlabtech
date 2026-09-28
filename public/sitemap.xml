@@ -177,9 +177,21 @@
   <!-- Insights & Blog -->
   <url>
     <loc>https://growthtechsys.com/blog</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://growthtechsys.com/blog/data-scraping-service-b2b-leads</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/blog/data-scraping-service-b2b-leads.png</image:loc>
+      <image:title>Data Scraping Service for B2B Leads | GrowthTechSys</image:title>
+      <image:caption>Live data scraping service that pulls verified B2B leads from Google Maps and directories, checks every email, and syncs to your CRM.</image:caption>
+    </image:image>
   </url>
 
   <url>

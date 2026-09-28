@@ -20,6 +20,7 @@
 
 ## Analysis & Field Notes
 
+- [Data Scraping Service for B2B Leads: Live Extraction vs Stale Lists](https://growthtechsys.com/blog/data-scraping-service-b2b-leads): Comprehensive guide on choosing a managed data scraping service, headless proxy extraction, triple-tier SMTP email verification, and automated CRM sync for outbound lead pipelines.
 - [Field Sales Automation Software: How Indian Field Teams Are Cutting Costs and Closing Fraud Gaps](https://growthtechsys.com/blog/field-sales-automation-software-india): Operational analysis on eliminating mock-GPS attendance fraud, coordinate-locked visit verification, automated TA/DA road-distance calculations, and DPDP Act compliance across 500+ Indian cities.
 - [Why a Unified CRM with WhatsApp and Email Marketing Beats a Fragmented Stack](https://growthtechsys.com/blog/unified-crm-whatsapp-email-marketing): Architectural comparison showing how consolidating HubSpot, Mailchimp, WhatsApp tools, and Zapier into GrowthFlow CRM achieves 97% open rates at 65% lower tooling cost.
 - [AI Video Creation Service for Ecommerce: How to Fix Creative Fatigue Without Studio Shoots](https://growthtechsys.com/blog/ai-video-creation-service-for-ecommerce): Operational playbook for scaling Meta & TikTok ad creative variations from product stills, eliminating studio shoots, and stabilizing customer acquisition costs.
