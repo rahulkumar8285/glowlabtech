@@ -1,5 +1,6 @@
 import express from 'express';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import { sendContactEmail } from './server/mailer.js';
@@ -85,6 +86,7 @@ app.post('/api/contact', async (req, res) => {
 const distPath = path.join(__dirname, 'dist');
 app.use(
   express.static(distPath, {
+    redirect: false, // Prevent express.static from issuing 301 redirects on directory routes without trailing slash
     setHeaders: (res, filePath) => {
       // Hashed Vite assets can be cached aggressively (1 year, immutable)
       if (filePath.includes(path.sep + 'assets' + path.sep)) {
@@ -103,9 +105,19 @@ app.use(
   })
 );
 
-// SPA client routing fallback (all unmatched GET requests serve index.html)
+// SPA client routing fallback & prerendered route handler
 app.get('*', (req, res) => {
   res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+
+  // Normalize pathname (strip query string and trailing slashes)
+  const cleanPath = req.path.replace(/\/+$/, '');
+  const prerenderedFile = path.join(distPath, cleanPath, 'index.html');
+
+  if (cleanPath && fs.existsSync(prerenderedFile)) {
+    return res.sendFile(prerenderedFile);
+  }
+
+  // Fallback to root index.html for dynamic SPA routing
   res.sendFile(path.join(distPath, 'index.html'));
 });
 

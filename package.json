@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build",
+    "build": "vite build && tsx scripts/prerender.ts",
     "start": "node server.js",
     "server": "node server.js",
     "preview": "vite preview",
