@@ -7,10 +7,9 @@
         http://www.google.com/schemas/sitemap-image/1.1
         http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
 
-  <!-- Primary Homepage -->
   <url>
     <loc>https://growthtechsys.com/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -20,244 +19,245 @@
     </image:image>
   </url>
 
-  <!-- Core SaaS Platforms & Products -->
-  <url>
-    <loc>https://growthtechsys.com/product/field-sales-tracking</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-    <image:image>
-      <image:loc>https://growthtechsys.com/images/products/field-sales-tracking-dashboard-hero.webp</image:loc>
-      <image:title>Field Sales Automation &amp; GPS Workforce Telematics Dashboard</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://growthtechsys.com/images/products/field-sales-modules-composite.webp</image:loc>
-      <image:title>Field Sales Modular Capabilities Architecture</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://growthtechsys.com/product/growthflow-crm</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-    <image:image>
-      <image:loc>https://growthtechsys.com/images/products/growthflow-crm-hero.webp</image:loc>
-      <image:title>GrowthFlow CRM &amp; Omnichannel Marketing Platform</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://growthtechsys.com/images/products/growthflow-crm-modules-composite.webp</image:loc>
-      <image:title>GrowthFlow CRM Unified Architecture &amp; Delivery Engine</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://growthtechsys.com/product/data-scraper-service</loc>
-    <lastmod>2026-09-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-    <image:image>
-      <image:loc>https://growthtechsys.com/images/products/data-scraper-hero.png</image:loc>
-      <image:title>Data Scraper Service &amp; Precision Web Extraction Platform</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://growthtechsys.com/images/products/data-scraper-modules-composite.png</image:loc>
-      <image:title>Data Scraper Modular Capabilities Architecture</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://growthtechsys.com/images/products/data-scraper-workflow.png</image:loc>
-      <image:title>Data Scraper 4-Step Precision Extraction Workflow</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://growthtechsys.com/images/products/data-scraper-showcase.png</image:loc>
-      <image:title>Data Scraper High-Throughput Extraction Console Preview</image:title>
-    </image:image>
-  </url>
-
-  <!-- Core Engineering Services (7 Active Offerings) -->
-  <url>
-    <loc>https://growthtechsys.com/services/ai-automation</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://growthtechsys.com/images/services/ai-automation-hero.png</image:loc>
-      <image:title>AI Automation &amp; Internal Workflow Architecture</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://growthtechsys.com/services/ai-video-creation</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://growthtechsys.com/images/services/ai-video-hero.png</image:loc>
-      <image:title>AI Video Creation &amp; Programmatic Ad Generation Pipeline</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://growthtechsys.com/services/lead-generation</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://growthtechsys.com/images/services/lead-generation-hero.png</image:loc>
-      <image:title>B2B Lead Generation &amp; Waterfall Enrichment Engine</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://growthtechsys.com/services/cold-email-outreach</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://growthtechsys.com/images/services/cold-email-hero.png</image:loc>
-      <image:title>Cold Email &amp; Outbound Deliverability Infrastructure</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://growthtechsys.com/services/website-design</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://growthtechsys.com/images/service-icons/website-design.png</image:loc>
-      <image:title>High-Conversion Website Design &amp; Digital Engineering</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://growthtechsys.com/services/content-strategy</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://growthtechsys.com/images/service-icons/content-strategy.png</image:loc>
-      <image:title>Editorial Content Strategy &amp; Thought Leadership Pipelines</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://growthtechsys.com/services/software-development</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://growthtechsys.com/images/service-icons/software-development.png</image:loc>
-      <image:title>Custom Software Development &amp; Proprietary AI Solutions</image:title>
-    </image:image>
-  </url>
-
-  <!-- Company & Social Proof -->
   <url>
     <loc>https://growthtechsys.com/about</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://growthtechsys.com/testimonials</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://growthtechsys.com/contact</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- Insights & Blog -->
-  <url>
-    <loc>https://growthtechsys.com/blog</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://growthtechsys.com/blog/data-scraping-service-b2b-leads</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://growthtechsys.com/images/blog/data-scraping-service-b2b-leads.png</image:loc>
-      <image:title>Data Scraping Service for B2B Leads | GrowthTechSys</image:title>
-      <image:caption>Live data scraping service that pulls verified B2B leads from Google Maps and directories, checks every email, and syncs to your CRM.</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://growthtechsys.com/blog/field-sales-automation-software-india</loc>
-    <lastmod>2026-09-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://growthtechsys.com/images/blog/field-sales-automation-software.png</image:loc>
-      <image:title>Field Sales Automation Software: Stop Fake GPS Claims</image:title>
-      <image:caption>Field sales automation software that blocks mock-GPS attendance, verifies visits, and automates TA/DA across India.</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://growthtechsys.com/blog/unified-crm-whatsapp-email-marketing</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://growthtechsys.com/images/blog/unified-crm-diagram.webp</image:loc>
-      <image:title>Unified CRM with WhatsApp and Email Marketing | GrowthFlow</image:title>
-      <image:caption>Why a unified CRM with WhatsApp and email marketing beats a fragmented software stack.</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://growthtechsys.com/blog/ai-video-creation-service-for-ecommerce</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://growthtechsys.com/blog/enterprise-ai-workflow-automation</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://growthtechsys.com/blog/why-spreadsheets-whatsapp-fail-field-sales-teams</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Legal & Compliance -->
   <url>
     <loc>https://growthtechsys.com/privacy</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://growthtechsys.com/terms</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://growthtechsys.com/security</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+
+  <url>
+    <loc>https://growthtechsys.com/blog</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://growthtechsys.com/services/ai-automation</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/services/ai-automation-hero.png</image:loc>
+      <image:title>AI Automation &amp; Internal Workflows</image:title>
+      <image:caption>Scale operations without expanding headcount through resilient autonomous workflows.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://growthtechsys.com/services/ai-video-creation</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/services/ai-video-hero.png</image:loc>
+      <image:title>AI Video Creation &amp; Creative Systems</image:title>
+      <image:caption>Produce and split-test dozens of high-converting video variations every week on autopilot.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://growthtechsys.com/services/lead-generation</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/services/lead-generation-hero.png</image:loc>
+      <image:title>Lead Generation Systems</image:title>
+      <image:caption>Predictable qualified meeting pipelines fueled by programmatic buying signals.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://growthtechsys.com/services/cold-email-outreach</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/services/cold-email-hero.png</image:loc>
+      <image:title>Cold Email &amp; Outreach Infrastructure</image:title>
+      <image:caption>Deliverability-hardened outbound engines that book meetings without domain risk.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://growthtechsys.com/services/website-design</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/homepage-share.png</image:loc>
+      <image:title>Website Design &amp; High-Conversion Systems</image:title>
+      <image:caption>Editorial web platforms engineered for speed, authority, and conversions.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://growthtechsys.com/services/content-strategy</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/homepage-share.png</image:loc>
+      <image:title>Content Strategy &amp; Editorial Engines</image:title>
+      <image:caption>A compounding authority system that builds pipeline instead of one-off posts.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://growthtechsys.com/services/software-development</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/homepage-share.png</image:loc>
+      <image:title>Software Development &amp; Custom AI Solutions</image:title>
+      <image:caption>Bespoke micro-SaaS, authenticated portals, and private fine-tuned AI models.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://growthtechsys.com/product/field-sales-tracking</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/products/field-sales-tracking-dashboard-hero.webp</image:loc>
+      <image:title>Field Sales Automation &amp; GPS Workforce Tracking Software</image:title>
+      <image:caption>Streamline daily beat plans, verify customer meetings, automate geo-fenced selfie attendance, and eliminate travel reimbursement disputes across 500+ Indian cities.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://growthtechsys.com/product/growthflow-crm</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/products/growthflow-crm-hero.webp</image:loc>
+      <image:title>GrowthFlow CRM &amp; Omnichannel Marketing Platform</image:title>
+      <image:caption>Stop paying for 4 separate subscriptions. Manage leads, track customer journeys, and run hyper-personalized email &amp; WhatsApp campaigns with 97% open rates from one unified platform.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://growthtechsys.com/product/data-scraper-service</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/products/data-scraper-hero.png</image:loc>
+      <image:title>Data Scraper Service &amp; Precision Web Extraction Platform</image:title>
+      <image:caption>Extract 100% verified, high-precision lead intelligence from LinkedIn, Google Maps, and multi-channel directories with zero blocks.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://growthtechsys.com/blog/data-scraping-service-b2b-leads</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/blog/data-scraping-service-b2b-leads.png</image:loc>
+      <image:title>Data Scraping Service for B2B Leads: Live Extraction vs Stale Lists</image:title>
+      <image:caption>Live data scraping service that pulls verified B2B leads from Google Maps and directories, checks every email, and syncs to your CRM.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://growthtechsys.com/blog/field-sales-automation-software-india</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/blog/field-sales-automation-software.png</image:loc>
+      <image:title>Field Sales Automation Software: How Indian Field Teams Are Cutting Costs and Closing Fraud Gaps</image:title>
+      <image:caption>Field sales automation software that blocks mock-GPS attendance, verifies visits, and automates TA/DA. Built for teams across 500+ Indian cities.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://growthtechsys.com/blog/unified-crm-whatsapp-email-marketing</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/blog/unified-crm-diagram.webp</image:loc>
+      <image:title>Why a Unified CRM with WhatsApp and Email Marketing Beats a Fragmented Stack</image:title>
+      <image:caption>Replace HubSpot, Mailchimp and WhatsApp tools with one CRM. See how GrowthFlow&#039;s unified platform hits 97% open rates at 65% lower cost.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://growthtechsys.com/blog/ai-video-creation-service-for-ecommerce</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/services/ai-video-hero.png</image:loc>
+      <image:title>AI Video Creation Service for Ecommerce: How to Fix Creative Fatigue Without Studio Shoots</image:title>
+      <image:caption>Eliminate creator delays and slash CAC. Discover how an AI video creation service delivers high-converting UGC and product ads in 48 hours.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://growthtechsys.com/blog/enterprise-ai-workflow-automation</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/services/ai-automation-architecture.png</image:loc>
+      <image:title>Enterprise AI Workflow Automation: Why Most Implementations Fail (And How to Build What Works)</image:title>
+      <image:caption>Stop losing engineering hours to broken automations. Learn how custom AI workflow pipelines eliminate operational drag without rebuilding your tech stack.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://growthtechsys.com/blog/why-spreadsheets-whatsapp-fail-field-sales-teams</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/products/field-sales-tracking-dashboard-hero.webp</image:loc>
+      <image:title>Why Spreadsheets and WhatsApp Groups Fail Field Sales Teams (And What to Use Instead)</image:title>
+      <image:caption>Discover how dedicated field sales tracking software eliminates fake visits, automates travel expenses, and speeds up retail order booking for distributors.</image:caption>
+    </image:image>
+  </url>
+
 </urlset>
