@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { SERVICES_DATA, PRODUCTS_DATA } from '../src/data/offeringsData.ts';
-import { BLOG_POSTS } from '../src/data/blogData.ts';
+import { SERVICES_DATA, PRODUCTS_DATA, type ServiceItem, type ProductItem } from '../src/data/offeringsData.ts';
+import { BLOG_POSTS, type BlogPost } from '../src/data/blogData.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -23,6 +23,438 @@ export interface RouteMeta {
   changefreq?: string;
   priority?: string;
   images?: Array<{ loc: string; title: string; caption?: string }>;
+  bodyHtml?: string;
+}
+
+// Helper to escape special HTML characters in text
+function escapeHtml(str: string): string {
+  if (!str) return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+// Generate complete semantic body HTML for a Service page
+function generateServiceBody(s: ServiceItem): string {
+  const challengesHtml =
+    s.challenges && s.challenges.length > 0
+      ? `<section style="margin-top:2rem;">
+          <h2 style="font-size:1.5rem;font-weight:600;margin-bottom:0.75rem;">Key Operational Challenges We Solve</h2>
+          <ul style="margin:0 0 1.5rem 1.5rem;line-height:1.8;">
+            ${s.challenges.map((c) => `<li>${escapeHtml(c)}</li>`).join('')}
+          </ul>
+        </section>`
+      : '';
+
+  const deliverablesHtml =
+    s.deliverables && s.deliverables.length > 0
+      ? `<section style="margin-top:2rem;">
+          <h2 style="font-size:1.5rem;font-weight:600;margin-bottom:0.75rem;">Architecture &amp; Engineering Deliverables</h2>
+          <ul style="margin:0 0 1.5rem 1.5rem;line-height:1.8;">
+            ${s.deliverables.map((d) => `<li>${escapeHtml(d)}</li>`).join('')}
+          </ul>
+        </section>`
+      : '';
+
+  const architectureHtml =
+    s.architecture && s.architecture.length > 0
+      ? `<section style="margin-top:2rem;">
+          <h2 style="font-size:1.5rem;font-weight:600;margin-bottom:0.75rem;">System Architecture Specification</h2>
+          ${s.architecture
+            .map(
+              (a) => `
+            <div style="margin-bottom:1.25rem;">
+              <h3 style="font-size:1.15rem;font-weight:600;margin-bottom:0.25rem;">${escapeHtml(a.title)}</h3>
+              <p style="color:#3f3f46;margin:0;">${escapeHtml(a.description)}</p>
+            </div>
+          `
+            )
+            .join('')}
+        </section>`
+      : '';
+
+  const metricsHtml =
+    s.metrics && s.metrics.length > 0
+      ? `<section style="margin-top:2rem;">
+          <h2 style="font-size:1.5rem;font-weight:600;margin-bottom:0.75rem;">Measurable Outcomes</h2>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
+            ${s.metrics
+              .map(
+                (m) => `
+              <div style="padding:1rem;background:#f4f4f5;border-radius:6px;">
+                <p style="font-size:1.5rem;font-weight:700;margin:0;color:#18181b;">${escapeHtml(m.value)}</p>
+                <p style="font-size:0.875rem;color:#71717a;margin:0.25rem 0 0;">${escapeHtml(m.label)}</p>
+              </div>
+            `
+              )
+              .join('')}
+          </div>
+        </section>`
+      : '';
+
+  return `
+    <main class="page-content" style="max-width:960px;margin:2rem auto;padding:1.5rem;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;color:#18181b;">
+      <nav aria-label="Breadcrumb" style="margin-bottom:1.5rem;font-size:0.9rem;color:#71717a;">
+        <a href="/" style="color:#2563eb;text-decoration:none;">Home</a> &gt; 
+        <a href="/#services" style="color:#2563eb;text-decoration:none;">Services</a> &gt; 
+        <span>${escapeHtml(s.name)}</span>
+      </nav>
+      <header>
+        <p style="font-size:0.875rem;text-transform:uppercase;letter-spacing:0.05em;color:#71717a;margin-bottom:0.25rem;">Engineering Practice ${escapeHtml(s.number)}</p>
+        <h1 style="font-size:2.25rem;font-weight:700;line-height:1.2;margin:0.5rem 0;">${escapeHtml(s.name)}</h1>
+        <p style="font-size:1.25rem;color:#52525b;margin-bottom:1.5rem;line-height:1.5;">${escapeHtml(s.tagline)}</p>
+      </header>
+      <section>
+        <h2 style="font-size:1.5rem;font-weight:600;margin-bottom:0.75rem;">Service Overview &amp; Scope</h2>
+        <p style="font-size:1.05rem;color:#27272a;">${escapeHtml(s.summary || s.description)}</p>
+      </section>
+      ${challengesHtml}
+      ${deliverablesHtml}
+      ${architectureHtml}
+      ${metricsHtml}
+      <section style="margin-top:3rem;padding:1.75rem;background:#f4f4f5;border-radius:8px;">
+        <h2 style="font-size:1.35rem;font-weight:600;margin-top:0;">Discuss Your Engineering Architecture</h2>
+        <p style="margin-bottom:1.25rem;color:#3f3f46;">${escapeHtml(s.outcome)}</p>
+        <p><a href="/contact" style="display:inline-block;padding:0.75rem 1.5rem;background:#18181b;color:#fff;text-decoration:none;border-radius:6px;font-weight:500;">Start a Project Consultation &rarr;</a></p>
+      </section>
+    </main>
+  `;
+}
+
+// Generate complete semantic body HTML for a Product page
+function generateProductBody(p: ProductItem): string {
+  const modulesHtml =
+    p.modules && p.modules.length > 0
+      ? `<section style="margin-top:2rem;">
+          <h2 style="font-size:1.5rem;font-weight:600;margin-bottom:0.75rem;">Core Modules &amp; Functional Capabilities</h2>
+          ${p.modules
+            .map(
+              (m) => `
+            <div style="margin-bottom:1.5rem;padding:1rem;background:#fafafa;border:1px solid #f4f4f5;border-radius:6px;">
+              <h3 style="font-size:1.2rem;font-weight:600;margin:0 0 0.5rem;">${escapeHtml(m.title)}${m.badge ? ` <span style="font-size:0.75rem;padding:0.2rem 0.5rem;background:#e4e4e7;border-radius:4px;font-weight:500;">${escapeHtml(m.badge)}</span>` : ''}</h3>
+              <p style="margin:0 0 0.5rem;color:#3f3f46;">${escapeHtml(m.description)}</p>
+              ${m.bullets ? `<ul style="margin:0 0 0 1.25rem;line-height:1.7;">${m.bullets.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul>` : ''}
+            </div>
+          `
+            )
+            .join('')}
+        </section>`
+      : '';
+
+  const workflowHtml =
+    p.workflow && p.workflow.length > 0
+      ? `<section style="margin-top:2rem;">
+          <h2 style="font-size:1.5rem;font-weight:600;margin-bottom:0.75rem;">Operational Workflow &amp; Execution Pipeline</h2>
+          <ol style="margin:0 0 1.5rem 1.25rem;line-height:1.8;">
+            ${p.workflow
+              .map(
+                (w) => `
+              <li style="margin-bottom:0.75rem;">
+                <strong>${escapeHtml(w.title)}:</strong> ${escapeHtml(w.description)}
+                <p style="font-size:0.9rem;color:#71717a;margin:0.25rem 0 0;">${escapeHtml(w.detail)}</p>
+              </li>
+            `
+              )
+              .join('')}
+          </ol>
+        </section>`
+      : '';
+
+  const whyHtml = p.whyNeeded
+    ? `<section style="margin-top:2rem;">
+        <h2 style="font-size:1.5rem;font-weight:600;margin-bottom:0.5rem;">${escapeHtml(p.whyNeeded.headline)}</h2>
+        <p style="color:#52525b;margin-bottom:1rem;">${escapeHtml(p.whyNeeded.subheadline)}</p>
+        <h3 style="font-size:1.15rem;font-weight:600;margin-bottom:0.5rem;">Common Operational Pain Points</h3>
+        <ul style="margin:0 0 1.5rem 1.25rem;line-height:1.8;">
+          ${p.whyNeeded.painPoints.map((pp) => `<li>${escapeHtml(pp)}</li>`).join('')}
+        </ul>
+        <h3 style="font-size:1.15rem;font-weight:600;margin-bottom:0.5rem;">Target Business Outcomes</h3>
+        <ul style="margin:0 0 1.5rem 1.25rem;line-height:1.8;">
+          ${p.whyNeeded.outcomes.map((o) => `<li>${escapeHtml(o)}</li>`).join('')}
+        </ul>
+      </section>`
+    : '';
+
+  const industriesHtml =
+    p.industries && p.industries.length > 0
+      ? `<section style="margin-top:2rem;">
+          <h2 style="font-size:1.5rem;font-weight:600;margin-bottom:0.75rem;">Industry Deployments</h2>
+          ${p.industries
+            .map(
+              (ind) => `
+            <div style="margin-bottom:1rem;">
+              <h3 style="font-size:1.15rem;font-weight:600;margin-bottom:0.25rem;">${escapeHtml(ind.title)}</h3>
+              <p style="margin:0 0 0.25rem;color:#3f3f46;"><strong>Problem:</strong> ${escapeHtml(ind.problem)}</p>
+              <p style="margin:0;color:#3f3f46;"><strong>Solution:</strong> ${escapeHtml(ind.solution)}</p>
+            </div>
+          `
+            )
+            .join('')}
+        </section>`
+      : '';
+
+  const faqsHtml =
+    p.faqs && p.faqs.length > 0
+      ? `<section style="margin-top:2.5rem;">
+          <h2 style="font-size:1.5rem;font-weight:600;margin-bottom:1rem;">Frequently Asked Questions</h2>
+          ${p.faqs
+            .map(
+              (f) => `
+            <div style="margin-bottom:1.25rem;">
+              <h3 style="font-size:1.15rem;font-weight:600;margin-bottom:0.25rem;">${escapeHtml(f.question)}</h3>
+              <p style="color:#3f3f46;margin:0;">${escapeHtml(f.answer)}</p>
+            </div>
+          `
+            )
+            .join('')}
+        </section>`
+      : '';
+
+  return `
+    <main class="page-content" style="max-width:960px;margin:2rem auto;padding:1.5rem;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;color:#18181b;">
+      <nav aria-label="Breadcrumb" style="margin-bottom:1.5rem;font-size:0.9rem;color:#71717a;">
+        <a href="/" style="color:#2563eb;text-decoration:none;">Home</a> &gt; 
+        <a href="/#products" style="color:#2563eb;text-decoration:none;">Products</a> &gt; 
+        <span>${escapeHtml(p.name)}</span>
+      </nav>
+      <header>
+        <p style="font-size:0.875rem;text-transform:uppercase;letter-spacing:0.05em;color:#71717a;margin-bottom:0.25rem;">${escapeHtml(p.badge || 'Platform')}</p>
+        <h1 style="font-size:2.25rem;font-weight:700;line-height:1.2;margin:0.5rem 0;">${escapeHtml(p.name)}</h1>
+        <p style="font-size:1.25rem;color:#52525b;margin-bottom:1.5rem;line-height:1.5;">${escapeHtml(p.tagline)}</p>
+      </header>
+      <section>
+        <h2 style="font-size:1.5rem;font-weight:600;margin-bottom:0.75rem;">Platform Overview</h2>
+        <p style="font-size:1.05rem;color:#27272a;">${escapeHtml(p.description)}</p>
+      </section>
+      ${modulesHtml}
+      ${workflowHtml}
+      ${whyHtml}
+      ${industriesHtml}
+      ${faqsHtml}
+      <section style="margin-top:3rem;padding:1.75rem;background:#f4f4f5;border-radius:8px;">
+        <h2 style="font-size:1.35rem;font-weight:600;margin-top:0;">Request a 14-Day Free Pilot</h2>
+        <p style="margin-bottom:1.25rem;color:#3f3f46;">${escapeHtml(p.outcome)}</p>
+        <p><a href="/contact" style="display:inline-block;padding:0.75rem 1.5rem;background:#18181b;color:#fff;text-decoration:none;border-radius:6px;font-weight:500;">Request Team Onboarding &rarr;</a></p>
+      </section>
+    </main>
+  `;
+}
+
+// Generate complete semantic body HTML for a Blog post
+function generateBlogBody(b: BlogPost): string {
+  const sectionsHtml =
+    b.sections && b.sections.length > 0
+      ? b.sections
+          .map((sec) => {
+            let secContent = '';
+            if (sec.heading) {
+              secContent += `<h2 style="font-size:1.5rem;font-weight:600;margin:2rem 0 0.75rem;">${escapeHtml(sec.heading)}</h2>`;
+            }
+            if (sec.subheading) {
+              secContent += `<h3 style="font-size:1.2rem;font-weight:600;margin:1.25rem 0 0.5rem;">${escapeHtml(sec.subheading)}</h3>`;
+            }
+            if (sec.content && sec.content.length > 0) {
+              secContent += sec.content
+                .map((p) => `<p style="margin-bottom:1.1rem;font-size:1.05rem;color:#27272a;">${escapeHtml(p)}</p>`)
+                .join('');
+            }
+            if (sec.bullets && sec.bullets.length > 0) {
+              secContent += `<ul style="margin:1rem 0 1.25rem 1.5rem;line-height:1.8;">${sec.bullets
+                .map((bullet) => `<li>${escapeHtml(bullet)}</li>`)
+                .join('')}</ul>`;
+            }
+            if (sec.contentAfterBullets && sec.contentAfterBullets.length > 0) {
+              secContent += sec.contentAfterBullets
+                .map((p) => `<p style="margin-bottom:1.1rem;font-size:1.05rem;color:#27272a;">${escapeHtml(p)}</p>`)
+                .join('');
+            }
+            if (sec.callout) {
+              secContent += `<blockquote style="border-left:4px solid #18181b;padding:0.875rem 1.25rem;background:#f4f4f5;margin:1.5rem 0;font-style:italic;">
+            <p style="margin:0;color:#18181b;">${escapeHtml(sec.callout.text)}</p>
+            ${sec.callout.attribution ? `<cite style="display:block;margin-top:0.5rem;font-size:0.875rem;font-style:normal;color:#71717a;">— ${escapeHtml(sec.callout.attribution)}</cite>` : ''}
+          </blockquote>`;
+            }
+            if (sec.table) {
+              secContent += `<div style="overflow-x:auto;margin:1.5rem 0;">
+            <table style="width:100%;border-collapse:collapse;text-align:left;">
+              <thead>
+                <tr style="background:#f4f4f5;border-bottom:2px solid #e4e4e7;">
+                  ${sec.table.headers.map((h) => `<th style="padding:0.75rem;border:1px solid #e4e4e7;">${escapeHtml(h)}</th>`).join('')}
+                </tr>
+              </thead>
+              <tbody>
+                ${sec.table.rows
+                  .map(
+                    (row) => `
+                  <tr style="border-bottom:1px solid #e4e4e7;">
+                    ${row.map((cell) => `<td style="padding:0.75rem;border:1px solid #e4e4e7;">${escapeHtml(cell)}</td>`).join('')}
+                  </tr>
+                `
+                  )
+                  .join('')}
+              </tbody>
+            </table>
+          </div>`;
+            }
+            return `<section>${secContent}</section>`;
+          })
+          .join('')
+      : `<section><p>${escapeHtml(b.excerpt)}</p></section>`;
+
+  const takeawaysHtml =
+    b.keyTakeaways && b.keyTakeaways.length > 0
+      ? `<div style="padding:1.25rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;margin:1.5rem 0;">
+        <h3 style="margin-top:0;color:#166534;font-size:1.15rem;font-weight:600;">Key Strategic Takeaways</h3>
+        <ul style="margin:0 0 0 1.25rem;color:#15803d;line-height:1.8;">
+          ${b.keyTakeaways.map((t) => `<li>${escapeHtml(t)}</li>`).join('')}
+        </ul>
+      </div>`
+    : '';
+
+  const faqsHtml =
+    b.faqs && b.faqs.length > 0
+      ? `<section style="margin-top:2.5rem;">
+        <h2 style="font-size:1.75rem;font-weight:700;margin-bottom:1.25rem;">Frequently Asked Questions</h2>
+        ${b.faqs
+          .map(
+            (f) => `
+          <div style="margin-bottom:1.5rem;">
+            <h3 style="font-size:1.2rem;font-weight:600;margin-bottom:0.35rem;">${escapeHtml(f.question)}</h3>
+            <p style="color:#3f3f46;margin:0;">${escapeHtml(f.answer)}</p>
+          </div>
+        `
+          )
+          .join('')}
+      </section>`
+      : '';
+
+  return `
+    <main class="page-content" style="max-width:860px;margin:2rem auto;padding:1.5rem;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;color:#18181b;">
+      <nav aria-label="Breadcrumb" style="margin-bottom:1.5rem;font-size:0.9rem;color:#71717a;">
+        <a href="/" style="color:#2563eb;text-decoration:none;">Home</a> &gt; 
+        <a href="/blog" style="color:#2563eb;text-decoration:none;">Blog</a> &gt; 
+        <span>${escapeHtml(b.title)}</span>
+      </nav>
+      <article>
+        <header>
+          <h1 style="font-size:2.25rem;font-weight:700;line-height:1.25;margin:0.5rem 0;">${escapeHtml(b.title)}</h1>
+          <p style="font-size:0.9rem;color:#71717a;margin-bottom:1.5rem;">
+            ${b.author ? `By <strong>${escapeHtml(b.author.name)}</strong> (${escapeHtml(b.author.role)}) · ` : ''}Published on ${escapeHtml(b.publishedAt)} · ${escapeHtml(b.readTime)}
+          </p>
+          <p style="font-size:1.2rem;color:#3f3f46;margin-bottom:1.5rem;line-height:1.6;">${escapeHtml(b.excerpt)}</p>
+        </header>
+        ${takeawaysHtml}
+        ${sectionsHtml}
+        ${faqsHtml}
+      </article>
+      <section style="margin-top:3rem;padding:1.75rem;background:#f4f4f5;border-radius:8px;">
+        <h2 style="font-size:1.35rem;font-weight:600;margin-top:0;">Discuss Your Systems Architecture</h2>
+        <p style="margin-bottom:1.25rem;color:#3f3f46;">We engineer custom AI software, automated workflow pipelines, and enterprise field workforce tracking telematics that scale revenue.</p>
+        <p><a href="/contact" style="display:inline-block;padding:0.75rem 1.5rem;background:#18181b;color:#fff;text-decoration:none;border-radius:6px;font-weight:500;">Connect with Engineering &rarr;</a></p>
+      </section>
+    </main>
+  `;
+}
+
+// Generate complete semantic body HTML for core pages
+function generateCoreBody(routePath: string): string {
+  if (routePath === '/about') {
+    return `
+      <main class="page-content" style="max-width:960px;margin:2rem auto;padding:1.5rem;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;color:#18181b;">
+        <header>
+          <h1 style="font-size:2.25rem;font-weight:700;margin-bottom:0.75rem;">About GrowthTechSys — Software, AI &amp; Automation Agency</h1>
+          <p style="font-size:1.25rem;color:#52525b;margin-bottom:2rem;">Deep Engineering Experience Across Diverse Industries &amp; Modern Tools</p>
+        </header>
+        <section>
+          <p>GrowthTechSys is a specialized software engineering firm based at World Tech Park, Gurugram. We design and deploy high-performance software systems, automated workflow pipelines, and enterprise workforce telematics.</p>
+          <p>Our multidisciplinary team combines system architecture, full-stack engineering, and AI fine-tuning to solve complex operational bottlenecks for growing enterprises.</p>
+        </section>
+        <section style="margin-top:2rem;">
+          <h2>Core Capabilities</h2>
+          <ul>
+            <li>Custom AI Software &amp; Proprietary System Portals</li>
+            <li>Zero-Hardware Field Sales Tracking &amp; Beat Plan Telematics</li>
+            <li>Unified Omnichannel Sales CRM &amp; Multi-Inbox Outreach</li>
+            <li>High-Throughput Web Data Extraction &amp; Verification Pipelines</li>
+          </ul>
+        </section>
+        <section style="margin-top:2rem;">
+          <h2>Headquarters &amp; Contact</h2>
+          <p>B-13 World Tech Park Block-B, Sector 30, Gurugram, Haryana 122001, India</p>
+          <p>Phone: +91 89297 21558 | Email: contact@growthtechsys.com</p>
+        </section>
+      </main>
+    `;
+  }
+
+  if (routePath === '/contact') {
+    return `
+      <main class="page-content" style="max-width:960px;margin:2rem auto;padding:1.5rem;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;color:#18181b;">
+        <header>
+          <h1 style="font-size:2.25rem;font-weight:700;margin-bottom:0.75rem;">Contact Us | Start a Project with GrowthTechSys</h1>
+          <p style="font-size:1.25rem;color:#52525b;margin-bottom:2rem;">Connect directly with our engineering team at World Tech Park, Gurugram.</p>
+        </header>
+        <section>
+          <p>Whether you need custom AI software, workflow automation, or enterprise workforce tracking telematics, our engineering leads are available for direct architecture consultations.</p>
+          <h2>Direct Contact Channels</h2>
+          <ul>
+            <li><strong>Telephone:</strong> +91 89297 21558</li>
+            <li><strong>Email:</strong> contact@growthtechsys.com</li>
+            <li><strong>Office:</strong> B-13 World Tech Park Block-B, 30, Jaipur - Delhi Expy, Silokhera, Block A, Sector 30, Gurugram, Haryana 122001</li>
+            <li><strong>Pilot Availability:</strong> 14-day zero-hardware team onboarding</li>
+          </ul>
+        </section>
+      </main>
+    `;
+  }
+
+  if (routePath === '/testimonials') {
+    return `
+      <main class="page-content" style="max-width:960px;margin:2rem auto;padding:1.5rem;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;color:#18181b;">
+        <header>
+          <h1 style="font-size:2.25rem;font-weight:700;margin-bottom:0.75rem;">Client Outcomes &amp; Testimonials | GrowthTechSys</h1>
+          <p style="font-size:1.25rem;color:#52525b;margin-bottom:2rem;">Verified outcomes, architectural case studies, and enterprise reviews.</p>
+        </header>
+        <section>
+          <p>Explore how enterprises and growing businesses deploy GrowthTechSys software to eliminate fraud, reduce software overhead, and automate operational workflows.</p>
+        </section>
+      </main>
+    `;
+  }
+
+  if (routePath === '/blog') {
+    return `
+      <main class="page-content" style="max-width:960px;margin:2rem auto;padding:1.5rem;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;color:#18181b;">
+        <header>
+          <h1 style="font-size:2.25rem;font-weight:700;margin-bottom:0.75rem;">Field Notes, Architecture Playbooks &amp; Engineering Essays</h1>
+          <p style="font-size:1.25rem;color:#52525b;margin-bottom:2rem;">Deep dives on operational AI, cold outreach infrastructure, and field workforce tracking telematics.</p>
+        </header>
+        <section>
+          <h2>Latest Engineering Playbooks</h2>
+          <ul>
+            ${BLOG_POSTS.map(
+              (b) => `
+              <li style="margin-bottom:1rem;">
+                <a href="/blog/${b.slug}" style="font-weight:600;font-size:1.15rem;color:#2563eb;text-decoration:none;">${escapeHtml(b.title)}</a>
+                <p style="color:#52525b;margin:0.25rem 0 0;">${escapeHtml(b.excerpt)}</p>
+              </li>
+            `
+            ).join('')}
+          </ul>
+        </section>
+      </main>
+    `;
+  }
+
+  return `
+    <main class="page-content" style="max-width:960px;margin:2rem auto;padding:1.5rem;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;color:#18181b;">
+      <h1>We engineer systems that compound your advantage.</h1>
+      <p>GrowthTechSys engineers custom AI software, automated workflow pipelines, and enterprise field workforce tracking telematics that scale revenue.</p>
+    </main>
+  `;
 }
 
 // 1. Core static pages
@@ -39,6 +471,7 @@ const CORE_PAGES: RouteMeta[] = [
       'GrowthTechSys, AI software agency, digital product development, field sales automation, GPS employee tracking app, custom software engineering, B2B workflow automation',
     changefreq: 'weekly',
     priority: '1.0',
+    bodyHtml: generateCoreBody('/'),
     images: [
       {
         loc: 'https://growthtechsys.com/images/homepage-hero-composite.webp',
@@ -57,6 +490,7 @@ const CORE_PAGES: RouteMeta[] = [
     ogImage: 'https://growthtechsys.com/images/homepage-share.png',
     changefreq: 'monthly',
     priority: '0.8',
+    bodyHtml: generateCoreBody('/about'),
     jsonLd: {
       '@type': 'AboutPage',
       name: 'About GrowthTechSys',
@@ -74,6 +508,7 @@ const CORE_PAGES: RouteMeta[] = [
     ogImage: 'https://growthtechsys.com/images/homepage-share.png',
     changefreq: 'monthly',
     priority: '0.8',
+    bodyHtml: generateCoreBody('/testimonials'),
     jsonLd: {
       '@type': 'ItemPage',
       name: 'Client Outcomes & Testimonials',
@@ -90,6 +525,7 @@ const CORE_PAGES: RouteMeta[] = [
     ogImage: 'https://growthtechsys.com/images/homepage-share.png',
     changefreq: 'monthly',
     priority: '0.85',
+    bodyHtml: generateCoreBody('/contact'),
     jsonLd: {
       '@type': 'ContactPage',
       name: 'Contact GrowthTechSys Engineering',
@@ -108,6 +544,7 @@ const CORE_PAGES: RouteMeta[] = [
     ogImage: 'https://growthtechsys.com/images/homepage-share.png',
     changefreq: 'monthly',
     priority: '0.5',
+    bodyHtml: generateCoreBody('/privacy'),
   },
   {
     path: '/terms',
@@ -119,6 +556,7 @@ const CORE_PAGES: RouteMeta[] = [
     ogImage: 'https://growthtechsys.com/images/homepage-share.png',
     changefreq: 'monthly',
     priority: '0.5',
+    bodyHtml: generateCoreBody('/terms'),
   },
   {
     path: '/security',
@@ -130,6 +568,7 @@ const CORE_PAGES: RouteMeta[] = [
     ogImage: 'https://growthtechsys.com/images/homepage-share.png',
     changefreq: 'monthly',
     priority: '0.5',
+    bodyHtml: generateCoreBody('/security'),
   },
   {
     path: '/blog',
@@ -141,6 +580,7 @@ const CORE_PAGES: RouteMeta[] = [
     ogImage: 'https://growthtechsys.com/images/homepage-share.png',
     changefreq: 'weekly',
     priority: '0.8',
+    bodyHtml: generateCoreBody('/blog'),
     jsonLd: {
       '@type': 'CollectionPage',
       name: 'Field Notes & Engineering Playbooks',
@@ -148,16 +588,6 @@ const CORE_PAGES: RouteMeta[] = [
     },
   },
 ];
-
-// Helper to escape special HTML characters in text
-function escapeHtml(str: string): string {
-  return str
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
-}
 
 export function getAllRoutes(): RouteMeta[] {
   const routes: RouteMeta[] = [...CORE_PAGES];
@@ -187,15 +617,16 @@ export function getAllRoutes(): RouteMeta[] {
       ],
     };
 
-    const serviceHeroImage = s.slug === 'ai-automation'
-      ? 'https://growthtechsys.com/images/services/ai-automation-hero.png'
-      : s.slug === 'ai-video-creation'
-      ? 'https://growthtechsys.com/images/services/ai-video-hero.png'
-      : s.slug === 'lead-generation'
-      ? 'https://growthtechsys.com/images/services/lead-generation-hero.png'
-      : s.slug === 'cold-email-outreach'
-      ? 'https://growthtechsys.com/images/services/cold-email-hero.png'
-      : 'https://growthtechsys.com/images/homepage-share.png';
+    const serviceHeroImage =
+      s.slug === 'ai-automation'
+        ? 'https://growthtechsys.com/images/services/ai-automation-hero.png'
+        : s.slug === 'ai-video-creation'
+        ? 'https://growthtechsys.com/images/services/ai-video-hero.png'
+        : s.slug === 'lead-generation'
+        ? 'https://growthtechsys.com/images/services/lead-generation-hero.png'
+        : s.slug === 'cold-email-outreach'
+        ? 'https://growthtechsys.com/images/services/cold-email-hero.png'
+        : 'https://growthtechsys.com/images/homepage-share.png';
 
     routes.push({
       path: `/services/${s.slug}`,
@@ -207,6 +638,7 @@ export function getAllRoutes(): RouteMeta[] {
       ogImage: serviceHeroImage,
       changefreq: 'monthly',
       priority: '0.9',
+      bodyHtml: generateServiceBody(s),
       jsonLd: [serviceSchema, breadcrumbSchema],
       images: [
         {
@@ -292,6 +724,7 @@ export function getAllRoutes(): RouteMeta[] {
       ogImage: productHeroImage,
       changefreq: 'weekly',
       priority: '0.95',
+      bodyHtml: generateProductBody(p),
       jsonLd: jsonLdGraph,
       images: [
         {
@@ -386,6 +819,7 @@ export function getAllRoutes(): RouteMeta[] {
       keywords: b.tags ? b.tags.join(', ') : undefined,
       changefreq: 'monthly',
       priority: '0.85',
+      bodyHtml: generateBlogBody(b),
       jsonLd: jsonLdGraph,
       images: [
         {
@@ -415,10 +849,7 @@ export function renderPageHtml(masterHtml: string, route: RouteMeta): string {
       `<meta name="description" content="${escapedDesc}" />`
     );
   } else {
-    html = html.replace(
-      '</head>',
-      `  <meta name="description" content="${escapedDesc}" />\n</head>`
-    );
+    html = html.replace('</head>', `  <meta name="description" content="${escapedDesc}" />\n</head>`);
   }
 
   // 3. Replace <link rel="canonical">
@@ -428,10 +859,7 @@ export function renderPageHtml(masterHtml: string, route: RouteMeta): string {
       `<link rel="canonical" href="${route.canonicalUrl}" />`
     );
   } else {
-    html = html.replace(
-      '</head>',
-      `  <link rel="canonical" href="${route.canonicalUrl}" />\n</head>`
-    );
+    html = html.replace('</head>', `  <link rel="canonical" href="${route.canonicalUrl}" />\n</head>`);
   }
 
   // 4. Replace or update OpenGraph Tags
@@ -441,16 +869,40 @@ export function renderPageHtml(masterHtml: string, route: RouteMeta): string {
   const ogImage = route.ogImage || 'https://growthtechsys.com/images/homepage-share.png';
   const ogType = route.ogType || 'website';
 
-  html = html.replace(/<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:title" content="${ogTitle}" />`);
-  html = html.replace(/<meta\s+property="og:description"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:description" content="${ogDesc}" />`);
-  html = html.replace(/<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:url" content="${ogUrl}" />`);
-  html = html.replace(/<meta\s+property="og:image"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:image" content="${ogImage}" />`);
-  html = html.replace(/<meta\s+property="og:type"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:type" content="${ogType}" />`);
+  html = html.replace(
+    /<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/i,
+    `<meta property="og:title" content="${ogTitle}" />`
+  );
+  html = html.replace(
+    /<meta\s+property="og:description"\s+content="[^"]*"\s*\/?>/i,
+    `<meta property="og:description" content="${ogDesc}" />`
+  );
+  html = html.replace(
+    /<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>/i,
+    `<meta property="og:url" content="${ogUrl}" />`
+  );
+  html = html.replace(
+    /<meta\s+property="og:image"\s+content="[^"]*"\s*\/?>/i,
+    `<meta property="og:image" content="${ogImage}" />`
+  );
+  html = html.replace(
+    /<meta\s+property="og:type"\s+content="[^"]*"\s*\/?>/i,
+    `<meta property="og:type" content="${ogType}" />`
+  );
 
   // 5. Replace Twitter Card Tags
-  html = html.replace(/<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/?>/i, `<meta name="twitter:title" content="${ogTitle}" />`);
-  html = html.replace(/<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/?>/i, `<meta name="twitter:description" content="${ogDesc}" />`);
-  html = html.replace(/<meta\s+name="twitter:image"\s+content="[^"]*"\s*\/?>/i, `<meta name="twitter:image" content="${ogImage}" />`);
+  html = html.replace(
+    /<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/?>/i,
+    `<meta name="twitter:title" content="${ogTitle}" />`
+  );
+  html = html.replace(
+    /<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/?>/i,
+    `<meta name="twitter:description" content="${ogDesc}" />`
+  );
+  html = html.replace(
+    /<meta\s+name="twitter:image"\s+content="[^"]*"\s*\/?>/i,
+    `<meta name="twitter:image" content="${ogImage}" />`
+  );
 
   // 6. Keywords if provided
   if (route.keywords) {
@@ -463,7 +915,16 @@ export function renderPageHtml(masterHtml: string, route: RouteMeta): string {
     }
   }
 
-  // 7. Inject Route-Specific JSON-LD Schema (Article, Service, SoftwareApplication, FAQPage, BreadcrumbList)
+  // 7. Clean up Master Homepage JSON-LD on Inner Pages to avoid duplicate or misleading schema
+  if (route.path !== '/') {
+    // Remove static Organization / WebSite block from inner pages
+    html = html.replace(
+      /<!-- Static JSON-LD Organization Schema for Crawlers -->\s*<script type="application\/ld\+json">[\s\S]*?<\/script>/i,
+      ''
+    );
+  }
+
+  // 8. Inject Route-Specific JSON-LD Schema (Article, Service, SoftwareApplication, BreadcrumbList, FAQPage)
   if (route.jsonLd) {
     const schemaContent = JSON.stringify(
       {
@@ -477,33 +938,15 @@ export function renderPageHtml(masterHtml: string, route: RouteMeta): string {
     html = html.replace('</head>', `${schemaTag}</head>`);
   }
 
-  // 8. Inject Semantic Pre-rendered Content Shell + Crawlable Noscript inside <div id="root">
-  const escapedH1 = escapeHtml(route.h1);
-  const semanticShell = `
-      <!-- Crawlable Semantic Header for Search Spiders & Text Indexers -->
-      <header class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0;" aria-hidden="false">
-        <h1>${escapedH1}</h1>
-        <p>${escapedDesc}</p>
-      </header>
-      <noscript>
-        <div style="max-width:880px;margin:2rem auto;padding:1.5rem;font-family:system-ui,sans-serif;line-height:1.6;color:#111;">
-          <h1>${escapedH1}</h1>
-          <p>${escapedDesc}</p>
-          <hr style="margin:1.5rem 0;border:0;border-top:1px solid #e5e7eb;" />
-          <nav aria-label="Site Navigation">
-            <p><strong>Explore GrowthTechSys:</strong></p>
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/testimonials">Client Outcomes</a></li>
-              <li><a href="/contact">Contact Engineering</a></li>
-              <li><a href="/blog">Field Notes &amp; Playbooks</a></li>
-            </ul>
-          </nav>
-        </div>
-      </noscript>`;
-
-  html = html.replace('<div id="root">', `<div id="root">${semanticShell}`);
+  // 9. Inject Complete Pre-rendered Semantic HTML Body into <div id="root">
+  // Crawlers and non-JS clients see the full, real article/service/product body immediately.
+  // The #brand-fallback-loader is styled to cover the view until client React takes over.
+  if (route.bodyHtml) {
+    html = html.replace(
+      '<div id="root">',
+      `<div id="root">\n      <!-- Static Pre-rendered Content Shell -->\n      ${route.bodyHtml}`
+    );
+  }
 
   return html;
 }
@@ -560,7 +1003,7 @@ export function prerenderAll(): void {
   const routes = getAllRoutes();
 
   console.log(`\n======================================================`);
-  console.log(`🚀 Starting Static Pre-Rendering (SSG) for ${routes.length} routes...`);
+  console.log(`🚀 Starting Full Static Pre-Rendering (SSG) for ${routes.length} routes...`);
   console.log(`======================================================\n`);
 
   let count = 0;
@@ -570,14 +1013,14 @@ export function prerenderAll(): void {
     if (route.path === '/') {
       // Overwrite dist/index.html with enriched homepage metadata
       fs.writeFileSync(masterIndexPath, pageHtml, 'utf-8');
-      console.log(`✓ [200] / -> dist/index.html (with JSON-LD & meta)`);
+      console.log(`✓ [200] / -> dist/index.html`);
     } else {
       // Create subfolder, e.g. dist/services/software-development/index.html
       const subDir = path.join(distDir, route.path.replace(/^\//, ''));
       fs.mkdirSync(subDir, { recursive: true });
       const targetFilePath = path.join(subDir, 'index.html');
       fs.writeFileSync(targetFilePath, pageHtml, 'utf-8');
-      console.log(`✓ [200] ${route.path} -> dist${route.path}/index.html (with JSON-LD & meta)`);
+      console.log(`✓ [200] ${route.path} -> dist${route.path}/index.html`);
     }
     count++;
   }
@@ -589,7 +1032,7 @@ export function prerenderAll(): void {
   fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemapXml, 'utf-8');
   console.log(`✓ Synced sitemap.xml to dist/sitemap.xml & public/sitemap.xml`);
 
-  console.log(`\n✨ Successfully pre-rendered ${count} SEO-optimized HTML pages into dist/\n`);
+  console.log(`\n✨ Successfully pre-rendered ${count} full HTML pages with real body copy into dist/\n`);
 }
 
 // Execute if run directly from CLI
