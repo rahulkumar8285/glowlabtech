@@ -9,7 +9,7 @@
 
   <url>
     <loc>https://growthtechsys.com/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -21,56 +21,56 @@
 
   <url>
     <loc>https://growthtechsys.com/about</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://growthtechsys.com/testimonials</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://growthtechsys.com/contact</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://growthtechsys.com/privacy</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://growthtechsys.com/terms</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://growthtechsys.com/security</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://growthtechsys.com/blog</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://growthtechsys.com/services/ai-automation</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -82,7 +82,7 @@
 
   <url>
     <loc>https://growthtechsys.com/services/ai-video-creation</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -94,7 +94,7 @@
 
   <url>
     <loc>https://growthtechsys.com/services/lead-generation</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -106,7 +106,7 @@
 
   <url>
     <loc>https://growthtechsys.com/services/cold-email-outreach</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -118,7 +118,7 @@
 
   <url>
     <loc>https://growthtechsys.com/services/website-design</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -130,7 +130,7 @@
 
   <url>
     <loc>https://growthtechsys.com/services/content-strategy</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -142,7 +142,7 @@
 
   <url>
     <loc>https://growthtechsys.com/services/software-development</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -154,7 +154,7 @@
 
   <url>
     <loc>https://growthtechsys.com/product/field-sales-tracking</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <image:image>
@@ -166,7 +166,7 @@
 
   <url>
     <loc>https://growthtechsys.com/product/growthflow-crm</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <image:image>
@@ -178,7 +178,7 @@
 
   <url>
     <loc>https://growthtechsys.com/product/data-scraper-service</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <image:image>
@@ -189,8 +189,20 @@
   </url>
 
   <url>
+    <loc>https://growthtechsys.com/blog/ai-video-ads-for-performance-marketing</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://growthtechsys.com/images/blog/ai-video-ads-performance-marketing.png</image:loc>
+      <image:title>AI Video Ads for Performance Marketing: How to Test 30+ Variations a Week</image:title>
+      <image:caption>Ad creative fatigue can hit within 7-10 days. See how AI video pipelines produce and test 30+ paid social variations per run at a lower cost.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://growthtechsys.com/blog/data-scraping-service-b2b-leads</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -202,7 +214,7 @@
 
   <url>
     <loc>https://growthtechsys.com/blog/field-sales-automation-software-india</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -214,7 +226,7 @@
 
   <url>
     <loc>https://growthtechsys.com/blog/unified-crm-whatsapp-email-marketing</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -226,7 +238,7 @@
 
   <url>
     <loc>https://growthtechsys.com/blog/ai-video-creation-service-for-ecommerce</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -238,7 +250,7 @@
 
   <url>
     <loc>https://growthtechsys.com/blog/enterprise-ai-workflow-automation</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -250,7 +262,7 @@
 
   <url>
     <loc>https://growthtechsys.com/blog/why-spreadsheets-whatsapp-fail-field-sales-teams</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
