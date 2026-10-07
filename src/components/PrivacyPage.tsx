@@ -201,10 +201,32 @@ export default function PrivacyPage({ onNavigate }: PrivacyPageProps) {
             </ul>
           </div>
 
-          {/* 7. Individual Rights & Data Retention */}
+          {/* 7. Google API Limited Use Disclosure */}
+          <div className="space-y-4 pt-4 border-t border-black/10 bg-white p-6 sm:p-8 rounded-2xl border border-black/10 shadow-sm">
+            <div className="flex items-center gap-3 text-[#1A1A1A] mb-1">
+              <Lock className="w-5 h-5 text-[#C84826]" />
+              <h2 className="font-headline font-semibold text-2xl sm:text-3xl text-[#1A1A1A] tracking-tight">
+                7. Google API Limited Use Disclosure
+              </h2>
+            </div>
+            <p className="font-body text-sm sm:text-base text-neutral-800 leading-relaxed">
+              GrowthTech Marketing Tools' use and transfer to any other app of information received from Google APIs will adhere to the{' '}
+              <a
+                href="https://developers.google.com/terms/api-services-user-data-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#C84826] font-medium underline hover:text-[#A3381B] transition-colors"
+              >
+                Google API Services User Data Policy
+              </a>
+              , including the Limited Use requirements. Raw, derived, or aggregated Google Workspace user data is never used to create, train, fine-tune, or improve foundational or generalized machine learning or artificial intelligence models.
+            </p>
+          </div>
+
+          {/* 8. Individual Rights & Data Retention */}
           <div className="space-y-4 pt-4 border-t border-black/10">
             <h2 className="font-headline font-semibold text-2xl sm:text-3xl text-[#1A1A1A] tracking-tight">
-              7. Your Rights & Data Retention
+              8. Your Rights & Data Retention
             </h2>
             <p className="font-body text-sm sm:text-base text-neutral-700 leading-relaxed">
               Under applicable data protection regulations, users and enterprise tenants maintain the right to:
@@ -220,11 +242,11 @@ export default function PrivacyPage({ onNavigate }: PrivacyPageProps) {
             </p>
           </div>
 
-          {/* 8. Corporate Grievance Officer & Official Contact Details */}
+          {/* 9. Corporate Grievance Officer & Official Contact Details */}
           <div className="space-y-6 pt-6 border-t border-black/10 bg-white p-6 sm:p-8 rounded-2xl border border-black/10">
             <div>
               <h2 className="font-headline font-semibold text-xl sm:text-2xl text-[#1A1A1A] tracking-tight mb-2">
-                8. Contact Our Privacy & Grievance Officer
+                9. Contact Our Privacy & Grievance Officer
               </h2>
               <p className="font-body text-xs sm:text-sm text-neutral-600 leading-relaxed">
                 If you have questions regarding this Privacy Policy, wish to exercise statutory privacy rights, or need to lodge a formal data grievance, please reach out to our dedicated officer:

@@ -449,6 +449,58 @@ function generateCoreBody(routePath: string): string {
     `;
   }
 
+  if (routePath === '/privacy') {
+    return `
+      <main class="page-content" style="max-width:960px;margin:2rem auto;padding:1.5rem;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;color:#18181b;">
+        <header>
+          <h1 style="font-size:2.25rem;font-weight:700;margin-bottom:0.75rem;">Privacy Policy / Data Protection Standards</h1>
+          <p style="font-size:1.25rem;color:#52525b;margin-bottom:2rem;">How GrowthTechSys collects, encrypts, and processes personal and organizational telemetry data across our digital platforms and workforce automation engines.</p>
+        </header>
+        <section>
+          <h2>1. Overview &amp; Scope</h2>
+          <p>GrowthTechSys (“we,” “our,” or “us”) designs and operates enterprise software, custom AI automations, and workforce telematics solutions. This Privacy Policy details how we handle information collected through our official website (<a href="https://growthtechsys.com" style="color:#c84826;">growthtechsys.com</a>), our mobile tracking and sales automation applications, and related software engines.</p>
+        </section>
+        <section style="margin-top:2rem;">
+          <h2>2. Information We Collect</h2>
+          <ul>
+            <li><strong>Direct Communications &amp; Inquiries:</strong> Name, work email address, corporate telephone number, organization name, and project specifications.</li>
+            <li><strong>Field Force Telemetry (For App Users):</strong> GPS coordinates, beat route breadcrumbs, trip distance calculations, visit timestamps, and Proof of Execution (POE).</li>
+            <li><strong>Technical Device Identifiers:</strong> Operating system version, device model, network state, battery indicators, and anti-tamper telemetry.</li>
+            <li><strong>Platform Usage Logs:</strong> Access logs, API invocation metrics, error traces, and administrative tenant session identifiers.</li>
+          </ul>
+        </section>
+        <section style="margin-top:2rem;">
+          <h2>3. Dedicated Field Force &amp; GPS Privacy Safeguards</h2>
+          <p>GPS coordinates are captured strictly between your explicit punch-in and punch-out. The instant a user punches out of their shift, all background location services immediately terminate.</p>
+        </section>
+        <section style="margin-top:2rem;">
+          <h2>4. How We Use Data &amp; Legal Bases</h2>
+          <p>Service execution, workforce reimbursement audits (TA/DA), platform security, fraud prevention, and direct inquiry handling.</p>
+        </section>
+        <section style="margin-top:2rem;">
+          <h2>5. Data Security &amp; Encryption Standards</h2>
+          <p>TLS 1.3 encryption in transit, AES-256 encryption at rest, offline sandbox encryption, and least-privilege role scoping.</p>
+        </section>
+        <section style="margin-top:2rem;">
+          <h2>6. Third-Party Sharing &amp; Transfers</h2>
+          <p>We do not sell, rent, monetize, or trade your personal or organizational telemetry data to third parties. Data is shared strictly with audited infrastructure sub-processors essential to service operations.</p>
+        </section>
+        <section style="margin-top:2rem;padding:1.5rem;background:#f4f4f5;border-radius:8px;border:1px solid #e4e4e7;">
+          <h2>7. Google API Limited Use Disclosure</h2>
+          <p>GrowthTech Marketing Tools' use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" style="color:#c84826;font-weight:600;">Google API Services User Data Policy</a>, including the Limited Use requirements. Raw, derived, or aggregated Google Workspace user data is never used to create, train, fine-tune, or improve foundational or generalized machine learning or artificial intelligence models.</p>
+        </section>
+        <section style="margin-top:2rem;">
+          <h2>8. Your Rights &amp; Data Retention</h2>
+          <p>Under applicable data protection regulations, users maintain the right to request export, correction, or deletion of customer tenant data upon contract completion.</p>
+        </section>
+        <section style="margin-top:2rem;">
+          <h2>9. Contact Our Privacy &amp; Grievance Officer</h2>
+          <p>B-13 World Tech Park Block-B, Sector 30, Gurugram, Haryana 122001 | Phone: +91 89297 21558 | Email: privacy@growthtechsys.com</p>
+        </section>
+      </main>
+    `;
+  }
+
   return `
     <main class="page-content" style="max-width:960px;margin:2rem auto;padding:1.5rem;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;color:#18181b;">
       <h1>We engineer systems that compound your advantage.</h1>
