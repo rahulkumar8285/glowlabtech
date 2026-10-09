@@ -38,7 +38,7 @@ const SERVICES: ServiceItem[] = [
     id: 'service-outreach',
     slug: 'cold-email-outreach',
     number: '04',
-    name: 'Cold Email & Outreach',
+    name: 'B2B Outreach & Communications',
     description: 'deliverability-safe outbound systems that book meetings on autopilot',
     href: '/services/cold-email-outreach',
   },

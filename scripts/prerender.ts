@@ -488,6 +488,8 @@ function generateCoreBody(routePath: string): string {
         <section style="margin-top:2rem;padding:1.5rem;background:#f4f4f5;border-radius:8px;border:1px solid #e4e4e7;">
           <h2>7. Google API Limited Use Disclosure</h2>
           <p>GrowthTech Marketing Tools' use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" style="color:#c84826;font-weight:600;">Google API Services User Data Policy</a>, including the Limited Use requirements. Raw, derived, or aggregated Google Workspace user data is never used to create, train, fine-tune, or improve foundational or generalized machine learning or artificial intelligence models.</p>
+          <p style="margin-top:0.75rem;font-weight:600;">Email warming services are not provided for Google accounts.</p>
+          <p style="margin-top:0.75rem;">Our applications do not provide, harvest, or sell contact leads databases. Users upload their own permission-based, opt-in contact lists via CSV. Every email dispatched through connected email integrations automatically includes an unsubscribe link and Gmail's native RFC-8058 one-click unsubscribe header, which immediately removes recipients from future communications upon request.</p>
         </section>
         <section style="margin-top:2rem;">
           <h2>8. Your Rights &amp; Data Retention</h2>
@@ -505,6 +507,10 @@ function generateCoreBody(routePath: string): string {
     <main class="page-content" style="max-width:960px;margin:2rem auto;padding:1.5rem;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;color:#18181b;">
       <h1>We engineer systems that compound your advantage.</h1>
       <p>GrowthTechSys engineers custom AI software, automated workflow pipelines, and enterprise field workforce tracking telematics that scale revenue.</p>
+      <footer style="margin-top:2rem;padding-top:1rem;border-top:1px solid #e4e4e7;font-size:0.875rem;color:#71717a;">
+        <p>© ${new Date().getFullYear()} GrowthTechSys. All rights reserved.</p>
+        <p style="margin-top:0.25rem;">Email warming services are not provided for Google accounts.</p>
+      </footer>
     </main>
   `;
 }

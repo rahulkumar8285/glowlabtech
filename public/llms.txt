@@ -5,15 +5,15 @@
 ## Core Products & Platforms
 
 - [Field Sales Automation & GPS Workforce Tracking Software](https://growthtechsys.com/product/field-sales-tracking): Turnkey, zero-hardware field sales telemetry platform with anti-mock GPS beat plan tracking, geofenced selfie attendance, mobile retail order booking with offline SQLite sync, and automated road-distance travel expense calculation.
-- [GrowthFlow CRM & Omnichannel Marketing Platform](https://growthtechsys.com/product/growthflow-crm): High-deliverability omnichannel sales engagement platform unifying WhatsApp Business API, personalized cold outreach, multi-inbox rotation, and unified customer CRM pipelines.
-- [Data Scraper Service & Precision Web Extraction Platform](https://growthtechsys.com/product/data-scraper-service): Live multi-channel lead extraction engine pulling 100% verified B2B leads from LinkedIn, Google Maps, and business directories with residential proxy rotation, triple-tier SMTP email validation, and direct CRM sync.
+- [GrowthFlow CRM & Omnichannel Marketing Platform](https://growthtechsys.com/product/growthflow-crm): High-deliverability omnichannel sales engagement platform unifying WhatsApp Business API, personalized outreach, sender rotation, and unified customer CRM pipelines.
+- [Market Intelligence & Data Enrichment Platform](https://growthtechsys.com/product/data-scraper-service): Live multi-channel data enrichment engine pulling 100% verified business records from directories and public portals with triple-tier SMTP email validation and direct CRM sync.
 
 ## Core Engineering Services
 
 - [AI Automation & Workflows](https://growthtechsys.com/services/ai-automation): Custom event-driven automation engines, resilient webhook pipelines, intelligent document ingestion, and multi-tool internal workflow orchestration.
 - [AI Video Creation & Creative Systems](https://growthtechsys.com/services/ai-video-creation): High-velocity programmatic short-form video generation, synthetic voice cloning, automated caption synchronization, and batch creative split-testing.
-- [Lead Generation Systems](https://growthtechsys.com/services/lead-generation): Intent-driven scraping pipelines, waterfall data enrichment (Apollo, Clay, Clearbit), qualification scoring, and direct CRM routing.
-- [Cold Email & Outreach Infrastructure](https://growthtechsys.com/services/cold-email-outreach): Deliverability-hardened outbound systems, secondary domain isolation, automated inbox warming, and spam-safe sequencing.
+- [Lead Generation Systems](https://growthtechsys.com/services/lead-generation): Intent-driven intelligence feeds, waterfall data enrichment (Apollo, Clay, Clearbit), qualification scoring, and direct CRM routing.
+- [B2B Outreach & Communications Infrastructure](https://growthtechsys.com/services/cold-email-outreach): Deliverability-hardened outbound systems, secondary domain isolation, mailbox health optimization, and deliverability-safe sequencing.
 - [Website Design & Management](https://growthtechsys.com/services/website-design): High-performance digital platforms engineered for conversion, modern typography, sub-second load times, and ongoing management.
 - [Content Strategy](https://growthtechsys.com/services/content-strategy): Compounding thought leadership frameworks, editorial pipelines, organic distribution architecture, and multi-channel asset repurposing.
 - [Software Development & Custom AI](https://growthtechsys.com/services/software-development): Bespoke web applications, enterprise dashboards, fine-tuned proprietary AI models, and scalable distributed architectures.
@@ -21,7 +21,7 @@
 ## Analysis & Field Notes
 
 - [AI Video Ads for Performance Marketing: How to Test 30+ Variations a Week](https://growthtechsys.com/blog/ai-video-ads-for-performance-marketing): Strategic playbook on beating ad creative fatigue with programmatic AI video pipelines, modular batch matrix testing, and localized paid social ads for Meta and TikTok.
-- [Data Scraping Service for B2B Leads: Live Extraction vs Stale Lists](https://growthtechsys.com/blog/data-scraping-service-b2b-leads): Comprehensive guide on choosing a managed data scraping service, headless proxy extraction, triple-tier SMTP email verification, and automated CRM sync for outbound lead pipelines.
+- [Data Extraction Service for B2B Leads: Live Extraction vs Stale Lists](https://growthtechsys.com/blog/data-scraping-service-b2b-leads): Comprehensive guide on choosing a managed data extraction service, headless browser extraction, triple-tier SMTP email verification, and automated CRM sync for outbound lead pipelines.
 - [Field Sales Automation Software: How Indian Field Teams Are Cutting Costs and Closing Fraud Gaps](https://growthtechsys.com/blog/field-sales-automation-software-india): Operational analysis on eliminating mock-GPS attendance fraud, coordinate-locked visit verification, automated TA/DA road-distance calculations, and DPDP Act compliance across 500+ Indian cities.
 - [Why a Unified CRM with WhatsApp and Email Marketing Beats a Fragmented Stack](https://growthtechsys.com/blog/unified-crm-whatsapp-email-marketing): Architectural comparison showing how consolidating HubSpot, Mailchimp, WhatsApp tools, and Zapier into GrowthFlow CRM achieves 97% open rates at 65% lower tooling cost.
 - [AI Video Creation Service for Ecommerce: How to Fix Creative Fatigue Without Studio Shoots](https://growthtechsys.com/blog/ai-video-creation-service-for-ecommerce): Operational playbook for scaling Meta & TikTok ad creative variations from product stills, eliminating studio shoots, and stabilizing customer acquisition costs.

@@ -135,7 +135,7 @@ export default function ProductsPage({
     const productKeywords = isCrm
       ? 'GrowthFlow CRM, unified lead management, customer CRM, email marketing automation, whatsapp marketing platform, activity-based email personalization, 97 open rate email, universal mail provider, AWS SES email marketing, WhatsApp Business API CRM, GrowthTechSys GrowthFlow'
       : isScraper
-      ? 'data scraper service, lead data extraction, linkedin scraper, google maps scraper, B2B data extraction, verified email finder, web scraping service India, targeted lead list, SMTP email verification, live lead enrichment, GrowthTechSys Data Scraper'
+      ? 'market intelligence platform, lead data extraction, verified business directories, B2B data extraction, verified email finder, directory indexing service India, targeted business records, SMTP email verification, live data enrichment, GrowthTechSys Market Intelligence'
       : 'field sales automation software, gps employee tracking app, field force tracking, beat planning software, geo-fenced attendance app, mock gps detection, travel reimbursement automation, sales rep tracking India';
 
     const cleanup = updatePageSEO({
@@ -455,14 +455,14 @@ export default function ProductsPage({
                 {isCrm
                   ? 'Modular revenue engines built for high-conversion omnichannel growth.'
                   : isScraper
-                  ? 'Specialized scraping pipelines built for precision multi-channel extraction.'
+                  ? 'Specialized data extraction pipelines built for precision multi-channel directory intelligence.'
                   : 'Enterprise modules engineered for end-to-end field sales accountability.'}
               </h2>
               <p className="font-body text-sm sm:text-base text-neutral-600 mt-4 leading-relaxed">
                 {isCrm
                   ? 'Unify lead pipelines, behavior-triggered personalized email sequences, official WhatsApp marketing, and real-time telemetry—all connected to any mail provider.'
                   : isScraper
-                  ? 'Extract live decision-maker data across LinkedIn, Google Maps, and niche business directories with residential proxy rotation, SMTP verification, and direct CRM sync.'
+                  ? 'Extract verified company data across Google Maps, public directories, and business registries with SMTP verification and direct CRM sync.'
                   : 'Empower your field reps with mobile-first automation for beat plans, geo-checkins, instant order booking, and verified travel reimbursements—while leadership retains complete real-time visibility.'}
               </p>
             </div>
@@ -745,7 +745,7 @@ export default function ProductsPage({
                 {isCrm
                   ? 'Explore in-depth blueprints on email deliverability, universal mail provider configuration, Meta WhatsApp Business compliance, and total cost of ownership.'
                   : isScraper
-                  ? 'Read technical breakdowns on residential proxy rotation, catch-all email verification mechanics, and GDPR/DPDP compliant public web scraping.'
+                  ? 'Read technical breakdowns on session normalization, catch-all email verification mechanics, and GDPR/DPDP compliant public directory extraction.'
                   : 'Dive into in-depth playbooks detailing how to audit routes, prevent GPS spoofing, and validate client visits.'}
               </p>
             </div>
@@ -827,14 +827,14 @@ export default function ProductsPage({
                 {isCrm
                   ? 'GrowthFlow CRM & Omnichannel Marketing FAQ'
                   : isScraper
-                  ? 'Data Scraper Service & Precision Extraction FAQ'
+                  ? 'Market Intelligence & Data Enrichment FAQ'
                   : 'Field Sales Automation & Workforce Tracking FAQ'}
               </h2>
               <p className="font-body text-xs sm:text-sm text-neutral-500 mt-2.5">
                 {isCrm
                   ? 'Common questions about 97% open rates, universal mail providers, WhatsApp Business API compliance, data privacy, and CRM migrations.'
                   : isScraper
-                  ? 'Common questions about LinkedIn anti-scraping compliance, residential proxy rotation, SMTP verification, and direct CRM sync.'
+                  ? 'Common questions about public directory compliance, verification pipelines, SMTP deliverability, and direct CRM sync.'
                   : 'Common questions about beat planning, mock GPS detection, privacy laws (DPDP Act), offline sync, and ERP integrations.'}
               </p>
             </div>

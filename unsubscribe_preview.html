@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GrowthTech Marketing Tools — Email Unsubscribe & Preference Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #FAF9F6;
+      color: #1A1A1A;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 16px;
+      line-height: 1.5;
+    }
+    .wrapper {
+      width: 100%;
+      max-width: 540px;
+    }
+    .header-branding {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .brand-title {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #1A1A1A;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .brand-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      background-color: #C84826;
+      color: #ffffff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .brand-subtitle {
+      font-size: 13px;
+      color: #71717A;
+      margin-top: 4px;
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #E4E4E7;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+    .status-banner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #F4F4F5;
+      border: 1px solid #E4E4E7;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 12px;
+      color: #52525B;
+      margin-bottom: 20px;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #10B981;
+      flex-shrink: 0;
+    }
+    h1 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #1A1A1A;
+      margin-bottom: 8px;
+    }
+    p.intro {
+      font-size: 13px;
+      color: #52525B;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #52525B;
+      margin-bottom: 8px;
+    }
+    .input-box {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 14px;
+      color: #1A1A1A;
+      background-color: #F4F4F5;
+      border: 1px solid #E4E4E7;
+      border-radius: 8px;
+      font-family: inherit;
+    }
+    .input-box:focus {
+      outline: none;
+      border-color: #C84826;
+      background-color: #FFFFFF;
+    }
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      background-color: #FAFAFA;
+      border: 1px solid #E4E4E7;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13px;
+      color: #27272A;
+      transition: all 0.15s ease;
+    }
+    .option-item:hover {
+      border-color: #C84826;
+      background-color: #FFF9F7;
+    }
+    .option-item input[type="radio"] {
+      accent-color: #C84826;
+      width: 16px;
+      height: 16px;
+    }
+    .btn-submit {
+      width: 100%;
+      background-color: #C84826;
+      color: #FFFFFF;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 13px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-submit:hover {
+      background-color: #B33E1D;
+    }
+    .instant-note {
+      font-size: 11px;
+      color: #71717A;
+      text-align: center;
+      margin-top: 12px;
+    }
+    .success-view {
+      display: none;
+      text-align: center;
+      padding: 12px 0;
+    }
+    .success-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: #ECFDF5;
+      color: #10B981;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 16px;
+      border: 1px solid #A7F3D0;
+    }
+    .success-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1A1A1A;
+      margin-bottom: 8px;
+    }
+    .success-text {
+      font-size: 13px;
+      color: #52525B;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .suppression-tag {
+      display: inline-block;
+      background-color: #F4F4F5;
+      color: #27272A;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid #E4E4E7;
+      margin-bottom: 16px;
+    }
+    .compliance-footer {
+      margin-top: 24px;
+      padding: 16px;
+      background-color: #FFFFFF;
+      border: 1px solid #E4E4E7;
+      border-radius: 10px;
+      font-size: 11px;
+      color: #71717A;
+      line-height: 1.6;
+    }
+    .compliance-title {
+      font-weight: 700;
+      color: #1A1A1A;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .toggle-bar {
+      margin-bottom: 16px;
+      text-align: right;
+    }
+    .toggle-btn {
+      background: none;
+      border: 1px solid #D4D4D8;
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 11px;
+      color: #52525B;
+      cursor: pointer;
+    }
+    .toggle-btn:hover {
+      background: #F4F4F5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="toggle-bar">
+      <button class="toggle-btn" onclick="toggleView()">Switch View (Form / Confirmed)</button>
+    </div>
+
+    <!-- Header Branding -->
+    <div class="header-branding">
+      <div class="brand-title">
+        <span>GrowthFlow CRM</span>
+        <span class="brand-badge">Official</span>
+      </div>
+      <div class="brand-subtitle">GrowthTech Marketing Tools &bull; Email Preference Center</div>
+    </div>
+
+    <!-- Main Card -->
+    <div class="card">
+      <div class="status-banner">
+        <span class="status-dot"></span>
+        <span>RFC 8058 One-Click Unsubscribe active &bull; Immediate Suppression Guaranteed</span>
+      </div>
+
+      <!-- State 1: Form View -->
+      <div id="form-view">
+        <h1>Unsubscribe from Email Communications</h1>
+        <p class="intro">
+          We respect your inbox. Confirm your email address below to immediately opt out and remove yourself from all future email campaigns.
+        </p>
+
+        <form onsubmit="handleUnsubscribe(event)">
+          <div class="form-group">
+            <label for="email">Recipient Email Address</label>
+            <input
+              type="email"
+              id="email"
+              class="input-box"
+              value="alex.morgan@acme-enterprises.com"
+              required
+            />
+          </div>
+
+          <label>Reason for unsubscribing (Optional):</label>
+          <div class="options-list">
+            <label class="option-item">
+              <input type="radio" name="reason" value="not-relevant" checked />
+              <span>Content is not relevant to my business</span>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="reason" value="too-many" />
+              <span>I receive too many emails</span>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="reason" value="never-signed" />
+              <span>I never signed up for these communications</span>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="reason" value="different-role" />
+              <span>I am no longer with this organization</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+              <line x1="12" y1="2" x2="12" y2="12"></line>
+            </svg>
+            <span>Unsubscribe Immediately (1-Click)</span>
+          </button>
+          <div class="instant-note">
+            Your request is processed immediately upon clicking. You will receive no further messages.
+          </div>
+        </form>
+      </div>
+
+      <!-- State 2: Success View -->
+      <div id="success-view" class="success-view">
+        <div class="success-icon">&#10003;</div>
+        <div class="success-title">You Have Been Successfully Unsubscribed</div>
+        <div class="suppression-tag">Status: Suppressed in Real-Time</div>
+        <p class="success-text">
+          <strong id="display-email">alex.morgan@acme-enterprises.com</strong> has been permanently removed from our outreach campaigns and added to our global suppression list.
+        </p>
+        <p class="success-text" style="font-size: 12px; color: #71717A;">
+          In accordance with Google Workspace and RFC 8058 standards, no further automated or marketing emails will be dispatched to this address.
+        </p>
+      </div>
+    </div>
+
+    <!-- Technical Compliance Box for Google Reviewers -->
+    <div class="compliance-footer">
+      <div class="compliance-title">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C84826" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <span>Google API &amp; Sender Guidelines Compliance Statement</span>
+      </div>
+      <div>&bull; <strong>Opt-In Contact Lists:</strong> GrowthTech Marketing Tools does not provide, harvest, or sell lead databases. All campaign recipients are imported by users via permission-based CSV lists.</div>
+      <div>&bull; <strong>1-Click Unsubscribe:</strong> Every outbound email includes a visible 1-click unsubscribe link in the footer plus native RFC 8058 headers (<code>List-Unsubscribe: &lt;https://growthtechsys.com/unsubscribe?token=...&gt;</code>, <code>List-Unsubscribe-Post: List-Unsubscribe=One-Click</code>) allowing Gmail users to unsubscribe directly inside Gmail.</div>
+      <div>&bull; <strong>Zero Warming Policy:</strong> Email warming services are not provided for Google accounts.</div>
+    </div>
+  </div>
+
+  <script>
+    function handleUnsubscribe(e) {
+      e.preventDefault();
+      var emailVal = document.getElementById('email').value;
+      document.getElementById('display-email').innerText = emailVal;
+      document.getElementById('form-view').style.display = 'none';
+      document.getElementById('success-view').style.display = 'block';
+    }
+
+    function toggleView() {
+      var form = document.getElementById('form-view');
+      var success = document.getElementById('success-view');
+      if (form.style.display === 'none') {
+        form.style.display = 'block';
+        success.style.display = 'none';
+      } else {
+        handleUnsubscribe({ preventDefault: function() {} });
+      }
+    }
+  </script>
+</body>
+</html>

@@ -221,6 +221,12 @@ export default function PrivacyPage({ onNavigate }: PrivacyPageProps) {
               </a>
               , including the Limited Use requirements. Raw, derived, or aggregated Google Workspace user data is never used to create, train, fine-tune, or improve foundational or generalized machine learning or artificial intelligence models.
             </p>
+            <p className="font-body text-sm sm:text-base text-neutral-900 font-semibold leading-relaxed">
+              Email warming services are not provided for Google accounts.
+            </p>
+            <p className="font-body text-sm sm:text-base text-neutral-800 leading-relaxed">
+              Our applications do not provide, harvest, or sell contact leads databases. Users upload their own permission-based, opt-in contact lists via CSV. Every email dispatched through connected email integrations automatically includes an unsubscribe link and Gmail's native RFC-8058 one-click unsubscribe header, which immediately removes recipients from future communications upon request.
+            </p>
           </div>
 
           {/* 8. Individual Rights & Data Retention */}

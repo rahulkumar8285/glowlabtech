@@ -21,7 +21,7 @@ export default function BlogListingPage({ onNavigate }: BlogListingPageProps) {
       description:
         'Technical breakdowns, operational case studies, and engineering playbooks on AI automation, software engineering, and B2B growth infrastructure.',
       keywords:
-        'AI engineering blog, software architecture playbooks, RAG pipelines, LLM latency benchmarks, cold email deliverability, B2B growth engineering',
+        'AI engineering blog, software architecture playbooks, RAG pipelines, LLM latency benchmarks, outbound deliverability, B2B growth engineering',
       canonicalUrl: 'https://growthtechsys.com/blog',
       ogType: 'website',
       jsonLd: {

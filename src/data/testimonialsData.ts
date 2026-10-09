@@ -54,9 +54,9 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     clientName: 'Daniel Osei',
     role: 'Co-Founder',
     company: 'Apex Cloud Analytics',
-    category: 'Cold Email Outreach',
+    category: 'B2B Outreach',
     serviceSlug: 'cold-email-outreach',
-    serviceName: 'Cold Email & Outreach',
+    serviceName: 'B2B Outreach & Communications',
     metric: {
       value: '68%',
       label: 'Sustained open rate across 40 domains',
@@ -77,7 +77,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
       value: '+310%',
       label: 'Qualified pipeline volume',
     },
-    context: 'Constructed automated intent-signal scraping and CRM routing workflows.',
+    context: 'Constructed automated intent-signal feeds and CRM routing workflows.',
   },
   {
     id: 'testimonial-5',

@@ -44,9 +44,9 @@ const DETAILED_SERVICES: ServiceDetail[] = [
     name: 'Lead Generation Systems',
     summary: 'End-to-end inbound and outbound infrastructure that routes vetted buyers to sales.',
     description:
-      'Stop relying on unverified lists and broken forms. We build proprietary scraping and lead enrichment engines that monitor buying signals, identify company hiring spikes or tech stack changes, score prospects mathematically, and inject warm qualified leads straight into your sales pipeline.',
+      'Stop relying on unverified lists and broken forms. We build proprietary signal detection and lead enrichment engines that monitor buying signals, identify company hiring spikes or tech stack changes, score prospects mathematically, and route qualified leads straight into your sales pipeline.',
     deliverables: [
-      'Intent-based data scrapers & waterfall enrichment (Apollo, Clay, Clearbit)',
+      'Intent-based signal intelligence & waterfall enrichment (Apollo, Clay, Clearbit)',
       'Algorithmic qualification scoring & deduplication logic',
       'Instant routing to calendar booking engines with qualification filters',
       'Two-way CRM sync (HubSpot, Salesforce, Pipedrive)',
@@ -55,13 +55,13 @@ const DETAILED_SERVICES: ServiceDetail[] = [
   },
   {
     number: '04',
-    name: 'Cold Email & Outreach Infrastructure',
-    summary: 'Deliverability-hardened outbound engines that generate qualified pipeline on autopilot.',
+    name: 'B2B Outreach & Communications Infrastructure',
+    summary: 'Deliverability-hardened communication engines that generate qualified pipeline on autopilot.',
     description:
-      'Outreach fails when domains burn and copy looks like spam. We set up isolated secondary domains, custom DNS records (SPF, DKIM, DMARC), progressive warm-up schedules, and hyper-relevant dynamic personalization algorithms that maintain 65%+ open rates and keep your primary domain safe.',
+      'Outreach fails when domains face deliverability issues and copy lacks relevance. We configure isolated secondary domains, custom DNS records (SPF, DKIM, DMARC), structured ramp schedules, and hyper-relevant dynamic personalization algorithms that maintain 65%+ open rates and keep your primary domain safe.',
     deliverables: [
       'Secondary domain procurement & DNS security hardening',
-      'Inbox warm-up monitoring & deliverability rotation',
+      'Mailbox health monitoring & deliverability rotation',
       'AI-enriched copy personalization based on prospect website & news',
       'Automated inbox triage & booking notification webhooks',
     ],

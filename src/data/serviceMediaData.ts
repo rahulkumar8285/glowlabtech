@@ -220,7 +220,7 @@ export const SERVICE_MEDIA_CONFIGS: Record<string, ServiceMediaConfig> = {
       height: 768,
       aspectRatio: '4:3',
       slotId: 'HERO',
-      title: 'Waterfall Scraping & Lead Scoring Engine',
+      title: 'Waterfall Enrichment & Lead Scoring Engine',
       suggestion:
         'Technical pipeline diagram showing multi-provider waterfall cascades (Apollo, Clay, Hunter) and algorithmic ICP lead scoring into CRM.',
       formats: 'PNG / WebP / SVG',
@@ -241,10 +241,10 @@ export const SERVICE_MEDIA_CONFIGS: Record<string, ServiceMediaConfig> = {
       slotId: 'SLOT 03',
       title: 'Waterfall Enrichment & CRM Pipeline Architecture',
       suggestion:
-        'Technical flowchart: Signal Scrapers → Waterfall Enrichment → Algorithmic Scoring → Direct CRM Pipeline Injection.',
+        'Technical flowchart: Signal Intelligence → Waterfall Enrichment → Algorithmic Scoring → Direct CRM Pipeline Injection.',
       formats: 'PNG / WebP / SVG',
       src: '/images/services/lead-generation-architecture.png',
-      alt: 'Lead Generation Systems 4-step engineering architecture diagram: Signal Scrapers, Waterfall Enrichment, Algorithmic Scoring, and CRM Injection',
+      alt: 'Lead Generation Systems 4-step engineering architecture diagram: Signal Intelligence, Waterfall Enrichment, Algorithmic Scoring, and CRM Injection',
       objectFit: 'contain',
     },
     outcomeVisual: {
@@ -269,10 +269,10 @@ export const SERVICE_MEDIA_CONFIGS: Record<string, ServiceMediaConfig> = {
       slotId: 'HERO',
       title: 'Deliverability-Hardened Outbound Infrastructure',
       suggestion:
-        'Infrastructure architecture showing secondary domain isolation, SPF/DKIM/DMARC alignment, automated warm-up rotation, and inbox triage.',
+        'Infrastructure architecture showing secondary domain isolation, SPF/DKIM/DMARC alignment, deliverability optimization, and inbox triage.',
       formats: 'PNG / WebP / SVG',
       src: '/images/services/cold-email-hero.png',
-      alt: 'Cold Email & Outreach secondary domain isolation and deliverability architecture',
+      alt: 'B2B Outreach & Communications secondary domain isolation and deliverability architecture',
       objectFit: 'contain',
     },
     challengeIcons: [
@@ -288,10 +288,10 @@ export const SERVICE_MEDIA_CONFIGS: Record<string, ServiceMediaConfig> = {
       slotId: 'SLOT 03',
       title: 'Secondary Domain Isolation & Deliverability Architecture',
       suggestion:
-        'Technical flowchart: Secondary Domain Isolation → Strict Security DNS Hardening → Automated Warm-Up & Rotation → AI Personalization Engine.',
+        'Technical flowchart: Secondary Domain Isolation → Strict Security DNS Hardening → Deliverability Optimization & Rotation → AI Personalization Engine.',
       formats: 'PNG / WebP / SVG',
       src: '/images/services/cold-email-architecture.png',
-      alt: 'Cold Email & Outreach 4-step engineering architecture diagram: Secondary Domain Isolation, Strict Security DNS Hardening, Automated Warm-Up & Rotation, AI Personalization Engine',
+      alt: 'B2B Outreach & Communications 4-step engineering architecture diagram: Secondary Domain Isolation, Strict Security DNS Hardening, Deliverability Optimization & Rotation, AI Personalization Engine',
       objectFit: 'contain',
     },
     outcomeVisual: {
@@ -301,10 +301,10 @@ export const SERVICE_MEDIA_CONFIGS: Record<string, ServiceMediaConfig> = {
       slotId: 'OUTCOME',
       title: 'Dedicated Deliverability Monitoring & Outbound Telemetry Dashboard',
       suggestion:
-        'Deliverability dashboard showing inbox placement rate, secondary domain health, warm-up volume ramp, and mailbox status telemetry.',
+        'Deliverability dashboard showing inbox placement rate, secondary domain health, volume ramp, and mailbox status telemetry.',
       formats: 'PNG / WebP / SVG',
       src: '/images/services/cold-email-outcome.png',
-      alt: 'Cold Email & Outreach dedicated deliverability monitoring dashboard and secondary domain telemetry preview',
+      alt: 'B2B Outreach & Communications dedicated deliverability monitoring dashboard and secondary domain telemetry preview',
       objectFit: 'contain',
     },
   },
@@ -579,10 +579,10 @@ export const PRODUCT_MEDIA_CONFIGS: Record<string, ServiceMediaConfig> = {
         'Live multi-channel extraction architecture connecting LinkedIn, Google Maps, and business directories through central verification.',
       formats: 'PNG / WebP',
       src: '/images/products/data-scraper-hero.png',
-      alt: 'Data Scraper Service live multi-channel extraction architecture connecting LinkedIn, Google Maps, and verified lead records',
+      alt: 'Market Intelligence Platform live multi-channel extraction architecture connecting LinkedIn, Google Maps, and verified lead records',
       objectFit: 'contain',
     },
-    // 2. Composite interface showcasing query builder, anti-captcha stealth monitor, technographic tag inspector, and lead deduplication table
+    // 2. Composite interface showcasing query builder, rate monitor, technographic tag inspector, and lead deduplication table
     modulesComposite: {
       width: 1024,
       height: 576,
@@ -590,13 +590,13 @@ export const PRODUCT_MEDIA_CONFIGS: Record<string, ServiceMediaConfig> = {
       slotId: 'SLOT 02 / MODULES',
       title: 'data-scraper-modules-composite.png',
       suggestion:
-        'Composite interface showcasing query builder, anti-captcha stealth monitor, technographic tag inspector, and lead deduplication table.',
+        'Composite interface showcasing query builder, rate monitor, technographic tag inspector, and lead deduplication table.',
       formats: 'PNG / WebP',
       src: '/images/products/data-scraper-modules-composite.png',
-      alt: 'Data Scraper Service query builder, proxy monitor, and contact enrichment tables',
+      alt: 'Market Intelligence Platform query builder, cluster monitor, and contact enrichment tables',
       objectFit: 'contain',
     },
-    // 3. 4-step extraction pipeline: Target ICP Definition → Distributed Stealth Scraping → Deep Enrichment & Verification → Clean CRM Delivery
+    // 3. 4-step extraction pipeline: Target ICP Definition → Distributed Public Extraction → Deep Enrichment & Verification → Clean CRM Delivery
     dayCycleWorkflow: {
       width: 1024,
       height: 341,
@@ -604,10 +604,10 @@ export const PRODUCT_MEDIA_CONFIGS: Record<string, ServiceMediaConfig> = {
       slotId: 'SLOT 03 / WORKFLOW',
       title: 'data-scraper-workflow.png',
       suggestion:
-        '4-step extraction pipeline: Target ICP Definition → Distributed Stealth Scraping → Deep Enrichment & Verification → Clean CRM Delivery.',
+        '4-step extraction pipeline: Target ICP Definition → Distributed Public Extraction → Deep Enrichment & Verification → Clean CRM Delivery.',
       formats: 'PNG / WebP / SVG',
       src: '/images/products/data-scraper-workflow.png',
-      alt: 'Data Scraper Service 4-step extraction architecture: Query Setup, Stealth Scraping, Multi-Tier Verification, and CRM Sync',
+      alt: 'Market Intelligence Platform 4-step extraction architecture: Query Setup, Public Extraction, Multi-Tier Verification, and CRM Sync',
       objectFit: 'contain',
     },
     // 4. Omnichannel data extraction terminal connected to GrowthFlow CRM and verified lead download center
@@ -621,7 +621,7 @@ export const PRODUCT_MEDIA_CONFIGS: Record<string, ServiceMediaConfig> = {
         'Omnichannel data extraction terminal connected to GrowthFlow CRM and verified lead download center.',
       formats: 'PNG / WebP',
       src: '/images/products/data-scraper-showcase.png',
-      alt: 'Data Scraper Service high-throughput extraction console with live telemetry, alert status, and spreadsheet export',
+      alt: 'Market Intelligence Platform high-throughput extraction console with live telemetry, alert status, and spreadsheet export',
       objectFit: 'contain',
     },
   },

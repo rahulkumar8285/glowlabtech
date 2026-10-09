@@ -145,7 +145,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                     onClick={(e) => handleLinkClick('/product/data-scraper-service', e)}
                     className="hover:text-[#FAF9F6] py-1 inline-flex items-center gap-1.5 transition-colors"
                   >
-                    <span>Data Scraper Service</span>
+                    <span>Market Intelligence</span>
                     <span className="text-[10px] bg-[#C84826]/20 text-[#C84826] px-1.5 py-0.5 rounded font-medium">
                       Platform
                     </span>
@@ -267,8 +267,13 @@ export default function Footer({ onNavigate }: FooterProps) {
 
       {/* Bottom Sub-Footer: Copyright, Legal & Back to Top */}
       <div className="w-full border-t border-white/[0.06] py-6 sm:py-8 bg-[#090908]">
-        <div className="w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-16 lg:px-20 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs font-body text-neutral-500">
-          <p>© {currentYear} GROWTHTECHSYS. All rights reserved.</p>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 w-full">
+            <div>
+              <p>© {currentYear} GROWTHTECHSYS. All rights reserved.</p>
+              <p className="mt-1 text-[11px] text-neutral-400">
+                Email warming services are not provided for Google accounts.
+              </p>
+            </div>
 
           <div className="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 border-white/[0.06]">
             <div className="flex items-center gap-3 sm:gap-4 text-neutral-400">

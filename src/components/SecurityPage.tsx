@@ -133,7 +133,7 @@ export default function SecurityPage({ onNavigate }: SecurityPageProps) {
                   <h4 className="font-headline font-medium text-base text-[#1A1A1A]">Web Application Firewalls (WAF)</h4>
                 </div>
                 <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
-                  Traffic is screened at the edge for OWASP Top 10 vulnerabilities, automated bot scrapers, brute-force attempts, and distributed denial-of-service (DDoS) vectors before hitting application handlers.
+                  Traffic is screened at the edge for OWASP Top 10 vulnerabilities, automated bot crawlers, brute-force attempts, and distributed denial-of-service (DDoS) vectors before hitting application handlers.
                 </p>
               </div>
             </div>

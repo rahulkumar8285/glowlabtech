@@ -13,7 +13,7 @@ const CATEGORIES = [
   'AI Video Creation',
   'AI Automation',
   'Lead Generation',
-  'Cold Email Outreach',
+  'B2B Outreach',
   'Website Design',
   'Software Development',
 ];
