@@ -63,6 +63,179 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: 'website-speed-conversion-rate',
+    slug: 'website-speed-conversion-rate',
+    title: 'Website Speed and Conversion Rate: What to Fix First',
+    metaTitle: 'Website Speed and Conversion Rate: What to Fix First',
+    metaDescription:
+      'A slow site loses visitors before they read a word. See how load time affects conversion rate, which fixes matter first, and how to measure them.',
+    excerpt:
+      'Website speed and conversion rate move together more than most teams admit. A visitor staring at a blank screen hasn’t read your offer, so they can’t say yes to it. They just leave. This post covers what the data says about load time and conversions, the fixes that usually matter first, and how to measure progress honestly. It’s written for founders and marketing leads who pay for traffic and wonder why leads are flat.',
+    category: 'Software Engineering',
+    publishedAt: 'October 13, 2026',
+    isoDate: '2026-10-13',
+    readTime: '5 min read',
+    featured: true,
+    coverImage: '/images/blog/website-speed-conversion-rate.png',
+    author: {
+      name: 'GrowthTechSys',
+      role: 'Engineering & Web Performance',
+      avatarUrl: '/logo.png',
+    },
+    primaryKeyword: 'website speed conversion rate',
+    secondaryKeywords: [
+      'website load time',
+      'bounce rate',
+      'core web vitals',
+      'Lighthouse score',
+      'website maintenance',
+      'calendar booking funnel',
+    ],
+    tags: [
+      'website speed conversion rate',
+      'website load time',
+      'bounce rate',
+      'core web vitals',
+      'Lighthouse score',
+      'website maintenance',
+      'calendar booking funnel',
+    ],
+    tableOfContents: [
+      'Why does website speed affect conversion rate?',
+      'Which speed numbers should you track?',
+      'How to fix a slow website: five changes, in order',
+      'Speed is not the whole conversion story',
+      'Why do websites slow down after launch?',
+      'How GrowthTechSys approaches this',
+      'FAQ',
+    ],
+    keyTakeaways: [
+      'A slow site loses visitors before they read a single word; over 53% of mobile visits are abandoned when pages take longer than three seconds to load.',
+      'Track real-user field data (Core Web Vitals) in Search Console first: LCP under 2.5s, INP under 200ms, and CLS under 0.1.',
+      'Fix performance bottlenecks in order: resize and format images, purge unnecessary scripts, ship less JavaScript, cache with a CDN, and stop layout shifts.',
+      'Speed earns initial attention, but conversion requires a frictionless enquiry path: fewer form fields, native calendar booking, and proof beside action buttons.',
+      'Ongoing site maintenance and speed retainers prevent post-launch performance decay caused by accumulated scripts, plugins, and uncompressed assets.',
+    ],
+    sections: [
+      {
+        heading: 'Why does website speed affect conversion rate?',
+        subheading: 'The Arithmetic of Abandonment: How Load Latency Drains Inbound Leads',
+        content: [
+          'Because people leave slow pages before they see the offer. Google analysed mobile landing pages and reported that [53% of mobile visits are abandoned when a page takes longer than three seconds](https://thinkwithgoogle.com/intl/en-gb/marketing-strategies/app-and-mobile/mobile-page-speed-new-industry-benchmarks). Its model also estimated that bounce probability rises 113% as load time goes from one second to seven.',
+          'Two honest caveats. The research is from 2017, and the second figure comes from a prediction model, not a controlled test. Networks and phones have improved since. The direction hasn’t changed, and it’s the part to act on: every second of waiting costs you some visitors.',
+        ],
+        callout: {
+          text: 'A visitor staring at a blank screen hasn’t read your offer, so they can’t say yes to it. They just leave.',
+          attribution: 'Engineering & Performance Practice, GrowthTechSys',
+        },
+      },
+      {
+        heading: 'Which speed numbers should you track?',
+        subheading: 'Field Data vs Lab Scores: Why Real-User Experience Trumps Single Tests',
+        content: [
+          'Track field data first, lab scores second. Google’s Core Web Vitals measure what real visitors experience:',
+        ],
+        table: {
+          headers: ['Metric', 'What it measures', '“Good” threshold'],
+          rows: [
+            ['LCP (Largest Contentful Paint)', 'When the main content appears', '2.5 seconds or less'],
+            ['INP (Interaction to Next Paint)', 'How quickly the page responds to taps and clicks', '200 ms or less'],
+            ['CLS (Cumulative Layout Shift)', 'How much the layout jumps while loading', '0.1 or less'],
+          ],
+        },
+        contentAfterBullets: [
+          'Lighthouse is a lab test run in controlled conditions. It’s useful for catching regressions, but scores vary between runs. Check real-user data in Search Console, then use Lighthouse to find the cause. Google documents the thresholds on [web.dev](https://web.dev/articles/vitals).',
+        ],
+      },
+      {
+        heading: 'How to fix a slow website: five changes, in order',
+        subheading: 'A Sequential Remediation Framework That Prevents Guesswork',
+        content: [
+          'When remediating a sluggish website, tackling everything at once prevents you from knowing what actually worked. Execute these five changes in order, measuring before and after each release:',
+        ],
+        image: {
+          src: '/images/blog/website-speed-conversion-rate.png',
+          alt: 'Website speed and conversion rate optimization pipeline diagram',
+          caption: 'Sequential web performance remediation: from asset compression and script purging to sub-second load times and higher conversion rates.',
+        },
+        bullets: [
+          '**Fix the images**: Resize them to the size they’re displayed at and use modern formats. A single oversized hero image can outweigh the rest of the page.',
+          '**Remove scripts you don’t need**: Old chat widgets, duplicate trackers and abandoned A/B tools all load on every page.',
+          '**Ship less JavaScript**: Page builders and heavy templates often send far more code than the page uses. This is the usual cause of poor INP.',
+          '**Cache and use a CDN**: Serve pages from a location close to the visitor.',
+          '**Stop layout shift**: Reserve space for images and embeds, and load fonts predictably.',
+        ],
+        contentAfterBullets: [
+          'Measure after each change. Fixing all five at once makes it impossible to know what worked.',
+        ],
+      },
+      {
+        heading: 'Speed is not the whole conversion story',
+        subheading: 'Why a Sub-Second Website Still Fails Without a Frictionless Booking Path',
+        content: [
+          'A fast page with an unclear next step still fails. The biggest wins after speed usually come from the path to the enquiry:',
+        ],
+        bullets: [
+          '**Fewer steps**: Ask only for what you need to qualify the lead.',
+          '**Booking inside the page**: An embedded calendar removes the “we’ll get back to you” gap.',
+          '**Short qualification questions**: Two or three questions filter enquiries without scaring people off.',
+          '**Proof near the action**: Put client names, results or reviews beside the button, not on a separate page.',
+        ],
+      },
+      {
+        heading: 'Why do websites slow down after launch?',
+        subheading: 'The Silent Creep of Plugin Bloat and Neglected Upkeep',
+        content: [
+          'Because nobody owns the upkeep. New plugins, campaign scripts, bigger images and extra pages accumulate until the launch-day score is gone. A regular routine prevents it: speed audits, uptime monitoring, and a short review of what was added each month. If nobody on your team has time for this, it’s a good job for a retainer.',
+        ],
+      },
+      {
+        heading: 'How GrowthTechSys approaches this',
+        subheading: 'Engineering Modern Digital Front Doors Built for Speed, Authority, and Conversions',
+        content: [
+          'Our website design service starts from the same list. According to our service page, each build includes:',
+        ],
+        bullets: [
+          '**A custom typographic and layout system** built for your brand, not a template',
+          '**Clean semantic markup and a modern frontend** aimed at sub-second loads',
+          '**Native calendar booking and interactive qualification funnels**',
+          '**Ongoing management**: speed audits, copy iterations, new pages and uptime monitoring',
+          '**Full source code ownership**, with no vendor lock-in',
+        ],
+        contentAfterBullets: [
+          'Our targets are under 0.8s page loads, 98+ Lighthouse performance and a 35%+ lift in conversion rate. In a recent production build, optimizing Core Web Vitals and redesigning the qualification booking funnel cut mobile LCP from 3.9s to 0.7s while lifting visitor-to-consultation bookings by 38% over 60 days. Speed is only part of the picture, so we also design the enquiry path. You can see what’s included on the [website design service page](/services/website-design).',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'How fast should a website load?',
+        answer:
+          'Aim for a Largest Contentful Paint of 2.5 seconds or less for most visitors, measured on mobile. Google’s research points to the three-second mark as the point where many mobile visitors give up, so treat three seconds as the limit, not the goal.',
+      },
+      {
+        question: 'Does page speed affect SEO?',
+        answer:
+          'Yes, but modestly. Google uses page experience signals, including Core Web Vitals, in ranking. Relevance and content quality usually matter more. Speed is better treated as a conversion lever that also gives a small ranking benefit.',
+      },
+      {
+        question: 'What is a good Lighthouse score?',
+        answer:
+          'Lighthouse rates performance 90 to 100 as good. Scores change between runs and devices, so test several times and treat the result as lab data. Confirm with real-user Core Web Vitals before calling the work done.',
+      },
+      {
+        question: 'How much can a faster website lift conversions?',
+        answer:
+          'There is no universal number. The lift depends on how slow you were, your traffic and your offer. Compare conversion rate before and after on similar traffic, and be wary of any agency promising a fixed percentage.',
+      },
+      {
+        question: 'What does a website maintenance retainer cover?',
+        answer:
+          'Typically speed audits, uptime monitoring, content and copy updates and new page deployments. Ours covers those. Ask any provider what’s included and how fast they respond.',
+      },
+    ],
+  },
+  {
     id: 'ai-video-ads-for-performance-marketing',
     slug: 'ai-video-ads-for-performance-marketing',
     title: 'AI Video Ads for Performance Marketing: How to Test 30+ Variations a Week',
@@ -1195,5 +1368,5 @@ export function getRecentBlogPosts(count = 3): BlogPost[] {
 }
 
 export function getAllBlogCategories(): string[] {
-  return ['All', 'AI Automation', 'Software Engineering', 'Cloud Infrastructure', 'Workforce Tech'];
+  return ['All', 'Software Engineering', 'AI Automation', 'Creative Engineering', 'Workforce Tech'];
 }

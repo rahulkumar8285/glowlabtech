@@ -131,6 +131,9 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
   };
 
   const handleNavigate = (path: string, e: MouseEvent) => {
+    if (path.startsWith('http://') || path.startsWith('https://')) {
+      return;
+    }
     if (onNavigate) {
       e.preventDefault();
       onNavigate(path);
@@ -150,12 +153,30 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
       const token = match[0];
       if (token.startsWith('[') && token.includes('](')) {
         const linkText = token.slice(1, token.indexOf(']('));
-        const linkUrl = token.slice(token.indexOf('](') + 2, -1);
+        const rawUrl = token.slice(token.indexOf('](') + 2, -1);
+        const isExternal =
+          rawUrl.startsWith('http://') ||
+          rawUrl.startsWith('https://') ||
+          rawUrl.startsWith('mailto:');
+        const isInternalGrowthTech =
+          rawUrl.startsWith('https://growthtechsys.com') ||
+          rawUrl.startsWith('http://growthtechsys.com');
+        const finalUrl = isInternalGrowthTech
+          ? rawUrl.replace(/^https?:\/\/growthtechsys\.com/, '')
+          : rawUrl;
+        const isExternalTarget = isExternal && !isInternalGrowthTech;
+
         parts.push(
           <a
             key={match.index}
-            href={linkUrl}
-            onClick={(e) => handleNavigate(linkUrl, e)}
+            href={finalUrl}
+            target={isExternalTarget ? '_blank' : undefined}
+            rel={isExternalTarget ? 'noopener noreferrer' : undefined}
+            onClick={(e) => {
+              if (!isExternalTarget) {
+                handleNavigate(finalUrl, e);
+              }
+            }}
             className="text-[#C84826] font-medium hover:underline underline-offset-2 cursor-pointer"
           >
             {linkText}
@@ -273,6 +294,12 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
               <time dateTime={post.isoDate}>{post.publishedAt}</time>
               <span className="text-neutral-300">•</span>
               <span>{post.readTime}</span>
+              {post.author && (
+                <>
+                  <span className="text-neutral-300">•</span>
+                  <span>By {post.author.name}</span>
+                </>
+              )}
             </div>
 
             {/* Social Share Buttons (Right Side) */}
