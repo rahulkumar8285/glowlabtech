@@ -165,9 +165,9 @@ export const BLOG_POSTS: BlogPost[] = [
           'To deliver measurable return on investment, field sales tracking software must be engineered specifically for Indian network realities, battery constraints, and field team behavior across dense tier-1 corridors and remote tier-2/tier-3 distribution belts.',
         ],
         image: {
-          src: '/images/products/field-sales-route-comparison.png',
-          alt: 'Field sales beat planning and route comparison diagram',
-          caption: 'Automated beat planning and route optimization: shifting from erratic manual transit to sequential, optimized counter coverage.',
+          src: '/images/blog/field-sales-tracking-software-india-guide.png',
+          alt: 'Field sales tracking mobile check-in app and live route map dashboard',
+          caption: 'Automated field sales tracking architecture: mobile geo-fenced counter check-ins paired with live beat route telematics and real-time counter coverage dashboards.',
         },
         bullets: [
           '**1. Geo-Fenced Counter Check-Ins**: A location pin sent on WhatsApp proves where a phone was for one second; it does not prove a client meeting took place. Modern field tracking software enforces geo-fencing: the sales executive can only initiate a "Client Check-in" when their device’s GPS coordinates match the verified latitude/longitude of the distributor or retailer. Once checked in, a session timer tracks dwell time at the counter.',
