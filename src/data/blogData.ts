@@ -123,6 +123,11 @@ export const BLOG_POSTS: BlogPost[] = [
           'Deploying dedicated [field sales tracking software](/product/field-sales-tracking) converts field operations from an honesty-dependent administrative burden into an automated, data-driven revenue engine. Below is an engineering-first breakdown of how [field force automation](/blog/field-sales-automation-software-india) works, why manual tracking fails at scale, and the architectural requirements needed for field execution in India.',
           'Most distributed sales teams rely on a patchwork of consumer messaging apps and spreadsheet templates. While this approach has zero initial software cost, it incurs severe downstream operational losses:',
         ],
+        image: {
+          src: '/images/blog/field-sales-manual-vs-automated.jpg',
+          alt: 'Manual spreadsheets and WhatsApp reporting vs automated mobile beat tracking',
+          caption: 'From chaotic WhatsApp pings and disputed spreadsheets to verified, sequential counter check-ins and automated analytics.',
+        },
         table: {
           headers: ['Friction Point', 'Manual / WhatsApp Workflow', 'Automated Field Tracking Platform'],
           rows: [
@@ -165,9 +170,9 @@ export const BLOG_POSTS: BlogPost[] = [
           'To deliver measurable return on investment, field sales tracking software must be engineered specifically for Indian network realities, battery constraints, and field team behavior across dense tier-1 corridors and remote tier-2/tier-3 distribution belts.',
         ],
         image: {
-          src: '/images/blog/field-sales-tracking-software-india-guide.png',
-          alt: 'Field sales tracking mobile check-in app and live route map dashboard',
-          caption: 'Automated field sales tracking architecture: mobile geo-fenced counter check-ins paired with live beat route telematics and real-time counter coverage dashboards.',
+          src: '/images/blog/field-sales-geofence-checkin.jpg',
+          alt: 'Geo-fenced retailer counter check-in verification with mobile app lock',
+          caption: 'Geo-fenced counter verification: GPS radius lock enforces physical presence within 50 meters of the retail storefront before unlocking check-in.',
         },
         bullets: [
           '**1. Geo-Fenced Counter Check-Ins**: A location pin sent on WhatsApp proves where a phone was for one second; it does not prove a client meeting took place. Modern field tracking software enforces geo-fencing: the sales executive can only initiate a "Client Check-in" when their device’s GPS coordinates match the verified latitude/longitude of the distributor or retailer. Once checked in, a session timer tracks dwell time at the counter.',
@@ -182,6 +187,11 @@ export const BLOG_POSTS: BlogPost[] = [
         content: [
           'At [GrowthTechSys](https://growthtechsys.com/), we build field sales automation systems engineered around simplicity and real-world field compliance across Indian logistics corridors, FMCG distributor networks, and pharmaceutical sales beats:',
         ],
+        image: {
+          src: '/images/blog/field-sales-telematics-dashboard.png',
+          alt: 'Field telematics route tracking and manager analytics dashboard',
+          caption: 'Enterprise telematics architecture: live GPS beat route trajectories convert into dispute-free travel allowances and real-time counter coverage.',
+        },
         bullets: [
           '**Minimal Battery Footprint**: Intelligent location sampling algorithms poll high-accuracy GPS only during state transitions (walking, driving, arriving at a geo-fence) rather than running continuous battery-draining polling, typically consuming less than 6–8% battery over a 10-hour shift.',
           '**Unified Pipeline Integration**: Field data feeds directly into our [GrowthFlow CRM](/product/growthflow-crm) and enterprise workflows, syncing distributor orders with back-office accounting, inventory warehouses, and automated WhatsApp notification bots.',
