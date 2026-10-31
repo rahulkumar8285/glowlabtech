@@ -23,6 +23,7 @@ import SecurityPage from './components/SecurityPage';
 import FinalCTASection from './components/FinalCTASection';
 import Footer from './components/Footer';
 import CookieBanner from './components/CookieBanner';
+import WhatsAppButton from './components/WhatsAppButton';
 import PreLoader from './components/PreLoader';
 import { updatePageSEO } from './utils/seo';
 
@@ -353,6 +354,9 @@ export default function App() {
 
       {/* GLOBAL FOOTER */}
       <Footer onNavigate={navigateTo} />
+
+      {/* FLOATING WHATSAPP CHAT BUTTON */}
+      <WhatsAppButton />
 
       {/* COOKIE CONSENT BANNER */}
       <CookieBanner />

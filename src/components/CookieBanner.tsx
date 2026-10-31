@@ -64,7 +64,7 @@ export default function CookieBanner() {
       role="dialog"
       aria-live="polite"
       aria-label="Cookie consent banner"
-      className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-6 sm:max-w-md z-50 animate-in fade-in slide-in-from-bottom-5 duration-300"
+      className="fixed bottom-4 left-4 right-4 sm:left-6 sm:right-auto sm:bottom-6 sm:max-w-md z-50 animate-in fade-in slide-in-from-bottom-5 duration-300"
     >
       <div className="relative w-full bg-[#141413]/95 backdrop-blur-md text-[#FAF9F6] border border-white/10 rounded-2xl shadow-2xl p-5 sm:p-6 overflow-hidden">
         {/* Subtle decorative background glow */}
