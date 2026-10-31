@@ -600,9 +600,25 @@ export default function BlogDetailPage({ slug, onNavigate }: BlogDetailPageProps
               {relatedPosts.map((related) => (
                 <article
                   key={related.id}
-                  className="group bg-white border border-black/[0.06] hover:border-black/20 p-6 rounded-xl transition-all duration-200 flex flex-col justify-between"
+                  className="group bg-white border border-black/[0.06] hover:border-black/20 p-5 sm:p-6 rounded-xl transition-all duration-200 flex flex-col justify-between"
                 >
                   <div>
+                    {related.coverImage && (
+                      <a
+                        href={`/blog/${related.slug}`}
+                        onClick={(e) => handleNavigate(`/blog/${related.slug}`, e)}
+                        className="block mb-4 overflow-hidden rounded-lg aspect-[16/9] bg-black/[0.02] border border-black/5 cursor-pointer"
+                        aria-label={related.title}
+                      >
+                        <img
+                          src={related.coverImage}
+                          alt={related.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                        />
+                      </a>
+                    )}
+
                     <div className="flex items-center gap-2 mb-2.5 text-xs font-body text-neutral-500">
                       <span className="font-medium text-[#C84826]">{related.category}</span>
                       <span>•</span>
