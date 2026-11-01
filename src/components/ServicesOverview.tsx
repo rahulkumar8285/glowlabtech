@@ -66,6 +66,14 @@ const SERVICES: ServiceItem[] = [
     description: 'tailored web apps, internal dashboards, and fine-tuned proprietary AI models',
     href: '/services/software-development',
   },
+  {
+    id: 'service-seo',
+    slug: 'seo-optimization',
+    number: '08',
+    name: 'SEO & Search Engine Growth',
+    description: 'technical SEO, Google Core Web Vitals speed, and local GMB optimization built to drive direct inbound calls',
+    href: '/services/seo-optimization',
+  },
 ];
 
 interface ServiceRowProps {

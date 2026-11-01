@@ -429,6 +429,54 @@ export const SERVICES_DATA: ServiceItem[] = [
       { value: '< 4 wks', label: 'Sprint delivery to production' },
     ],
   },
+  {
+    id: 'service-seo',
+    slug: 'seo-optimization',
+    number: '08',
+    name: 'SEO Optimization & Search Engine Growth',
+    shortTitle: 'SEO & Search Growth',
+    tagline: 'Technical SEO, Google Core Web Vitals acceleration, and Google Business Profile (GMB) dominance.',
+    summary: 'High-intent commercial search ranking, sub-second web vitals speed, and local GMB optimization engineered to turn organic Google searchers into direct inbound calls.',
+    description:
+      'We reject vanity keyword fluff and spam link tactics that get penalized by Google helpful content updates. We engineer technical, high-performance search systems strictly aligned with Google’s official Search Essentials and Core Web Vitals benchmarks. From semantic JSON-LD schema graphs and sub-second page delivery to local Google Business Profile (GMB) 3-pack dominance, we optimize your entire digital footprint so qualified commercial prospects find your business, trust your authority, and pick up the phone to call you.',
+    challenges: [
+      'Stagnant organic rankings stuck behind competitors on page 2+ despite paying thousands for generic SEO blog content',
+      'Sluggish page load speeds and failing Google Core Web Vitals (LCP > 2.5s, INP > 200ms) causing high bounce rates and algorithmic ranking penalties',
+      'Neglected Google Business Profile (GMB) losing local 3-pack map dominance, direct phone calls, and high-intent customer discovery',
+      'Zero conversion optimization on organic traffic—visitors land, glance at generic walls of text, and bounce without calling or booking',
+    ],
+    architecture: [
+      {
+        title: 'Google Core Web Vitals & Performance Engineering',
+        description: 'Sub-second time-to-first-byte (TTFB), Largest Contentful Paint (LCP < 0.8s), Interaction to Next Paint (INP < 200ms), and 98+ Google Lighthouse scores across desktop and mobile devices.',
+      },
+      {
+        title: 'Commercial Keyword Clustering & Search Intent Mapping',
+        description: 'Targeting high-intent, bottom-of-funnel commercial search terms, zero-click answer snippets, and programmatic topic clusters that attract ready-to-buy decision-makers.',
+      },
+      {
+        title: 'Schema.org Microdata & Semantic Entity Graphs',
+        description: 'Full JSON-LD structured data implementation (LocalBusiness, Service, Article, FAQPage, BreadcrumbList) for instant Google rich snippets and enhanced AI search indexation.',
+      },
+      {
+        title: 'Google Business Profile (GMB) & Local 3-Pack Optimization',
+        description: 'Complete GMB profile verification, localized geo-coordinates, NAP citation consistency, review generation workflows, and direct click-to-call conversion tracking.',
+      },
+    ],
+    deliverables: [
+      'Comprehensive Technical SEO & Core Web Vitals performance audit with code-level remediation',
+      'Google Business Profile (GMB) 3-pack ranking optimization with geo-tagging & direct-call funnels',
+      'High-intent commercial keyword clustering & competitive gap analysis mapped to Google Search Essentials',
+      'Automated Schema.org JSON-LD microdata integration across all service, product, and blog pages',
+      'Direct inbound call tracking, Google Search Console telemetry, and monthly algorithmic performance reports',
+    ],
+    outcome: 'Dominant top-3 Google rankings on commercial keywords, sub-second page performance, and a measurable surge in direct phone calls and qualified sales enquiries.',
+    metrics: [
+      { value: '< 0.8s', label: 'Core Web Vitals LCP' },
+      { value: 'Top 3', label: 'Local GMB 3-Pack rank' },
+      { value: '+65%', label: 'Inbound calls & leads' },
+    ],
+  },
 ];
 
 export const PRODUCTS_DATA: ProductItem[] = [

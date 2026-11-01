@@ -448,6 +448,53 @@ export const SERVICE_MEDIA_CONFIGS: Record<string, ServiceMediaConfig> = {
       objectFit: 'contain',
     },
   },
+  'seo-optimization': {
+    headerHero: {
+      width: 1024,
+      height: 768,
+      aspectRatio: '4:3',
+      slotId: 'HERO',
+      title: 'Google Search & Local GMB Growth Architecture',
+      suggestion:
+        'Isometric diagram showing technical Core Web Vitals optimization, semantic schema graph, commercial keyword clusters, and local GMB 3-pack call conversions.',
+      formats: 'PNG / WebP / SVG',
+      src: '/images/services/seo-optimization-hero.png',
+      alt: 'SEO Optimization & Search Engine Growth isometric diagram illustrating Google Core Web Vitals, Schema.org microdata, and local GMB map call generation',
+      objectFit: 'contain',
+    },
+    challengeIcons: [
+      '/images/services/seo-optimization-fail-01.png',
+      '/images/services/seo-optimization-fail-02.png',
+      '/images/services/seo-optimization-fail-03.png',
+      '/images/services/seo-optimization-fail-04.png',
+    ],
+    architectureDiagram: {
+      width: 1024,
+      height: 341,
+      aspectRatio: '3:1',
+      slotId: 'SLOT 03',
+      title: 'Technical SEO, Core Web Vitals & Local GMB Growth Pipeline',
+      suggestion:
+        'Technical flowchart: Google Search Essentials Audit → Core Web Vitals Speed Engineering (LCP < 0.8s) → Semantic Schema.org Entity Graphs → GMB 3-Pack Optimization & Direct Calls.',
+      formats: 'PNG / WebP / SVG',
+      src: '/images/services/seo-optimization-architecture.png',
+      alt: 'SEO Optimization 4-step engineering architecture diagram: Technical Audit, Core Web Vitals, Schema Entities, and GMB Call Conversion Funnel',
+      objectFit: 'contain',
+    },
+    outcomeVisual: {
+      width: 612,
+      height: 408,
+      aspectRatio: '3:2',
+      slotId: 'OUTCOME',
+      title: 'Google Search Console & Local GMB Inbound Call Dashboard',
+      suggestion:
+        'Telemetry dashboard showing top-3 commercial rankings, 98+ Lighthouse performance, and direct inbound phone calls generated from Google Maps.',
+      formats: 'PNG / WebP / SVG',
+      src: '/images/services/seo-optimization-outcome.png',
+      alt: 'SEO Optimization & GMB Growth Console rank acceleration and inbound phone call telemetry preview',
+      objectFit: 'contain',
+    },
+  },
 };
 
 export const PRODUCT_MEDIA_CONFIGS: Record<string, ServiceMediaConfig> = {
